@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-Regular.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-Medium.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-Bold.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NicoMoji';
+  src: url('@/assets/fonts/NicoMoji/NicoMoji-Regular.ttf');
+}

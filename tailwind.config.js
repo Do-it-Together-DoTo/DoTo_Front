@@ -31,7 +31,14 @@ export default {
       purple: '#C06EF2',
       yellow: '#FCF898',
       green: '#8EFF9A',
+      error: '#F25454',
     },
+
+    fontFamily: {
+      pre: ['Pretendard'],
+      nico: ['NicoMoji'],
+    },
+
     extend: {},
   },
   plugins: [],
