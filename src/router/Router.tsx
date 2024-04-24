@@ -1,6 +1,4 @@
 import App from '@/App';
-import CommunityLayout from '@/components/layout/CommunityLayout';
-import StoreLayout from '@/components/layout/StoreLayout';
 import NotFound from '@/pages/NotFound';
 import Betting from '@/pages/community/Betting';
 import Chatting from '@/pages/community/Chatting';
@@ -10,7 +8,7 @@ import Home from '@/pages/home/Home';
 import Mypage from '@/pages/mypage/Mypage';
 import Inventory from '@/pages/store/Inventory';
 import Shop from '@/pages/store/Shop';
-import { RouterProvider, createBrowserRouter, RouteObject } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
   const routes: RouteObject[] = [
@@ -25,16 +23,16 @@ const Router = () => {
         },
         {
           path: 'store',
-          element: <StoreLayout />,
           children: [
+            { path: '', element: <Navigate to="shop" /> },
             { path: 'shop', element: <Shop /> },
             { path: 'inventory', element: <Inventory /> },
           ],
         },
         {
           path: 'community',
-          element: <CommunityLayout />,
           children: [
+            { path: '', element: <Navigate to="ranking" /> },
             { path: 'ranking', element: <Ranking /> },
             { path: 'search', element: <Search /> },
             { path: 'chatting', element: <Chatting /> },
@@ -42,7 +40,7 @@ const Router = () => {
           ],
         },
         {
-          path: '/mypage',
+          path: 'mypage',
           element: <Mypage />,
         },
       ],
