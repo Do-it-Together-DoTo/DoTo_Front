@@ -2,15 +2,15 @@ import { SunIcon } from '@/assets/svg';
 import { MoonIcon } from '@/assets/svg';
 import { NotificationOnIcon } from '@/assets/svg';
 import { NotificationOffIcon } from '@/assets/svg';
+import useNotificationStore from '@/store/notificationStore';
 import { useState } from 'react';
 
 const Topbar = () => {
   //알람이랑 다크모드는 전역상태로 관리해야할 것 같은데
-  const [isNotification, setIsNotification] = useState(false);
+  const { isNotification, setIsNotification } = useNotificationStore();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const handleAlarmClick = () => {
-    setIsNotification(!isNotification);
-    //TODO: 알람 전체 상태 관리 필요
+    setIsNotification();
   };
   const handleDarkModeClick = () => {
     //TODO: 다크모드도 전체상태 관리로 다루기 + 다크모드 색상
@@ -18,7 +18,7 @@ const Topbar = () => {
   };
   return (
     <div className="flex justify-end px-2 h-16 items-center ">
-      <div className="flex gap-3 sm:gap-14">
+      <div className="flex gap-3">
         <label className="inline-flex items-center cursor-pointer">
           <div className="relative w-12 h-6 bg-Light_Layout-100 rounded-2xl ">
             <input type="checkbox" value="" className="sr-only peer" onClick={handleDarkModeClick} />
