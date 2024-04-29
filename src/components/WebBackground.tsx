@@ -1,5 +1,3 @@
-import React from 'react';
-
 const WebBackground = () => {
   return (
     <div className="mt-10 ml-10 w-[70rem] h-[41.8125rem]  flex ">
