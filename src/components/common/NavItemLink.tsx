@@ -10,7 +10,7 @@ interface NavItemLinkProps {
 
 const NavItemLink = ({ to, name, children }: NavItemLinkProps) => {
   return (
-    <NavLink to={to} className="flex gap-5 items-center ">
+    <NavLink to={to} className="flex  gap-[0.5rem] items-center ">
       {({ isActive }) => (
         <>
           {Children.map(children, (child) =>
