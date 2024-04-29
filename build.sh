@@ -1,4 +1,5 @@
+#!/bin/sh
 cd ../
 mkdir output
-cp -R ./Do-it-Together-DoTo/* ./output
-cp -R ./output ./Do-it-Together-DoTo/
+cp -R ./DoTo_Front/* ./output
+cp -R ./output ./DoTo_Front/
