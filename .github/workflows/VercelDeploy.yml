@@ -21,8 +21,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.AUTO_VERCEL_SECRET_KEY }}
         with:
           source-directory: 'output'
-          destination-github-username: [jeongjiyeon315]
-          destination-repository-name: [doto_front_deploy]
+          destination-github-username: jeongjiyeon315
+          destination-repository-name: doto_front_deploy
           user-email: ${{ secrets.OFFICIAL_ACCOUNT_EMAIL }}
           commit-message: ${{ github.event.commits[0].message }}
           target-branch: main
