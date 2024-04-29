@@ -1,4 +1,4 @@
-import App from '@/App';
+import Layout from '@/components/common/Layout';
 import NotFoundPage from '@/pages/NotFoundPage';
 import BettingPage from '@/pages/community/BettingPage';
 import ChattingPage from '@/pages/community/ChattingPage';
@@ -14,11 +14,11 @@ const Router = () => {
   const routes: RouteObject[] = [
     {
       path: '/',
-      element: <App />,
+      element: <Layout />,
       errorElement: <NotFoundPage />,
       children: [
         {
-          path: '/',
+          index: true,
           element: <HomePage />,
         },
         {

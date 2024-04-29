@@ -19,11 +19,11 @@ const Navbar = () => {
           <HomeIcon width="32" height="31" />
         </NavItemLink>
 
-        <NavItemLink to={'/community/ranking'} name="커뮤니티">
+        <NavItemLink to={'/community'} name="커뮤니티">
           <CommunityIcon width="30" height="30" />
         </NavItemLink>
 
-        <NavItemLink to={'/store/shop'} name="스토어">
+        <NavItemLink to={'/store'} name="스토어">
           <StoreIcon width="30" height="30" />
         </NavItemLink>
 
