@@ -8,10 +8,10 @@ import NavItemLink from './NavItemLink';
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-col gap-16 w-48 px-7">
+    <nav className="flex flex-col gap-16 w-48 px-7 dark:bg-Dark_Layout-100">
       <div>
         <NavLink to="/">
-          <Logo width="109" height="70" />
+          <Logo width="109" height="70" className="fill-Light_Text_Name dark:fill-Dark_Text_Name " />
         </NavLink>
       </div>
       <div className="flex flex-col gap-11 h-screen">

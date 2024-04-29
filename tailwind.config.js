@@ -2,6 +2,7 @@
 export default {
   // eslint-disable-next-line prettier/prettier
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     colors: {
       Dark_Layout: {

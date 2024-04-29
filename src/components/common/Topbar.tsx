@@ -15,9 +15,14 @@ const Topbar = () => {
     setIsDarkMode();
     console.log(isDarkMode);
     localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
+    if (!isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
   return (
-    <div className="flex justify-end px-2 h-16 items-center ">
+    <div className="flex justify-end px-2 h-16 items-center dark:bg-Dark_Layout-100">
       <div className="flex gap-3">
         {isDarkMode ? (
           <div className="relative w-12 h-6 bg-Dark_Layout-400 rounded-2xl" onClick={handleDarkModeClick}>
