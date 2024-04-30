@@ -1,7 +1,4 @@
-import { SunIcon } from '@/assets/svg';
-import { MoonIcon } from '@/assets/svg';
-import { NotificationOnIcon } from '@/assets/svg';
-import { NotificationOffIcon } from '@/assets/svg';
+import { SunIcon, MoonIcon, NotificationOnIcon, NotificationOffIcon } from '@/assets/svg';
 import useDarkModeStore from '@/store/darkmodeStore';
 import useNotificationStore from '@/store/notificationStore';
 

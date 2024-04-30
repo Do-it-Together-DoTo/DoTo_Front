@@ -1,9 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { HomeIcon } from '@/assets/svg';
-import { CommunityIcon } from '@/assets/svg';
-import { StoreIcon } from '@/assets/svg';
-import { MypageIcon } from '@/assets/svg';
-import { Logo } from '@/assets/svg';
+import { HomeIcon, CommunityIcon, StoreIcon, MypageIcon, Logo } from '@/assets/svg';
+
 import NavItemLink from './NavItemLink';
 
 const Navbar = () => {
