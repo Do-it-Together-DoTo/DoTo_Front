@@ -8,6 +8,7 @@ import HomePage from '@/pages/home/HomePage';
 import Mypage from '@/pages/mypage/Mypage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
+import SignIn from '@pages/sign/SignIn';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
@@ -20,6 +21,13 @@ const Router = () => {
         {
           index: true,
           element: <HomePage />,
+        },
+        {
+          path: 'sign',
+          children: [
+            { path: '', element: <Navigate to="signin" /> },
+            { path: 'signin', element: <SignIn /> },
+          ],
         },
         {
           path: 'store',
