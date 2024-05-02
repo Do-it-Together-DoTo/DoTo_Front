@@ -13,6 +13,13 @@ import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'reac
 
 const Router = () => {
   const routes: RouteObject[] = [
+     {
+          path: 'sign',
+          children: [
+            { path: '', element: <Navigate to="signin" /> },
+            { path: 'signin', element: <SignIn /> },
+          ],
+        },
     {
       path: '/',
       element: <Layout />,
@@ -22,13 +29,7 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
-        {
-          path: 'sign',
-          children: [
-            { path: '', element: <Navigate to="signin" /> },
-            { path: 'signin', element: <SignIn /> },
-          ],
-        },
+       
         {
           path: 'store',
           children: [
