@@ -9,17 +9,19 @@ import Mypage from '@/pages/mypage/Mypage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
 import SignIn from '@pages/sign/SignIn';
+import SignUp from '@/modal/SignUp';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
   const routes: RouteObject[] = [
-     {
-          path: 'sign',
-          children: [
-            { path: '', element: <Navigate to="signin" /> },
-            { path: 'signin', element: <SignIn /> },
-          ],
-        },
+    {
+      path: 'sign',
+      children: [
+        { path: '', element: <Navigate to="signup" /> },
+        { path: 'signin', element: <SignIn /> },
+         { path: 'signup', element: <SignUp /> },
+      ],
+    },
     {
       path: '/',
       element: <Layout />,
@@ -29,7 +31,7 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
-       
+
         {
           path: 'store',
           children: [
