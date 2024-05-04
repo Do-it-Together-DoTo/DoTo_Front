@@ -24,7 +24,7 @@ jobs:
           destination-github-username: jeongjiyeon315
           destination-repository-name: doto_front_deploy
           user-email: ${{ secrets.OFFICIAL_ACCOUNT_EMAIL }}
-          commit-message: ${{ github.event.commits[0].message }}
+          commit-message: ${{ github.event.commits[0].message || 'Update Project' }}
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
         run: echo $DESTINATION_CLONED_DIRECTORY
