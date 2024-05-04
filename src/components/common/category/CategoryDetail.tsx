@@ -2,13 +2,13 @@ import React, { ReactNode } from 'react';
 import { Children } from 'react';
 import { NavLink } from 'react-router-dom';
 
-interface CategoryDetailItemProps {
+interface CategoryDetailProps {
   to: string;
   name: string;
   children: ReactNode;
 }
 
-const CategoryDetailItem = ({ to, name, children }: CategoryDetailItemProps) => {
+const CategoryDetail = ({ to, name, children }: CategoryDetailProps) => {
   return (
     <NavLink to={to} className="w-full px-11 py-3 flex gap-[0.5rem] items-center justify-start ">
       {({ isActive }) => (
@@ -34,4 +34,4 @@ const CategoryDetailItem = ({ to, name, children }: CategoryDetailItemProps) => 
     </NavLink>
   );
 };
-export default CategoryDetailItem;
+export default CategoryDetail;

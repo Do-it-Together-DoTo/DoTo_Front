@@ -1,10 +1,10 @@
 import React, { ReactNode, useState, Children } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowDownwardIcon, ArrowForwardIcon } from '@/assets/svg';
-import CategoryDetailItem from './CategoryDetailItem';
+import CategoryDetail from './CategoryDetail';
 import { ICON_MAP } from './CategoryConstant';
 
-interface CategorybarItemProps {
+interface CategoryProps {
   page: {
     name: string;
     to: string;
@@ -14,7 +14,7 @@ interface CategorybarItemProps {
   children: ReactNode;
 }
 
-const CategorybarItem = ({ page, children }: CategorybarItemProps) => {
+const Category = ({ page, children }: CategoryProps) => {
   const [isCategoryActive, setIsCategoryActive] = useState(false);
 
   const handleClickCategory = () => {
@@ -65,9 +65,9 @@ const CategorybarItem = ({ page, children }: CategorybarItemProps) => {
           </div>
           {isCategoryActive &&
             page.detail.map((detail) => (
-              <CategoryDetailItem key={detail.name} to={detail.to} name={detail.name}>
+              <CategoryDetail key={detail.name} to={detail.to} name={detail.name}>
                 {React.createElement(ICON_MAP[detail.icon], { width: '17', height: '17' })}
-              </CategoryDetailItem>
+              </CategoryDetail>
             ))}
         </>
       ) : (
@@ -104,4 +104,4 @@ const CategorybarItem = ({ page, children }: CategorybarItemProps) => {
     </>
   );
 };
-export default CategorybarItem;
+export default Category;
