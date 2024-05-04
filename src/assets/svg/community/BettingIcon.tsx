@@ -22,7 +22,7 @@ const SvgBettingIcon = (props: SVGProps<SVGSVGElement>) => (
       <path fill="url(#bettingIcon_svg__a)" d="M.729.5h20v20h-20z" />
     </mask>
     <g mask="url(#bettingIcon_svg__b)">
-      <path fill="#717171" d="M0-1h23v24H0z" />
+      <path d="M0-1h23v24H0z" />
     </g>
     <defs>
       <pattern id="bettingIcon_svg__a" width={1} height={1} patternContentUnits="objectBoundingBox">
