@@ -1,3 +1,4 @@
+import Categorybar from '@/components/common/Categorybar';
 import Layout from '@/components/common/Layout';
 import NotFoundPage from '@/pages/NotFoundPage';
 import BettingPage from '@/pages/community/BettingPage';
@@ -23,6 +24,7 @@ const Router = () => {
         },
         {
           path: 'store',
+          element: <Categorybar category="store" />,
           children: [
             { path: '', element: <Navigate to="shop" /> },
             { path: 'shop', element: <ShopPage /> },
@@ -31,17 +33,18 @@ const Router = () => {
         },
         {
           path: 'community',
+          element: <Categorybar category="community" />,
           children: [
-            { path: '', element: <Navigate to="ranking" /> },
             { path: 'ranking', element: <RankingPage /> },
-            { path: 'search', element: <SearchPage /> },
+            { path: 'friends', element: <SearchPage /> },
             { path: 'chatting', element: <ChattingPage /> },
             { path: 'betting', element: <BettingPage /> },
           ],
         },
         {
           path: 'mypage',
-          element: <Mypage />,
+          element: <Categorybar category="mypage" />,
+          children: [{ path: '', element: <Mypage /> }],
         },
       ],
     },
