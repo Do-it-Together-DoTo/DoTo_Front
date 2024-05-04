@@ -19,7 +19,7 @@ const Router = () => {
       children: [
         { path: '', element: <Navigate to="signup" /> },
         { path: 'signin', element: <SignIn /> },
-         { path: 'signup', element: <SignUp /> },
+        { path: 'signup', element: <SignUp /> },
       ],
     },
     {
