@@ -2,6 +2,7 @@ export { default as BettingIcon } from './BettingIcon';
 export { default as BronzeStarIcon } from './BronzeStarIcon';
 export { default as CharacterProfileIcon } from './CharacterProfileIcon';
 export { default as ChattingIcon } from './ChattingIcon';
+export { default as CoinIcon } from './CoinIcon';
 export { default as FriendIcon } from './FriendIcon';
 export { default as GoldStarIcon } from './GoldStarIcon';
 export { default as RankingBackground } from './RankingBackground';

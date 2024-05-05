@@ -1,5 +1,6 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { IBetting } from './BettingConstant';
+
 interface BettingItemProps {
   betting: IBetting;
   isParticipate: boolean;
