@@ -1,5 +1,9 @@
 export { default as Logo } from './Logo';
+export { default as MyBlob } from './MyBlob';
+export { default as Slider } from './Slider';
+export { default as Coin } from './Coin';
 export { default as CommunityIcon } from './CommunityIcon';
+export { default as Egg } from './Egg';
 export { default as HomeIcon } from './HomeIcon';
 export { default as MoonIcon } from './MoonIcon';
 export { default as MypageIcon } from './MypageIcon';
