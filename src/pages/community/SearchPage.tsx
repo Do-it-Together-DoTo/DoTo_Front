@@ -16,13 +16,6 @@ const SearchPage = () => {
           <FriendItem />
           <FriendItem />
           <FriendItem />
-          <FriendItem />
-          <FriendItem />
-          <FriendItem />
-          <FriendItem />
-          <FriendItem />
-          <FriendItem />
-          <FriendItem />
         </div>
       </div>
     </div>
