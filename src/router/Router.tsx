@@ -14,6 +14,8 @@ import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
 import SignIn from '@pages/sign/SignIn';
 import SignUp from '@/modal/SignUp';
+import FindPw from '@/modal/FindPw';
+
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
@@ -24,6 +26,7 @@ const Router = () => {
         { path: '', element: <Navigate to="signup" /> },
         { path: 'signin', element: <SignIn /> },
         { path: 'signup', element: <SignUp /> },
+        { path: 'findpw', element: <FindPw /> },
       ],
     },
     {

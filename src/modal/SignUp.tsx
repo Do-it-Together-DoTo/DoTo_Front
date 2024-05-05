@@ -60,7 +60,7 @@ const SignUp = () => {
         <div className="w-[16.625rem] h-[0rem] mt-[0.375rem] border border-1 border-Dark_Text_Contents" />
         <div className="w-[16.625rem] font-pre text-[7px] text-error">비밀번호가 일치하지 않습니다.</div>
         <button className="mt-[2.5rem] w-[17.625rem] h-[2.3125rem] bg-Button font-pre font-bold text-Light_Layout-100 text-[15px] border rounded-lg rounded-10">
-          로그인
+          회원가입
         </button>
       </div>
     </div>
