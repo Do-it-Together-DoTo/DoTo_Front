@@ -6,8 +6,10 @@ import RankingPage from '@/pages/community/RankingPage';
 import SearchPage from '@/pages/community/SearchPage';
 import HomePage from '@/pages/home/HomePage';
 import Mypage from '@/pages/mypage/Mypage';
-import InventoryPage from '@/pages/store/InventoryPage';
-import ShopPage from '@/pages/store/ShopPage';
+import InventoryItemPage from '@/pages/store/InventoryItemPage';
+import InventoryCharacterPage from '@/pages/store/InventoryItemPage';
+import ShopItemPage from '@/pages/store/ShopItemPage';
+import ShopCharacterPage from '@/pages/store/ShopCharacterPage';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
@@ -25,8 +27,10 @@ const Router = () => {
           path: 'store',
           children: [
             { path: '', element: <Navigate to="shop" /> },
-            { path: 'shop', element: <ShopPage /> },
-            { path: 'inventory', element: <InventoryPage /> },
+            { path: 'shop/character', element: <ShopCharacterPage /> },
+            { path: 'shop/item', element: <ShopItemPage /> },
+            { path: 'inventory/character', element: <InventoryCharacterPage /> },
+            { path: 'inventory/item', element: <InventoryItemPage /> },
           ],
         },
         {

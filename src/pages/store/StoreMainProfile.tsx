@@ -6,7 +6,7 @@ const StoreMainProfile = () => {
       <MyBlob className="w-[6.8137rem] h-[4.1563rem]" />
       <div>
         <div className="flex gap-x-[0.625rem] w-[27.1875rem]">
-          <div className="text-Light_Text_Name text-[1.8125rem]">닉네임</div>
+          <div className="text-Light_Text_Name font-bold text-[1.8125rem]">닉네임</div>
           <div className="content-end text-Light_Text_AboutMe font-nico">Lv.3</div>
         </div>
         <div className="flex items-center">
