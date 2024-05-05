@@ -7,6 +7,8 @@ export { default as Coin } from './Coin';
 export { default as CommunityIcon } from './CommunityIcon';
 export { default as Egg } from './Egg';
 export { default as HomeIcon } from './HomeIcon';
+export { default as MagicPotion1 } from './MagicPotion1';
+export { default as MagicPotion2 } from './MagicPotion2';
 export { default as MoonIcon } from './MoonIcon';
 export { default as MypageIcon } from './MypageIcon';
 export { default as NotificationOffIcon } from './NotificationOffIcon';
