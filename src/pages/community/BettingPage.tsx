@@ -6,7 +6,7 @@ import { MyBettingList } from '@/components/community/betting/BettingConstant';
 const BettingPage = () => {
   return (
     <main className="w-[54rem] h-[45rem] flex flex-col gap-7 bg-Light_Layout-100 dark:bg-Dark_Layout-300 items-center py-14">
-      <BettingModal betting={MyBettingList[0]} />
+      {/* <BettingModal betting={MyBettingList[0]} /> */}
       <MyBetting />
       <OpenBetting />
     </main>
