@@ -1,6 +1,8 @@
 export { default as Logo } from './Logo';
 export { default as MyBlob } from './MyBlob';
 export { default as Slider } from './Slider';
+export { default as NormalBadge } from './NormalBadge';
+export { default as RareBadge } from './RareBadge';
 export { default as Coin } from './Coin';
 export { default as CommunityIcon } from './CommunityIcon';
 export { default as Egg } from './Egg';
