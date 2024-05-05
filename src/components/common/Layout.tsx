@@ -5,9 +5,13 @@ import Topbar from './Topbar';
 const Layout = () => {
   return (
     <>
-      <Topbar />
-      <Navbar />
-      <Outlet />
+      <div className="w-full h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
+        <Topbar />
+        <div className="flex">
+          <Navbar />
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };
