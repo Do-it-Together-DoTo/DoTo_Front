@@ -9,7 +9,7 @@ const RankingPage = () => {
 
   return (
     <main className="h-[45rem] flex ">
-      <div className="flex flex-col items-center w-[33.75rem] bg-Dark_Text_Contents dark:bg-Dark_Layout-300">
+      <div className="flex flex-col items-center w-[33.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-300">
         <Timer />
         <TopRankers topRankers={rankers.slice(0, 3)} />
         <Rankers rankers={rankers} />

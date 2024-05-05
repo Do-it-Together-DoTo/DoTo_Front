@@ -13,6 +13,7 @@ import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
+import ChattingRoomPage from '@/pages/community/ChattingRoomPage';
 
 const Router = () => {
   const routes: RouteObject[] = [
@@ -33,6 +34,7 @@ const Router = () => {
             { path: 'ranking', element: <RankingPage /> },
             { path: 'friends', element: <SearchPage /> },
             { path: 'chatting', element: <ChattingPage /> },
+            { path: 'chatting/:roomId', element: <ChattingRoomPage /> },
             { path: 'betting', element: <BettingPage /> },
           ],
         },

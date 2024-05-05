@@ -8,9 +8,9 @@ interface RankersProps {
 }
 const Rankers = ({ rankers }: RankersProps) => {
   return (
-    <section className="w-[28rem] h-[24.1875rem] rounded-[1.875rem] bg-Light_Layout-400 flex flex-col items-center px-9 py-[1.1875rem] gap-4 overflow-scroll">
+    <section className="w-[28rem] h-[24.1875rem] rounded-[1.875rem] bg-Light_Layout-400 flex flex-col items-center px-9 py-[1.1875rem] overflow-y-scroll">
       <h3 className="text-lg text-Light_CategoryText_Icon_Contents">랭킹 순위</h3>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 ">
         {rankers.map((user, idx) => (
           <div
             key={user.point}
