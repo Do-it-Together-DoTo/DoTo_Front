@@ -26,7 +26,7 @@ const Router = () => {
         {
           path: 'store',
           children: [
-            { path: '', element: <Navigate to="shop" /> },
+            { path: '', element: <Navigate to="shop/character" /> },
             { path: 'shop/character', element: <ShopCharacterPage /> },
             { path: 'shop/item', element: <ShopItemPage /> },
             { path: 'inventory/character', element: <InventoryCharacterPage /> },
