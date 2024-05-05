@@ -1,3 +1,4 @@
+import Categorybar from '@/components/common/category/Categorybar';
 import Layout from '@/components/common/Layout';
 import NotFoundPage from '@/pages/NotFoundPage';
 import BettingPage from '@/pages/community/BettingPage';
@@ -5,7 +6,10 @@ import ChattingPage from '@/pages/community/ChattingPage';
 import RankingPage from '@/pages/community/RankingPage';
 import SearchPage from '@/pages/community/SearchPage';
 import HomePage from '@/pages/home/HomePage';
-import Mypage from '@/pages/mypage/Mypage';
+import ChangePasswordPage from '@/pages/mypage/ChangePasswordPage';
+import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
+import MydataPage from '@/pages/mypage/MydataPage';
+import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
 import SignIn from '@pages/sign/SignIn';
@@ -33,7 +37,19 @@ const Router = () => {
         },
 
         {
+          path: 'community',
+          element: <Categorybar category="community" />,
+          children: [
+            { path: '', element: <Navigate to="ranking" /> },
+            { path: 'ranking', element: <RankingPage /> },
+            { path: 'friends', element: <SearchPage /> },
+            { path: 'chatting', element: <ChattingPage /> },
+            { path: 'betting', element: <BettingPage /> },
+          ],
+        },
+        {
           path: 'store',
+          element: <Categorybar category="store" />,
           children: [
             { path: '', element: <Navigate to="shop" /> },
             { path: 'shop', element: <ShopPage /> },
@@ -41,18 +57,15 @@ const Router = () => {
           ],
         },
         {
-          path: 'community',
-          children: [
-            { path: '', element: <Navigate to="ranking" /> },
-            { path: 'ranking', element: <RankingPage /> },
-            { path: 'search', element: <SearchPage /> },
-            { path: 'chatting', element: <ChattingPage /> },
-            { path: 'betting', element: <BettingPage /> },
-          ],
-        },
-        {
           path: 'mypage',
-          element: <Mypage />,
+          element: <Categorybar category="mypage" />,
+          children: [
+            { path: '', element: <Navigate to="mydata" /> },
+            { path: 'mydata', element: <MydataPage /> },
+            { path: 'update-profile', element: <UpdateProfilePage /> },
+            { path: 'change-password', element: <ChangePasswordPage /> },
+            { path: 'delete-account', element: <DeleteAccountPage /> },
+          ],
         },
       ],
     },
