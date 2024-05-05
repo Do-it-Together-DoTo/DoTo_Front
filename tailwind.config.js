@@ -32,7 +32,10 @@ export default {
       purple: '#C06EF2',
       yellow: '#FCF898',
       green: '#8EFF9A',
+      transparent: 'transparent',
       error: '#F25454',
+      Ranking_Bar_Start: '#88A0E9',
+      Ranking_Bar_End: '#C7A4F4',
     },
 
     fontFamily: {
