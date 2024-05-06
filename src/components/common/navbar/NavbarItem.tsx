@@ -8,7 +8,7 @@ interface NavItemLinkProps {
   children: ReactNode;
 }
 
-const NavItemLink = ({ to, name, children }: NavItemLinkProps) => {
+const NavbarItem = ({ to, name, children }: NavItemLinkProps) => {
   return (
     <NavLink to={to} className="flex  gap-[0.5rem] items-center ">
       {({ isActive }) => (
@@ -34,4 +34,4 @@ const NavItemLink = ({ to, name, children }: NavItemLinkProps) => {
     </NavLink>
   );
 };
-export default NavItemLink;
+export default NavbarItem;

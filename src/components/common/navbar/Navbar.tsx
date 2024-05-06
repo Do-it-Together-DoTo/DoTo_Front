@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { HomeIcon, CommunityIcon, StoreIcon, MypageIcon, Logo } from '@/assets/svg';
 
-import NavItemLink from './NavItemLink';
+import NavbarItem from './NavbarItem';
 
 const Navbar = () => {
   return (
@@ -12,21 +12,21 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className="flex flex-col gap-11">
-        <NavItemLink to={'/'} name="홈">
+        <NavbarItem to={'/'} name="홈">
           <HomeIcon width="32" height="31" />
-        </NavItemLink>
+        </NavbarItem>
 
-        <NavItemLink to={'/community'} name="커뮤니티">
+        <NavbarItem to={'/community'} name="커뮤니티">
           <CommunityIcon width="30" height="30" />
-        </NavItemLink>
+        </NavbarItem>
 
-        <NavItemLink to={'/store'} name="스토어">
+        <NavbarItem to={'/store'} name="스토어">
           <StoreIcon width="30" height="30" />
-        </NavItemLink>
+        </NavbarItem>
 
-        <NavItemLink to={'/mypage'} name="마이페이지">
+        <NavbarItem to={'/mypage'} name="마이페이지">
           <MypageIcon width="28" height="28" />
-        </NavItemLink>
+        </NavbarItem>
       </div>
     </nav>
   );
