@@ -12,7 +12,7 @@ import MydataPage from '@/pages/mypage/MydataPage';
 import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
-import SignIn from '@pages/sign/SignIn';
+import SignIn from '@/pages/auth/SignIn';
 import SignUp from '@/modal/SignUp';
 import FindPw from '@/modal/FindPw';
 
@@ -21,12 +21,11 @@ import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'reac
 const Router = () => {
   const routes: RouteObject[] = [
     {
-      path: 'sign',
+      path: '/auth',
       children: [
-        { path: '', element: <Navigate to="signup" /> },
-        { path: 'signin', element: <SignIn /> },
-        { path: 'signup', element: <SignUp /> },
-        { path: 'findpw', element: <FindPw /> },
+        { path: '/signin', element: <SignIn /> },
+        { path: '/signup', element: <SignUp /> },
+        { path: '/findpw', element: <FindPw /> },
       ],
     },
     {
