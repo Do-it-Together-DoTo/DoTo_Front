@@ -1,18 +1,18 @@
-import Categorybar from '@/components/common/category/Categorybar';
-import Layout from '@/components/common/Layout';
-import NotFoundPage from '@/pages/NotFoundPage';
-import BettingPage from '@/pages/community/BettingPage';
-import ChattingPage from '@/pages/community/ChattingPage';
-import RankingPage from '@/pages/community/RankingPage';
-import SearchPage from '@/pages/community/SearchPage';
-import HomePage from '@/pages/home/HomePage';
-import ChangePasswordPage from '@/pages/mypage/ChangePasswordPage';
-import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
-import MydataPage from '@/pages/mypage/MydataPage';
-import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
-import InventoryPage from '@/pages/store/InventoryPage';
-import ShopPage from '@/pages/store/ShopPage';
-import SignIn from '@/pages/auth/SignIn';
+import Categorybar from '@components/common/category/Categorybar';
+import Layout from '@components/common/Layout';
+import NotFoundPage from '@pages/NotFoundPage';
+import BettingPage from '@pages/community/BettingPage';
+import ChattingPage from '@pages/community/ChattingPage';
+import RankingPage from '@pages/community/RankingPage';
+import SearchPage from '@pages/community/SearchPage';
+import HomePage from '@pages/home/HomePage';
+import ChangePasswordPage from '@pages/mypage/ChangePasswordPage';
+import DeleteAccountPage from '@pages/mypage/DeleteAccountPage';
+import MydataPage from '@pages/mypage/MydataPage';
+import UpdateProfilePage from '@pages/mypage/UpdateProfilePage';
+import InventoryPage from '@pages/store/InventoryPage';
+import ShopPage from '@pages/store/ShopPage';
+import SignIn from '@pages/auth/SignIn';
 import SignUp from '@/modal/SignUp';
 import FindPw from '@/modal/FindPw';
 
@@ -23,9 +23,9 @@ const Router = () => {
     {
       path: '/auth',
       children: [
-        { path: '/signin', element: <SignIn /> },
-        { path: '/signup', element: <SignUp /> },
-        { path: '/findpw', element: <FindPw /> },
+        { path: 'signin', element: <SignIn /> },
+        { path: 'signup', element: <SignUp /> },
+        { path: 'findpw', element: <FindPw /> },
       ],
     },
     {
