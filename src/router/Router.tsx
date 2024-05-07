@@ -1,3 +1,4 @@
+
 import Categorybar from '@/components/common/category/Categorybar';
 import Layout from '@/components/common/Layout';
 import NotFoundPage from '@/pages/NotFoundPage';
@@ -11,12 +12,23 @@ import MydataPage from '@/pages/mypage/MydataPage';
 import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
+import SignIn from '@pages/auth/SignIn';
+import SignUp from '@/modal/SignUp';
+import FindPw from '@/modal/FindPw';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 import ChattingRoomPage from '@/pages/community/ChattingRoomPage';
 import FriendPage from '@/pages/community/FriendPage';
 
 const Router = () => {
   const routes: RouteObject[] = [
+    {
+      path: '/auth',
+      children: [
+        { path: 'signin', element: <SignIn /> },
+        { path: 'signup', element: <SignUp /> },
+        { path: 'findpw', element: <FindPw /> },
+      ],
+    },
     {
       path: '/',
       element: <Layout />,
@@ -26,6 +38,7 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
+
         {
           path: 'community',
           element: <Categorybar category="community" />,
