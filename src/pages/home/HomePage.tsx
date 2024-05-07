@@ -1,4 +1,15 @@
+import { faker } from '@faker-js/faker';
 import { UserImgSample, CoinIcon } from '@assets/svg';
+
+const followers = Array.from({ length: 10 }, () => ({
+  id: faker.string.uuid(),
+  userimg: faker.image.avatar(),
+  username: faker.internet.userName(),
+  introduction: faker.lorem.sentence(),
+  level: faker.number.int({ min: 1, max: 10 }),
+  coin: faker.number.int({ min: 0, max: 9999 }),
+  experience: faker.number.int({ min: 0, max: 100 }),
+}));
 
 const HomePage = () => {
   return (
@@ -14,10 +25,13 @@ const HomePage = () => {
 
           <div className="flex items-center ml-auto mr-8">
             <div className="block w-20 h-1 rounded-full bg-Dark_Layout-100">
-              <div className="block h-1 rounded-full w-[calc(0.05rem*70)] bg-gradient" />
+              <div
+                className="block h-1 rounded-full bg-gradient"
+                style={{ width: `calc(0.05rem*${followers[0].experience})` }}
+              />
             </div>
             <span className="text-[0.5rem] font-nico text-Light_Text_AboutMe mr-2 absolute right-0 dark:text-Dark_Text_AboutMe">
-              70%
+              {followers[0].experience}%
             </span>
           </div>
 
