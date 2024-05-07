@@ -34,6 +34,9 @@ export default {
       green: '#8EFF9A',
       error: '#F25454',
     },
+    backgroundImage: {
+      gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
+    },
 
     fontFamily: {
       pre: ['Pretendard'],
