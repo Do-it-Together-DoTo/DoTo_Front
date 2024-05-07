@@ -1,9 +1,13 @@
+export { default as GoogleIcon } from './GoogleIcon';
 export { default as Logo } from './Logo';
+export { default as Logo2 } from './Logo2';
 export { default as ArrowDownwardIcon } from './ArrowDownwardIcon';
 export { default as ArrowForwardIcon } from './community/ArrowForwardIcon';
 export { default as CommunityIcon } from './community/CommunityIcon';
 export { default as HomeIcon } from './HomeIcon';
+export { default as KakaoIcon } from './KakaoIcon';
 export { default as MoonIcon } from './MoonIcon';
+export { default as NaverIcon } from './NaverIcon';
 export { default as MypageIcon } from './mypage/MypageIcon';
 export { default as NotificationOffIcon } from './NotificationOffIcon';
 export { default as NotificationOnIcon } from './NotificationOnIcon';
