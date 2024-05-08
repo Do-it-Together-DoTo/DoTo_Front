@@ -1,7 +1,6 @@
 import MyBetting from '@/components/community/betting/MyBetting';
 import OpenBetting from '@/components/community/betting/OpenBetting';
-import BettingModal from '@/modal/BettingModal';
-import { MyBettingList } from '@/components/community/betting/BettingConstant';
+// import BettingModal from '@/modal/BettingModal';
 
 const BettingPage = () => {
   return (
