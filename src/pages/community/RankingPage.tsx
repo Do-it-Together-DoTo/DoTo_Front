@@ -1,17 +1,21 @@
-import { useState } from 'react';
-import { RANKERS } from '@/dummy';
-import TopRankers from '@/components/community/ranking/TopRankers';
+import { useEffect, useState } from 'react';
+import { IUser, RANKERS } from '@/components/community/ranking/RankingConstant';
+import Podium from '@/components/community/ranking/Podium';
 import Rankers from '@/components/community/ranking/Rankers';
 import MyRanking from '@/components/community/ranking/MyRanking';
 import Timer from '@/components/community/ranking/Timer';
 const RankingPage = () => {
-  const [rankers, setRankers] = useState(RANKERS);
+  const [rankers, setRankers] = useState<IUser[]>([]);
+
+  useEffect(() => {
+    setRankers(RANKERS);
+  }, []);
 
   return (
     <main className="h-[45rem] flex ">
       <div className="flex flex-col items-center w-[33.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-300">
         <Timer />
-        <TopRankers topRankers={rankers.slice(0, 3)} />
+        <Podium rankers={rankers} />
         <Rankers rankers={rankers} />
       </div>
       <MyRanking />

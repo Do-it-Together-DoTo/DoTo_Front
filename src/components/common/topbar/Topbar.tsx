@@ -18,8 +18,8 @@ const Topbar = () => {
     }
   };
   return (
-    <div className="flex justify-end px-[1.59375rem] h-[3.1875rem] items-center dark:bg-Dark_Layout-100">
-      <div className="flex gap-3 w-[5.0625rem]">
+    <div className="flex justify-end px-[1.59375rem] h-[3.1875rem] items-center dark:bg-Dark_Layout-100 ">
+      <div className="flex gap-3 w-[5.0625rem] ">
         {isDarkMode ? (
           <div
             className="relative w-[3.125rem] h-[1.375rem] bg-Dark_Layout-400 rounded-2xl"
