@@ -1,9 +1,6 @@
 import { TimerIcon } from '@/assets/svg/community';
 import dayjs from 'dayjs';
 import 'dayjs/plugin/objectSupport';
-import duration from 'dayjs/plugin/duration';
-
-dayjs.extend(duration);
 
 const Timer = () => {
   // TODO: 타이머 기능 만들어야함.`
