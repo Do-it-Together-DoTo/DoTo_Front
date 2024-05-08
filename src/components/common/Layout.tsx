@@ -1,13 +1,17 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import Topbar from './Topbar';
+import Navbar from './navbar/Navbar';
+import Topbar from './topbar/Topbar';
 
 const Layout = () => {
   return (
     <>
-      <Topbar />
-      <Navbar />
-      <Outlet />
+      <div>
+        <Topbar />
+        <div className="flex ">
+          <Navbar />
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };
