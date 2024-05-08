@@ -18,7 +18,7 @@ const Podium = ({ rankers }: PodiumProps) => {
           <div className="flex flex-col w-12 items-center">
             {rank === 0 && <CrownIcon width="25" height="25" />}
             <p className="text-Light_Text_Name font-bold text-[0.625rem]">{user.nickname}</p>
-            <p className="bg-gradient-to-l bg-clip-text  to-Ranking_Bar_End from-Ranking_Bar_Start text-transparent text-base">
+            <p className="bg-gradient-to-l bg-clip-text font-nico to-Ranking_Bar_End from-Ranking_Bar_Start text-transparent text-base">
               {'+' + user.point}
             </p>
             <CharacterProfileIcon />

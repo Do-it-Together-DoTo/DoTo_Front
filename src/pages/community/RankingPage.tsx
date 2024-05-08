@@ -4,6 +4,7 @@ import Podium from '@/components/community/ranking/Podium';
 import Rankers from '@/components/community/ranking/Rankers';
 import MyRanking from '@/components/community/ranking/MyRanking';
 import Timer from '@/components/community/ranking/Timer';
+
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IUser[]>([]);
 

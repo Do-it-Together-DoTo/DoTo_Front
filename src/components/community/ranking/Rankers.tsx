@@ -26,7 +26,7 @@ const Rankers = ({ rankers }: RankersProps) => {
                   height: '12',
                 })}
             </div>
-            <p className="bg-gradient-to-l bg-clip-text  to-Ranking_Bar_End from-Ranking_Bar_Start text-transparent text-base">
+            <p className="bg-gradient-to-l bg-clip-text font-nico to-Ranking_Bar_End from-Ranking_Bar_Start text-transparent text-base">
               {'+' + user.point}
             </p>
           </div>
