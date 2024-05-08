@@ -19,6 +19,14 @@ import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'reac
 const Router = () => {
   const routes: RouteObject[] = [
     {
+      path: '/auth',
+      children: [
+        { path: 'signin', element: <SignIn /> },
+        { path: 'signup', element: <SignUp /> },
+        { path: 'findpw', element: <FindPw /> },
+      ],
+    },
+    {
       path: '/',
       element: <Layout />,
       errorElement: <NotFoundPage />,
@@ -38,6 +46,7 @@ const Router = () => {
             { path: 'inventory/item', element: <InventoryItemPage /> },
           ],
         },
+
         {
           path: 'community',
           element: <Categorybar category="community" />,
