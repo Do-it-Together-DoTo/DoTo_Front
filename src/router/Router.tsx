@@ -1,4 +1,3 @@
-
 import Categorybar from '@/components/common/category/Categorybar';
 import Layout from '@/components/common/Layout';
 import NotFoundPage from '@/pages/NotFoundPage';

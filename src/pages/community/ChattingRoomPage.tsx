@@ -13,10 +13,10 @@ const ChattingRoomPage = () => {
   const { roomId } = useParams();
   const [room, setRoom] = useState<IChatting>();
   const [messages, setMessages] = useState<IChattingMessage[]>([]);
-  useEffect(() => {
-    setRoom(CHATTING_ROOM_LIST.find((room) => room.roomId === roomId));
-    setMessages(CHATTING_MESSAGE_LIST);
-  }, []);
+  // useEffect(() => {
+  //   setRoom(CHATTING_ROOM_LIST.find((room) => room.roomId === roomId));
+  //   setMessages(CHATTING_MESSAGE_LIST);
+  // }, []);
 
   return (
     <main className="w-[54rem] h-[45rem] flex  flex-col gap-6 bg-Light_Layout-100 dark:bg-Dark_Layout-300 items-center py-14">
