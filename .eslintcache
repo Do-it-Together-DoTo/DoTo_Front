@@ -1,1 +1,1325 @@
-[{"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\App.tsx":"1","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowDownwardIcon.tsx":"2","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowForwardIcon.tsx":"3","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ArrowForwardIcon.tsx":"4","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BettingIcon.tsx":"5","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ChattingIcon.tsx":"6","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CommunityIcon.tsx":"7","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\FriendIcon.tsx":"8","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\index.ts":"9","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingIcon.tsx":"10","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\CommunityIcon.tsx":"11","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\GoogleIcon.tsx":"12","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\HomeIcon.tsx":"13","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\index.ts":"14","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\KakaoIcon.tsx":"15","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo.tsx":"16","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo2.tsx":"17","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\MoonIcon.tsx":"18","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\AccountDeleteIcon.tsx":"19","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\index.ts":"20","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MydataIcon.tsx":"21","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MypageIcon.tsx":"22","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\PasswordUpdateIcon.tsx":"23","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\ProfileUpdateIcon.tsx":"24","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\SettingIcon.tsx":"25","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\MypageIcon.tsx":"26","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NaverIcon.tsx":"27","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOffIcon.tsx":"28","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOnIcon.tsx":"29","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\index.ts":"30","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\InventoryIcon.tsx":"31","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\ShopIcon.tsx":"32","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\StoreIcon.tsx":"33","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\StoreIcon.tsx":"34","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\SunIcon.tsx":"35","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Category.tsx":"36","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Categorybar.tsx":"37","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryConstant.ts":"38","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryDetail.tsx":"39","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\Layout.tsx":"40","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\Navbar.tsx":"41","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\NavbarItem.tsx":"42","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\topbar\\Topbar.tsx":"43","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\WebBackground.tsx":"44","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\main.tsx":"45","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\FindPw.tsx":"46","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\SignUp.tsx":"47","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\auth\\SignIn.tsx":"48","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\BettingPage.tsx":"49","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingPage.tsx":"50","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\RankingPage.tsx":"51","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\home\\HomePage.tsx":"52","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\ChangePasswordPage.tsx":"53","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\DeleteAccountPage.tsx":"54","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\MydataPage.tsx":"55","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\UpdateProfilePage.tsx":"56","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\NotFoundPage.tsx":"57","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\store\\InventoryPage.tsx":"58","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\store\\ShopPage.tsx":"59","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\router\\Router.tsx":"60","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\store\\darkmodeStore.tsx":"61","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\store\\notificationStore.tsx":"62","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\vite-env.d.ts":"63","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BronzeStarIcon.tsx":"64","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CharacterProfileIcon.tsx":"65","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CoinIcon.tsx":"66","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CrownIcon.tsx":"67","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\GoldStarIcon.tsx":"68","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingBackground.tsx":"69","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\SilverStarIcon.tsx":"70","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\TimerIcon.tsx":"71","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\BettingConstant.ts":"72","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\BettingItem.tsx":"73","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\MyBetting.tsx":"74","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\MyBettingCategory.tsx":"75","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\OpenBetting.tsx":"76","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingConstant.ts":"77","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingItem.tsx":"78","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingMessage.tsx":"79","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendConstant.ts":"80","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendItem.tsx":"81","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendList.tsx":"82","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\SearchFriends.tsx":"83","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\MyRanking.tsx":"84","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Podium.tsx":"85","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Rankers.tsx":"86","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\RankingConstant.ts":"87","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Timer.tsx":"88","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\search\\FriendList.tsx":"89","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\BettingModal.tsx":"90","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingRoomPage.tsx":"91","C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\FriendPage.tsx":"92"},{"size":103,"mtime":1715158567017,"results":"93","hashOfConfig":"94"},{"size":1163,"mtime":1715158567301,"results":"95","hashOfConfig":"94"},{"size":1193,"mtime":1715158567317,"results":"96","hashOfConfig":"94"},{"size":1172,"mtime":1715158567334,"results":"97","hashOfConfig":"94"},{"size":32928,"mtime":1715158567351,"results":"98","hashOfConfig":"94"},{"size":638,"mtime":1715158567401,"results":"99","hashOfConfig":"94"},{"size":550,"mtime":1715158567417,"results":"100","hashOfConfig":"94"},{"size":1296,"mtime":1715158567434,"results":"101","hashOfConfig":"94"},{"size":702,"mtime":1715126295652,"results":"102","hashOfConfig":"94"},{"size":440,"mtime":1715158567484,"results":"103","hashOfConfig":"94"},{"size":581,"mtime":1715158567501,"results":"104","hashOfConfig":"94"},{"size":3156,"mtime":1715158567517,"results":"105","hashOfConfig":"94"},{"size":599,"mtime":1715158567517,"results":"106","hashOfConfig":"94"},{"size":867,"mtime":1715158567534,"results":"107","hashOfConfig":"94"},{"size":10392,"mtime":1715158567534,"results":"108","hashOfConfig":"94"},{"size":5173,"mtime":1715158567551,"results":"109","hashOfConfig":"94"},{"size":5526,"mtime":1715158567551,"results":"110","hashOfConfig":"94"},{"size":842,"mtime":1715158567567,"results":"111","hashOfConfig":"94"},{"size":566,"mtime":1715158567567,"results":"112","hashOfConfig":"94"},{"size":316,"mtime":1715158567567,"results":"113","hashOfConfig":"94"},{"size":494,"mtime":1715158567584,"results":"114","hashOfConfig":"94"},{"size":556,"mtime":1715158567584,"results":"115","hashOfConfig":"94"},{"size":766,"mtime":1715158567584,"results":"116","hashOfConfig":"94"},{"size":1021,"mtime":1715158567601,"results":"117","hashOfConfig":"94"},{"size":1653,"mtime":1715158567601,"results":"118","hashOfConfig":"94"},{"size":577,"mtime":1715158567601,"results":"119","hashOfConfig":"94"},{"size":7297,"mtime":1715158567617,"results":"120","hashOfConfig":"94"},{"size":589,"mtime":1715158567617,"results":"121","hashOfConfig":"94"},{"size":435,"mtime":1715158567617,"results":"122","hashOfConfig":"94"},{"size":110,"mtime":1715158567634,"results":"123","hashOfConfig":"94"},{"size":471,"mtime":1715158567634,"results":"124","hashOfConfig":"94"},{"size":1074,"mtime":1715158567634,"results":"125","hashOfConfig":"94"},{"size":584,"mtime":1715158567651,"results":"126","hashOfConfig":"94"},{"size":615,"mtime":1715158567651,"results":"127","hashOfConfig":"94"},{"size":1146,"mtime":1715158567668,"results":"128","hashOfConfig":"94"},{"size":3706,"mtime":1715158567684,"results":"129","hashOfConfig":"94"},{"size":793,"mtime":1715158567700,"results":"130","hashOfConfig":"94"},{"size":2017,"mtime":1715158567701,"results":"131","hashOfConfig":"94"},{"size":1133,"mtime":1715158567717,"results":"132","hashOfConfig":"94"},{"size":334,"mtime":1715158567717,"results":"133","hashOfConfig":"94"},{"size":1067,"mtime":1715158567734,"results":"134","hashOfConfig":"94"},{"size":1084,"mtime":1715158567734,"results":"135","hashOfConfig":"94"},{"size":2340,"mtime":1715158567751,"results":"136","hashOfConfig":"94"},{"size":399,"mtime":1715158567918,"results":"137","hashOfConfig":"94"},{"size":258,"mtime":1715158567967,"results":"138","hashOfConfig":"94"},{"size":3305,"mtime":1715158567984,"results":"139","hashOfConfig":"94"},{"size":3648,"mtime":1715158567984,"results":"140","hashOfConfig":"94"},{"size":2760,"mtime":1715158568001,"results":"141","hashOfConfig":"94"},{"size":503,"mtime":1715158568017,"results":"142","hashOfConfig":"94"},{"size":496,"mtime":1715158568017,"results":"143","hashOfConfig":"94"},{"size":846,"mtime":1715158568034,"results":"144","hashOfConfig":"94"},{"size":85,"mtime":1715158568051,"results":"145","hashOfConfig":"94"},{"size":115,"mtime":1715158568051,"results":"146","hashOfConfig":"94"},{"size":106,"mtime":1715158568066,"results":"147","hashOfConfig":"94"},{"size":93,"mtime":1715158568067,"results":"148","hashOfConfig":"94"},{"size":110,"mtime":1715158568067,"results":"149","hashOfConfig":"94"},{"size":95,"mtime":1715158568067,"results":"150","hashOfConfig":"94"},{"size":105,"mtime":1715158568084,"results":"151","hashOfConfig":"94"},{"size":91,"mtime":1715158568084,"results":"152","hashOfConfig":"94"},{"size":2962,"mtime":1715158568101,"results":"153","hashOfConfig":"94"},{"size":322,"mtime":1715158568101,"results":"154","hashOfConfig":"94"},{"size":361,"mtime":1715158568118,"results":"155","hashOfConfig":"94"},{"size":38,"mtime":1715158568118,"results":"156","hashOfConfig":"94"},{"size":684,"mtime":1715158567351,"results":"157","hashOfConfig":"94"},{"size":5897,"mtime":1715158567384,"results":"158","hashOfConfig":"94"},{"size":1698,"mtime":1715158567417,"results":"159","hashOfConfig":"94"},{"size":20130,"mtime":1715126294991,"results":"160","hashOfConfig":"94"},{"size":676,"mtime":1715158567451,"results":"161","hashOfConfig":"94"},{"size":6247,"mtime":1715158567468,"results":"162","hashOfConfig":"94"},{"size":683,"mtime":1715158567484,"results":"163","hashOfConfig":"94"},{"size":966,"mtime":1715158567501,"results":"164","hashOfConfig":"94"},{"size":822,"mtime":1715158567751,"results":"165","hashOfConfig":"94"},{"size":967,"mtime":1715158567767,"results":"166","hashOfConfig":"94"},{"size":1816,"mtime":1715158567784,"results":"167","hashOfConfig":"94"},{"size":614,"mtime":1715158567784,"results":"168","hashOfConfig":"94"},{"size":700,"mtime":1715158567802,"results":"169","hashOfConfig":"94"},{"size":1741,"mtime":1715158567802,"results":"170","hashOfConfig":"94"},{"size":801,"mtime":1715158567818,"results":"171","hashOfConfig":"94"},{"size":745,"mtime":1715158567834,"results":"172","hashOfConfig":"94"},{"size":577,"mtime":1715158567834,"results":"173","hashOfConfig":"94"},{"size":1478,"mtime":1715158567834,"results":"174","hashOfConfig":"94"},{"size":826,"mtime":1715158567851,"results":"175","hashOfConfig":"94"},{"size":1106,"mtime":1715158567851,"results":"176","hashOfConfig":"94"},{"size":722,"mtime":1715158567868,"results":"177","hashOfConfig":"94"},{"size":1630,"mtime":1715158567884,"results":"178","hashOfConfig":"94"},{"size":1566,"mtime":1715158567884,"results":"179","hashOfConfig":"94"},{"size":670,"mtime":1715158567901,"results":"180","hashOfConfig":"94"},{"size":1693,"mtime":1715158567901,"results":"181","hashOfConfig":"94"},{"size":613,"mtime":1715158567918,"results":"182","hashOfConfig":"94"},{"size":1877,"mtime":1715158567968,"results":"183","hashOfConfig":"94"},{"size":2049,"mtime":1715158590858,"results":"184","hashOfConfig":"94"},{"size":390,"mtime":1715158568034,"results":"185","hashOfConfig":"94"},{"filePath":"186","messages":"187","suppressedMessages":"188","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"xzutcj",{"filePath":"189","messages":"190","suppressedMessages":"191","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"192","messages":"193","suppressedMessages":"194","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"195","messages":"196","suppressedMessages":"197","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"198","messages":"199","suppressedMessages":"200","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"201","messages":"202","suppressedMessages":"203","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"204","messages":"205","suppressedMessages":"206","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"207","messages":"208","suppressedMessages":"209","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"210","messages":"211","suppressedMessages":"212","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"213","messages":"214","suppressedMessages":"215","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"216","messages":"217","suppressedMessages":"218","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"219","messages":"220","suppressedMessages":"221","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"222","messages":"223","suppressedMessages":"224","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"225","messages":"226","suppressedMessages":"227","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"228","messages":"229","suppressedMessages":"230","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"231","messages":"232","suppressedMessages":"233","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"234","messages":"235","suppressedMessages":"236","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"237","messages":"238","suppressedMessages":"239","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"240","messages":"241","suppressedMessages":"242","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"243","messages":"244","suppressedMessages":"245","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"246","messages":"247","suppressedMessages":"248","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"249","messages":"250","suppressedMessages":"251","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"252","messages":"253","suppressedMessages":"254","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"255","messages":"256","suppressedMessages":"257","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"258","messages":"259","suppressedMessages":"260","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"261","messages":"262","suppressedMessages":"263","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"264","messages":"265","suppressedMessages":"266","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"267","messages":"268","suppressedMessages":"269","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"270","messages":"271","suppressedMessages":"272","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"273","messages":"274","suppressedMessages":"275","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"276","messages":"277","suppressedMessages":"278","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"279","messages":"280","suppressedMessages":"281","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"282","messages":"283","suppressedMessages":"284","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"285","messages":"286","suppressedMessages":"287","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"288","messages":"289","suppressedMessages":"290","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"291","messages":"292","suppressedMessages":"293","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"294","messages":"295","suppressedMessages":"296","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"297","messages":"298","suppressedMessages":"299","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"300","messages":"301","suppressedMessages":"302","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"303","messages":"304","suppressedMessages":"305","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"306","messages":"307","suppressedMessages":"308","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"309","messages":"310","suppressedMessages":"311","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"312","messages":"313","suppressedMessages":"314","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"315","messages":"316","suppressedMessages":"317","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"318","messages":"319","suppressedMessages":"320","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"321","messages":"322","suppressedMessages":"323","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"324","messages":"325","suppressedMessages":"326","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"327","messages":"328","suppressedMessages":"329","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"330","messages":"331","suppressedMessages":"332","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"333","messages":"334","suppressedMessages":"335","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"336","messages":"337","suppressedMessages":"338","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"339","messages":"340","suppressedMessages":"341","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"342","messages":"343","suppressedMessages":"344","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"345","messages":"346","suppressedMessages":"347","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"348","messages":"349","suppressedMessages":"350","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"351","messages":"352","suppressedMessages":"353","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"354","messages":"355","suppressedMessages":"356","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"357","messages":"358","suppressedMessages":"359","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"360","messages":"361","suppressedMessages":"362","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"363","messages":"364","suppressedMessages":"365","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"366","messages":"367","suppressedMessages":"368","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"369","messages":"370","suppressedMessages":"371","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"372","messages":"373","suppressedMessages":"374","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"375","messages":"376","suppressedMessages":"377","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"378","messages":"379","suppressedMessages":"380","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"381","messages":"382","suppressedMessages":"383","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"384","messages":"385","suppressedMessages":"386","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"387","messages":"388","suppressedMessages":"389","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"390","messages":"391","suppressedMessages":"392","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"393","messages":"394","suppressedMessages":"395","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"396","messages":"397","suppressedMessages":"398","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"399","messages":"400","suppressedMessages":"401","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"402","messages":"403","suppressedMessages":"404","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"405","messages":"406","suppressedMessages":"407","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"408","messages":"409","suppressedMessages":"410","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"411","messages":"412","suppressedMessages":"413","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"414","messages":"415","suppressedMessages":"416","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"417","messages":"418","suppressedMessages":"419","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"420","messages":"421","suppressedMessages":"422","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"423","messages":"424","suppressedMessages":"425","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"426","messages":"427","suppressedMessages":"428","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"429","messages":"430","suppressedMessages":"431","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"432","messages":"433","suppressedMessages":"434","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"435","messages":"436","suppressedMessages":"437","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"438","messages":"439","suppressedMessages":"440","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"441","messages":"442","suppressedMessages":"443","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"444","messages":"445","suppressedMessages":"446","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"447","messages":"448","suppressedMessages":"449","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"450","messages":"451","suppressedMessages":"452","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"453","messages":"454","suppressedMessages":"455","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"456","messages":"457","suppressedMessages":"458","errorCount":6,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"459","messages":"460","suppressedMessages":"461","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\App.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowDownwardIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowForwardIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ArrowForwardIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BettingIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ChattingIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CommunityIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\FriendIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\index.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\CommunityIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\GoogleIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\HomeIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\index.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\KakaoIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo2.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\MoonIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\AccountDeleteIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\index.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MydataIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MypageIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\PasswordUpdateIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\ProfileUpdateIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\SettingIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\MypageIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NaverIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOffIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOnIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\index.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\InventoryIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\ShopIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\StoreIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\StoreIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\SunIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Category.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Categorybar.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryConstant.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryDetail.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\Layout.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\Navbar.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\NavbarItem.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\common\\topbar\\Topbar.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\WebBackground.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\main.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\FindPw.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\SignUp.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\auth\\SignIn.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\BettingPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\RankingPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\home\\HomePage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\ChangePasswordPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\DeleteAccountPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\MydataPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\mypage\\UpdateProfilePage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\NotFoundPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\store\\InventoryPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\store\\ShopPage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\router\\Router.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\store\\darkmodeStore.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\store\\notificationStore.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\vite-env.d.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BronzeStarIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CharacterProfileIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CoinIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CrownIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\GoldStarIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingBackground.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\SilverStarIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\TimerIcon.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\BettingConstant.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\BettingItem.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\MyBetting.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\MyBettingCategory.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\betting\\OpenBetting.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingConstant.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingItem.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\chatting\\ChattingMessage.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendConstant.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendItem.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\FriendList.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\friend\\SearchFriends.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\MyRanking.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Podium.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Rankers.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\RankingConstant.ts",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\ranking\\Timer.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\components\\community\\search\\FriendList.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\modal\\BettingModal.tsx",[],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingRoomPage.tsx",["462","463","464","465","466","467"],[],"C:\\Users\\SSAFY\\Desktop\\DoTo_Front\\src\\pages\\community\\FriendPage.tsx",[],[],{"ruleId":"468","severity":2,"message":"469","line":2,"column":10,"nodeType":"470","messageId":"471","endLine":2,"endColumn":19},{"ruleId":"468","severity":2,"message":"472","line":5,"column":3,"nodeType":"470","messageId":"471","endLine":5,"endColumn":21},{"ruleId":"468","severity":2,"message":"473","line":6,"column":3,"nodeType":"470","messageId":"471","endLine":6,"endColumn":24},{"ruleId":"468","severity":2,"message":"474","line":13,"column":11,"nodeType":"470","messageId":"471","endLine":13,"endColumn":17},{"ruleId":"468","severity":2,"message":"475","line":14,"column":16,"nodeType":"470","messageId":"471","endLine":14,"endColumn":23},{"ruleId":"468","severity":2,"message":"476","line":15,"column":20,"nodeType":"470","messageId":"471","endLine":15,"endColumn":31},"@typescript-eslint/no-unused-vars","'useEffect' is defined but never used.","Identifier","unusedVar","'CHATTING_ROOM_LIST' is defined but never used.","'CHATTING_MESSAGE_LIST' is defined but never used.","'roomId' is assigned a value but never used.","'setRoom' is assigned a value but never used.","'setMessages' is assigned a value but never used."]
+[
+  {
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\App.tsx": "1",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowDownwardIcon.tsx": "2",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowForwardIcon.tsx": "3",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\CoinIcon.tsx": "4",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ArrowForwardIcon.tsx": "5",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BettingIcon.tsx": "6",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ChattingIcon.tsx": "7",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CommunityIcon.tsx": "8",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\FriendIcon.tsx": "9",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\index.ts": "10",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingIcon.tsx": "11",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\CommunityIcon.tsx": "12",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\GoogleIcon.tsx": "13",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\HomeIcon.tsx": "14",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\index.ts": "15",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\KakaoIcon.tsx": "16",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo.tsx": "17",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo2.tsx": "18",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\MoonIcon.tsx": "19",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\AccountDeleteIcon.tsx": "20",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\index.ts": "21",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MydataIcon.tsx": "22",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MypageIcon.tsx": "23",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\PasswordUpdateIcon.tsx": "24",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\ProfileUpdateIcon.tsx": "25",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\SettingIcon.tsx": "26",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\MypageIcon.tsx": "27",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NaverIcon.tsx": "28",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOffIcon.tsx": "29",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOnIcon.tsx": "30",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\index.ts": "31",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\InventoryIcon.tsx": "32",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\ShopIcon.tsx": "33",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\StoreIcon.tsx": "34",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\StoreIcon.tsx": "35",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\SunIcon.tsx": "36",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\UserImgSample.tsx": "37",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Category.tsx": "38",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Categorybar.tsx": "39",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryConstant.ts": "40",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryDetail.tsx": "41",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\Layout.tsx": "42",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\Navbar.tsx": "43",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\NavbarItem.tsx": "44",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\topbar\\Topbar.tsx": "45",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\WebBackground.tsx": "46",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\main.tsx": "47",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\modal\\FindPw.tsx": "48",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\modal\\SignUp.tsx": "49",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\auth\\SignIn.tsx": "50",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\BettingPage.tsx": "51",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingPage.tsx": "52",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\RankingPage.tsx": "53",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\SearchPage.tsx": "54",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\home\\HomePage.tsx": "55",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\ChangePasswordPage.tsx": "56",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\DeleteAccountPage.tsx": "57",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\MydataPage.tsx": "58",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\UpdateProfilePage.tsx": "59",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\NotFoundPage.tsx": "60",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\store\\InventoryPage.tsx": "61",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\store\\ShopPage.tsx": "62",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\router\\Router.tsx": "63",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\store\\darkmodeStore.tsx": "64",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\store\\notificationStore.tsx": "65",
+    "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\vite-env.d.ts": "66"
+  },
+  {
+    "size": 103,
+    "mtime": 1715066194088,
+    "results": "67",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1163,
+    "mtime": 1715066194404,
+    "results": "69",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1193,
+    "mtime": 1715066194411,
+    "results": "70",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1528,
+    "mtime": 1715150167070,
+    "results": "71",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1172,
+    "mtime": 1715066194455,
+    "results": "72",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 32928,
+    "mtime": 1715066194472,
+    "results": "73",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 638,
+    "mtime": 1715066194480,
+    "results": "74",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 550,
+    "mtime": 1715066194485,
+    "results": "75",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1296,
+    "mtime": 1715066194494,
+    "results": "76",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 224,
+    "mtime": 1715066194500,
+    "results": "77",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 440,
+    "mtime": 1715066194507,
+    "results": "78",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 581,
+    "mtime": 1715066194513,
+    "results": "79",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 3156,
+    "mtime": 1715066194520,
+    "results": "80",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 599,
+    "mtime": 1715066194525,
+    "results": "81",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 951,
+    "mtime": 1715066194531,
+    "results": "82",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 10392,
+    "mtime": 1715066194539,
+    "results": "83",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 5173,
+    "mtime": 1715066194550,
+    "results": "84",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 5526,
+    "mtime": 1715066194558,
+    "results": "85",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 842,
+    "mtime": 1715066194566,
+    "results": "86",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 566,
+    "mtime": 1715066194573,
+    "results": "87",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 316,
+    "mtime": 1715066194576,
+    "results": "88",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 494,
+    "mtime": 1715066194581,
+    "results": "89",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 556,
+    "mtime": 1715066194585,
+    "results": "90",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 766,
+    "mtime": 1715066194589,
+    "results": "91",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1021,
+    "mtime": 1715066194595,
+    "results": "92",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1653,
+    "mtime": 1715066194600,
+    "results": "93",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 577,
+    "mtime": 1715066194608,
+    "results": "94",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 7297,
+    "mtime": 1715066194615,
+    "results": "95",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 589,
+    "mtime": 1715066194620,
+    "results": "96",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 435,
+    "mtime": 1715066194624,
+    "results": "97",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 110,
+    "mtime": 1715066194627,
+    "results": "98",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 471,
+    "mtime": 1715066194632,
+    "results": "99",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1074,
+    "mtime": 1715066194635,
+    "results": "100",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 584,
+    "mtime": 1715066194641,
+    "results": "101",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 615,
+    "mtime": 1715066194645,
+    "results": "102",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1146,
+    "mtime": 1715066194652,
+    "results": "103",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 4951,
+    "mtime": 1715150186452,
+    "results": "104",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 3706,
+    "mtime": 1715066194681,
+    "results": "105",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 808,
+    "mtime": 1715066194694,
+    "results": "106",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 2017,
+    "mtime": 1715066194708,
+    "results": "107",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1133,
+    "mtime": 1715066194715,
+    "results": "108",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 403,
+    "mtime": 1715148162918,
+    "results": "109",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1084,
+    "mtime": 1715066194730,
+    "results": "110",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 1084,
+    "mtime": 1715066194737,
+    "results": "111",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 2338,
+    "mtime": 1715066194752,
+    "results": "112",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 400,
+    "mtime": 1715066194757,
+    "results": "113",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 199,
+    "mtime": 1715150157182,
+    "results": "114",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 3305,
+    "mtime": 1715066194802,
+    "results": "115",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 3648,
+    "mtime": 1715066194807,
+    "results": "116",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 2760,
+    "mtime": 1715066194813,
+    "results": "117",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 97,
+    "mtime": 1715066194817,
+    "results": "118",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 99,
+    "mtime": 1715066194820,
+    "results": "119",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 97,
+    "mtime": 1715066194823,
+    "results": "120",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 103,
+    "mtime": 1715066194826,
+    "results": "121",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 5744,
+    "mtime": 1715148545961,
+    "results": "122",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 115,
+    "mtime": 1715066194845,
+    "results": "123",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 106,
+    "mtime": 1715066194849,
+    "results": "124",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 93,
+    "mtime": 1715066194852,
+    "results": "125",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 110,
+    "mtime": 1715066194856,
+    "results": "126",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 95,
+    "mtime": 1715066194860,
+    "results": "127",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 105,
+    "mtime": 1715066194865,
+    "results": "128",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 91,
+    "mtime": 1715066194869,
+    "results": "129",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 2809,
+    "mtime": 1715066194879,
+    "results": "130",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 322,
+    "mtime": 1715066194884,
+    "results": "131",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 361,
+    "mtime": 1715066194889,
+    "results": "132",
+    "hashOfConfig": "68"
+  },
+  {
+    "size": 38,
+    "mtime": 1715066194899,
+    "results": "133",
+    "hashOfConfig": "68"
+  },
+  {
+    "filePath": "134",
+    "messages": "135",
+    "suppressedMessages": "136",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  "vbiyo6",
+  {
+    "filePath": "137",
+    "messages": "138",
+    "suppressedMessages": "139",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "140",
+    "messages": "141",
+    "suppressedMessages": "142",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "143",
+    "messages": "144",
+    "suppressedMessages": "145",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "146",
+    "messages": "147",
+    "suppressedMessages": "148",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "149",
+    "messages": "150",
+    "suppressedMessages": "151",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "152",
+    "messages": "153",
+    "suppressedMessages": "154",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "155",
+    "messages": "156",
+    "suppressedMessages": "157",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "158",
+    "messages": "159",
+    "suppressedMessages": "160",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "161",
+    "messages": "162",
+    "suppressedMessages": "163",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "164",
+    "messages": "165",
+    "suppressedMessages": "166",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "167",
+    "messages": "168",
+    "suppressedMessages": "169",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "170",
+    "messages": "171",
+    "suppressedMessages": "172",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "173",
+    "messages": "174",
+    "suppressedMessages": "175",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "176",
+    "messages": "177",
+    "suppressedMessages": "178",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "179",
+    "messages": "180",
+    "suppressedMessages": "181",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "182",
+    "messages": "183",
+    "suppressedMessages": "184",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "185",
+    "messages": "186",
+    "suppressedMessages": "187",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "188",
+    "messages": "189",
+    "suppressedMessages": "190",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "191",
+    "messages": "192",
+    "suppressedMessages": "193",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "194",
+    "messages": "195",
+    "suppressedMessages": "196",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "197",
+    "messages": "198",
+    "suppressedMessages": "199",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "200",
+    "messages": "201",
+    "suppressedMessages": "202",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "203",
+    "messages": "204",
+    "suppressedMessages": "205",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "206",
+    "messages": "207",
+    "suppressedMessages": "208",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "209",
+    "messages": "210",
+    "suppressedMessages": "211",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "212",
+    "messages": "213",
+    "suppressedMessages": "214",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "215",
+    "messages": "216",
+    "suppressedMessages": "217",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "218",
+    "messages": "219",
+    "suppressedMessages": "220",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "221",
+    "messages": "222",
+    "suppressedMessages": "223",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "224",
+    "messages": "225",
+    "suppressedMessages": "226",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "227",
+    "messages": "228",
+    "suppressedMessages": "229",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "230",
+    "messages": "231",
+    "suppressedMessages": "232",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "233",
+    "messages": "234",
+    "suppressedMessages": "235",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "236",
+    "messages": "237",
+    "suppressedMessages": "238",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "239",
+    "messages": "240",
+    "suppressedMessages": "241",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "242",
+    "messages": "243",
+    "suppressedMessages": "244",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "245",
+    "messages": "246",
+    "suppressedMessages": "247",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "248",
+    "messages": "249",
+    "suppressedMessages": "250",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "251",
+    "messages": "252",
+    "suppressedMessages": "253",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "254",
+    "messages": "255",
+    "suppressedMessages": "256",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "257",
+    "messages": "258",
+    "suppressedMessages": "259",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "260",
+    "messages": "261",
+    "suppressedMessages": "262",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "263",
+    "messages": "264",
+    "suppressedMessages": "265",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "266",
+    "messages": "267",
+    "suppressedMessages": "268",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "269",
+    "messages": "270",
+    "suppressedMessages": "271",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "272",
+    "messages": "273",
+    "suppressedMessages": "274",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "275",
+    "messages": "276",
+    "suppressedMessages": "277",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "278",
+    "messages": "279",
+    "suppressedMessages": "280",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "281",
+    "messages": "282",
+    "suppressedMessages": "283",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "284",
+    "messages": "285",
+    "suppressedMessages": "286",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "287",
+    "messages": "288",
+    "suppressedMessages": "289",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "290",
+    "messages": "291",
+    "suppressedMessages": "292",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "293",
+    "messages": "294",
+    "suppressedMessages": "295",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "296",
+    "messages": "297",
+    "suppressedMessages": "298",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "299",
+    "messages": "300",
+    "suppressedMessages": "301",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "302",
+    "messages": "303",
+    "suppressedMessages": "304",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "305",
+    "messages": "306",
+    "suppressedMessages": "307",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "308",
+    "messages": "309",
+    "suppressedMessages": "310",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "311",
+    "messages": "312",
+    "suppressedMessages": "313",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "314",
+    "messages": "315",
+    "suppressedMessages": "316",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "317",
+    "messages": "318",
+    "suppressedMessages": "319",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "320",
+    "messages": "321",
+    "suppressedMessages": "322",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "323",
+    "messages": "324",
+    "suppressedMessages": "325",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "326",
+    "messages": "327",
+    "suppressedMessages": "328",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "329",
+    "messages": "330",
+    "suppressedMessages": "331",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\App.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowDownwardIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\ArrowForwardIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\CoinIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ArrowForwardIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\BettingIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\ChattingIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\CommunityIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\FriendIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\index.ts",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\community\\RankingIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\CommunityIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\GoogleIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\HomeIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\index.ts",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\KakaoIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\Logo2.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\MoonIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\AccountDeleteIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\index.ts",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MydataIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\MypageIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\PasswordUpdateIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\ProfileUpdateIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\mypage\\SettingIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\MypageIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NaverIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOffIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\NotificationOnIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\index.ts",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\InventoryIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\ShopIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\store\\StoreIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\StoreIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\SunIcon.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\assets\\svg\\UserImgSample.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Category.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\Categorybar.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryConstant.ts",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\category\\CategoryDetail.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\Layout.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\Navbar.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\navbar\\NavbarItem.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\common\\topbar\\Topbar.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\components\\WebBackground.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\main.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\modal\\FindPw.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\modal\\SignUp.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\auth\\SignIn.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\BettingPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\ChattingPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\RankingPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\community\\SearchPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\home\\HomePage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\ChangePasswordPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\DeleteAccountPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\MydataPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\mypage\\UpdateProfilePage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\NotFoundPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\store\\InventoryPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\pages\\store\\ShopPage.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\router\\Router.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\store\\darkmodeStore.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\store\\notificationStore.tsx",
+  [],
+  [],
+  "C:\\Users\\ymk37\\Desktop\\DoTo_Front\\src\\vite-env.d.ts",
+  [],
+  []
+]
