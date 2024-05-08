@@ -101,7 +101,7 @@ const HomePage = () => {
                                 LV.{follower.level}
                               </span>
                             </div>
-                            <span className="overflow-hidden text-xs line-clamp-1 text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
+                            <span className="mt-0.5 overflow-hidden text-xs line-clamp-1 text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
                               {follower.introduction}
                             </span>
                           </div>
