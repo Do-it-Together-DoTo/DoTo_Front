@@ -1,4 +1,4 @@
-import { Egg, Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
+import { Coin, RareBadge, MagicPotion1 } from '@/assets/svg';
 
 const StoreItem = () => {
   return (

@@ -14,6 +14,9 @@ import InventoryItemPage from '@/pages/store/InventoryItemPage';
 import InventoryCharacterPage from '@/pages/store/InventoryItemPage';
 import ShopItemPage from '@/pages/store/ShopItemPage';
 import ShopCharacterPage from '@/pages/store/ShopCharacterPage';
+import SignIn from '@pages/auth/SignIn';
+import SignUp from '@/modal/SignUp';
+import FindPw from '@/modal/FindPw';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
