@@ -1,9 +1,9 @@
-import { faker } from '@faker-js/faker';
+import { fakerKO as faker } from '@faker-js/faker';
 import { UserImgSample, CoinIcon } from '@assets/svg';
 
 const followers = Array.from({ length: 10 }, () => ({
   id: faker.string.uuid(),
-  username: faker.internet.userName(),
+  username: faker.name.lastName() + faker.name.firstName(),
   introduction: faker.lorem.sentence(),
   level: faker.number.int({ min: 1, max: 10 }),
   coin: faker.number.int({ min: 0, max: 9999 }),
@@ -42,7 +42,7 @@ const HomePage = () => {
               <UserImgSample className="absolute bottom-0 w-20 " />
             </div>
             <div className="flex flex-col max-w-[6.5rem] pb-4 ml-3">
-              <span className="overflow-hidden font-bold text-Light_Text_Name line-clamp-1 dark:text-Dark_Text_Name">
+              <span className="overflow-hidden font-bold text-Light_Text_Name whitespace-nowrap text-ellipsis dark:text-Dark_Text_Name">
                 센센센센센센센센
               </span>
               <span className="overflow-hidden text-xs text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe line-clamp-2">
