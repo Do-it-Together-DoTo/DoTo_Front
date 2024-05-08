@@ -1,3 +1,5 @@
+import tailwindScrollbarHide from 'tailwind-scrollbar-hide';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   // eslint-disable-next-line prettier/prettier
@@ -45,5 +47,5 @@ export default {
 
     extend: {},
   },
-  plugins: [],
+  plugins: [tailwindScrollbarHide],
 };
