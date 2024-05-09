@@ -1,37 +1,34 @@
 import { TimerIcon } from '@/assets/svg/community';
 import dayjs from 'dayjs';
-import 'dayjs/plugin/objectSupport';
+import duration from 'dayjs/plugin/duration';
+dayjs.extend(duration);
+
+import { useEffect, useState } from 'react';
 
 const Timer = () => {
-  // TODO: 타이머 기능 만들어야함.`
-  const now = dayjs();
-  const resetTime = dayjs().endOf('D');
+  const [restSec, setRestSec] = useState(dayjs.duration(dayjs().endOf('D').diff(dayjs())));
 
-  console.log(resetTime.diff(now, 'hour'));
+  // TODO: 타이머 로직 보완 필요: useInterval 사용
+  useEffect(() => {
+    console.log(restSec);
+    const id = setInterval(() => {
+      setRestSec(dayjs.duration(dayjs().endOf('D').diff(dayjs())));
+    }, 1000);
+  }, []);
 
   return (
     <section className="flex gap-4 items-center py-4">
       <TimerIcon width={17} height={20} />
-      <div className="flex gap-1">
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">0</p>
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">0</p>
-        <p className="text-Light_Text_AboutMe">일</p>
-      </div>
-      <div className="flex gap-1">
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">2</p>
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">3</p>
-        <p className="text-Light_Text_AboutMe">시</p>
-      </div>
-      <div className="flex gap-1">
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">0</p>
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">8</p>
-        <p className="text-Light_Text_AboutMe">분</p>
-      </div>
-      <div className="flex gap-1">
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">4</p>
-        <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">1</p>
-        <p className="text-Light_Text_AboutMe">초</p>
-      </div>
+      {restSec
+        .format('DD/HH/mm/ss')
+        .split('/')
+        .map((time, idx) => (
+          <div className="flex gap-1" key={time + idx}>
+            <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">{time[0]}</p>
+            <p className="text-center w-5 h-6 rounded-md bg-Light_Layout-300 text-Light_Text_AboutMe">{time[1]}</p>
+            <p className="text-Light_Text_AboutMe">{idx == 0 ? '일' : idx == 1 ? '시' : idx === 2 ? '분' : '초'}</p>
+          </div>
+        ))}
     </section>
   );
 };
