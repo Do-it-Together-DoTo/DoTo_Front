@@ -32,9 +32,9 @@ const HomePage = () => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <div className="relative flex">
+      <div className="flex w-screen">
         {/* 프로필 & 팔로워 */}
-        <section className="absolute top-0 flex flex-col h-[calc(100vh-3.1875rem)]">
+        <section className="flex flex-col h-[calc(100vh-3.1875rem)]">
           {/* 내 프로필 */}
           <div className="w-[16.1875rem] h-[10.5rem] bg-Light_Layout-100 rounded-tl-3xl dark:bg-Dark_Layout-200 flex flex-col justify-center relative">
             <div className="flex items-center ml-auto mr-8 mb-0.5">
@@ -51,7 +51,7 @@ const HomePage = () => {
                   style={{ width: `calc(0.05rem*${followers[0].experience})` }}
                 />
               </div>
-              <span className="text-[0.5rem] font-nico text-Light_Text_AboutMe mr-2 absolute right-0 dark:text-Dark_Text_AboutMe">
+              <span className="text-[0.55rem] font-nico text-Light_Text_AboutMe mr-2 absolute right-0 dark:text-Dark_Text_AboutMe">
                 {followers[0].experience}%
               </span>
             </div>
@@ -114,6 +114,49 @@ const HomePage = () => {
               </div>
             )}
           </Droppable>
+        </section>
+
+        {/* ToDo*/}
+        <section className="flex h-[calc(100vh-3.1875rem)] w-full">
+          {/* 캘린더 */}
+          <div className="flex flex-col w-3/5 h-full bg-Light_Layout-300 dark:bg-Dark_Layout-400">
+            <div className="flex flex-col px-5 my-9">
+              <p className="font-nico text-Light_CategoryText_Icon_Contents text-[0.625rem] h-1.5 w-40 text-right dark:text-Dark_CategoryText_Icon">
+                LV.3
+              </p>
+              <div className="flex items-center">
+                <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-300">
+                  <UserImgSample className="w-14" />
+                </div>
+                <div className="flex flex-col justify-center ml-3">
+                  <div className="flex items-center h-3.5">
+                    <div className="block w-20 h-1 rounded-full bg-Dark_Layout-100">
+                      <div
+                        className="block h-1 rounded-full bg-gradient"
+                        style={{ width: `calc(0.05rem*${followers[0].experience})` }}
+                      />
+                    </div>
+                    <span className="text-[0.55rem] font-nico text-Light_Text_AboutMe ml-0.5 dark:text-Dark_Text_AboutMe">
+                      {followers[0].experience}%
+                    </span>
+                  </div>
+                  <span className="h-4 text-base font-bold text-Light_Text_Name mb-1.5 dark:text-Dark_Text_Name">
+                    친구 1
+                  </span>
+                  <span className="text-xs text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
+                    ssafy 11기. 여기서는 좀더 길게길게 보입니다.
+                  </span>
+                </div>
+
+                <button className="h-6 w-[4.375rem] rounded-md bg-Light_CategoryText_Icon_Contents text-[0.625rem] text-Light_Layout-400 ml-auto">
+                  친구삭제
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* 카테고리 */}
+          <div className="w-2/5 h-full bg-Light_Layout-100 dark:bg-Dark_Layout-100"></div>
         </section>
       </div>
     </DragDropContext>
