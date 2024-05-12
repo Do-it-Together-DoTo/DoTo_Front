@@ -3,7 +3,7 @@ import StoreMainProfile from './StoreMainProfile';
 
 const InventoryItemPage = () => {
   return (
-    <div className="w-screen bg-Light_Layout-200">
+    <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 grow">
       <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
         보관함
       </div>
