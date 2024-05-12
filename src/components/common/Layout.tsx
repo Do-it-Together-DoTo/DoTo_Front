@@ -5,9 +5,9 @@ import Topbar from './topbar/Topbar';
 const Layout = () => {
   return (
     <>
-      <div>
+      <div className="w-full h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
         <Topbar />
-        <div className="flex ">
+        <div className="flex">
           <Navbar />
           <Outlet />
         </div>
