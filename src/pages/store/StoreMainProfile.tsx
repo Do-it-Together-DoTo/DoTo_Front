@@ -2,7 +2,7 @@ import { MyBlob, Slider, Coin } from '@/assets/svg';
 
 const StoreMainProfile = () => {
   return (
-    <div className="rounded-[0.9375rem] flex items-center justify-center justify-center w-[49.8125rem] h-[9.375rem] bg-Light_Layout-100">
+    <div className="rounded-[0.9375rem] flex items-center justify-center justify-center w-[49.8125rem] h-[9.375rem] bg-Light_Layout-100 dark:bg-Dark_Layout-200">
       <MyBlob className="w-[6.8137rem] h-[4.1563rem]" />
       <div>
         <div className="flex gap-x-[0.625rem] w-[27.1875rem]">

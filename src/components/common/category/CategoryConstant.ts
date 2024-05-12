@@ -33,13 +33,21 @@ export const CATEGORY_LIST: Record<string, Category[]> = {
   store: [
     {
       name: '스토어',
-      to: 'shop',
+      to: 'shop/character',
       icon: 'ShopIcon',
+      detail: [
+        { name: '캐릭터', to: '/store/shop/character', icon: 'MydataIcon' },
+        { name: '아이템', to: '/store/shop/item', icon: 'InventoryIcon' },
+      ],
     },
     {
       name: '보관함',
-      to: 'inventory',
+      to: 'inventory/character',
       icon: 'InventoryIcon',
+      detail: [
+        { name: '캐릭터', to: '/store/inventory/character', icon: 'MydataIcon' },
+        { name: '아이템', to: '/store/inventory/item', icon: 'InventoryIcon' },
+      ],
     },
   ],
   mypage: [

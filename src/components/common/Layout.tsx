@@ -7,7 +7,7 @@ const Layout = () => {
     <>
       <div className="w-full h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
         <Topbar />
-        <div className="flex">
+        <div className="flex max-w-screen">
           <Navbar />
           <Outlet />
         </div>

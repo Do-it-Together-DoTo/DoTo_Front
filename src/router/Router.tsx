@@ -11,7 +11,7 @@ import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
 import MydataPage from '@/pages/mypage/MydataPage';
 import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryItemPage from '@/pages/store/InventoryItemPage';
-import InventoryCharacterPage from '@/pages/store/InventoryItemPage';
+import InventoryCharacterPage from '@/pages/store/InventoryCharacterPage';
 import ShopItemPage from '@/pages/store/ShopItemPage';
 import ShopCharacterPage from '@/pages/store/ShopCharacterPage';
 import SignIn from '@pages/auth/SignIn';
@@ -38,18 +38,6 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
-        {
-          path: 'store',
-          element: <Categorybar category="store" />,
-          children: [
-            { path: '', element: <Navigate to="shop/character" /> },
-            { path: 'shop/character', element: <ShopCharacterPage /> },
-            { path: 'shop/item', element: <ShopItemPage /> },
-            { path: 'inventory/character', element: <InventoryCharacterPage /> },
-            { path: 'inventory/item', element: <InventoryItemPage /> },
-          ],
-        },
-
         {
           path: 'community',
           element: <Categorybar category="community" />,
