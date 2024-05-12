@@ -3,7 +3,7 @@ import StoreMainProfile from '../../components/store/StoreMainProfile';
 
 const ShopCharacterPage = () => {
   return (
-    <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 grow">
+    <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
       <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
         스토어
       </div>
