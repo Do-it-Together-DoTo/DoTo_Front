@@ -3,7 +3,7 @@ import StoreMainProfile from '../../components/store/StoreMainProfile';
 
 const ShopItemPage = () => {
   return (
-    <div>
+    <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 grow">
       <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
         스토어
       </div>
@@ -11,12 +11,6 @@ const ShopItemPage = () => {
         <StoreMainProfile />
         <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-[49.1875rem] py-[2.3125rem]">
           {/* <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
-          <ShopItem />
           <ShopItem />
           <ShopItem /> */}
         </div>
