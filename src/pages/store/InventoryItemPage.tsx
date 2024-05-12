@@ -1,5 +1,5 @@
-import InventoryItem from './InventoryItem';
-import StoreMainProfile from './StoreMainProfile';
+import InventoryItem from '../../components/store/InventoryItem';
+import StoreMainProfile from '../../components/store/StoreMainProfile';
 
 const InventoryItemPage = () => {
   return (

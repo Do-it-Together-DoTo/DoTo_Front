@@ -1,5 +1,5 @@
 // import ShopItem from './ShopItem';
-import StoreMainProfile from './StoreMainProfile';
+import StoreMainProfile from '../../components/store/StoreMainProfile';
 
 const ShopItemPage = () => {
   return (
