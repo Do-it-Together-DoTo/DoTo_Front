@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Droppable, Draggable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { fakerKO as faker } from '@faker-js/faker';
+import CustomCalendar from '@/components/home/CustomCalendar';
 import { UserImgSample, CoinIcon } from '@assets/svg';
 
 type SelectedUser = {
@@ -209,6 +210,7 @@ const HomePage = () => {
                   ))}
               </div>
             </div>
+            <CustomCalendar />
           </div>
 
           {/* 카테고리 */}
