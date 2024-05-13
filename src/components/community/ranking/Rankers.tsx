@@ -17,9 +17,9 @@ const Rankers = ({ rankers }: RankersProps) => {
             className="w-full flex items-center justify-between py-2 border-b-[0.1rem] border-Light_Layout-200"
           >
             <div className="flex gap-2 items-center">
-              <span className="text-Light_CategoryText_Icon_Contents">{idx + 1}</span>
+              <span className="text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">{idx + 1}</span>
               <CharacterProfileIcon width="40" height="40" />
-              <span className="text-Light_Text_Name text-xs">{user.nickname}</span>
+              <span className="text-Light_Text_Name text-xs dark:text-Dark_CategoryText_Icon">{user.nickname}</span>
               {idx < 3 &&
                 React.createElement(STAR_ICON_MAP[idx], {
                   width: '12',

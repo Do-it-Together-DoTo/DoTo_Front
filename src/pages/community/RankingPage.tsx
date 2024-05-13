@@ -14,7 +14,7 @@ const RankingPage = () => {
 
   return (
     <main className="h-[calc(100vh-3.1875rem)] flex ">
-      <div className="flex flex-col items-center w-[33.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-300">
+      <div className="flex flex-col items-center w-[33.75rem] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
         <Timer />
         <Podium rankers={rankers} />
         <Rankers rankers={rankers} />
