@@ -11,7 +11,7 @@ const SignIn = () => {
             className="w-[19.875rem] h-[2.75rem] pl-[0.875rem] outline-none font-pre text-Light_Text_Name placeholder-Dark_Text_Contents text-[15px] border border-1 rounded-lg rounded-10 border-Dark_Text_Contents"
             placeholder="아이디 입력"
           />
-          
+
           <input
             type="text"
             className="mt-[1rem] w-[19.875rem] h-[2.75rem] pl-[0.875rem] outline-none font-pre text-Light_Text_Name placeholder-Dark_Text_Contents text-[15px] border border-1 rounded-lg rounded-10 border-Dark_Text_Contents"
