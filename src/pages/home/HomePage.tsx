@@ -36,6 +36,7 @@ const initialFollowers = Array.from({ length: 10 }, () => ({
 const HomePage = () => {
   const [followers, setFollowers] = useState(initialFollowers);
   const [selectedUser, setSelectedUser] = useState<SelectedUser>(userProfile);
+  const [isFollowed, setIsFollowed] = useState(false);
 
   const handleDragEnd = (result: DropResult) => {
     const { source, destination } = result;
@@ -186,11 +187,26 @@ const HomePage = () => {
                     {selectedUser.introduction}
                   </span>
                 </div>
-                {!selectedUser.isUserProfile && (
-                  <button className="h-6 w-[4.375rem] rounded-md bg-Light_CategoryText_Icon_Contents text-[0.625rem] text-Light_Layout-400 ml-auto">
-                    친구삭제
-                  </button>
-                )}
+                {!selectedUser.isUserProfile &&
+                  (isFollowed ? (
+                    <button
+                      onClick={() => {
+                        setIsFollowed(false);
+                      }}
+                      className="flex items-center justify-center h-6 w-[4.375rem] rounded-md bg-Light_CategoryText_Icon_Contents text-[0.625rem] text-Light_Layout-400 ml-auto"
+                    >
+                      친구삭제
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        setIsFollowed(true);
+                      }}
+                      className="flex items-center justify-center h-6 w-[4.375rem] rounded-md bg-Button text-[0.625rem] text-Light_Layout-400 ml-auto"
+                    >
+                      친구신청
+                    </button>
+                  ))}
               </div>
             </div>
           </div>
