@@ -1,6 +1,6 @@
 const MyRanking = () => {
   return (
-    <section className="w-[20rem] p-8 flex flex-col items-center bg-Light_Layout-100 dark:bg-Dark_Layout-200 ">
+    <section className="h-full p-8 flex flex-col items-center bg-Light_Layout-100 dark:bg-Dark_Layout-200">
       <h3 className="text-lg text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">MY 랭킹 순위</h3>
       <div className="flex flex-col w-full ">
         <div className="h-[8.75rem] bg-gradient-to-t py-3 flex flex-col items-center to-Ranking_Bar_End from-Ranking_Bar_Start rounded-t-2xl relative">

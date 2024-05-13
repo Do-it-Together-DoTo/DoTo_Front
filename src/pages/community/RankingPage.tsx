@@ -13,13 +13,15 @@ const RankingPage = () => {
   }, []);
 
   return (
-    <main className="h-[calc(100vh-3.1875rem)] flex ">
-      <div className="flex flex-col items-center w-[33.75rem] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
+    <main className="h-[calc(100vh-3.1875rem)] flex w-full justify-center">
+      <div className="w-[35rem] flex flex-col grow items-center bg-Light_Layout-200 dark:bg-Dark_Layout-300 ">
         <Timer />
         <Podium rankers={rankers} />
         <Rankers rankers={rankers} />
       </div>
-      <MyRanking />
+      <div className="shrink-0 w-[20rem]">
+        <MyRanking />
+      </div>
     </main>
   );
 };
