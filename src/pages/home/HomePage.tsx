@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Droppable, Draggable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { fakerKO as faker } from '@faker-js/faker';
-import CustomCalendar from '@/components/home/CustomCalendar';
+import CustomCalendar from '@/components/home/calendar/CustomCalendar';
 import { UserImgSample, CoinIcon } from '@assets/svg';
 
 type SelectedUser = {
@@ -154,8 +154,8 @@ const HomePage = () => {
         {/* ToDo*/}
         <section className="flex h-[calc(100vh-3.1875rem)] w-full">
           {/* 캘린더 */}
-          <div className="flex flex-col w-3/5 h-full bg-Light_Layout-300 dark:bg-Dark_Layout-400">
-            <div className="flex flex-col px-5 my-9">
+          <div className="flex flex-col items-center w-3/5 h-full max-h-full overflow-y-auto scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-400">
+            <div className="flex flex-col px-5 my-7">
               {!selectedUser.isUserProfile ? (
                 <p className="font-nico text-Light_CategoryText_Icon_Contents text-[0.625rem] h-1.5 w-40 text-right dark:text-Dark_CategoryText_Icon">
                   LV.{selectedUser.level}
@@ -163,7 +163,7 @@ const HomePage = () => {
               ) : (
                 <p className="h-1.5" />
               )}
-              <div className="flex items-center">
+              <div className="flex items-center w-[30rem]">
                 <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-300">
                   <UserImgSample className="w-14" />
                 </div>
@@ -210,7 +210,9 @@ const HomePage = () => {
                   ))}
               </div>
             </div>
-            <CustomCalendar />
+            <div className="flex items-center justify-center">
+              <CustomCalendar />
+            </div>
           </div>
 
           {/* 카테고리 */}
