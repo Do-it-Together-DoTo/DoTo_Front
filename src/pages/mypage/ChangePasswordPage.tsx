@@ -1,3 +1,12 @@
+import { fakerKO as faker } from '@faker-js/faker';
+
+const initialData=()=>({
+  all:faker.number.int({min:1,max:31}),
+  category1:faker.number.int({min:1,max:10}),
+  category2:faker.number.int({min:1,max:10}),
+  category3:faker.number.int({min:1,max:10}),
+  category4:faker.number.int({min:1,max:10}),
+})
 const ChangePasswordPage = () => {
   //TODO 비밀번호 정규식 로직 , 비동기 통신
   return (
