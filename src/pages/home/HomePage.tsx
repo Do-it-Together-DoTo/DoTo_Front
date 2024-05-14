@@ -155,7 +155,7 @@ const HomePage = () => {
         <section className="flex h-[calc(100vh-3.1875rem)] w-full">
           {/* 캘린더 */}
           <div className="flex flex-col items-center w-3/5 h-full max-h-full overflow-y-auto scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-400">
-            <div className="flex flex-col px-5 my-7">
+            <div className="flex flex-col px-5 my-8">
               {!selectedUser.isUserProfile ? (
                 <p className="font-nico text-Light_CategoryText_Icon_Contents text-[0.625rem] h-1.5 w-40 text-right dark:text-Dark_CategoryText_Icon">
                   LV.{selectedUser.level}
