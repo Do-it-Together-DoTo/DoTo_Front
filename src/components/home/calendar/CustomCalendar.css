@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-Light.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-SemiBold.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  src:
+    url('@/assets/fonts/Pretendard/Pretendard-Bold.woff') format('woff'),
+    url('@/assets/fonts/Pretendard/Pretendard-Bold.woff2') format('woff2');
+}
+
+.react-calendar {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pretendard';
+  align-items: center;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0.75rem;
+  width: 30rem;
+  height: 30rem;
+  padding: 3rem 1rem;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* 년-월 */
+.react-calendar__navigation__label > span {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 1rem;
+  color: #616161;
+}
+
+.react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
+  width: 0.625rem;
+}
+
+.react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+  width: 0.625rem;
+}
+
+/* 요일 */
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.react-calendar__month-view__weekdays__weekday > abbr {
+  color: #717171;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day > abbr {
+  font-size: 0.75rem;
+  font-weight: 300;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  border-radius: 50%;
+  margin: 0.25rem 0;
+  color: #202225;
+}
+
+.react-calendar__tile:enabled:focus > abbr {
+  background-color: #fdfdfd;
+  color: #717171 !important;
+  font-weight: 600;
+}
+
+.react-calendar__tile--now > abbr {
+  color: #fdfdfd !important;
+  background-color: #898989;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  border-radius: 50%;
+  margin: 0.25rem 0;
+}
