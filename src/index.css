@@ -63,6 +63,6 @@ html {
 
 @media (min-width: 1536px) {
   html {
-    @apply text-xl;
+    @apply text-lg;
   }
 }
