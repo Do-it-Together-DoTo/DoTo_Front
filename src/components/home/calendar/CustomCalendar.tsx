@@ -10,23 +10,36 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const CustomCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
 
-  const addContent = () => {
-    return <div className="w-8 h-8 rounded-md bg-Light_Layout-300"></div>;
+  const addContent = ({ date, view }: { date: Date; view: string }) => {
+    if (view === 'month' && date.getMonth() === selectedMonth) {
+      return <div className="w-8 h-8 rounded-md bg-Light_Layout-300"></div>;
+    }
+  };
+
+  const disableNeighboringMonth = ({ date, view }: { date: Date; view: string }) => {
+    return view === 'month' && date.getMonth() !== selectedMonth;
   };
 
   return (
     <Calendar
       onChange={onChange}
       value={value}
-      showNeighboringMonth={false}
+      minDetail="month"
       next2Label={null}
       prev2Label={null}
       nextLabel={<NextLabel />}
       prevLabel={<PrevLabel />}
       locale="ko"
       formatDay={(_locale, date) => moment(date).format('D')}
+      onActiveStartDateChange={({ activeStartDate }) => {
+        if (activeStartDate) {
+          setSelectedMonth(activeStartDate.getMonth());
+        }
+      }}
       tileContent={addContent}
+      tileDisabled={disableNeighboringMonth}
     />
   );
 };

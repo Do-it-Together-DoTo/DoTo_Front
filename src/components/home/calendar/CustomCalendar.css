@@ -104,3 +104,15 @@
   border-radius: 50%;
   margin: 0.25rem 0;
 }
+
+.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth
+  > abbr {
+  color: #d9d9d9;
+  font-size: 1rem;
+  font-weight: 300;
+}
