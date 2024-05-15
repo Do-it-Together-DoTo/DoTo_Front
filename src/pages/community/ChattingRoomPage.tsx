@@ -23,8 +23,12 @@ const ChattingRoomPage = () => {
     if (e.key == 'Enter' && !e.shiftKey) {
       e.preventDefault();
       formRef.current?.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-      (e.target as HTMLTextAreaElement).value = '';
+      const text = (e.target as HTMLTextAreaElement).value;
+
       // TODO:초기화과정 다르게 해야함
+      // 1. 전송하기 누르면 채팅 등록되었다는 요청
+      (e.target as HTMLTextAreaElement).value = '';
+      // 3. 다시 채팅 가져오기
     }
   };
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -49,6 +53,7 @@ const ChattingRoomPage = () => {
               <ChattingMessage message={message} />
             ))}
           </div>
+          {/* 채팅입력 구간 */}
           <form
             ref={formRef}
             onSubmit={handleFormSubmit}
