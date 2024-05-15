@@ -1,6 +1,6 @@
 import ChattingMessage from '@/components/community/chatting/ChattingMessage';
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
   CHATTING_ROOM_LIST,
   CHATTING_MESSAGE_LIST,
@@ -8,6 +8,7 @@ import {
   IChattingMessage,
 } from '@/components/community/chatting/ChattingConstant';
 import { CharacterProfileIcon } from '@/assets/svg/community';
+import { ArrowLeftIcon } from '@/assets/svg';
 
 const ChattingRoomPage = () => {
   const { roomId } = useParams();
@@ -40,6 +41,9 @@ const ChattingRoomPage = () => {
     <main className="w-full  h-[calc(100vh-3.1875rem)] flex  flex-col gap-6 bg-Light_Layout-200 dark:bg-Dark_Layout-300 items-center py-14">
       <section className="flex flex-col w-[33.75rem] py-8 px-9 bg-Light_Layout-400 gap-6 rounded-2xl dark:bg-Dark_Layout-400">
         <div className="flex items-center gap-3">
+          <Link to="/community/chatting">
+            <ArrowLeftIcon width="2rem" height="2rem" />
+          </Link>
           <CharacterProfileIcon width="36" height="36" />
           <div className="text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon flex flex-col">
             <h3 className="text-lg  font-bold">{room?.roomName}</h3>
