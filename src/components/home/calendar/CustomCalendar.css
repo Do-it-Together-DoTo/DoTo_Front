@@ -116,3 +116,37 @@
   font-size: 1rem;
   font-weight: 300;
 }
+
+/* 다크모드 */
+
+.dark.react-calendar {
+  background-color: #5b5d63;
+}
+
+.dark.react-calendar .react-calendar__navigation__label > span {
+  color: #f2f2f2;
+}
+
+.dark.react-calendar .react-calendar__month-view__weekdays__weekday > abbr {
+  color: #d0d0d0;
+}
+
+.dark.react-calendar .react-calendar__tile.react-calendar__month-view__days__day > abbr {
+  color: #fdfdfd;
+}
+
+.dark.react-calendar
+  .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth
+  > abbr {
+  color: #898989;
+}
+
+.dark.react-calendar .react-calendar__tile--now > abbr {
+  color: #41444b !important;
+  background-color: #f2f2f2;
+}
+
+.dark.react-calendar .react-calendar__tile:enabled:focus > abbr {
+  background-color: #41444b;
+  color: #f2f2f2 !important;
+}
