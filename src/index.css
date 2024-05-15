@@ -44,3 +44,7 @@
   font-family: 'NicoMoji';
   src: url('@/assets/fonts/NicoMoji/NicoMoji-Regular.ttf');
 }
+
+body {
+  -ms-overflow-style: none;
+}
