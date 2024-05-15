@@ -3,3 +3,9 @@ export interface IMember {
   memberId: string;
   nickname: string;
 }
+
+export const STATUS = {
+  FRIEND: 0,
+  UNFOLLOW: 1,
+  WAIT: 2,
+};

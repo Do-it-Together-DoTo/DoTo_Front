@@ -1,34 +1,46 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { IMember } from './FriendConstant';
-
+import { useState } from 'react';
+import { STATUS } from './FriendConstant';
 interface IFriendItemProps {
   member: IMember;
 }
 
 const FriendItem = ({ member }: IFriendItemProps) => {
-  const handleDeleteFriendBtn = () => {};
+  const [status, setStatus] = useState(member.status);
+
+  const handleDeleteFriendBtn = () => {
+    //TODO:친구삭제 모달 등장
+  };
 
   const handleFriendBtn = () => {
     // TODO:친구신청 api요청
+    setStatus(STATUS.WAIT);
+    console.log(member.status);
   };
-  const handleBlockBtn = () => {};
 
-  const handleWaitBtn = () => {};
-
+  const handleWaitBtn = () => {
+    // TODO:친구신청 취소 api요청
+    setStatus(STATUS.UNFOLLOW);
+    console.log(member.status);
+  };
+  const handleBlockBtn = () => {
+    //TODO:차단 모달 등장
+  };
   return (
     <li className="flex gap-4 items-center">
       <CharacterProfileIcon width="40" height="40" />
       <span className="text-Light_CategoryText_Icon_Contents text-base dark:text-Dark_CategoryText_Icon">
         {member.nickname}
       </span>
-      {member.status ? (
+      {status === STATUS.FRIEND ? (
         <button
           onClick={handleDeleteFriendBtn}
           className="w-[4.375rem] h-[1.5625rem] bg-Light_CategoryText_Icon_Contents text-Light_Layout-400 text-[0.625rem] rounded-[0.6875rem] dark:text-Dark_CategoryText_Icon"
         >
           친구삭제
         </button>
-      ) : member.status === 1 ? (
+      ) : status === STATUS.UNFOLLOW ? (
         <button
           onClick={handleFriendBtn}
           className="w-[4.375rem] h-[1.5625rem] bg-Button text-Light_Layout-400 text-[0.625rem] rounded-[0.6875rem] dark:text-Dark_CategoryText_Icon"
@@ -36,7 +48,7 @@ const FriendItem = ({ member }: IFriendItemProps) => {
           친구신청
         </button>
       ) : (
-        member.status === 2 && (
+        status === STATUS.WAIT && (
           <button
             onClick={handleWaitBtn}
             className="w-[4.375rem] h-[1.5625rem] bg-Light_Layout-100 text-[0.625rem] rounded-[0.6875rem] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe"
