@@ -18,6 +18,8 @@ import SignIn from '@pages/auth/SignIn';
 import SignUp from '@/modal/SignUp';
 import FindPw from '@/modal/FindPw';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
+import ChattingRoomPage from '@/pages/community/ChattingRoomPage';
+import FriendPage from '@/pages/community/FriendPage';
 
 const Router = () => {
   const routes: RouteObject[] = [
@@ -44,8 +46,9 @@ const Router = () => {
           children: [
             { path: '', element: <Navigate to="ranking" /> },
             { path: 'ranking', element: <RankingPage /> },
-            { path: 'friends', element: <SearchPage /> },
+            { path: 'friends', element: <FriendPage /> },
             { path: 'chatting', element: <ChattingPage /> },
+            { path: 'chatting/:roomId', element: <ChattingRoomPage /> },
             { path: 'betting', element: <BettingPage /> },
           ],
         },
