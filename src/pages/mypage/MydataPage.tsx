@@ -1,5 +1,6 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/svg';
 import { fakerKO as faker } from '@faker-js/faker';
+import React, { useState } from 'react';
 
 const MydataPage = () => {
   const data = {
@@ -23,15 +24,44 @@ const MydataPage = () => {
     category3: `${((data.category3 / initialMax.category3) * 31.25).toFixed(3)}rem`,
     category4: `${((data.category4 / initialMax.category4) * 31.25).toFixed(3)}rem`,
   };
+  const today = new Date();
+  const [titleYear, setTitleYear] = useState(today.getFullYear());
+  const [titleMonth, setTitleMonth] = useState(today.getMonth());
 
+  const ArrowLeftHandler = () => {
+    if (titleMonth === 1) {
+      setTitleMonth(12);
+      setTitleYear(titleYear - 1);
+    } else {
+      setTitleMonth(titleMonth - 1);
+    }
+  };
+  const ArrowRightHandler = () => {
+    if (titleMonth === 12) {
+      setTitleMonth(1);
+      setTitleYear(titleYear + 1);
+    } else {
+      setTitleMonth(titleMonth + 1);
+    }
+  };
   return (
     <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(screen-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
       <div className="mt-[2.125rem] w-[12.875rem] h-[1.875rem] flex justify-center	">
-        <ArrowLeftIcon width="30" height="30" className="fill-Light_Text_Name dark:fill-Dark_Text_Name" />
+        <ArrowLeftIcon
+          width="30"
+          height="30"
+          className="fill-Light_Text_Name dark:fill-Dark_Text_Name"
+          onClick={ArrowLeftHandler}
+        />
         <span className="w-[8rem] h-[1.875rem] flex justify-center items-center text-Light_Text_Name font-semibold dark:text-Dark_Text_Name">
-          2024년 4월
+          {titleYear}년 {titleMonth}월
         </span>
-        <ArrowRightIcon width="30" height="30" className="dark:fill-Dark_Text_Name" />
+        <ArrowRightIcon
+          width="30"
+          height="30"
+          className="fill-Light_Text_Name dark:fill-Dark_Text_Name"
+          onClick={ArrowRightHandler}
+        />
       </div>
       <div className="mt-[2.5rem] flex flex-col items-center w-[49.25rem] h-[31.625rem] bg-Light_Layout-300 rounded-[0.9375rem] dark:bg-Dark_Layout-400">
         <div className="mt-[1.875rem] w-[8.5rem] h-[1.8125rem] font-semibold text-[1.5rem] text-Light_Text_Name dark:text-Dark_Text_Name">
