@@ -62,7 +62,7 @@ const ChangePasswordPage = () => {
             <div className="font-pre text-[0.6rem] text-error mt-[0.25rem]">비밀번호가 일치하지 않습니다.</div>
           </div>
         </div>
-        <button className="mt-[3.8125rem] mx-auto w-[11.0625rem] h-[3rem] bg-Button font-pre text-Light_Layout-100 text-[1.5625rem] border rounded-lg rounded-[1.5625rem]">
+        <button className="mt-[3.8125rem] mx-auto w-[11.0625rem] h-[3rem] bg-Button font-pre text-Light_Layout-100 text-[1.5625rem] border rounded-[1.5625rem]">
           변경
         </button>
       </div>

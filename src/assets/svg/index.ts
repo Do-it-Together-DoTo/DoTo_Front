@@ -9,6 +9,7 @@ export { default as HomeIcon } from './HomeIcon';
 export { default as KakaoIcon } from './KakaoIcon';
 export { default as Logo } from './Logo';
 export { default as Logo2 } from './Logo2';
+export { default as ModifyIcon } from './ModifyIcon';
 export { default as MoonIcon } from './MoonIcon';
 export { default as MypageIcon } from './MypageIcon';
 export { default as NaverIcon } from './NaverIcon';

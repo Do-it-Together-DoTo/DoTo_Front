@@ -1,5 +1,5 @@
 const UpdateProfilePage = () => {
-  return <div>프로필 수정</div>;
+  return <div>프로필 변경</div>;
 };
 
 export default UpdateProfilePage;
