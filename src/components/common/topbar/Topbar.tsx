@@ -18,8 +18,8 @@ const Topbar = () => {
     }
   };
   return (
-    <div className="flex justify-end px-[1.59375rem] h-[3.1875rem] items-center dark:bg-Dark_Layout-100">
-      <div className="flex gap-3 w-[5.0625rem]">
+    <div className="flex justify-end px-[1.59375rem] h-[3.1875rem] items-center dark:bg-Dark_Layout-100 ">
+      <div className="flex gap-3 w-[5.0625rem] ">
         {isDarkMode ? (
           <div
             className="relative w-[3.125rem] h-[1.375rem] bg-Dark_Layout-400 rounded-2xl"
@@ -28,7 +28,7 @@ const Topbar = () => {
             <div className="flex">
               <div className=" -translate-x-[1.7rem] absolute top-[0.125rem] right-[0.125rem] bg-Light_Layout-100 rounded-full h-[1.125rem] w-[1.125rem] duration-500" />
               <div className="absolute top-[0.1875rem] right-[0.4375rem]">
-                <MoonIcon width="16" height="16" />
+                <MoonIcon width={`1rem`} height={`1rem`} />
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Topbar = () => {
           >
             <div className="flex">
               <div className="absolute top-[0.1875rem] left-[0.4375rem]">
-                <SunIcon width="15" height="15" />
+                <SunIcon width={`1rem`} height={`1rem`} />
               </div>
               <div className="translate-x-[1.7rem] absolute top-[0.125rem] left-[0.125rem] bg-Light_Layout-300 rounded-full h-[1.125rem] w-[1.125rem] duration-500" />
             </div>
@@ -48,9 +48,9 @@ const Topbar = () => {
 
         <div onClick={handleAlarmClick} className="flex items-center">
           {isNotification ? (
-            <NotificationOnIcon width="19" height="19" />
+            <NotificationOnIcon width={`1.1875rem`} height={`1.1875rem`} />
           ) : (
-            <NotificationOffIcon width="19" height="19" />
+            <NotificationOffIcon width={`1.1875rem`} height={`1.1875rem`} />
           )}
         </div>
       </div>
