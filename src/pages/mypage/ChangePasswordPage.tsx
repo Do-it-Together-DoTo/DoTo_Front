@@ -5,7 +5,7 @@ const ChangePasswordPage = () => {
       <h1 className="mt-[3.25rem] h-[2rem] text-Light_CategoryText_Icon_Contents font-semibold text-[1.625rem] dark:text-Dark_Text_Name">
         비밀번호 변경
       </h1>
-      <div className="mt-[5.5rem] flex flex-col w-[47.875rem] h-[32.25rem]  bg-Light_Layout-300 rounded-lg rounded-[0.9375rem] dark:bg-Dark_Layout-200">
+      <div className="mt-[5.5rem] flex flex-col w-[47.875rem] h-[32.25rem]  bg-Light_Layout-300 rounded-[0.9375rem] dark:bg-Dark_Layout-200">
         <div className="mt-[5.6875rem] flex w-[33.375rem] h-[3rem] ml-[8.125rem]">
           <label
             className="w-[6.6875rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"

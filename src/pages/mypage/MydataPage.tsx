@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/svg';
 import { fakerKO as faker } from '@faker-js/faker';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const MydataPage = () => {
   const data = {
