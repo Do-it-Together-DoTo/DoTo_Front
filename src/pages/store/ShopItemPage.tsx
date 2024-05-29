@@ -1,5 +1,6 @@
 // import ShopItem from './ShopItem';
 import StoreMainProfile from '../../components/store/StoreMainProfile';
+import StoreDetailModal from '@/modal/StoreDetailModal';
 
 const ShopItemPage = () => {
   return (
@@ -10,9 +11,11 @@ const ShopItemPage = () => {
       <div className="px-[1.875rem]">
         <StoreMainProfile />
         <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-[49.1875rem] py-[2.3125rem]">
+          <h3>Test Modal UI Here</h3>
+          <StoreDetailModal />
           {/* <ShopItem />
           <ShopItem />
-          <ShopItem /> */}
+        <ShopItem /> */}
         </div>
       </div>
     </div>
