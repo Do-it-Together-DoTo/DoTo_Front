@@ -1,11 +1,14 @@
 import { CoinIcon } from '@/assets/svg/community';
 import { IBetting } from '@/components/community/betting/BettingConstant';
+import { useState } from 'react';
 
 interface BettingDetailModalProps {
   betting: IBetting;
+  type: 'detail' | null;
 }
 
-const BettingModal = ({ betting }: BettingDetailModalProps) => {
+const BettingModal = ({ betting, type }: BettingDetailModalProps) => {
+  const [isValid] = useState(true);
   return (
     <>
       <div className="fixed top-0 left-0 w-screen h-screen bg-Dark_Layout-100 bg-opacity-60" />
@@ -31,11 +34,22 @@ const BettingModal = ({ betting }: BettingDetailModalProps) => {
             </p>
           </div>
         </div>
-        <p>
-          <span className="font-bold text-xl">40명</span>의 친구가 베팅에 참여했어요
-        </p>
-        <button className="w-full h-10 bg-Button text-Light_Layout-400 text-base rounded-[0.625rem] font-bold">
-          채팅방 가기
+        {type === 'detail' ? (
+          <p>
+            <span className="font-bold text-xl">40명</span>의 친구가 베팅에 참여했어요
+          </p>
+        ) : (
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex items-center">
+              <CoinIcon width="30" height="30" />
+              {/* TODO:제한 로직 걸어야함. 10~50, 베팅금액 부족 */}
+              <input className="border-b px-4 w-20 focus:outline-none" />를 베팅할게요.
+            </div>
+            <p>{isValid ? '유효' : '금액이 부족합니다.'}</p>
+          </div>
+        )}
+        <button className="w-full h-10  bg-Button text-Light_Layout-400 text-base rounded-[0.625rem] font-bold">
+          {type === 'detail' ? '채팅방 가기' : '베팅하기'}
         </button>
       </div>
     </>
