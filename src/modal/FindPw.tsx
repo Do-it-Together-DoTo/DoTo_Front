@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const FindPw = () => {
   const [email, setEmail] = useState('');
@@ -72,7 +72,7 @@ const FindPw = () => {
             onChange={(e) => setEmail(e.target.value)}
             onFocus={() => setTouched({ ...touched, email: true })}
           />
-          <button className="w-[4.4375rem] h-[1.1875rem] text-Light_Text_AboutMe font-pre border border-1 border-Light_Text_AboutMe rounded-lg rounded-20 text-[8px]">
+          <button className="flex items-center justify-center w-[4.4375rem] h-[1.1875rem] text-Light_Text_AboutMe font-pre border border-1 border-Light_Text_AboutMe rounded-lg rounded-20 text-[8px]">
             인증번호 발송
           </button>
         </div>
@@ -90,7 +90,7 @@ const FindPw = () => {
           />
           <div className="w-[3.625rem] h-[1.625rem] flex items-center justify-between">
             <span className="font-pre text-[7px] text-Dark_Text_AboutMe">02:47</span>
-            <button className="w-[2rem] h-[1rem] text-Button font-pre border border-1 border-Button rounded-lg rounded-20 text-[7px]">
+            <button className="flex items-center justify-center w-[2rem] h-[1rem] text-Button font-pre border border-1 border-Button rounded-lg rounded-20 text-[7px]">
               인증
             </button>
           </div>
