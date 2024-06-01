@@ -50,8 +50,8 @@ const FindPw = () => {
   }, [email, verificationCode, password, confirmPassword, touched]);
 
   const handleChangePassword = () => {
-    if (!errors.email && !errors.verificationCode && !errors.password && !errors.confirmPassword) {
-      -console.log('비밀번호 변경 성공');
+    if (isFormValid) {
+      -console.log('비밀번호 찾기 성공');
     }
   };
 
