@@ -1,7 +1,6 @@
 import { UserImgSample } from '@assets/svg';
 
-const UpdateProfilePage = () => {
-  //return <div>프로필 변경</div>;
+const BlockAccountPage = () => {
   return (
     <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
       <h1 className="mt-[3.25rem] h-[2rem] text-Light_CategoryText_Icon_Contents font-semibold text-[1.625rem] dark:text-Dark_Text_Name">
@@ -28,4 +27,4 @@ const UpdateProfilePage = () => {
   );
 };
 
-export default UpdateProfilePage;
+export default BlockAccountPage;
