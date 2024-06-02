@@ -1,4 +1,4 @@
-import { MyBlob, Slider, Coin } from '@/assets/svg';
+import { MyBlob, Coin } from '@/assets/svg';
 import { fakerKO as faker } from '@faker-js/faker';
 
 const profileExample = Array.from({ length: 1 }, () => ({
@@ -9,12 +9,6 @@ const profileExample = Array.from({ length: 1 }, () => ({
   coin: faker.number.int({ min: 0, max: 9999 }),
   experience: faker.number.int({ min: 0, max: 100 }),
 }));
-
-// 다른 페이지들은 width 조정 따로 안해도 w-full 잘 차는데
-// 내 페이지만 오른쪽으로 더 넘어가서 스크롤링됨
-// >>> MainProfile 기본 width 지정 문제였음 ( 극단적으로 줄이니까 일단 스크롤은 안되는거 확인 )
-// 이 안에서 gap 조절
-// space-x-40으로 줄여봄 >> 이걸로 조정
 
 const StoreMainProfile = () => {
   return (
@@ -32,22 +26,15 @@ const StoreMainProfile = () => {
           </div>
 
           <div className="flex items-center">
-            <Slider className="w-[11.75rem] h-[0.75rem]" />
+            <div className="block w-[10rem] h-[0.75rem] rounded-full bg-Dark_Layout-100">
+              <div
+                className="block h-[0.75rem] rounded-full bg-gradient"
+                style={{ width: `calc(0.1rem*${profileExample[0].experience})` }}
+              />
+            </div>
             <div className="ml-[0.3125rem] font-nico text-Light_Text_AboutMe dark:text-Dark_Text_Contents text-[0.75rem]">
               {profileExample[0].experience}%
             </div>
-
-            {/* <div className="flex items-center ml-auto mr-8">
-              <div className="block w-20 h-1 rounded-full bg-Dark_Layout-100">
-                <div
-                  className="block h-1 rounded-full bg-gradient"
-                  style={{ width: `calc(0.05rem*${profileExample[0].experience})` }}
-                />
-              </div>
-              <span className="text-[0.5rem] font-nico text-Light_Text_AboutMe mr-2 absolute right-0 dark:text-Dark_Text_AboutMe">
-                {profileExample[0].experience}%
-              </span>
-            </div> */}
           </div>
         </div>
       </div>
