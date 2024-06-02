@@ -4,7 +4,6 @@ import NotFoundPage from '@/pages/NotFoundPage';
 import BettingPage from '@/pages/community/BettingPage';
 import ChattingPage from '@/pages/community/ChattingPage';
 import RankingPage from '@/pages/community/RankingPage';
-import SearchPage from '@/pages/community/SearchPage';
 import HomePage from '@/pages/home/HomePage';
 import ChangePasswordPage from '@/pages/mypage/ChangePasswordPage';
 import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
