@@ -34,7 +34,7 @@ const StoreMainProfile = () => {
           <div className="flex items-center">
             <Slider className="w-[11.75rem] h-[0.75rem]" />
             <div className="ml-[0.3125rem] font-nico text-Light_Text_AboutMe dark:text-Dark_Text_Contents text-[0.75rem]">
-              27%
+              {profileExample[0].experience}%
             </div>
 
             {/* <div className="flex items-center ml-auto mr-8">
@@ -53,7 +53,9 @@ const StoreMainProfile = () => {
       </div>
       <div className="flex items-center h-[1.875rem]">
         <Coin className="w-[1.875rem] h-[1.875rem]" />
-        <div className="font-nico text-Light_Text_Name dark:text-Dark_Text_Contents text-[1.75rem]">20</div>
+        <div className="font-nico text-Light_Text_Name dark:text-Dark_Text_Contents text-[1.75rem]">
+          {profileExample[0].coin}
+        </div>
       </div>
     </div>
   );

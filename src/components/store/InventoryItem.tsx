@@ -1,12 +1,27 @@
-import { MyBlob, Slider } from '@/assets/svg';
+import { RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
-const InventoryItem = () => {
+type propstype = {
+  itemName: string;
+  isRare: boolean;
+  itemValue: number;
+};
+const InventoryItem = (props: propstype) => {
   return (
     <div className="flex flex-col justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]">
-      <MyBlob className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]">캐릭터 이미지</MyBlob>
-      <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">캐릭터 이름</div>
-      <div className="text-Light_Text_AboutMe dark:text-Dark_Text_Contents font-nico text-[0.8125rem]">Lv.3</div>
-      <Slider className="w-[6.2075rem] mt-[0.6875rem]" />
+      {props.isRare === true ? (
+        <MagicPotion1 className="w-[3.8144rem] h-[3.8144rem] mb-[1rem]" />
+      ) : (
+        <MagicPotion2 className="w-[3.8144rem] h-[3.8144rem] mb-[1rem]" />
+      )}
+      <div className="flex flex-col items-center justify-center gap-y-[0.125rem]">
+        <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">{props.itemName}</div>
+        {props.isRare === true ? <RareBadge className="h-[0.8506rem]" /> : <NormalBadge className="h-[0.8506rem]" />}
+        <div className="flex items-center gap-x-[0.25rem]">
+          <div className="font-nico text-[0.6875rem] text-Light_Text_Name dark:text-Dark_Text_Contents">
+            × {props.itemValue}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

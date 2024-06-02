@@ -1,4 +1,4 @@
-import InventoryItem from '../../components/store/InventoryItem';
+import InventoryCharacter from '../../components/store/InventoryCharacter';
 import StoreMainProfile from '../../components/store/StoreMainProfile';
 import { fakerKO as faker } from '@faker-js/faker';
 import { useState } from 'react';
@@ -23,15 +23,14 @@ const InventoryCharacterPage = () => {
       <div className="px-[1.875rem]">
         <StoreMainProfile />
         <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-[49.1875rem] py-[2.3125rem]">
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
-          <InventoryItem />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
+          <InventoryCharacter />
         </div>
       </div>
     </div>
