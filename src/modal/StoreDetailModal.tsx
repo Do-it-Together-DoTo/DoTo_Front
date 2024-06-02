@@ -3,7 +3,6 @@ import { MyBlob, Slider } from '@/assets/svg';
 const StoreDetailModal = () => {
   return (
     <div className="flex flex-col items-center justify-center h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
-      {/* <h3>StoreDetailModal</h3> */}
       <div className="flex flex-col justify-center items-center w-[9.8125rem]">
         <div className="flex flex-col items-center w-[8.6875rem]  mb-[1.375rem]">
           <MyBlob className="w-20 h-12 m-2.5" />

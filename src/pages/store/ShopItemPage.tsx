@@ -1,4 +1,4 @@
-// import ShopItem from './ShopItem';
+// import ShopItem from '@/components/store//ShopItem';
 import StoreMainProfile from '../../components/store/StoreMainProfile';
 import StoreDetailModal from '@/modal/StoreDetailModal';
 
@@ -13,9 +13,9 @@ const ShopItemPage = () => {
         <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-[49.1875rem] py-[2.3125rem]">
           <h3>Test Modal UI Here</h3>
           <StoreDetailModal />
-          {/* <ShopItem />
-          <ShopItem />
-        <ShopItem /> */}
+          {/* <ShopItem itemName={'AAA'} coinValue={100} isRare={true} />
+          <ShopItem itemName={'AAA'} coinValue={100} isRare={true} />
+          <ShopItem itemName={'AAA'} coinValue={100} isRare={true} /> */}
         </div>
       </div>
     </div>

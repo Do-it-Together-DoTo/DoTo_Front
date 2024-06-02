@@ -1,4 +1,4 @@
-import ShopItem from '../../components/store/ShopItem';
+import ShopItem from '@/components/store/ShopItem';
 import StoreMainProfile from '../../components/store/StoreMainProfile';
 
 const ShopCharacterPage = () => {

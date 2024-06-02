@@ -1,12 +1,9 @@
-export { default as GoogleIcon } from './GoogleIcon';
-export { default as Logo } from './Logo';
 export { default as MyBlob } from './MyBlob';
 export { default as Slider } from './Slider';
 export { default as NormalBadge } from './NormalBadge';
 export { default as RareBadge } from './RareBadge';
 export { default as Coin } from './Coin';
 export { default as Egg } from './Egg';
-export { default as Logo2 } from './Logo2';
 export { default as ArrowDownwardIcon } from './ArrowDownwardIcon';
 export { default as ArrowForwardIcon } from './ArrowForwardIcon';
 export { default as ArrowLeftIcon } from './ArrowLeftIcon';
