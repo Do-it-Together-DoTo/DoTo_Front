@@ -19,7 +19,7 @@ const BlockAccountPage = () => {
             닉네임 뭐하지
           </div>
           <button className="w-[5.75rem] h-[1.5625rem] bg-Light_Layout-100 font-pre text-Light_Text_AboutMe text-[0.8rem] rounded-[1.5625rem]">
-            변경
+            해제
           </button>
         </div>
       </div>
