@@ -33,8 +33,8 @@ const CustomCalendar = () => {
       minDetail="month"
       next2Label={null}
       prev2Label={null}
-      nextLabel={<NextLabel {...(isDarkMode ? { fill: '#F2F2F2' } : {})} />}
-      prevLabel={<PrevLabel {...(isDarkMode ? { fill: '#F2F2F2' } : {})} />}
+      nextLabel={<NextLabel className="dark:fill-Dark_Text_Name" />}
+      prevLabel={<PrevLabel className="dark:fill-Dark_Text_Name" />}
       formatDay={(_locale, date) => moment(date).format('D')}
       onActiveStartDateChange={({ activeStartDate }) => {
         if (activeStartDate) {
