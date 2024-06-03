@@ -12,11 +12,13 @@ const profileExample = Array.from({ length: 1 }, () => ({
 
 const StoreMainProfile = () => {
   return (
-    <div className="rounded-[0.9375rem] flex items-center justify-center w-[49.8125rem] h-[9.375rem] bg-Light_Layout-100 dark:bg-Dark_Layout-200">
+    <div className="rounded-[0.9375rem] flex items-center justify-center w-full h-[9.375rem] gap-x-80 bg-Light_Layout-100 dark:bg-Dark_Layout-200">
+      {/* <div className="rounded-[0.9375rem] flex items-center justify-center w-[49.8125rem] h-[9.375rem] bg-Light_Layout-100 dark:bg-Dark_Layout-200"> */}
       <div className="flex">
         <MyBlob className="w-[6.8137rem] h-[4.1563rem] mr-4" />
+
         <div className="flex flex-col justify-end gap-y-[0.625rem]">
-          <div className="flex w-[27.1875rem] gap-x-[0.625rem] mb-[0.625rem]">
+          <div className="flex gap-x-[0.625rem]">
             <div className="text-Light_Text_Name dark:text-Dark_Text_Name font-bold text-[1.8125rem]">
               {profileExample[0].username}
             </div>
@@ -39,7 +41,7 @@ const StoreMainProfile = () => {
         </div>
       </div>
       <div className="flex items-center h-[1.875rem]">
-        <Coin className="w-[1.875rem] h-[1.875rem]" />
+        <Coin className="w-[1.875rem] h-[1.875rem] mr-2" />
         <div className="font-nico text-Light_Text_Name dark:text-Dark_Text_Contents text-[1.75rem]">
           {profileExample[0].coin}
         </div>

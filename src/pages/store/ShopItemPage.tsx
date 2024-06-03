@@ -13,6 +13,18 @@ const ShopCharacterPage = () => {
           <ShopItem itemName={'AAA'} coinValue={100} isRare={true} />
           <ShopItem itemName={'BBB'} coinValue={200} isRare={true} />
           <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
+          <ShopItem itemName={'CCC'} coinValue={300} isRare={false} />
         </div>
       </div>
     </div>
