@@ -15,7 +15,7 @@ const InventoryItem = (props: propstype) => {
       )}
       <div className="flex flex-col items-center justify-center gap-y-[0.125rem]">
         <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">{props.itemName}</div>
-        {props.isRare === true ? <RareBadge className="h-[0.8506rem]" /> : <NormalBadge className="h-[0.8506rem]" />}
+        {props.isRare ? <RareBadge className="h-[0.8506rem]" /> : <NormalBadge className="h-[0.8506rem]" />}
         <div className="flex items-center gap-x-[0.25rem]">
           <div className="font-nico text-[0.6875rem] text-Light_Text_Name dark:text-Dark_Text_Contents">
             × {props.itemValue}

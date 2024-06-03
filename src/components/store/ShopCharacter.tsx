@@ -11,7 +11,7 @@ const ShopCharacter = (props: propstype) => {
       <Egg className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]" />
       <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">{props.characterName}</div>
       <div className="flex items-center gap-x-[0.25rem]">
-        <Coin className="w-[1.1875rem] h-[1.1875rem]"></Coin>
+        <Coin className="w-[1.1875rem] h-[1.1875rem]" />
         <div className="font-nico text-[0.6875rem] text-Light_Text_Name dark:text-Dark_Text_Contents">
           {props.coinValue}
         </div>

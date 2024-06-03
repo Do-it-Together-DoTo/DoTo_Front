@@ -1,9 +1,9 @@
-import InventoryItem from '../../components/store/InventoryItem';
-import StoreMainProfile from '../../components/store/StoreMainProfile';
+import InventoryItem from '@/components/store/InventoryItem';
+import StoreMainProfile from '@/components/store/StoreMainProfile';
 
 const InventoryItemPage = () => {
   return (
-    <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
+    <div className="h-[calc(100vh-3.1875rem)] overflow-auto scroll scrollbar-hide bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
       <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
         보관함
       </div>
