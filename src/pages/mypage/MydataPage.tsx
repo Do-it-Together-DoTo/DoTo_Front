@@ -1,6 +1,8 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/svg';
 import { fakerKO as faker } from '@faker-js/faker';
 import { useState } from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 
 const MydataPage = () => {
   const data = {
@@ -44,6 +46,19 @@ const MydataPage = () => {
       setTitleMonth(titleMonth + 1);
     }
   };
+  ChartJS.register(ArcElement, Tooltip, Legend);
+  const Data = {
+    labels: ['성공', '실패'],
+    datasets: [
+      {
+        data: [62, 38],
+        backgroundColor: ['#ffeb9b', '#b5f2ff'],
+        borderColor: ['#ffeb9b', '#b5f2ff'],
+      },
+    ],
+  };
+  const Options = {};
+
   return (
     <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(screen-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
       <div className="mt-[2.125rem] w-[12.875rem] h-[1.875rem] flex justify-center	">
@@ -184,7 +199,9 @@ const MydataPage = () => {
             <div className="mt-[1rem] font-semibold text-[1.25rem] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
               베팅 승률
             </div>
-            <div className="w-[13.75rem] h-[13.75rem]">도넛 테이블</div>
+            <div className="w-[13.75rem] h-[13.75rem]">
+              <Doughnut data={Data} options={Options}></Doughnut>
+            </div>
             <div className="w-[4.875rem] h-[2.25rem] flex justify-center items-center">
               <div className="font-semibold text-Button text-[2rem]">38</div>
               <div className="font-semibold text-Light_Text_Name dark:text-Dark_Text_Name text-[2rem]">%</div>
@@ -197,7 +214,10 @@ const MydataPage = () => {
             <div className="mt-[1rem] font-semibold text-[1.25rem] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
               베팅 수익률
             </div>
-            <div className="w-[13.75rem] h-[13.75rem]">도넛 테이블</div>
+
+            <div className="w-[13.75rem] h-[13.75rem]">
+              <Doughnut data={Data} options={Options}></Doughnut>
+            </div>
             <div className="w-[4.875rem] h-[2.25rem] flex justify-center items-center">
               <div className="font-semibold text-Button text-[2rem]">38</div>
               <div className="font-semibold text-Light_Text_Name dark:text-Dark_Text_Name text-[2rem]">%</div>
