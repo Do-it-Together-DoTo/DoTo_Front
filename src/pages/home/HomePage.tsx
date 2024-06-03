@@ -37,7 +37,7 @@ const initialFollowers = Array.from({ length: 10 }, () => ({
 const HomePage = () => {
   const [followers, setFollowers] = useState(initialFollowers);
   const [selectedUser, setSelectedUser] = useState<SelectedUser>(userProfile);
-  const [isFollowed, setIsFollowed] = useState(false);
+  // const [isFollowed, setIsFollowed] = useState(false);
 
   const handleDragEnd = (result: DropResult) => {
     const { source, destination } = result;
@@ -188,7 +188,7 @@ const HomePage = () => {
                     {selectedUser.introduction}
                   </span>
                 </div>
-                {!selectedUser.isUserProfile &&
+                {/* {!selectedUser.isUserProfile &&
                   (isFollowed ? (
                     <button
                       onClick={() => {
@@ -207,7 +207,7 @@ const HomePage = () => {
                     >
                       친구신청
                     </button>
-                  ))}
+                  ))} */}
               </div>
             </div>
             <div className="flex items-center justify-center">
