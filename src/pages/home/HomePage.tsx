@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import moment from 'moment';
+import 'moment/dist/locale/ko';
 import { Droppable, Draggable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { fakerKO as faker } from '@faker-js/faker';
 import CustomCalendar from '@/components/home/calendar/CustomCalendar';
+import useSelectedDateState from '@/store/selectedDateStore';
 import { UserImgSample, CoinIcon } from '@assets/svg';
 
 type SelectedUser = {
@@ -38,6 +41,10 @@ const HomePage = () => {
   const [followers, setFollowers] = useState(initialFollowers);
   const [selectedUser, setSelectedUser] = useState<SelectedUser>(userProfile);
   // const [isFollowed, setIsFollowed] = useState(false);
+
+  const { selectedDate } = useSelectedDateState((state) => ({
+    selectedDate: moment(state.selectedDate as Date).format('MMM Do (dd)'),
+  }));
 
   const handleDragEnd = (result: DropResult) => {
     const { source, destination } = result;
@@ -216,7 +223,9 @@ const HomePage = () => {
           </div>
 
           {/* 카테고리 */}
-          <div className="w-2/5 h-full bg-Light_Layout-100 dark:bg-Dark_Layout-100"></div>
+          <div className="w-2/5 h-full bg-Light_Layout-200 dark:bg-Dark_Layout-200">
+            <p>{selectedDate}</p>
+          </div>
         </section>
       </div>
     </DragDropContext>
