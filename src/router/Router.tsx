@@ -9,8 +9,10 @@ import ChangePasswordPage from '@/pages/mypage/ChangePasswordPage';
 import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
 import MydataPage from '@/pages/mypage/MydataPage';
 import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
-import InventoryPage from '@/pages/store/InventoryPage';
-import ShopPage from '@/pages/store/ShopPage';
+import InventoryItemPage from '@/pages/store/InventoryItemPage';
+import InventoryCharacterPage from '@/pages/store/InventoryCharacterPage';
+import ShopItemPage from '@/pages/store/ShopItemPage';
+import ShopCharacterPage from '@/pages/store/ShopCharacterPage';
 import SignIn from '@pages/auth/SignIn';
 import SignUp from '@/modal/SignUp';
 import FindPw from '@/modal/FindPw';
@@ -37,7 +39,6 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
-
         {
           path: 'community',
           element: <Categorybar category="community" />,
@@ -54,9 +55,11 @@ const Router = () => {
           path: 'store',
           element: <Categorybar category="store" />,
           children: [
-            { path: '', element: <Navigate to="shop" /> },
-            { path: 'shop', element: <ShopPage /> },
-            { path: 'inventory', element: <InventoryPage /> },
+            { path: '', element: <Navigate to="shop/character" /> },
+            { path: 'shop/character', element: <ShopCharacterPage /> },
+            { path: 'shop/item', element: <ShopItemPage /> },
+            { path: 'inventory/character', element: <InventoryCharacterPage /> },
+            { path: 'inventory/item', element: <InventoryItemPage /> },
           ],
         },
         {

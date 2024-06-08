@@ -48,3 +48,25 @@
 body {
   -ms-overflow-style: none;
 }
+
+html {
+  @apply text-xs;
+}
+
+@media (min-width: 1024px) {
+  html {
+    @apply text-sm;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    @apply text-base;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    @apply text-lg;
+  }
+}
