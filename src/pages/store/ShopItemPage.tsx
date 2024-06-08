@@ -1,5 +1,6 @@
 import ShopItem from '@/components/store/ShopItem';
 import StoreMainProfile from '@/components/store/StoreMainProfile';
+import StoreItemBuyModal from '@/modal/store/StoreItemBuyModal';
 
 const ShopCharacterPage = () => {
   return (
@@ -10,6 +11,7 @@ const ShopCharacterPage = () => {
       <div className="flex flex-col px-[1.875rem] h-[calc(100vh-8.8125rem)]">
         <StoreMainProfile />
         <div className="flex-1 my-[2.3125rem] overflow-auto scroll">
+          <StoreItemBuyModal />
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full py-[2.3125rem]">
             <ShopItem itemName={'AAA'} coinValue={100} isRare={true} />
             <ShopItem itemName={'BBB'} coinValue={200} isRare={true} />
