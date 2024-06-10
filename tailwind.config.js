@@ -12,6 +12,7 @@ export default {
         200: '#292B2F',
         300: '#2F3136',
         400: '#41444B',
+        500: '#5b5d63',
       },
       Dark_Text_Name: '#F2F2F2',
       Dark_Text_AboutMe: '#A9AEBB',
