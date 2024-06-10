@@ -14,7 +14,6 @@ const ShopCharacter = (props: ShopCharProps) => {
 
   return (
     <div
-      // onClick={props.onClick}
       onClick={handleClick}
       className="flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]"
     >

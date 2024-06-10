@@ -1,6 +1,6 @@
 import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
-const StoreItemBuyModal = () => {
+const ShopItemBuyModal = () => {
   return (
     <div className="flex flex-col items-center justify-center h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
       <div className="flex flex-col justify-center items-center w-[9.8125rem]">
@@ -29,4 +29,4 @@ const StoreItemBuyModal = () => {
   );
 };
 
-export default StoreItemBuyModal;
+export default ShopItemBuyModal;

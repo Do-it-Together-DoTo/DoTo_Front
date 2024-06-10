@@ -1,13 +1,12 @@
 import { Coin, Egg } from '@/assets/svg';
 import { Dispatch, SetStateAction } from 'react';
 
-interface StoreCharModalProps {
+interface ShopCharModalProps {
   characterName: string;
   coinValue: number;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
-
-const StoreCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: StoreCharModalProps) => {
+const ShopCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: ShopCharModalProps) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -46,4 +45,4 @@ const StoreCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: StoreCh
   );
 };
 
-export default StoreCharBuyModal;
+export default ShopCharBuyModal;

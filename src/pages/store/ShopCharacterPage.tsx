@@ -1,6 +1,6 @@
 import ShopCharacter from '@/components/store/ShopCharacter';
 import StoreMainProfile from '@/components/store/StoreMainProfile';
-import StoreCharBuyModal from '@/modal/store/StoreCharBuyModal';
+import ShopCharBuyModal from '@/modal/store/ShopCharBuyModal';
 
 import { useState } from 'react';
 
@@ -23,7 +23,7 @@ const ShopCharacterPage = () => {
         <StoreMainProfile />
         <div className="flex-1 my-[2.3125rem] overflow-auto scroll">
           {isModalOpen && selectedChar && (
-            <StoreCharBuyModal
+            <ShopCharBuyModal
               characterName={selectedChar.characterName}
               coinValue={selectedChar.coinValue}
               setIsModalOpen={setIsModalOpen}
