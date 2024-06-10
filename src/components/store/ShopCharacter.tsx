@@ -1,13 +1,23 @@
 import { Coin, Egg } from '@/assets/svg';
 
-type propstype = {
+type ShopCharProps = {
   characterName: string;
   coinValue: number;
+  // onClick: () => void;
+  onClick: (characterName: string, coinValue: number) => void;
 };
 
-const ShopCharacter = (props: propstype) => {
+const ShopCharacter = (props: ShopCharProps) => {
+  const handleClick = () => {
+    props.onClick(props.characterName, props.coinValue);
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]">
+    <div
+      // onClick={props.onClick}
+      onClick={handleClick}
+      className="flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]"
+    >
       <Egg className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]" />
       <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">{props.characterName}</div>
       <div className="flex items-center gap-x-[0.25rem]">

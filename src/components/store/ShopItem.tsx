@@ -8,7 +8,7 @@ type propstype = {
 
 const ShopItem = (props: propstype) => {
   return (
-    <div className="flex flex-col justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]">
+    <div className="flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]">
       {props.isRare === true ? (
         <MagicPotion1 className="w-[3.8144rem] h-[3.8144rem] mb-[1rem]" />
       ) : (
