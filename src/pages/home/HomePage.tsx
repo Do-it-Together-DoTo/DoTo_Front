@@ -40,22 +40,24 @@ const initialFollowers = Array.from({ length: 10 }, () => ({
 }));
 
 const todoList = Array.from({ length: 6 }, () => ({
-  id: faker.string.uuid(),
   category: {
+    id: faker.string.uuid(),
     shared: ['public', 'friendOnly', 'private'][Math.floor(Math.random() * 3)],
     title: faker.lorem.word(),
     color: ['skyblue', 'pink', 'blue', 'salmon', 'purple', 'yellow', 'green'][Math.floor(Math.random() * 7)],
+
+    todo: Array.from({ length: 3 }, () => ({
+      id: faker.string.uuid(),
+      title: faker.lorem.sentence({ min: 3, max: 20 }),
+      isDone: Math.random() < 0.5,
+    })),
   },
-  todo: Array.from({ length: 3 }, () => ({
-    id: faker.string.uuid(),
-    title: faker.lorem.sentence({ min: 3, max: 20 }),
-    isDone: Math.random() < 0.5,
-  })),
 }));
 
 const HomePage = () => {
   const [followers, setFollowers] = useState(initialFollowers);
   const [selectedUser, setSelectedUser] = useState<SelectedUser>(userProfile);
+  const [todos, setTodos] = useState(todoList);
   // const [isFollowed, setIsFollowed] = useState(false);
 
   const { selectedDate } = useSelectedDateState((state) => ({
@@ -67,14 +69,42 @@ const HomePage = () => {
     if (!destination) return;
     if (source.droppableId === destination.droppableId && source.index === destination.index) return;
 
-    const newFollowers = [...followers];
+    if (source.droppableId === 'followers') {
+      const newFollowers = [...followers];
 
-    const add = newFollowers[source.index];
-    newFollowers.splice(source.index, 1);
+      const add = newFollowers[source.index];
+      newFollowers.splice(source.index, 1);
 
-    newFollowers.splice(destination.index, 0, add);
+      newFollowers.splice(destination.index, 0, add);
 
-    setFollowers(newFollowers);
+      setFollowers(newFollowers);
+    } else {
+      const sourceCategory = todos.find((todoItem) => todoItem.category.id === source.droppableId);
+      const destinationCategory = todos.find((todoItem) => todoItem.category.id === destination.droppableId);
+
+      const sourceTodos = sourceCategory ? [...sourceCategory.category.todo] : [];
+      const destinationTodos = destinationCategory ? [...destinationCategory.category.todo] : [];
+
+      const [removed] = sourceTodos.splice(source.index, 1);
+
+      if (source.droppableId === destination.droppableId) {
+        sourceTodos.splice(destination.index, 0, removed);
+      } else {
+        destinationTodos.splice(destination.index, 0, removed);
+      }
+
+      setTodos(
+        todos.map((todoItem) => {
+          if (todoItem.category.id === source.droppableId) {
+            return { ...todoItem, category: { ...todoItem.category, todo: sourceTodos } };
+          } else if (todoItem.category.id === destination.droppableId) {
+            return { ...todoItem, category: { ...todoItem.category, todo: destinationTodos } };
+          } else {
+            return todoItem;
+          }
+        }),
+      );
+    }
   };
 
   const onClickSelected = (props: SelectedUser) => {
@@ -131,7 +161,7 @@ const HomePage = () => {
             </div>
           </div>
           {/* 팔로워 */}
-          <Droppable droppableId="inbox-column">
+          <Droppable droppableId="followers">
             {(provided) => (
               <div
                 ref={provided.innerRef}
@@ -147,7 +177,7 @@ const HomePage = () => {
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                           onClick={() => onClickSelected(follower)}
-                          className="flex items-center mb-5 px-5 w-[14.4375rem] h-12 rounded-md hover:bg-Light_Layout-100 active:bg-Light_Layout-100 dark:hover:bg-Dark_Layout-200 dark:active:bg-Dark_Layout-200"
+                          className="flex items-center mb-5 px-5 w-[14.4375rem] h-12 rounded-md hover:bg-Light_Layout-100 active:bg-Light_Layout-100 dark:hover:bg-Dark_Layout-300 dark:active:bg-Dark_Layout-300"
                         >
                           <UserImgSample className="min-w-14 max-h-8" />
                           <div className="flex flex-col ml-3.5 max-w-32">
@@ -247,8 +277,8 @@ const HomePage = () => {
               <CategorySettingIcon width={`0.875rem`} className="dark:fill-Dark_Text_Contents" />
             </div>
             <div className="overflow-y-auto scrollbar-hide">
-              {todoList.map((todo) => (
-                <CategoryCard key={todo.id} category={todo.category} todoList={todo.todo} />
+              {todos.map((todo) => (
+                <CategoryCard key={todo.category.id} category={todo.category} todoList={todo.category.todo} />
               ))}
             </div>
           </div>

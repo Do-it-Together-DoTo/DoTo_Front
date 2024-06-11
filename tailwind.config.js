@@ -33,7 +33,7 @@ export default {
       blue: '#658DDE',
       salmon: '#E39999',
       purple: '#C06EF2',
-      yellow: '#FCF898',
+      yellow: '#FFE03A',
       green: '#8EFF9A',
       transparent: 'transparent',
       error: '#F25454',
