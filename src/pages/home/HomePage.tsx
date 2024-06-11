@@ -161,7 +161,7 @@ const HomePage = () => {
             </div>
           </div>
           {/* 팔로워 */}
-          <Droppable droppableId="followers">
+          <Droppable droppableId="followers" type="followers" direction="vertical">
             {(provided) => (
               <div
                 ref={provided.innerRef}

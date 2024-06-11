@@ -39,7 +39,7 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
         <CreateTodoIcon width={`1.125rem`} className="dark:fill-Dark_Text_Contents" />
       </section>
       {/* TodoList */}
-      <Droppable droppableId={category.id}>
+      <Droppable droppableId={category.id} direction="vertical">
         {(provided) => (
           <section ref={provided.innerRef} {...provided.droppableProps} className="mb-6">
             {todoList.map((todo, index) => (
