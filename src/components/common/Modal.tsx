@@ -1,4 +1,4 @@
-import { ModalPortal } from '@/hooks/useModalPortal';
+import { ModalPortal } from '@/components/common/ModalPortal';
 
 const Modal = ({ onClose, children }: { onClose: () => void; children: React.ReactNode }) => {
   return (
