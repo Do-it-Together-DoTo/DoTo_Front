@@ -1,6 +1,10 @@
 import { MyBlob, Slider } from '@/assets/svg';
 
-const StoreDetailModal = () => {
+interface StoreDetailModalProps {
+  onClose: () => void;
+}
+
+const StoreDetailModal = ({ onClose }: StoreDetailModalProps) => {
   return (
     <div className="flex flex-col items-center justify-center h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
       <div className="flex flex-col justify-center items-center w-[9.8125rem]">
@@ -23,7 +27,10 @@ const StoreDetailModal = () => {
         <div className="text-[10px] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
           캐릭터 설명~~ 캐릭터 설명~~ 캐릭터 설명~~ 캐릭터 설명~~ 캐릭터 설명~~
         </div>
-        <button className="mt-[2.5rem] w-[9.8125rem] h-[2.1875rem] bg-Button font-pre font-bold text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]">
+        <button
+          onClick={onClose}
+          className="mt-[2.5rem] w-[9.8125rem] h-[2.1875rem] bg-Button font-pre font-bold text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
+        >
           적용하기
         </button>
       </div>
