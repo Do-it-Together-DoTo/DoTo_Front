@@ -51,6 +51,7 @@ body {
 
 html {
   @apply text-xs;
+  /* @apply text-base; */
 }
 
 @media (min-width: 1024px) {
