@@ -8,8 +8,8 @@ const Navbar = () => {
   const { isDesktop } = useDeviceSize();
   return (
     <div
-      className="flex dark:bg-Dark_Layout-100 dt:px-[1.59375rem] dt:gap-16 dt:flex-col dt:w-40 dt:h-[calc(100vh-3.1875rem)] 
-     mb:fixed mb:bottom-0 mb:justify-center mb:h-[4rem]"
+      className="flex bg-Light_Layout-300 dark:bg-Dark_Layout-100 dt:px-[1.59375rem] dt:gap-16 dt:flex-col dt:w-40 dt:h-[calc(100vh-3.1875rem)] 
+     mb:fixed mb:bottom-0 mb:justify-center mb:h-[4rem] mb:py-[0.5rem]"
     >
       {isDesktop && (
         <div>
@@ -18,7 +18,7 @@ const Navbar = () => {
           </NavLink>
         </div>
       )}
-      <nav className="flex gap-[2.75rem] dt:flex-col mb:justify-between mb:w-screen mb:px-[3rem] mb:h-[4rem]">
+      <nav className="flex gap-[2.75rem] bg-Light_Layout-300 dt:flex-col mb:justify-between mb:w-screen mb:px-[3rem] mb:h-[4rem] ">
         <NavbarItem to={'/'} name="홈">
           <HomeIcon width={`2rem`} height={`1.9375rem`} />
         </NavbarItem>

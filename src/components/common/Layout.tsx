@@ -19,8 +19,9 @@ const Layout = () => {
       {isMobile && (
         <div className="w-screen h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
           <Topbar />
-
-          {/* <Outlet /> */}
+          <div className="py-[4rem]">
+            <Outlet />
+          </div>
           <Navbar />
         </div>
       )}
