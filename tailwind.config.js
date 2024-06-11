@@ -45,6 +45,11 @@ export default {
       nico: ['NicoMoji'],
     },
 
+    screens: {
+      mb: { min: '320px', max: '640px' },
+      dt: { min: '640px' },
+    },
+
     extend: {
       backgroundImage: {
         gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
