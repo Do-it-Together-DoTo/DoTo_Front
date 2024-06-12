@@ -10,7 +10,7 @@ interface NavItemLinkProps {
 
 const NavbarItem = ({ to, name, children }: NavItemLinkProps) => {
   return (
-    <NavLink to={to} className="flex gap-[0.5rem] items-center mb:flex-col">
+    <NavLink to={to} className="flex gap-[0.5rem] items-center mb:flex-col dark:bg-Dark_Layout-100">
       {({ isActive }) => (
         <>
           {Children.map(children, (child) =>

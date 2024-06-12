@@ -18,7 +18,7 @@ const Navbar = () => {
           </NavLink>
         </div>
       )}
-      <nav className="flex gap-[2.75rem] bg-Light_Layout-300 dt:flex-col mb:justify-between mb:w-screen mb:px-[3rem] mb:h-[4rem] ">
+      <nav className="flex gap-[2.75rem] dark:bg-Dark_Layout-100 dt:bg-Light_Layout-300 dt:flex-col mb:justify-between mb:w-screen mb:px-[3rem] mb:h-[4rem] ">
         <NavbarItem to={'/'} name="홈">
           <HomeIcon width={`2rem`} height={`1.9375rem`} />
         </NavbarItem>
