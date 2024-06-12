@@ -42,8 +42,9 @@ const ChattingRoomPage = () => {
       <section className="flex flex-col w-[33.75rem] py-8 px-9 bg-Light_Layout-400 gap-6 rounded-2xl dark:bg-Dark_Layout-400">
         <div className="flex items-center gap-3">
           <Link to="/community/chatting">
-            <ArrowLeftIcon width="2rem" height="2rem" />
+            <ArrowLeftIcon width={`1rem`} />
           </Link>
+
           <CharacterProfileIcon width="36" height="36" />
           <div className="text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon flex flex-col">
             <h3 className="text-lg  font-bold">{room?.roomName}</h3>
