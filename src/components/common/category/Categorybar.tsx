@@ -10,15 +10,18 @@ interface CategorybarProps {
 const Categorybar = ({ category }: CategorybarProps) => {
   return (
     <div className="flex w-screen">
-      <div className="w-[16.1875rem] shrink-0 py-[7rem] h-[calc(100vh-3.1875rem)] bg-Light_Layout-100 rounded-tl-3xl dark:bg-Dark_Layout-200 flex flex-col gap-3 px-4">
+      <div className="flex shrink-0 dt:bg-Light_Layout-100 dt:rounded-tl-3xl dt:h-[calc(100vh-3.1875rem)] dt:w-[16.1875rem]  dt:py-[7rem] dt:flex-col gap-3 px-4 mb:fixed mb:top-[4rem] mb:h-[3rem] mb:w-screen mb:justify-around dark:bg-Dark_Layout-200 ">
         {CATEGORY_LIST[category].map((page) => (
           <div key={page.name}>
-            <Category page={page}>{React.createElement(ICON_MAP[page.icon], { width: '17', height: '17' })}</Category>
+            <Category page={page}>
+              {React.createElement(ICON_MAP[page.icon], { width: `1rem`, height: `1rem` })}
+            </Category>
           </div>
         ))}
       </div>
-
-      <Outlet />
+      <div className="mb:pt-[3rem]">
+        <Outlet />
+      </div>
     </div>
   );
 };
