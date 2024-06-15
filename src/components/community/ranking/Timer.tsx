@@ -7,13 +7,13 @@ dayjs.extend(duration);
 import { useEffect, useState } from 'react';
 
 const Timer = () => {
-  const [restSec, setRestSec] = useState(dayjs.duration(dayjs().endOf('D').diff(dayjs())));
+  const [restSec, setRestSec] = useState(dayjs.duration(dayjs().endOf('w').add(1, 'd').diff(dayjs())));
 
   // TODO: 타이머 로직 보완 필요: useInterval 사용
   useEffect(() => {
     console.log(restSec);
     setInterval(() => {
-      setRestSec(dayjs.duration(dayjs().endOf('D').diff(dayjs())));
+      setRestSec(dayjs.duration(dayjs().endOf('w').add(1, 'd').diff(dayjs())));
     }, 1000);
   }, []);
 
