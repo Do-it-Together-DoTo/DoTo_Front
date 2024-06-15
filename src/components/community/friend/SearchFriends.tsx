@@ -1,4 +1,5 @@
-import { MEMBER_LIST, IMember } from './FriendConstant';
+import { IMember } from './FriendConstant';
+import { MEMBER_LIST } from '@/dummy/Friend';
 import FriendItem from './FriendItem';
 import { useState, useEffect } from 'react';
 
@@ -16,7 +17,7 @@ const SearchFriends = () => {
       />
       <div className="w-full h-[24.1875rem] rounded-[1.875rem] bg-Light_Layout-400 flex flex-col items-center px-8 py-[1.1875rem] gap-4 overflow-y-auto scrollbar-hide dark:bg-Dark_Layout-400">
         {members.map((member) => (
-          <FriendItem key={member.memberId} member={member} isFriend={false} />
+          <FriendItem key={member.memberId} member={member} />
         ))}
       </div>
     </section>

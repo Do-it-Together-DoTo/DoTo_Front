@@ -1,8 +1,7 @@
 import ShopCharacter from '@/components/store/ShopCharacter';
 import StoreMainProfile from '@/components/store/StoreMainProfile';
-import ShopCharBuyModal from '@/modal/store/ShopCharBuyModal';
-
-import { useState } from 'react';
+import useModal from '@/hooks/useModal';
+import StoreDetailModal from '@/modal/StoreDetailModal';
 
 const ShopCharacterPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -12,6 +11,8 @@ const ShopCharacterPage = () => {
     setIsModalOpen(true);
     setSelectedChar({ characterName, coinValue });
   };
+
+  const { Modal, open, close } = useModal();
 
   return (
     <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
@@ -30,7 +31,12 @@ const ShopCharacterPage = () => {
             />
           )}
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
-            <ShopCharacter characterName={'캐릭터1'} coinValue={100} onClick={openModal} />
+            <button onClick={open}>
+              <ShopCharacter characterName={'캐릭터1'} coinValue={100} onClick={openModal} />
+            </button>
+            <Modal>
+              <StoreDetailModal onClose={close} />
+            </Modal>
             <ShopCharacter characterName={'캐릭터2'} coinValue={200} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터3'} coinValue={300} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터4'} coinValue={400} onClick={openModal} />
