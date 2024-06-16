@@ -7,10 +7,12 @@ import { useState } from 'react';
 
 const ShopCharacterPage = () => {
   const [selectedChar, setSelectedChar] = useState<{ characterName: string; coinValue: number } | null>(null);
+
   const { Modal, open, close } = useModal();
 
   const confirm = () => {
-    console.log('confirm clicked');
+    console.log('ShopCharBuyModal confirmed');
+    // confirm 클릭 시 기타 기능 추가
     close();
   };
 
@@ -38,6 +40,9 @@ const ShopCharacterPage = () => {
               />
             )}
           </Modal>
+
+          {/* Faker로 임의 데이터 불러오게 해보기?(Home Page User 나열된 것처럼) */}
+
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
             <ShopCharacter characterName={'캐릭터1'} coinValue={100} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터2'} coinValue={200} onClick={openModal} />

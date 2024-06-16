@@ -3,7 +3,6 @@ import { Coin, Egg } from '@/assets/svg';
 type ShopCharProps = {
   characterName: string;
   coinValue: number;
-  // onClick: () => void;
   onClick: (characterName: string, coinValue: number) => void;
 };
 
@@ -11,8 +10,6 @@ const ShopCharacter = (props: ShopCharProps) => {
   const handleClick = () => {
     props.onClick(props.characterName, props.coinValue);
   };
-
-  // Faker로 임의 데이터 불러오게 해보기?(Home Page User 나열된 것처럼)
 
   return (
     <div
