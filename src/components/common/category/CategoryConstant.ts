@@ -54,7 +54,7 @@ export const CATEGORY_LIST: Record<string, Category[]> = {
     {
       name: '마이페이지',
       icon: 'MydataIcon',
-      to: '',
+      to: 'mydata',
       detail: [
         { name: '나의 기록', to: 'mydata', icon: 'MydataIcon' },
         { name: '보관함', to: '/store/inventory', icon: 'InventoryIcon' },
@@ -64,7 +64,7 @@ export const CATEGORY_LIST: Record<string, Category[]> = {
     {
       name: '설정',
       icon: 'SettingIcon',
-      to: '',
+      to: 'change-password',
       detail: [
         { name: '비밀번호 변경', to: 'change-password', icon: 'PasswordUpdateIcon' },
         { name: '계정 삭제', to: 'delete-account', icon: 'AccountDeleteIcon' },
