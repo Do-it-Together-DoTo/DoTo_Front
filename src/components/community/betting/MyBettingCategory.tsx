@@ -8,7 +8,7 @@ interface MyBettingCategoryProps {
 
 const MyBettingCategory = ({ category, bettings }: MyBettingCategoryProps) => {
   return (
-    <div className="flex w-full flex-col gap-2">
+    <div className="flex w-full flex-col gap-[0.5rem]">
       <p className="text-Light_CategoryText_Icon_Contents text-xs">{category}</p>
       {bettings.map((betting) => (
         <BettingItem key={betting.name} betting={betting} isParticipate={true} />

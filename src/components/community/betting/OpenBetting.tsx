@@ -8,9 +8,9 @@ const OpenBetting = () => {
     setBettings(OpenBettingList);
   }, []);
   return (
-    <section className="w-[31rem] flex flex-col gap-3">
+    <section className="dt:w-[31rem] mb:w-full flex flex-col gap-3">
       <h3 className="text-Light_CategoryText_Icon_Contents text-2xl">오픈 베팅</h3>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-[0.5rem]">
         {bettings.map((betting) => (
           <BettingItem key={betting.name} betting={betting} isParticipate={false} />
         ))}
