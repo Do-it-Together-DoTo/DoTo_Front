@@ -10,16 +10,16 @@ const Layout = () => {
       {isDesktop && (
         <div className="w-full h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
           <Topbar />
-          <div className="flex">
+          <div className="flex w-full">
             <Navbar />
             <Outlet />
           </div>
         </div>
       )}
       {isMobile && (
-        <div className="w-screen h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
+        <div className="w-full h-full bg-Light_Layout-400 dark:bg-Dark_Layout-100">
           <Topbar />
-          <div className="py-[4rem]">
+          <div className="py-[4rem] w-full">
             <Outlet />
           </div>
           <Navbar />
