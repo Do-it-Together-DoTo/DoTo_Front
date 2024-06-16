@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-
-const SignUp = () => {
+interface SignUpProps {
+  close: () => void;
+}
+const SignUp = ({ close }: SignUpProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -63,7 +65,10 @@ const SignUp = () => {
   return (
     <div className="flex items-center justify-center w-screen h-screen bg-Dark_Layout-100 bg-opacity-60">
       <div className="relative flex flex-col items-center w-[20.875rem] h-[40.4375rem] bg-Light_Layout-400 border-none rounded-lg rounded-15">
-        <button className="absolute top-[0.8125rem] right-[0.4375rem] w-[1.1875rem] h-[1.1875rem] font-pre font-bold text-center text-Light_Text_Name">
+        <button
+          className="absolute top-[0.8125rem] right-[0.4375rem] w-[1.1875rem] h-[1.1875rem] font-pre font-bold text-center text-Light_Text_Name"
+          onClick={close}
+        >
           X
         </button>
         <h1 className="mt-[3.5rem] text-center font-pre font-bold text-Light_Text_Name text-[15px] w-[20.875rem] h-[2.125rem]">

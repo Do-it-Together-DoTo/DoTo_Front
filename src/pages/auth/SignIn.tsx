@@ -1,6 +1,11 @@
+import { useCallback, useState } from 'react';
 import { Logo2, KakaoIcon, NaverIcon, GoogleIcon } from '@/assets/svg';
+import SignUp from '@/modal/SignUp';
+import useModal from '@/hooks/useModal';
 
 const SignIn = () => {
+  const { Modal, open, close, isOpen } = useModal();
+
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="w-[22.5rem] h-[42.25rem] flex flex-col items-center">
@@ -11,9 +16,8 @@ const SignIn = () => {
             className="w-[19.875rem] h-[2.75rem] pl-[0.875rem] outline-none font-pre text-Light_Text_Name placeholder-Dark_Text_Contents text-[15px] border border-1 rounded-lg rounded-10 border-Dark_Text_Contents"
             placeholder="아이디 입력"
           />
-          <div></div>
           <input
-            type="text"
+            type="password" // 비밀번호 입력칸은 type을 "password"로 수정해야 보안상 안전합니다.
             className="mt-[1rem] w-[19.875rem] h-[2.75rem] pl-[0.875rem] outline-none font-pre text-Light_Text_Name placeholder-Dark_Text_Contents text-[15px] border border-1 rounded-lg rounded-10 border-Dark_Text_Contents"
             placeholder="비밀번호 입력"
           />
@@ -30,13 +34,14 @@ const SignIn = () => {
         <div className="my-[1.375rem] w-[19.875rem] flex items-center">
           <div className="ml-[5.3125rem] font-bold font-pre text-Light_Text_Name text-[12px]">비밀번호 찾기</div>
           <div className="ml-[0.375rem] mr-[0.3125rem] w-[0rem] h-[1.125rem] border border-1 border-Dark_Text_Contents" />
-          <div className="font-bold font-pre text-Light_Text_Name text-[12px]">회원가입</div>
+          <div className="font-bold font-pre text-Light_Text_Name text-[12px] cursor-pointer" onClick={open}>
+            회원가입
+          </div>
         </div>
         <div className="flex items-center">
           <div className="w-[7rem] h-[0rem] border border-1 border-Dark_Text_Contents" />
           <div className="px-[0.4rem] font-pre text-Dark_Text_Contents text-[12px]">SNS 계정으로 로그인</div>
           <div className="w-[7rem] h-[0rem] border border-1 border-Dark_Text_Contents" />
-          <div></div>
         </div>
         <div className="mt-[1.375rem] flex items-center space-x-[2rem] w-[13.875rem] ju">
           <KakaoIcon width="50" height="50" />
@@ -44,6 +49,9 @@ const SignIn = () => {
           <GoogleIcon width="50" height="50" />
         </div>
       </div>
+      <Modal>
+        <SignUp close={close} />
+      </Modal>
     </div>
   );
 };
