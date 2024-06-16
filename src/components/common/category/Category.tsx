@@ -2,7 +2,7 @@ import React, { ReactNode, useState, Children } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowDownwardIcon, ArrowForwardIcon } from '@/assets/svg';
 import CategoryDetail from './CategoryDetail';
-import { ICON_MAP } from './CategoryConstant';
+import { ICON_MAP } from './constant';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 
 interface CategoryProps {
@@ -73,7 +73,7 @@ const Category = ({ page, children }: CategoryProps) => {
         <NavLink
           to={page.to}
           className={({ isActive }) =>
-            ` flex items-center w-full px-11 py-3 gap-[0.5rem] relative ${
+            ` flex items-center w-full dt:px-11 py-3 gap-[0.5rem] relative ${
               isActive
                 ? 'dt:bg-Light_Layout-200 dt:dark:bg-Dark_Layout-300 mb:border-b-2 mb:border-Dark_Layout-300 mb:dark:border-Light_Layout-200'
                 : ''
@@ -83,7 +83,7 @@ const Category = ({ page, children }: CategoryProps) => {
           {({ isActive }) => (
             <>
               <span
-                className={`dt:text-base mb:text-xl ${
+                className={`dt:text-base mb:text-xl whitespace-nowrap ${
                   isActive
                     ? 'text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
                     : 'text-Dark_CategoryText_Icon dark:text-Light_Text_Name'

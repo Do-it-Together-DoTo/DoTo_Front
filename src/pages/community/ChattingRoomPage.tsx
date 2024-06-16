@@ -9,6 +9,7 @@ import {
 } from '@/components/community/chatting/ChattingConstant';
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { ArrowLeftIcon } from '@/assets/svg';
+import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 
 const ChattingRoomPage = () => {
   const { roomId } = useParams();
@@ -38,7 +39,7 @@ const ChattingRoomPage = () => {
   };
 
   return (
-    <main className="w-full  h-[calc(100vh-3.1875rem)] flex  flex-col gap-6 bg-Light_Layout-200 dark:bg-Dark_Layout-300 items-center py-14">
+    <CommunityPageLayout>
       <section className="flex flex-col w-[33.75rem] py-8 px-9 bg-Light_Layout-400 gap-6 rounded-2xl dark:bg-Dark_Layout-400">
         <div className="flex items-center gap-3">
           <Link to="/community/chatting">
@@ -73,7 +74,7 @@ const ChattingRoomPage = () => {
           </form>
         </div>
       </section>
-    </main>
+    </CommunityPageLayout>
   );
 };
 

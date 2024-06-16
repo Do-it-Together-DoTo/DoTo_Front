@@ -4,6 +4,7 @@ import Podium from '@/components/community/ranking/Podium';
 import Rankers from '@/components/community/ranking/Rankers';
 import MyRanking from '@/components/community/ranking/MyRanking';
 import Timer from '@/components/community/ranking/Timer';
+import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IUser[]>([]);
@@ -13,7 +14,7 @@ const RankingPage = () => {
   }, []);
 
   return (
-    <main className="h-[calc(100vh-3.1875rem)] flex w-full justify-center">
+    <CommunityPageLayout>
       <div className="w-[35rem] flex flex-col grow items-center bg-Light_Layout-200 dark:bg-Dark_Layout-300 ">
         <Timer />
         <Podium rankers={rankers} />
@@ -22,7 +23,7 @@ const RankingPage = () => {
       <div className="shrink-0 w-[20rem]">
         <MyRanking />
       </div>
-    </main>
+    </CommunityPageLayout>
   );
 };
 
