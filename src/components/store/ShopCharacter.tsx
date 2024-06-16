@@ -12,6 +12,8 @@ const ShopCharacter = (props: ShopCharProps) => {
     props.onClick(props.characterName, props.coinValue);
   };
 
+  // Faker로 임의 데이터 불러오게 해보기?(Home Page User 나열된 것처럼)
+
   return (
     <div
       onClick={handleClick}

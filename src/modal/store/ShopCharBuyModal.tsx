@@ -1,15 +1,18 @@
 import { Coin, Egg } from '@/assets/svg';
-import { Dispatch, SetStateAction } from 'react';
+// import { Dispatch, SetStateAction } from 'react';
 
 interface ShopCharModalProps {
   characterName: string;
   coinValue: number;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+  onClose: () => void;
+  onConfirm: () => void;
+  // setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
-const ShopCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: ShopCharModalProps) => {
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+// const ShopCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: ShopCharModalProps) => {
+const ShopCharBuyModal = ({ characterName, coinValue, onClose, onConfirm }: ShopCharModalProps) => {
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-Dark_Layout-100 bg-opacity-60">
@@ -29,12 +32,16 @@ const ShopCharBuyModal = ({ characterName, coinValue, setIsModalOpen }: ShopChar
           </div>
 
           <div className="flex gap-x-2.5">
-            <button className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]">
+            <button
+              className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
+              onClick={onConfirm}
+            >
               구매
             </button>
             <button
               className="w-[6.75rem] h-[1.5625rem] bg-Light_Text_AboutMe font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
-              onClick={closeModal}
+              // onClick={closeModal}
+              onClick={onClose}
             >
               취소
             </button>
