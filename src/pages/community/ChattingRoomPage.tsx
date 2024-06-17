@@ -53,7 +53,7 @@ const ChattingRoomPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-[29rem] h-[30rem] px-5 py-6 bg-Light_Layout-100 rounded-2xl justify-between dark:bg-Dark_Layout-300">
+        <div className="flex flex-col w-[29rem] h-[30rem] mb:h-[47rem] px-5 py-6 bg-Light_Layout-100 rounded-2xl justify-between dark:bg-Dark_Layout-300">
           <div className="flex flex-col w-full gap-5 max-h-70 py-3 overflow-y-scroll">
             {messages.map((message) => (
               <ChattingMessage message={message} />
