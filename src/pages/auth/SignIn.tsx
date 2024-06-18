@@ -1,11 +1,30 @@
-import { useCallback, useState } from 'react';
 import { Logo2, KakaoIcon, NaverIcon, GoogleIcon } from '@/assets/svg';
+import { useState } from 'react';
+
 import SignUp from '@/modal/SignUp';
+import FindPw from '@/modal/FindPw';
 import useModal from '@/hooks/useModal';
 
 const SignIn = () => {
-  const { Modal, open, close, isOpen } = useModal();
+  const { Modal, open, close } = useModal();
+  const [isSignUpModalOpen, setSignUpModalOpen] = useState(false);
+  const [isFindPwModalOpen, setFindPwModalOpen] = useState(false);
 
+  const openSignUpModal = () => {
+    setSignUpModalOpen(true);
+    open();
+  };
+
+  const openFindPwModal = () => {
+    setFindPwModalOpen(true);
+    open();
+  };
+
+  const closeModal = () => {
+    setSignUpModalOpen(false);
+    setFindPwModalOpen(false);
+    close();
+  };
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="w-[22.5rem] h-[42.25rem] flex flex-col items-center">
@@ -32,9 +51,11 @@ const SignIn = () => {
           로그인
         </button>
         <div className="my-[1.375rem] w-[19.875rem] flex items-center">
-          <div className="ml-[5.3125rem] font-bold font-pre text-Light_Text_Name text-[12px]">비밀번호 찾기</div>
+          <div className="ml-[5.3125rem] font-bold font-pre text-Light_Text_Name text-[12px]" onClick={openFindPwModal}>
+            비밀번호 찾기
+          </div>
           <div className="ml-[0.375rem] mr-[0.3125rem] w-[0rem] h-[1.125rem] border border-1 border-Dark_Text_Contents" />
-          <div className="font-bold font-pre text-Light_Text_Name text-[12px] cursor-pointer" onClick={open}>
+          <div className="font-bold font-pre text-Light_Text_Name text-[12px] cursor-pointer" onClick={openSignUpModal}>
             회원가입
           </div>
         </div>
@@ -50,7 +71,8 @@ const SignIn = () => {
         </div>
       </div>
       <Modal>
-        <SignUp close={close} />
+        {isSignUpModalOpen && <SignUp close={closeModal} />}
+        {isFindPwModalOpen && <FindPw close={closeModal} />}
       </Modal>
     </div>
   );

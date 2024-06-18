@@ -1,6 +1,5 @@
 import { UserImgSample, ModifyIcon } from '@assets/svg';
 import { useState } from 'react';
-import useModal from '@/hooks/useModal';
 
 const UpdateProfilePage = () => {
   const [nickName, setNickName] = useState('센');
