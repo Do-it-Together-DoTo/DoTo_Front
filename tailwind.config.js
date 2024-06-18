@@ -58,5 +58,14 @@ export default {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /bg-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /border-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+  ],
+
   plugins: [tailwindScrollbarHide],
 };
