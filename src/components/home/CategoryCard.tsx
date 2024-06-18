@@ -7,6 +7,9 @@ import {
   CheckIcon,
   TodoEditModalIcon,
 } from '@/assets/svg/home/category';
+import useModal from '@/hooks/useModal';
+import TodoEditModal from '@/modal/home/TodoEditModal';
+import { useState } from 'react';
 
 interface Todo {
   id: string;
@@ -22,6 +25,10 @@ interface Category {
 }
 
 const CategoryCard = ({ category, todoList }: { category: Category; todoList: Todo[] }) => {
+  const { Modal, open, close } = useModal();
+
+  const [selectedTodo, setSelectedTodo] = useState({ title: '', category: '', color: '' });
+
   return (
     <div>
       {/* Category */}
@@ -46,6 +53,10 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
               <Draggable key={todo.id} draggableId={todo.id} index={index}>
                 {(provided) => (
                   <div
+                    onClick={() => {
+                      open();
+                      setSelectedTodo({ title: todo.title, category: category.title, color: category.color });
+                    }}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
@@ -85,6 +96,9 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
           </section>
         )}
       </Droppable>
+      <Modal>
+        <TodoEditModal onClose={close} selectedTodo={selectedTodo} />
+      </Modal>
     </div>
   );
 };
