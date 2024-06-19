@@ -1,9 +1,11 @@
 import { UserImgSample, ModifyIcon } from '@assets/svg';
 import { useState } from 'react';
-
+import useModal from '@/hooks/useModal';
+import ModifyMainCharacter from '@/modal/mypage/ModifyMainCharacter';
 const UpdateProfilePage = () => {
   const [nickName, setNickName] = useState('센');
   const [comment, setComment] = useState('싸피11기');
+  const { Modal, open, close } = useModal();
 
   return (
     <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
@@ -11,15 +13,13 @@ const UpdateProfilePage = () => {
         프로필 수정
       </h1>
       <div className="mt-[5.5rem] relative  w-[47.0625rem] h-[31.75rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
-        <button className="absolute top-[1rem] right-[1rem] w-[2.5rem] h-[2.5rem] font-pre font-bold text-center text-[2rem] text-Light_Text_Name dark:text-Dark_Text_Name">
-          X
-        </button>
         <div className="mt-[1.8125rem] relative w-[11.0625rem] h-[11.0625rem] bg-Light_Layout-100 rounded-full dark:bg-Dark_Layout-100">
           <UserImgSample className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
           <ModifyIcon
             width={32}
             height={32}
             className="absolute top-3 right-3 fill-Light_Text_Name dark:fill-Dark_Text_Name"
+            onClick={open}
           />
         </div>
         <div className="mt-[2rem] w-[38.75rem] flex justify-between items-center">
@@ -45,6 +45,9 @@ const UpdateProfilePage = () => {
           저장
         </button>
       </div>
+      <Modal>
+        <ModifyMainCharacter close={close} />
+      </Modal>
     </div>
   );
 };

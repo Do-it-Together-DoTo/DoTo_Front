@@ -69,6 +69,7 @@ const SignUp = ({ close }: SignUpProps) => {
           className="absolute top-[0.8125rem] right-[0.4375rem] w-[1.1875rem] h-[1.1875rem] font-pre font-bold text-center text-Light_Text_Name"
           onClick={close}
         >
+          {' '}
           X
         </button>
         <h1 className="mt-[3.5rem] text-center font-pre font-bold text-Light_Text_Name text-[15px] w-[20.875rem] h-[2.125rem]">
