@@ -10,7 +10,7 @@ const UpdateProfilePage = () => {
       <h1 className="mt-[3.25rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
         프로필 수정
       </h1>
-      <div className="mt-[7.5rem] relative  w-[47.0625rem] h-[31.75rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
+      <div className="mt-[5.5rem] relative  w-[47.0625rem] h-[31.75rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
         <button className="absolute top-[1rem] right-[1rem] w-[2.5rem] h-[2.5rem] font-pre font-bold text-center text-[2rem] text-Light_Text_Name dark:text-Dark_Text_Name">
           X
         </button>
