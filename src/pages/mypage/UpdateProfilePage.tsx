@@ -25,7 +25,7 @@ const UpdateProfilePage = () => {
         <div className="mt-[2rem] w-[38.75rem] flex justify-between items-center">
           <div className="text-[1.5625rem] text-Light_Text_Name dark:text-Dark_Text_Name">닉네임</div>
           <input
-            className="pl-[2rem] flex items-center w-[31.4375rem] h-[4rem] bg-Light_Layout-400 dark:bg-Dark_Layout-400 rounded-[1.5625rem] text-[1.5625rem] text-Light_Text_Name dark:text-Dark_Text_Name"
+            className="pl-[2rem] focus:outline-none flex items-center w-[31.4375rem] h-[4rem] bg-Light_Layout-400 dark:bg-Dark_Layout-400 rounded-[1.5625rem] text-[1.5625rem] text-Light_Text_Name dark:text-Dark_Text_Name"
             value={nickName}
             onChange={(e) => setNickName(e.target.value)}
           />
@@ -34,7 +34,7 @@ const UpdateProfilePage = () => {
           <div className="text-[1.5625rem] text-Light_Text_Name dark:text-Dark_Text_Name">한줄 소개</div>
           <div className="pl-[2rem] pr-[1rem] flex items-center justify-between w-[31.4375rem] h-[4rem] bg-Light_Layout-400 dark:bg-Dark_Layout-400 rounded-[1.5625rem]">
             <input
-              className="w-[23.75rem] text-[1.5625rem] text-Light_Text_Name overflow-hidden line-clamp-1 dark:text-Dark_Text_Name"
+              className="w-[23.75rem] text-[1.5625rem] focus:outline-none bg-Light_Layout-400 dark:bg-Dark_Layout-400 text-Light_Text_Name overflow-hidden line-clamp-1 dark:text-Dark_Text_Name"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
