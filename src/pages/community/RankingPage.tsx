@@ -5,9 +5,11 @@ import Rankers from '@/components/community/ranking/Rankers';
 import MyRanking from '@/components/community/ranking/MyRanking';
 import Timer from '@/components/community/ranking/Timer';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
+import { useDeviceSize } from '@/hooks/useDeviceSize';
 
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IUser[]>([]);
+  const { isDesktop, isMobile } = useDeviceSize();
 
   useEffect(() => {
     setRankers(RANKERS);
@@ -15,14 +17,24 @@ const RankingPage = () => {
 
   return (
     <CommunityPageLayout>
-      <div className="w-[35rem] flex flex-col grow items-center bg-Light_Layout-200 dark:bg-Dark_Layout-300 ">
-        <Timer />
-        <Podium rankers={rankers} />
-        <Rankers rankers={rankers} />
-      </div>
-      <div className="shrink-0 w-[20rem]">
-        <MyRanking />
-      </div>
+      {isDesktop && (
+        <>
+          <div className="w-[35rem] flex flex-col grow items-center bg-Light_Layout-200 dark:bg-Dark_Layout-300 ">
+            <Timer />
+            <Podium rankers={rankers} />
+            <Rankers rankers={rankers} />
+          </div>
+          <div className="shrink-0 w-[20rem]">
+            <MyRanking />
+          </div>
+        </>
+      )}
+      {isMobile && (
+        <div className="h-full">
+          <Podium rankers={rankers} />
+          <Rankers rankers={rankers} />
+        </div>
+      )}
     </CommunityPageLayout>
   );
 };
