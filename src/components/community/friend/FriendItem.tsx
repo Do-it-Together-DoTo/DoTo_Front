@@ -28,8 +28,8 @@ const FriendItem = ({ member }: IFriendItemProps) => {
     //TODO:차단 모달 등장
   };
   return (
-    <li className="flex gap-4 items-center">
-      <CharacterProfileIcon width="40" height="40" />
+    <li className="flex dt:gap-[1rem] items-center mb:justify-between mb:w-full">
+      <CharacterProfileIcon width="2.5rem" height="2.5rem" />
       <span className="text-Light_CategoryText_Icon_Contents text-base dark:text-Dark_CategoryText_Icon">
         {member.nickname}
       </span>
