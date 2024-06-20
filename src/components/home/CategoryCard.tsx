@@ -33,15 +33,17 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
     <div>
       {/* Category */}
       <section className="flex">
-        <div className={`flex bg-${category.color} w-fit py-1.5 px-2.5 rounded-md mr-1`}>
+        <div
+          className={`flex border border-${category.color} w-fit py-1.5 px-2.5 rounded-md mr-1 bg-${category.color} bg-opacity-15`}
+        >
           {category.shared === 'public' ? (
-            <PublicIcon width={`0.875rem`} />
+            <PublicIcon className={`w-[0.875rem] fill-${category.color}`} />
           ) : category.shared === 'friendOnly' ? (
-            <FriendOnlyIcon width={`0.875rem`} />
+            <FriendOnlyIcon className={`w-[0.875rem] fill-${category.color}`} />
           ) : (
-            <PrivateIcon width={`0.875rem`} />
+            <PrivateIcon className={`w-[0.875rem] fill-${category.color}`} />
           )}
-          <span className="text-xs text-Light_Layout-400 ml-1.5">{category.title}</span>
+          <span className={`text-xs text-${category.color} font-medium ml-1.5`}>{category.title}</span>
         </div>
         <CreateTodoIcon width={`1.125rem`} className="dark:fill-Dark_Text_Contents" />
       </section>

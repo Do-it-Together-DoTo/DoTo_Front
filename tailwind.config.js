@@ -60,10 +60,16 @@ export default {
   },
   safelist: [
     {
-      pattern: /bg-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+      pattern: /fill-(skyblue|pink|blue|salmon|purple|yellow|green)/,
     },
     {
       pattern: /border-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /bg-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /text-(skyblue|pink|blue|salmon|purple|yellow|green)/,
     },
   ],
 
