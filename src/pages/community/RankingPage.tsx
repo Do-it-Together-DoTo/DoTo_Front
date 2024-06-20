@@ -7,7 +7,6 @@ import Timer from '@/components/community/ranking/Timer';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 import OrderToggle from '@/components/community/ranking/orderToggle/OrderToggle';
-import CheckBox from '@/components/common/category/Checkbox';
 
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IUser[]>([]);

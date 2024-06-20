@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 import MenuGroup from './MenuGroup';
 
 const MenuBar = () => {
-  const [value, setValue] = useState('search');
+  const [value] = useState('search');
   return (
     <MenuGroup initialValue={value}>
       <MenuItem value="search">검색</MenuItem>
