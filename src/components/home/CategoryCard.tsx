@@ -27,7 +27,7 @@ interface Category {
 const CategoryCard = ({ category, todoList }: { category: Category; todoList: Todo[] }) => {
   const { Modal, open, close } = useModal();
 
-  const [selectedTodo, setSelectedTodo] = useState({ title: '', category: '', color: '' });
+  const [selectedTodo, setSelectedTodo] = useState({ title: '', category: '', color: '', shared: '' });
 
   return (
     <div>
@@ -55,7 +55,12 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
                   <div
                     onClick={() => {
                       open();
-                      setSelectedTodo({ title: todo.title, category: category.title, color: category.color });
+                      setSelectedTodo({
+                        title: todo.title,
+                        category: category.title,
+                        color: category.color,
+                        shared: category.shared,
+                      });
                     }}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
