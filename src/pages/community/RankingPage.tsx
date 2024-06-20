@@ -6,11 +6,12 @@ import MyRanking from '@/components/community/ranking/MyRanking';
 import Timer from '@/components/community/ranking/Timer';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
+import OrderToggle from '@/components/community/ranking/orderToggle/OrderToggle';
+import CheckBox from '@/components/common/category/Checkbox';
 
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IUser[]>([]);
   const { isDesktop, isMobile } = useDeviceSize();
-
   useEffect(() => {
     setRankers(RANKERS);
   }, []);
@@ -30,7 +31,8 @@ const RankingPage = () => {
         </>
       )}
       {isMobile && (
-        <div className="h-full">
+        <div className="h-full flex flex-col items-end">
+          <OrderToggle />
           <Podium rankers={rankers} />
           <Rankers rankers={rankers} />
         </div>

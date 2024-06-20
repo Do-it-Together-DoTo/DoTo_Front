@@ -2,10 +2,10 @@ import useRadioStore from '@/store/radioStore';
 import { ReactNode } from 'react';
 import { useEffect } from 'react';
 
-interface RadioGroupProps {
+export interface RadioGroupProps {
   children: ReactNode;
   initialValue: string;
-  className: string;
+  className?: string;
 }
 
 const RadioGroup = ({ children, initialValue, className }: RadioGroupProps) => {
