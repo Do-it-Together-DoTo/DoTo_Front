@@ -59,6 +59,14 @@ export default {
       transitionProperty: {
         height: 'height',
       },
+      keyframes: {
+        fadeIn: {
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.2s ease-in 0.25s forwards',
+      },
     },
   },
   safelist: [

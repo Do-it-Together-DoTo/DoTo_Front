@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   OnCloseIcon,
   TodoEditIcon,
@@ -7,7 +8,7 @@ import {
   OpenTodoEditIcon,
 } from '@/assets/svg/home/modal';
 import { PublicIcon, FriendOnlyIcon, PrivateIcon } from '@/assets/svg/home/category';
-import { useState } from 'react';
+import CustomModalCalendar from '@/components/home/calendar/ModalCustomCalendar';
 
 interface TodoEditModalProps {
   onClose: () => void;
@@ -31,10 +32,10 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
 
   return (
     <div
-      className={`relative w-[24.625rem] rounded-2xl bg-Light_Layout-200 flex flex-col p-7 items-center transition-all duration-500 ease-in-out dark:bg-Dark_Layout-300 ${contentInfo === 'todoEdit' ? 'h-[28rem]' : 'h-[34rem]'}`}
+      className={`relative w-[24.625rem] rounded-2xl bg-Light_Layout-200 flex flex-col p-7 items-center transition-all duration-500 ease-in-out dark:bg-Dark_Layout-300 ${contentInfo === 'todoEdit' ? 'h-[30rem] justify-center' : 'h-[34rem]'}`}
     >
       <button onClick={onClose}>
-        <OnCloseIcon className="absolute right-0 w-3 mr-7 dark:fill-Dark_Text_Contents" />
+        <OnCloseIcon className="absolute w-3 right-7 top-7 dark:fill-Dark_Text_Contents" />
       </button>
       {contentInfo === 'todoEdit' && (
         <>
@@ -99,8 +100,10 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
             </button>
             <p className="ml-2 font-medium text-Light_Text_Name">날짜바꾸기</p>
           </div>
-          <div className="w-full h-full bg-Dark_Layout-100"></div>
-          <button className="bg-Button text-Light_Layout-400 py-2.5 px-12 rounded-3xl mt-6">확인</button>
+          <CustomModalCalendar />
+          <button className="w-32 opacity-0 max-h-10 bg-Button text-Light_Layout-400 rounded-3xl animate-fadeIn">
+            확인
+          </button>
         </div>
       )}
       {contentInfo === 'repeat' && (
@@ -111,8 +114,10 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
             </button>
             <p className="ml-2 font-medium text-Light_Text_Name">다시하기</p>
           </div>
-          <div className="w-full h-full bg-Dark_Layout-100"></div>
-          <button className="bg-Button text-Light_Layout-400 py-2.5 px-12 rounded-3xl mt-6">확인</button>
+          <CustomModalCalendar />
+          <button className="w-32 opacity-0 max-h-10 bg-Button text-Light_Layout-400 rounded-3xl animate-fadeIn">
+            확인
+          </button>
         </div>
       )}
     </div>
