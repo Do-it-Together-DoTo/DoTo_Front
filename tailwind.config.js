@@ -56,6 +56,9 @@ export default {
       backgroundImage: {
         gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
       },
+      transitionProperty: {
+        height: 'height',
+      },
     },
   },
   safelist: [
