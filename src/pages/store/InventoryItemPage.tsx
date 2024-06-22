@@ -6,7 +6,6 @@ import InventoryItemUseModal from '@/modal/store/InventoryItemUseModal';
 import { useState } from 'react';
 
 const InventoryItemPage = () => {
-  // 클릭된 item을 state안에서 조정~~
   const [selectedItem, setSelectedItem] = useState<{ itemName: string; isRare: boolean; itemValue: number } | null>(
     null,
   );

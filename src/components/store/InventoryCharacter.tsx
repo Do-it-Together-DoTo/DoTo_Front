@@ -6,6 +6,7 @@ interface InvenCharProps {
   characterExp: number;
   characterDesc: string;
   onClick: (characterName: string, characterLevel: number, characterExp: number, characterDesc: string) => void;
+  isSelected: boolean;
 }
 
 const InventoryCharacter = (props: InvenCharProps) => {
@@ -15,7 +16,7 @@ const InventoryCharacter = (props: InvenCharProps) => {
 
   return (
     <div
-      className="flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border border-solid border-Dark_Text_Contents dark:border-Dark_Layout-400 rounded-[0.9375rem]"
+      className={`flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border dark:border-Dark_Layout-400 rounded-[0.9375rem] ${props.isSelected ? 'border-Button border-4 ' : 'border-Dark_Text_Contents'} `}
       onClick={handleClick}
     >
       <MyBlob className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]">캐릭터 이미지</MyBlob>

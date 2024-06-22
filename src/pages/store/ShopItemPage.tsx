@@ -13,8 +13,8 @@ const ShopItemPage = () => {
 
   const confirm = () => {
     console.log('ShopItemBuyModal confirmed');
+    // confirm 클릭 시 기타 기능 추가
     close();
-    // 나머지 confirm 눌렀을 때 기능들 추가
   };
 
   const openModal = (itemName: string, coinValue: number, isRare: boolean) => {

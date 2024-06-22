@@ -62,6 +62,7 @@ const InventoryCharacterPage = () => {
               characterExp={1234}
               characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
               onClick={openModal}
+              isSelected={false}
             />
             <InventoryCharacter
               characterName={'유리'}
@@ -69,6 +70,7 @@ const InventoryCharacterPage = () => {
               characterExp={123451461}
               characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
               onClick={openModal}
+              isSelected={false}
             />
             <InventoryCharacter
               characterName={'맹구'}
@@ -76,6 +78,7 @@ const InventoryCharacterPage = () => {
               characterExp={4321}
               characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
               onClick={openModal}
+              isSelected={false}
             />
             <InventoryCharacter
               characterName={'짱아'}
@@ -83,6 +86,7 @@ const InventoryCharacterPage = () => {
               characterExp={1}
               characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
               onClick={openModal}
+              isSelected={true}
             />
           </div>
         </div>

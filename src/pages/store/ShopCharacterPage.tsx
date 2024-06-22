@@ -2,6 +2,9 @@ import ShopCharacter from '@/components/store/ShopCharacter';
 import StoreMainProfile from '@/components/store/StoreMainProfile';
 import useModal from '@/hooks/useModal';
 import ShopCharBuyModal from '@/modal/store/ShopCharBuyModal';
+import ShopHatchModal from '@/modal/store/ShopHatchModal';
+import NewCharModal from '@/modal/store/NewCharModal';
+import SelectCharModal from '@/modal/store/SelectCharModal';
 
 import { useState } from 'react';
 
@@ -40,9 +43,7 @@ const ShopCharacterPage = () => {
               />
             )}
           </Modal>
-
           {/* Faker로 임의 데이터 불러오게 해보기?(Home Page User 나열된 것처럼) */}
-
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
             <ShopCharacter characterName={'캐릭터1'} coinValue={100} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터2'} coinValue={200} onClick={openModal} />
@@ -50,6 +51,12 @@ const ShopCharacterPage = () => {
             <ShopCharacter characterName={'캐릭터4'} coinValue={400} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터5'} coinValue={500} onClick={openModal} />
             <ShopCharacter characterName={'캐릭터6'} coinValue={600} onClick={openModal} />
+          </div>
+          Modal test
+          <div className="flex gap-x-5 gap-y-5">
+            <SelectCharModal />
+            <ShopHatchModal />
+            <NewCharModal />
           </div>
         </div>
       </div>
