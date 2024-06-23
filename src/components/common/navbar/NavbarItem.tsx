@@ -10,7 +10,7 @@ interface NavItemLinkProps {
 
 const NavbarItem = ({ to, name, children }: NavItemLinkProps) => {
   return (
-    <NavLink to={to} className="flex  gap-[0.5rem] items-center ">
+    <NavLink to={to} className="flex gap-[0.5rem] items-center mb:flex-col dark:bg-Dark_Layout-100">
       {({ isActive }) => (
         <>
           {Children.map(children, (child) =>
@@ -21,11 +21,11 @@ const NavbarItem = ({ to, name, children }: NavItemLinkProps) => {
             }),
           )}
           <span
-            className={
+            className={`text-base ${
               isActive
-                ? ' text-base text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
-                : 'text-base  text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
-            }
+                ? 'text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
+                : 'text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
+            }`}
           >
             {name}
           </span>

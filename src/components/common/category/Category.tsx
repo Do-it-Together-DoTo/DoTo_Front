@@ -2,7 +2,8 @@ import React, { ReactNode, useState, Children } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowDownwardIcon, ArrowForwardIcon } from '@/assets/svg';
 import CategoryDetail from './CategoryDetail';
-import { ICON_MAP } from './CategoryConstant';
+import { ICON_MAP } from './constant';
+import { useDeviceSize } from '@/hooks/useDeviceSize';
 
 interface CategoryProps {
   page: {
@@ -16,21 +17,19 @@ interface CategoryProps {
 
 const Category = ({ page, children }: CategoryProps) => {
   const [isCategoryActive, setIsCategoryActive] = useState(false);
-
+  const { isDesktop } = useDeviceSize();
   const handleClickCategory = () => {
     setIsCategoryActive((prev) => !prev);
   };
 
   return (
     <>
-      {page.detail ? (
+      {page.detail && isDesktop ? (
         <>
           <div
-            className={
-              isCategoryActive
-                ? 'bg-Light_Layout-200 dark:bg-Dark_Layout-300 flex items-center w-full px-11 py-3  gap-[0.5rem] relative'
-                : 'flex items-center w-full px-11 py-3 gap-[0.5rem] relative'
-            }
+            className={`flex items-center w-full px-11 py-3  gap-[0.5rem] relative ${
+              isCategoryActive ? 'dt:bg-Light_Layout-200 dark:bg-Dark_Layout-300 mb:border-b-2' : ''
+            }`}
             onClick={handleClickCategory}
           >
             {isCategoryActive ? (
@@ -47,11 +46,11 @@ const Category = ({ page, children }: CategoryProps) => {
               />
             )}
             <span
-              className={
+              className={`text-base ${
                 isCategoryActive
-                  ? ' text-base text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
-                  : 'text-base  text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
-              }
+                  ? 'text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
+                  : 'text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
+              }`}
             >
               {page.name}
             </span>
@@ -66,7 +65,7 @@ const Category = ({ page, children }: CategoryProps) => {
           {isCategoryActive &&
             page.detail.map((detail) => (
               <CategoryDetail key={detail.name} to={detail.to} name={detail.name}>
-                {React.createElement(ICON_MAP[detail.icon], { width: '17', height: '17' })}
+                {React.createElement(ICON_MAP[detail.icon], { width: `1rem`, height: `1rem` })}
               </CategoryDetail>
             ))}
         </>
@@ -74,19 +73,21 @@ const Category = ({ page, children }: CategoryProps) => {
         <NavLink
           to={page.to}
           className={({ isActive }) =>
-            isActive
-              ? 'bg-Light_Layout-200 dark:bg-Dark_Layout-300 flex items-center w-full px-11 py-3  gap-[0.5rem] relative'
-              : 'flex items-center w-full px-11 py-3 gap-[0.5rem] relative'
+            ` flex items-center w-full dt:px-11 py-3 gap-[0.5rem] relative ${
+              isActive
+                ? 'dt:bg-Light_Layout-200 dt:dark:bg-Dark_Layout-300 mb:border-b-2 mb:border-Dark_Layout-300 mb:dark:border-Light_Layout-200'
+                : ''
+            }`
           }
         >
           {({ isActive }) => (
             <>
               <span
-                className={
+                className={`dt:text-base mb:text-xl whitespace-nowrap ${
                   isActive
-                    ? ' text-base text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
-                    : 'text-base  text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
-                }
+                    ? 'text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
+                    : 'text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
+                }`}
               >
                 {page.name}
               </span>

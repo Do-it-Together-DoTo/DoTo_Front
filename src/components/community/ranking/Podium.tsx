@@ -1,14 +1,16 @@
 import { CharacterProfileIcon, CrownIcon, RankingBackground } from '@/assets/svg/community';
 import React from 'react';
 import { STAR_ICON_MAP, IUser } from './RankingConstant';
+import { useDeviceSize } from '@/hooks/useDeviceSize';
 
 interface PodiumProps {
   rankers: IUser[];
 }
 const Podium = ({ rankers }: PodiumProps) => {
+  const { isDesktop } = useDeviceSize();
   return (
-    <section className="flex gap-[2rem] items-end justify-center w-[25rem] h-[16.25rem] relative ">
-      <RankingBackground className="absolute" width="405" height="245" />
+    <section className="flex gap-[2rem] items-end justify-center w-[25rem] mb:w-full h-[16.25rem] relative ">
+      {isDesktop && <RankingBackground className="absolute" width="405" height="245" />}
       {rankers.slice(0, 3).map((user, rank) => (
         // idx를 이용해서 flex 아이템을 바꾸자
         <div
