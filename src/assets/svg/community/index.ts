@@ -9,4 +9,5 @@ export { default as GoldStarIcon } from './GoldStarIcon';
 export { default as RankingBackground } from './RankingBackground';
 export { default as RankingIcon } from './RankingIcon';
 export { default as SilverStarIcon } from './SilverStarIcon';
+export { default as SwitchIcon } from './SwitchIcon';
 export { default as TimerIcon } from './TimerIcon';

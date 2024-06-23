@@ -1,16 +1,32 @@
 import Friends from '@/components/community/friend/FriendList';
 import SearchFriends from '@/components/community/friend/SearchFriends';
 // import FriendModal from '@/modal/FriendModal';
+import CommunityPageLayout from '@/components/community/CommunityPageLayout';
+import { useDeviceSize } from '@/hooks/useDeviceSize';
+import MenuBar from '@/components/community/friend/menuBar/MenuBar';
+import useRadioStore from '@/store/radioStore';
 
 const FriendPage = () => {
+  const { isDesktop, isMobile } = useDeviceSize();
+  const checkedValue = useRadioStore((state) => state.checkedValue);
   return (
-    <main className="w-full h-[calc(100vh-3.1875rem)] flex bg-Light_Layout-200 dark:bg-Dark_Layout-300 justify-center px-5 py-20 gap-8">
-      <div className="flex gap-8">
-        {/* <FriendModal type="block" /> */}
-        <SearchFriends />
-        <Friends />
-      </div>
-    </main>
+    <CommunityPageLayout>
+      {isDesktop && (
+        <div className="flex gap-8">
+          {/* <FriendModal type="block" /> */}
+          <SearchFriends />
+          <Friends />
+        </div>
+      )}
+
+      {isMobile && (
+        <div className="flex flex-col gap-8">
+          {/* <FriendModal type="block" /> */}
+          <MenuBar />
+          {checkedValue === 'search' ? <SearchFriends /> : <Friends />}
+        </div>
+      )}
+    </CommunityPageLayout>
   );
 };
 
