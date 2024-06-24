@@ -14,7 +14,9 @@ const ModifyMainCharacter = ({ close }: ModifyMCProps) => {
 
   return (
     <div className="relative mt-[5.5rem] relative w-[47.0625rem] h-[31.75rem] bg-Light_Layout-200 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
-      <p className="mt-[1.5rem] font-semibold text-[1.25rem]">대표캐릭터 변경</p>
+      <p className="mt-[1.5rem] font-semibold text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name">
+        대표캐릭터 변경
+      </p>
       <button
         className="absolute top-[1.5rem] right-[1.5rem] w-[1.5rem] h-[1.5rem] text-[1.5rem] font-pre font-bold text-center text-Light_Text_Name"
         onClick={close}
