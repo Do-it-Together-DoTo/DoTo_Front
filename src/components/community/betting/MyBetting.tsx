@@ -27,7 +27,7 @@ const MyBetting = () => {
   }, []);
 
   return (
-    <section className="w-[31rem] flex flex-col gap-3">
+    <section className="dt:w-[31rem] mb:w-full flex flex-col gap-3">
       <div className="flex justify-between items-center">
         <h3 className="text-Light_CategoryText_Icon_Contents text-2xl">나의 베팅</h3>
         {!host.length && (
@@ -36,7 +36,7 @@ const MyBetting = () => {
           </button>
         )}
       </div>
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-[1rem] items-center">
         {host.length ? <MyBettingCategory category="연 베팅" bettings={host} /> : ''}
         {participate.length ? <MyBettingCategory category="참여한 베팅" bettings={participate} /> : ''}
         {complete.length ? <MyBettingCategory category="완료한 베팅" bettings={complete} /> : ''}
