@@ -1,6 +1,7 @@
 import { BettingIcon, ChattingIcon, FriendIcon, RankingIcon } from '@/assets/svg/community';
 import { AccountDeleteIcon, MydataIcon, PasswordUpdateIcon, ProfileUpdateIcon, SettingIcon } from '@/assets/svg/mypage';
 import { InventoryIcon, ShopIcon } from '@/assets/svg/store';
+import { BlockIcon } from '@/assets/svg';
 import { ElementType } from 'react';
 
 interface Category {
@@ -21,6 +22,7 @@ export const ICON_MAP: Record<string, ElementType> = {
   InventoryIcon: InventoryIcon,
   ShopIcon: ShopIcon,
   AccountDeleteIcon: AccountDeleteIcon,
+  BlockIcon: BlockIcon,
 };
 
 export const CATEGORY_LIST: Record<string, Category[]> = {
@@ -59,6 +61,7 @@ export const CATEGORY_LIST: Record<string, Category[]> = {
         { name: '나의 기록', to: 'mydata', icon: 'MydataIcon' },
         { name: '보관함', to: '/store/inventory', icon: 'InventoryIcon' },
         { name: '프로필 수정', to: 'update-profile', icon: 'ProfileUpdateIcon' },
+        { name: '차단 목록', to: 'block-list', icon: 'BlockIcon' },
       ],
     },
     {
