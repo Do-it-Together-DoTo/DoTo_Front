@@ -218,7 +218,7 @@ const HomePage = () => {
                 <p className="h-1.5" />
               )}
               <div className="flex items-center w-[30rem]">
-                <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-200">
+                <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-400">
                   <UserImgSample className="w-14" />
                 </div>
                 <div className="flex flex-col justify-center ml-3">

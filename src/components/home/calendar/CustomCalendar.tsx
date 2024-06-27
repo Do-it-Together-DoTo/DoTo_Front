@@ -13,7 +13,7 @@ const CustomCalendar = () => {
 
   const addContent = ({ date, view }: { date: Date; view: string }) => {
     if (view === 'month' && date.getMonth() === selectedMonth) {
-      return <div className="w-8 h-8 rounded-md bg-Light_Layout-300 dark:bg-Light_Text_AboutMe"></div>;
+      return <div className="w-8 h-8 rounded-md bg-Light_Layout-300 dark:bg-Dark_Layout-300"></div>;
     }
   };
 
