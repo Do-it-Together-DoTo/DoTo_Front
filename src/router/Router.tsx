@@ -15,8 +15,7 @@ import InventoryCharacterPage from '@/pages/store/InventoryCharacterPage';
 import ShopItemPage from '@/pages/store/ShopItemPage';
 import ShopCharacterPage from '@/pages/store/ShopCharacterPage';
 import SignIn from '@pages/auth/SignIn';
-import SignUp from '@/modal/SignUp';
-import FindPw from '@/modal/FindPw';
+import BlockAccountPage from '@pages/mypage/BlockAccountPage';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 import ChattingRoomPage from '@/pages/community/ChattingRoomPage';
 import FriendPage from '@/pages/community/FriendPage';
@@ -25,11 +24,7 @@ const Router = () => {
   const routes: RouteObject[] = [
     {
       path: '/auth',
-      children: [
-        { path: 'signin', element: <SignIn /> },
-        { path: 'signup', element: <SignUp /> },
-        { path: 'findpw', element: <FindPw /> },
-      ],
+      children: [{ path: 'signin', element: <SignIn /> }],
     },
     {
       path: '/',
@@ -40,6 +35,7 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
+
         {
           path: 'category',
           children: [{ index: true, element: <CategorySettingPage /> }],
@@ -76,6 +72,7 @@ const Router = () => {
             { path: 'update-profile', element: <UpdateProfilePage /> },
             { path: 'change-password', element: <ChangePasswordPage /> },
             { path: 'delete-account', element: <DeleteAccountPage /> },
+            { path: 'block-list', element: <BlockAccountPage /> },
           ],
         },
       ],
