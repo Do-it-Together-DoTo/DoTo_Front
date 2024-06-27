@@ -68,7 +68,7 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     style={{ ...provided.draggableProps.style, cursor: 'pointer' }}
-                    className="flex bg-Light_Layout-400 my-2.5 py-3 rounded-xl items-center relative dark:bg-Dark_Layout-400"
+                    className="flex bg-Light_Layout-400 my-2.5 py-3 rounded-xl items-center relative dark:bg-Dark_Layout-200"
                   >
                     {todo.isDone ? (
                       <>

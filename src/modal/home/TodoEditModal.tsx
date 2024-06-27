@@ -32,7 +32,7 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
 
   return (
     <div
-      className={`relative w-[24.625rem] rounded-2xl bg-Light_Layout-200 flex flex-col p-7 items-center transition-all duration-500 ease-in-out dark:bg-Dark_Layout-300 ${contentInfo === 'todoEdit' ? 'h-[30rem] justify-center' : 'h-[34rem]'}`}
+      className={`relative w-[24.625rem] rounded-2xl bg-Light_Layout-200 flex flex-col p-7 items-center transition-all duration-500 ease-in-out dark:bg-Dark_Layout-300 ${contentInfo === 'todoEdit' ? 'h-[30rem] justify-center' : 'h-[36rem]'}`}
     >
       <button onClick={onClose}>
         <OnCloseIcon className="absolute w-3 right-7 top-7 dark:fill-Dark_Text_Contents" />
@@ -96,9 +96,9 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
         <div className="relative flex flex-col items-center w-full h-full mt-9">
           <div className="flex mb-6 mr-auto">
             <button onClick={openTodoEditModal}>
-              <OpenTodoEditIcon className="w-4" />
+              <OpenTodoEditIcon className="w-4 dark:fill-Dark_Text_Name" />
             </button>
-            <p className="ml-2 font-medium text-Light_Text_Name">날짜바꾸기</p>
+            <p className="ml-2 font-medium text-Light_Text_Name dark:text-Dark_Text_Name">날짜바꾸기</p>
           </div>
           <CustomModalCalendar />
           <button className="w-32 opacity-0 max-h-10 bg-Button text-Light_Layout-400 rounded-3xl animate-fadeIn">
@@ -110,9 +110,9 @@ const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
         <div className="relative flex flex-col items-center w-full h-full mt-9">
           <div className="flex mb-6 mr-auto">
             <button onClick={openTodoEditModal}>
-              <OpenTodoEditIcon className="w-4" />
+              <OpenTodoEditIcon className="w-4 dark:fill-Dark_Text_Name" />
             </button>
-            <p className="ml-2 font-medium text-Light_Text_Name">다시하기</p>
+            <p className="ml-2 font-medium text-Light_Text_Name dark:text-Dark_Text_Name">다시하기</p>
           </div>
           <CustomModalCalendar />
           <button className="w-32 opacity-0 max-h-10 bg-Button text-Light_Layout-400 rounded-3xl animate-fadeIn">
