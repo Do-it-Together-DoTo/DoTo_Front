@@ -5,6 +5,7 @@ import BettingPage from '@/pages/community/BettingPage';
 import ChattingPage from '@/pages/community/ChattingPage';
 import RankingPage from '@/pages/community/RankingPage';
 import HomePage from '@/pages/home/HomePage';
+import CategorySettingPage from '@/pages/home/CategorySettingPage';
 import ChangePasswordPage from '@/pages/mypage/ChangePasswordPage';
 import DeleteAccountPage from '@/pages/mypage/DeleteAccountPage';
 import MydataPage from '@/pages/mypage/MydataPage';
@@ -38,6 +39,10 @@ const Router = () => {
         {
           index: true,
           element: <HomePage />,
+        },
+        {
+          path: 'category',
+          children: [{ index: true, element: <CategorySettingPage /> }],
         },
         {
           path: 'community',

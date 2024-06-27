@@ -63,9 +63,26 @@ export default {
         fadeIn: {
           '100%': { opacity: '1' },
         },
+        rightToLeft: {
+          from: {
+            opacity: 0,
+            transform: 'translateX(100%)',
+          },
+          to: {
+            opacity: 1,
+            transform: 'translateX(0)',
+            marginRight: '0.75rem',
+          },
+        },
       },
       animation: {
         fadeIn: 'fadeIn 0.2s ease-in 0.25s forwards',
+        rightToLeftDelay1: 'rightToLeft 0.2s ease-in-out forwards',
+        rightToLeftDelay2: 'rightToLeft 0.2s ease-in-out 0.05s forwards',
+        rightToLeftDelay3: 'rightToLeft 0.2s ease-in-out 0.1s forwards',
+        rightToLeftDelay4: 'rightToLeft 0.2s ease-in-out 0.15s forwards',
+        rightToLeftDelay5: 'rightToLeft 0.2s ease-in-out 0.2s forwards',
+        rightToLeftDelay6: 'rightToLeft 0.2s ease-in-out 0.25s forwards',
       },
     },
   },

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/dist/locale/ko';
 import { Droppable, Draggable, DragDropContext, DropResult } from 'react-beautiful-dnd';
@@ -274,7 +275,9 @@ const HomePage = () => {
               <p className="text-lg text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Contents">
                 {selectedDate}
               </p>
-              <CategorySettingIcon width={`0.875rem`} className="dark:fill-Dark_Text_Contents" />
+              <NavLink to="/category">
+                <CategorySettingIcon width={`1.275rem`} className="dark:fill-Dark_Text_Contents" />
+              </NavLink>
             </div>
             <div className="overflow-y-auto scrollbar-hide">
               {todos.map((todo) => (

@@ -67,12 +67,13 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
+                    style={{ ...provided.draggableProps.style, cursor: 'pointer' }}
                     className="flex bg-Light_Layout-400 my-2.5 py-3 rounded-xl items-center relative dark:bg-Dark_Layout-400"
                   >
                     {todo.isDone ? (
                       <>
                         <div
-                          className={`flex items-center justify-center w-3 h-3 rounded-full mx-2.5 bg-${category.color} absolute left-0`}
+                          className={`flex items-center justify-center w-3 h-3 rounded-full mx-2 cursor-pointer bg-${category.color} absolute left-0`}
                         >
                           <CheckIcon width={`0.375rem`} />
                         </div>
@@ -83,7 +84,7 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
                     ) : (
                       <>
                         <div
-                          className={`w-3 h-3 rounded-full mx-2.5 border-${category.color} border-[0.0625rem] absolute left-0`}
+                          className={`w-3 h-3 rounded-full mx-2.5 border-${category.color} cursor-pointer border-[0.0625rem] absolute left-0`}
                         />
                         <p className="pr-[2.625rem] pl-8 text-xs text-Dark_CategoryText_Icon dark:text-Light_Layout-400">
                           {todo.title}
@@ -93,7 +94,7 @@ const CategoryCard = ({ category, todoList }: { category: Category; todoList: To
                     <TodoEditModalIcon
                       width={`1.125rem`}
                       style={{ margin: '0 0.75rem', position: 'absolute', right: 0 }}
-                      className="dark:fill-Dark_Text_Contents"
+                      className="cursor-pointer dark:fill-Dark_Text_Contents"
                     />
                   </div>
                 )}

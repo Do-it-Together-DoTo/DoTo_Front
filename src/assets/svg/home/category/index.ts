@@ -5,3 +5,4 @@ export { default as FriendOnlyIcon } from './FriendOnlyIcon';
 export { default as PrivateIcon } from './PrivateIcon';
 export { default as PublicIcon } from './PublicIcon';
 export { default as TodoEditModalIcon } from './TodoEditModalIcon';
+export { default as ToggleIcon } from './ToggleIcon';
