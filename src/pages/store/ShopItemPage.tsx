@@ -3,12 +3,30 @@ import StoreMainProfile from '@/components/store/StoreMainProfile';
 import useModal from '@/hooks/useModal';
 import ShopItemBuyModal from '@/modal/store/ShopItemBuyModal';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { instance } from '@/api/axios';
 
 const ShopItemPage = () => {
   const [selectedItem, setSelectedItem] = useState<{ itemName: string; coinValue: number; isRare: boolean } | null>(
     null,
   );
+
+  const [items, setItems] = useState<Array<{ id: number; name: string; img: string; price: number; grade: string }>>(
+    [],
+  );
+
+  useEffect(() => {
+    instance
+      .get('/store/items')
+      .then((res) => {
+        setItems(res.data.body.items);
+        console.log('응답 완료:', res.data.body.items);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
+  }, []);
+
   const { Modal, open, close } = useModal();
 
   const confirm = () => {
@@ -42,32 +60,15 @@ const ShopItemPage = () => {
             )}
           </Modal>
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
-            <ShopItem itemName={'AAA'} coinValue={100} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'BBB'} coinValue={200} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'CCC'} coinValue={300} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item10'} coinValue={400} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item1'} coinValue={500} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'item2'} coinValue={600} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item3'} coinValue={700} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item4'} coinValue={800} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'CCC'} coinValue={900} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'CCC'} coinValue={10} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item24'} coinValue={20} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item1524'} coinValue={30} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'item15234514'} coinValue={80} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'itemitem'} coinValue={3234520} isRare={true} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
-            <ShopItem itemName={'helloitem'} coinValue={312371} isRare={false} onClick={openModal} />
+            {items.map((item) => (
+              <ShopItem
+                key={item.id}
+                itemName={item.name}
+                coinValue={item.price}
+                isRare={item.grade === '테스트 아이템 등급1'}
+                onClick={openModal}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -3,7 +3,8 @@ import StoreMainProfile from '@/components/store/StoreMainProfile';
 import InventoryCharUseModal from '@/modal/store/InventoryCharUseModal';
 import useModal from '@/hooks/useModal';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { instance } from '@/api/axios';
 
 const InventoryCharacterPage = () => {
   const [selectedChar, setSelectedChar] = useState<{
@@ -12,6 +13,23 @@ const InventoryCharacterPage = () => {
     characterExp: number;
     characterDesc: string;
   } | null>(null);
+
+  // type 'never' error 처리
+  const [characters, setCharacters] = useState<
+    Array<{ id: number; name: string; img: string; level: number; description: string; exp: number }>
+  >([]);
+
+  useEffect(() => {
+    instance
+      .get('/members/characters')
+      .then((res) => {
+        setCharacters(res.data.body.characters);
+        console.log('응답 완료:', res.data.body.characters);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
+  }, []);
 
   const { Modal, open, close } = useModal();
 
@@ -47,47 +65,17 @@ const InventoryCharacterPage = () => {
             )}
           </Modal>
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
-            {/* <InventoryCharUseModal
-              characterName={'이름테스트'}
-              characterLevel={30}
-              characterExp={41254}
-              characterDesc={'설명입니다어쩌구저쩌꾸'}
-              onConfirm={confirm}
-              onClose={close}
-            /> */}
-
-            <InventoryCharacter
-              characterName={'짱구'}
-              characterLevel={7}
-              characterExp={1234}
-              characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
-              onClick={openModal}
-              isSelected={false}
-            />
-            <InventoryCharacter
-              characterName={'유리'}
-              characterLevel={7}
-              characterExp={123451461}
-              characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
-              onClick={openModal}
-              isSelected={false}
-            />
-            <InventoryCharacter
-              characterName={'맹구'}
-              characterLevel={7}
-              characterExp={4321}
-              characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
-              onClick={openModal}
-              isSelected={false}
-            />
-            <InventoryCharacter
-              characterName={'짱아'}
-              characterLevel={2}
-              characterExp={1}
-              characterDesc={'설명입니다우아아아아아아아ㅏ아앙ㅇ'}
-              onClick={openModal}
-              isSelected={true}
-            />
+            {characters.map((character) => (
+              <InventoryCharacter
+                key={character.id}
+                characterName={character.name}
+                characterLevel={character.level}
+                characterExp={character.exp}
+                characterDesc={character.description}
+                onClick={openModal}
+                isSelected={false}
+              />
+            ))}
           </div>
         </div>
       </div>

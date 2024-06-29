@@ -4,36 +4,27 @@ import useModal from '@/hooks/useModal';
 import InventoryItemUseModal from '@/modal/store/InventoryItemUseModal';
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import ShopItemBuyModal from '@/modal/store/ShopItemBuyModal';
-
-const url = 'http://13.124.61.12:8080';
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+import { instance } from '@/api/axios';
 
 const InventoryItemPage = () => {
   const [selectedItem, setSelectedItem] = useState<{ itemName: string; isRare: boolean; itemValue: number } | null>(
     null,
   );
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Array<{ id: number; name: string; img: string; count: number; grade: string }>>(
+    [],
+  );
 
   useEffect(() => {
-    async function getItem() {
-      try {
-        const response = await axios.get(`${url}/store/items/`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setItems(response.data.body.items);
-        console.log('items:', response.data.body.items);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    // axios 함수 실행
-    getItem();
+    instance
+      .get('/members/items')
+      .then((res) => {
+        setItems(res.data.body.items);
+        console.log('응답 완료:', res.data.body.items);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
   }, []);
 
   const { Modal, open, close } = useModal();
@@ -70,7 +61,13 @@ const InventoryItemPage = () => {
           </Modal>
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
             {items.map((item) => (
-              <InventoryItem key={item.id} itemName={item.name} isRare={true} itemValue={8} onClick={openModal} />
+              <InventoryItem
+                key={item.id}
+                itemName={item.name}
+                isRare={item.grade === 'RARE'}
+                itemValue={item.count}
+                onClick={openModal}
+              />
             ))}
             {/* <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={8} onClick={openModal} />
             <InventoryItem itemName={'특 성장 물약'} isRare={false} itemValue={3} onClick={openModal} />
