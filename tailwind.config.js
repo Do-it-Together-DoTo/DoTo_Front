@@ -12,6 +12,7 @@ export default {
         200: '#292B2F',
         300: '#2F3136',
         400: '#41444B',
+        500: '#5b5d63',
       },
       Dark_Text_Name: '#F2F2F2',
       Dark_Text_AboutMe: '#A9AEBB',
@@ -32,7 +33,7 @@ export default {
       blue: '#658DDE',
       salmon: '#E39999',
       purple: '#C06EF2',
-      yellow: '#FCF898',
+      yellow: '#FFE03A',
       green: '#8EFF9A',
       black: '#000000',
       transparent: 'transparent',
@@ -55,7 +56,50 @@ export default {
       backgroundImage: {
         gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
       },
+      transitionProperty: {
+        height: 'height',
+      },
+      keyframes: {
+        fadeIn: {
+          '100%': { opacity: '1' },
+        },
+        rightToLeft: {
+          from: {
+            opacity: 0,
+            transform: 'translateX(100%)',
+          },
+          to: {
+            opacity: 1,
+            transform: 'translateX(0)',
+            marginRight: '0.75rem',
+          },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.2s ease-in 0.25s forwards',
+        rightToLeftDelay1: 'rightToLeft 0.2s ease-in-out forwards',
+        rightToLeftDelay2: 'rightToLeft 0.2s ease-in-out 0.05s forwards',
+        rightToLeftDelay3: 'rightToLeft 0.2s ease-in-out 0.1s forwards',
+        rightToLeftDelay4: 'rightToLeft 0.2s ease-in-out 0.15s forwards',
+        rightToLeftDelay5: 'rightToLeft 0.2s ease-in-out 0.2s forwards',
+        rightToLeftDelay6: 'rightToLeft 0.2s ease-in-out 0.25s forwards',
+      },
     },
   },
+  safelist: [
+    {
+      pattern: /fill-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /border-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /bg-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+    {
+      pattern: /text-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
+  ],
+
   plugins: [tailwindScrollbarHide],
 };
