@@ -3,12 +3,38 @@ import StoreMainProfile from '@/components/store/StoreMainProfile';
 import useModal from '@/hooks/useModal';
 import InventoryItemUseModal from '@/modal/store/InventoryItemUseModal';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import ShopItemBuyModal from '@/modal/store/ShopItemBuyModal';
+
+const url = 'http://13.124.61.12:8080';
+const token =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
 const InventoryItemPage = () => {
   const [selectedItem, setSelectedItem] = useState<{ itemName: string; isRare: boolean; itemValue: number } | null>(
     null,
   );
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    async function getItem() {
+      try {
+        const response = await axios.get(`${url}/store/items/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setItems(response.data.body.items);
+        console.log('items:', response.data.body.items);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // axios 함수 실행
+    getItem();
+  }, []);
 
   const { Modal, open, close } = useModal();
 
@@ -43,26 +69,13 @@ const InventoryItemPage = () => {
             )}
           </Modal>
           <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
-            <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={8} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={33} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={3242353} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={3} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={242} onClick={openModal} />
-            <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={3} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={23} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={312} onClick={openModal} />
-            <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={3125} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={34} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={213} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={57653} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={5893} onClick={openModal} />
-            <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={56543} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={69783} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={766783} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={213} onClick={openModal} />
-            <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={88} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={44} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={355} onClick={openModal} />
+            {items.map((item) => (
+              <InventoryItem key={item.id} itemName={item.name} isRare={true} itemValue={8} onClick={openModal} />
+            ))}
+            {/* <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={8} onClick={openModal} />
+            <InventoryItem itemName={'특 성장 물약'} isRare={false} itemValue={3} onClick={openModal} />
+            <InventoryItem itemName={'성장 물약'} isRare={true} itemValue={33} onClick={openModal} />
+            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={3242353} onClick={openModal} /> */}
           </div>
         </div>
       </div>
