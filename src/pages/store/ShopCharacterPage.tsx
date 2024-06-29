@@ -9,8 +9,6 @@ import { instance } from '@/api/axios';
 const ShopCharacterPage = () => {
   const [selectedChar, setSelectedChar] = useState<{ characterName: string; coinValue: number } | null>(null);
 
-  // type Eggs = { id: number; name: string; img: string; price: number };
-  // const [eggs, setEggs] = useState<Eggs | null>(null);
   // const [eggs, setEggs] = useState<object<{ id: number; name: string; img: string; price: number }>>();
   const [eggs, setEggs] = useState<{ id: number; name: string; img: string; price: number } | null>(null);
 
@@ -43,7 +41,7 @@ const ShopCharacterPage = () => {
   // eggs가 null이면 렌더링 에러
   if (eggs) {
     return (
-      <div className="h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
+      <div className="w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
         <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
           스토어
         </div>
