@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { PublicIcon, FriendOnlyIcon, PrivateIcon, CheckIcon, ToggleIcon } from '@/assets/svg/home/category';
 import { OpenTodoEditIcon } from '@/assets/svg/home/modal';
-import { NavLink } from 'react-router-dom';
 
 const CategorySettingPage = () => {
   const [isColorButton, setIsColorButton] = useState(false);
@@ -10,6 +9,10 @@ const CategorySettingPage = () => {
 
   const [isShared, setIsShared] = useState('public');
   const [isColor, setIsColor] = useState('pink');
+
+  const handleGoBack = () => {
+    window.history.back();
+  };
 
   const handleOnClickButton = (prop: string): React.MouseEventHandler<HTMLButtonElement> => {
     return () => {
@@ -40,9 +43,9 @@ const CategorySettingPage = () => {
   return (
     <div className="w-full px-20 pt-9 h-[calc(100vh-3.1875rem)] rounded-tl-3xl bg-Light_Layout-300 dark:bg-Dark_Layout-200">
       <div className="relative flex items-center justify-center">
-        <NavLink to="/">
-          <OpenTodoEditIcon className="absolute top-0 left-0 w-8 dark:fill-Dark_Text_Name" />
-        </NavLink>
+        <button onClick={handleGoBack}>
+          <OpenTodoEditIcon className="absolute top-0 left-0 w-12 px-2 py-2 dark:fill-Dark_Text_Name hover:bg-Light_Layout-200 hover:rounded-full dark:hover:bg-Dark_Layout-100" />
+        </button>
         <h1 className="text-2xl font-semibold text-Light_Text_Name dark:text-Dark_Text_Name">카테고리 관리</h1>
       </div>
       <div className="flex my-14">

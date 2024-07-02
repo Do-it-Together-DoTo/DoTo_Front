@@ -99,6 +99,9 @@ export default {
     {
       pattern: /text-(skyblue|pink|blue|salmon|purple|yellow|green)/,
     },
+    {
+      pattern: /caret-(skyblue|pink|blue|salmon|purple|yellow|green)/,
+    },
   ],
 
   plugins: [tailwindScrollbarHide],

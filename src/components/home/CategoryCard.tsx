@@ -6,7 +6,9 @@ import {
   CreateTodoIcon,
   CheckIcon,
   TodoEditModalIcon,
+  CreateTodoSubmitIcon,
 } from '@/assets/svg/home/category';
+import { OnCloseIcon } from '@/assets/svg/home/modal';
 import useModal from '@/hooks/useModal';
 import TodoEditModal from '@/modal/home/TodoEditModal';
 import { useState } from 'react';
@@ -31,9 +33,45 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
   const { Modal, open, close } = useModal();
 
   const [selectedTodo, setSelectedTodo] = useState({ title: '', category: '', color: '', shared: '' });
+  const [isCreate, setIsCreate] = useState(false);
+  const [createTodo, setCreateTodo] = useState('');
 
   const handleIsDoneButton = (todo: TodoProps) => {
     instance.patch(`/todo/check/${todo.id}`);
+  };
+
+  const handleCreateTodoButton = () => {
+    setIsCreate(!isCreate);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+
+    try {
+      if (e.key === 'Enter') {
+        // todo get api 구현되면 categoryId 받아서 post
+        instance.post('/todo', { categoryId: 10002, contents: target.value });
+        setCreateTodo('');
+        setIsCreate(!isCreate);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCreateTodo(e.target.value);
+  };
+
+  const handleCreateTodoSubmitButton = () => {
+    try {
+      // todo get api 구현되면 categoryId 받아서 post
+      instance.post('/todo', { categoryId: 10002, contents: createTodo });
+      setCreateTodo('');
+      setIsCreate(!isCreate);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -45,7 +83,6 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
             <div
               className={`flex border border-${color.toLowerCase()} w-fit py-1.5 px-2.5 rounded-md mr-1 bg-${color.toLowerCase()} bg-opacity-15`}
             >
-              {/* 나중에 공개여부 받는걸로 변경 */}
               {scope === 'PUBLIC' ? (
                 <PublicIcon className={`w-[0.875rem] fill-${color.toLowerCase()}`} />
               ) : scope === 'FRIENDS' ? (
@@ -55,8 +92,29 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
               )}
               <span className={`text-xs text-${color.toLowerCase()} font-medium ml-1.5`}>{title}</span>
             </div>
-            <CreateTodoIcon width={`1.125rem`} className="dark:fill-Dark_Text_Contents" />
+            <button onClick={handleCreateTodoButton}>
+              <CreateTodoIcon width={`1.125rem`} className="dark:fill-Dark_Text_Contents" />
+            </button>
           </section>
+          {isCreate && (
+            <div
+              className={`flex bg-Light_Layout-400 my-2.5 py-3 rounded-xl items-center relative border-2 border-${color.toLowerCase()} dark:bg-Dark_Layout-200`}
+            >
+              <input
+                type="text"
+                placeholder="할 일을 입력하세요."
+                onKeyDown={handleKeyDown}
+                onChange={handleChange}
+                className={`w-full caret-${color.toLowerCase()} text-left ml-2.5 text-Light_CategoryText_Icon_Contents text-xs font-medium text- outline-none bg-Light_Layout-400 dark:bg-Dark_Layout-200 dark:text-Light_Layout-300`}
+              />
+              <button onClick={handleCreateTodoSubmitButton}>
+                <CreateTodoSubmitIcon className="w-5 ml-2.5 dark:stroke-Light_Layout-400" />
+              </button>
+              <button onClick={handleCreateTodoButton}>
+                <OnCloseIcon className="w-3 fill-Dark_Text_AboutMe mx-2.5 dark:fill-Dark_Text_Contents" />
+              </button>
+            </div>
+          )}
           {/* TodoList */}
           <Droppable droppableId={String(id)} direction="vertical">
             {(provided) => (
@@ -88,7 +146,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                             >
                               <CheckIcon width={`0.375rem`} />
                             </div>
-                            <p className="pr-[2.625rem] pl-8 text-xs text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">
+                            <p className="pr-[2.625rem] pl-8 text-xs text-Dark_CategoryText_Icon dark:text-Dark_CategoryText_Icon">
                               {todo.contents}
                             </p>
                           </>
@@ -98,7 +156,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                               onClick={() => handleIsDoneButton(todo)}
                               className={`w-3 h-3 rounded-full mx-2.5 border-${color.toLowerCase()} cursor-pointer border-[0.0625rem] absolute left-0`}
                             />
-                            <p className="pr-[2.625rem] pl-8 text-xs text-Dark_CategoryText_Icon dark:text-Light_Layout-400">
+                            <p className="pr-[2.625rem] pl-8 text-xs  text-Light_CategoryText_Icon_Contents dark:text-Light_Layout-400">
                               {todo.contents}
                             </p>
                           </>
