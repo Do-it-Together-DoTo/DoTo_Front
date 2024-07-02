@@ -12,7 +12,6 @@ const MyBetting = () => {
   async function fetchMyBetting() {
     try {
       const response = await getMyBetting();
-      console.log(response);
       setMyBetting(response.data.body.myBetting);
       setJoiningBetting(response.data.body.joiningBetting);
       setClosedBetting(response.data.body.closedBetting);

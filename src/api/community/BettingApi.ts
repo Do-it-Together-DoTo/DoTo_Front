@@ -8,7 +8,7 @@ export const getMyBetting = async () => {
 };
 
 //베팅 생성
-export const createBetting = async (data: IBettingAdd) => {
+export const addBetting = async (data: IBettingAdd) => {
   return await axiosInstance.post<IBettingAdd>(END_POINT.MY_BETTING, data);
 };
 
@@ -23,7 +23,7 @@ export const getBetting = async (bettingId: number) => {
 };
 
 //베팅 참여
-export const participateBetting = async (bettingId: number, data: IBettingJoin) => {
+export const joinBetting = async (bettingId: number, data: IBettingJoin) => {
   return await axiosInstance.post<IBettingJoin>(END_POINT.BETTING(bettingId), data);
 };
 
