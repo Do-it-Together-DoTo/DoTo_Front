@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export interface IBetting {
   bettingId: number;
   bettingName: string;
-  mainCharacterImg: String;
+  mainCharacterImg: string;
   memberId: number;
   memberNickname: string;
 }
@@ -19,6 +19,7 @@ const MyBetting = () => {
   async function fetchMyBetting() {
     try {
       const response = await getMyBetting();
+      console.log(response);
       setMyBetting(response.data.body.myBetting);
       setJoiningBetting(response.data.body.joiningBetting);
       setClosedBetting(response.data.body.closedBetting);
