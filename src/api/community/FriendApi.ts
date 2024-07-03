@@ -1,0 +1,53 @@
+import { axiosInstance } from '../axiosInstance';
+import { END_POINT } from '../constants';
+import { IFriendDetail, IFriendList, IFriendReq } from './Friend.Interface';
+
+//친구 목록 조회
+export const getFriends = async (data: IFriendList) => {
+  return await axiosInstance.get(END_POINT.MY_FRIEND, { params: data });
+};
+
+//친구 차단 목록 조회
+export const getBlockFriends = async (data: IFriendList) => {
+  return await axiosInstance.get(END_POINT.FRIEND_BLOCK, { params: data });
+};
+
+//유저 차단
+export const blockFriend = async (data: IFriendReq) => {
+  return await axiosInstance.post(END_POINT.FRIEND_BLOCK, data);
+};
+
+//유저 차단 취소
+export const unBlockFriend = async (data: IFriendReq) => {
+  return await axiosInstance.delete(END_POINT.FRIEND_BLOCK, { data: data });
+};
+
+//친구 신청
+export const requestFriend = async (data: IFriendReq) => {
+  return await axiosInstance.post(END_POINT.FRIEND_REQUEST, data);
+};
+
+//친구 신청 취소
+export const cancelRequestFriend = async (data: IFriendReq) => {
+  return await axiosInstance.delete(END_POINT.FRIEND_REQUEST, { data: data });
+};
+
+//친구 신청 수락
+export const acceptRequsetFriend = async (data: IFriendReq) => {
+  return await axiosInstance.post(END_POINT.FRIEND_RESPONSE, data);
+};
+
+//친구 신청 거절
+export const refuseRequestFriend = async (data: IFriendReq) => {
+  return await axiosInstance.delete(END_POINT.FRIEND_RESPONSE, { data: data });
+};
+
+//친구 삭제
+export const removeFriend = async (friendId: number) => {
+  return await axiosInstance.delete(END_POINT.FRIEND(friendId));
+};
+
+//친구 상세 목록
+export const getFriendDetail = async (data: IFriendList) => {
+  return await axiosInstance.get(END_POINT.FRIEND_DETAIL, { params: data });
+};

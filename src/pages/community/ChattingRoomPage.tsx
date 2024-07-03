@@ -24,7 +24,7 @@ const ChattingRoomPage = () => {
   };
   useEffect(() => {
     fetchChatMessage();
-  }, []);
+  });
 
   const formRef = useRef<HTMLFormElement>(null);
   const handleEnterPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
