@@ -2,22 +2,35 @@ import { CharacterProfileIcon } from '@/assets/svg/community';
 import { STATUS } from './FriendConstant';
 import Button from './Button';
 import { IFriend } from '@/api/community/Friend.Interface';
+import { cancelRequestFriend, removeFriend, requestFriend } from '@/api/community/FriendApi';
 interface IFriendItemProps {
   friend: IFriend;
 }
 
 const FriendItem = ({ friend }: IFriendItemProps) => {
-  const handleDeleteFriendBtn = () => {
-    //TODO:친구삭제 모달 등장
+  const handleDeleteFriendBtn = async () => {
+    try {
+      await removeFriend(friend.memberId);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleFriendBtn = () => {
-    // TODO:친구신청 api요청
+  const handleFriendBtn = async () => {
+    try {
+      await requestFriend({ friendId: friend.memberId });
+    } catch (error) {
+      console.log(error);
+    }
     console.log(friend.status);
   };
 
-  const handleWaitBtn = () => {
-    // TODO:친구신청 취소 api요청
+  const handleWaitBtn = async () => {
+    try {
+      await cancelRequestFriend({ friendId: friend.memberId });
+    } catch (error) {
+      console.log(error);
+    }
     console.log(friend.status);
   };
   const handleBlockBtn = () => {

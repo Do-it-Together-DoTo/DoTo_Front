@@ -13,43 +13,38 @@ export const getBlockFriends = async (data: IFriendList) => {
 };
 
 //유저 차단
-export const blockFriend = async (data: IFriendReq) => {
+export const postBlockFriend = async (data: IFriendReq) => {
   return await axiosInstance.post(END_POINT.FRIEND_BLOCK, data);
 };
 
 //유저 차단 취소
-export const unBlockFriend = async (data: IFriendReq) => {
+export const deleteBlockFriend = async (data: IFriendReq) => {
   return await axiosInstance.delete(END_POINT.FRIEND_BLOCK, { data: data });
 };
 
 //친구 신청
-export const requestFriend = async (data: IFriendReq) => {
+export const postFriendRequset = async (data: IFriendReq) => {
   return await axiosInstance.post(END_POINT.FRIEND_REQUEST, data);
 };
 
 //친구 신청 취소
-export const cancelRequestFriend = async (data: IFriendReq) => {
+export const deleteFriendRequest = async (data: IFriendReq) => {
   return await axiosInstance.delete(END_POINT.FRIEND_REQUEST, { data: data });
 };
 
 //친구 신청 수락
-export const acceptRequsetFriend = async (data: IFriendReq) => {
+export const postFriend = async (data: IFriendReq) => {
   return await axiosInstance.post(END_POINT.FRIEND_RESPONSE, data);
 };
 
 //친구 신청 거절
-export const refuseRequestFriend = async (data: IFriendReq) => {
+export const deleteFriendResponse = async (data: IFriendReq) => {
   return await axiosInstance.delete(END_POINT.FRIEND_RESPONSE, { data: data });
 };
 
 //친구 삭제
-export const removeFriend = async (friendId: number) => {
+export const deleteFriend = async (friendId: number) => {
   return await axiosInstance.delete(END_POINT.FRIEND(friendId));
-};
-
-//친구 상세 목록
-export const getFriendDetail = async (data: IFriendList) => {
-  return await axiosInstance.get(END_POINT.FRIEND_DETAIL, { params: data });
 };
 
 //친구 검색

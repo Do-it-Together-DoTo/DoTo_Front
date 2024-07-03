@@ -1,6 +1,5 @@
-import { MEMBER_LIST } from '@/dummy/Friend';
 import FriendItem from './FriendItem';
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { IFriend } from '@/api/community/Friend.Interface';
 import { searchFriend } from '@/api/community/FriendApi';
 
