@@ -1,23 +1,31 @@
 import ChattingMessage from '@/components/community/chatting/ChattingMessage';
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import {
-  CHATTING_ROOM_LIST,
-  CHATTING_MESSAGE_LIST,
-  IChatting,
-  IChattingMessage,
-} from '@/components/community/chatting/ChattingConstant';
+import { CHATTING_ROOM_LIST, IChatting } from '@/components/community/chatting/ChattingConstant';
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { ArrowLeftIcon } from '@/assets/svg';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
+import { getChatting, sendChattingMessage } from '@/api/community/ChattingApi';
+import { IChat } from '@/api/community/Chatting.Interface';
 
 const ChattingRoomPage = () => {
   const { roomId } = useParams();
   const [room, setRoom] = useState<IChatting>();
-  const [messages, setMessages] = useState<IChattingMessage[]>([]);
+  const [messages, setMessages] = useState<IChat[]>([]);
+  const [message, setMessage] = useState('');
+
+  const fetchChatMessage = async () => {
+    try {
+      const response = await getChatting(Number(roomId));
+      console.log(response);
+      setMessages(response.data.body.chats.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
+    fetchChatMessage();
     setRoom(CHATTING_ROOM_LIST.find((room) => room.roomId === roomId));
-    setMessages(CHATTING_MESSAGE_LIST);
   }, [roomId]);
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,9 +41,11 @@ const ChattingRoomPage = () => {
       // 3. 다시 채팅 가져오기
     }
   };
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: 소켓요청
+    const response = await sendChattingMessage(Number(roomId), { contents: message });
+    setMessage('');
+    console.log(response);
   };
 
   return (
@@ -66,6 +76,9 @@ const ChattingRoomPage = () => {
             className="pl-2 py-3 bg-Light_Layout-400 rounded-[0.625rem] dark:bg-Dark_Layout-400"
           >
             <textarea
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               rows={4}
               className="w-full bg-Light_Layout-400 resize-none outline-none dark:bg-Dark_Layout-400"
               onKeyDown={handleEnterPress}

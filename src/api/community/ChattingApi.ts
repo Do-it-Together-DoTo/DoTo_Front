@@ -19,5 +19,5 @@ export const joinChatting = async (chatRoomId: number) => {
 
 //채팅메세지 작성
 export const sendChattingMessage = async (chatRoomId: number, data: ChatAdd) => {
-  return await axiosInstance.post(END_POINT.CHATTING(chatRoomId), data);
+  return await axiosInstance.post(END_POINT.CHATTING_MESSAGE(chatRoomId), data);
 };
