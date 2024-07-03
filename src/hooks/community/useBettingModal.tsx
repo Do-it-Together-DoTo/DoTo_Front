@@ -30,7 +30,7 @@ export const useBettingModal = ({ betting }: createBettingProps) => {
 
   useEffect(() => {
     fetchBetting();
-  }, []);
+  });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
