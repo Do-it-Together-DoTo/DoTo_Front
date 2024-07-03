@@ -1,4 +1,4 @@
-import Friends from '@/components/community/friend/FriendList';
+import Friends from '@/components/community/friend/Friends';
 import SearchFriends from '@/components/community/friend/SearchFriends';
 // import FriendModal from '@/modal/FriendModal';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';

@@ -1,6 +1,6 @@
 import { axiosInstance } from '../axiosInstance';
 import { END_POINT } from '../constants';
-import { IFriendList, IFriendReq } from './Friend.Interface';
+import { IFriendList, IFriendReq, IFriendSearchReq } from './Friend.Interface';
 
 //친구 목록 조회
 export const getFriends = async (data: IFriendList) => {
@@ -50,4 +50,9 @@ export const removeFriend = async (friendId: number) => {
 //친구 상세 목록
 export const getFriendDetail = async (data: IFriendList) => {
   return await axiosInstance.get(END_POINT.FRIEND_DETAIL, { params: data });
+};
+
+//친구 검색
+export const searchFriend = async (data: IFriendSearchReq) => {
+  return await axiosInstance.get(END_POINT.FRIEND_SEARCH, { params: data });
 };

@@ -14,5 +14,6 @@ export const END_POINT = {
   FRIEND_BLOCK: `/friends/block`,
   FRIEND_REQUEST: `/friends/request`,
   FRIEND_RESPONSE: `/friends/response`,
-  FRIEND_DETAIL: `members/friends`,
+  FRIEND_DETAIL: `/members/friends`,
+  FRIEND_SEARCH: `/members/search`,
 };

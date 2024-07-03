@@ -2,6 +2,7 @@ export interface IFriend {
   memberId: number;
   nickname: string;
   mainCharacterImg: string;
+  status?: 'FRIEND' | 'NOT_FRIEND';
 }
 
 export interface IFriendBlock {
@@ -10,6 +11,11 @@ export interface IFriendBlock {
 
 export interface IFriendReq {
   friendId: number;
+}
+
+export interface IFriendSearchReq {
+  keyword: string;
+  lastMemberId?: number;
 }
 
 export interface IFriendDetail {
