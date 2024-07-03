@@ -66,7 +66,6 @@ const HomePage = () => {
       .get('/members/')
       .then((res: ApiProps) => {
         setUserProfile({ ...res.data.body, memberId: null });
-        console.log('유저정보 응답 완료:', res.data.body);
       })
       .catch((err: string) => {
         console.log('유저정보 응답 실패:', err);
@@ -76,7 +75,6 @@ const HomePage = () => {
       .get('/members/friends')
       .then((res: ApiProps) => {
         setFollowers(res.data.body['relations']['content']);
-        console.log('팔로워 응답 완료:', res.data.body['relations']['content']);
       })
       .catch((err: string) => {
         console.log('팔로워 응답 실패:', err);
@@ -93,7 +91,6 @@ const HomePage = () => {
         .get(`/todo?date=${selectedDate}`)
         .then((res: ApiProps) => {
           setTodos(res.data.body['todoList']);
-          console.log('내 투두 응답 완료:', res.data.body['todoList']);
         })
         .catch((err: string) => {
           console.log('내 투두 응답 실패:', err);
@@ -103,7 +100,6 @@ const HomePage = () => {
         .get(`/todo/${selectedUser.memberId}?date=${selectedDate}`)
         .then((res: ApiProps) => {
           setTodos(res.data.body['todoList']);
-          console.log('투두 응답 완료:', res.data.body['todoList']);
         })
         .catch((err: string) => {
           console.log('투두 응답 실패:', err);

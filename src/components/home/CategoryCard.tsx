@@ -47,15 +47,18 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
 
-    try {
-      if (e.key === 'Enter') {
-        // todo get api 구현되면 categoryId 받아서 post
-        instance.post('/todo', { categoryId: 10002, contents: target.value });
-        setCreateTodo('');
-        setIsCreate(!isCreate);
-      }
-    } catch (error) {
-      console.error(error);
+    if (e.key === 'Enter' && target.value !== '') {
+      // todo get api 구현되면 categoryId 받아서 post
+      instance
+        .post('/todo', { categoryId: 10002, contents: target.value })
+        .then(() => {
+          setCreateTodo('');
+          setIsCreate(!isCreate);
+        })
+        .catch((error) => {
+          // 에러 처리
+          console.error('카테고리 생성 에러:', error);
+        });
     }
   };
 
@@ -64,14 +67,16 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
   };
 
   const handleCreateTodoSubmitButton = () => {
-    try {
-      // todo get api 구현되면 categoryId 받아서 post
-      instance.post('/todo', { categoryId: 10002, contents: createTodo });
-      setCreateTodo('');
-      setIsCreate(!isCreate);
-    } catch (error) {
-      console.error(error);
-    }
+    // todo get api 구현되면 categoryId 받아서 post
+    instance
+      .post('/todo', { categoryId: 10002, contents: createTodo })
+      .then(() => {
+        setCreateTodo('');
+        setIsCreate(!isCreate);
+      })
+      .catch((error) => {
+        console.error('카테고리 생성 에러:', error);
+      });
   };
 
   return (
@@ -87,9 +92,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                 <PublicIcon className={`w-[0.875rem] fill-${color.toLowerCase()}`} />
               ) : scope === 'FRIENDS' ? (
                 <FriendOnlyIcon className={`w-[0.875rem] fill-${color.toLowerCase()}`} />
-              ) : (
+              ) : scope === 'PRIVATE' ? (
                 <PrivateIcon className={`w-[0.875rem] fill-${color.toLowerCase()}`} />
-              )}
+              ) : null}
               <span className={`text-xs text-${color.toLowerCase()} font-medium ml-1.5`}>{title}</span>
             </div>
             <button onClick={handleCreateTodoButton}>
@@ -107,11 +112,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                 onChange={handleChange}
                 className={`w-full caret-${color.toLowerCase()} text-left ml-2.5 text-Light_CategoryText_Icon_Contents text-xs font-medium text- outline-none bg-Light_Layout-400 dark:bg-Dark_Layout-200 dark:text-Light_Layout-300`}
               />
-              <button onClick={handleCreateTodoSubmitButton}>
-                <CreateTodoSubmitIcon className="w-5 ml-2.5 dark:stroke-Light_Layout-400" />
-              </button>
+              {createTodo !== '' ? (
+                <button onClick={handleCreateTodoSubmitButton}>
+                  <CreateTodoSubmitIcon className="w-4 ml-2.5 dark:stroke-Light_Layout-400" />
+                </button>
+              ) : (
+                <></>
+              )}
               <button onClick={handleCreateTodoButton}>
-                <OnCloseIcon className="w-3 fill-Dark_Text_AboutMe mx-2.5 dark:fill-Dark_Text_Contents" />
+                <OnCloseIcon className="w-2.5 fill-Dark_Text_AboutMe mx-2.5 dark:fill-Dark_Text_Contents" />
               </button>
             </div>
           )}
@@ -199,7 +208,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                     >
                       <CheckIcon width={`0.375rem`} />
                     </div>
-                    <p className="pr-[2.625rem] pl-8 text-xs text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">
+                    <p className="pr-[2.625rem] pl-8 text-xs text-Dark_CategoryText_Icon dark:text-Dark_CategoryText_Icon">
                       {todo.contents}
                     </p>
                   </>
@@ -208,7 +217,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ memberId, id, color, title,
                     <div
                       className={`w-3 h-3 rounded-full mx-2.5 border-${color.toLowerCase()} cursor-pointer border-[0.0625rem] absolute left-0`}
                     />
-                    <p className="pr-[2.625rem] pl-8 text-xs text-Dark_CategoryText_Icon dark:text-Light_Layout-400">
+                    <p className="pr-[2.625rem] pl-8 text-xs text-Light_CategoryText_Icon_Contents dark:text-Light_Layout-400">
                       {todo.contents}
                     </p>
                   </>

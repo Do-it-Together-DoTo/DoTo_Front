@@ -1,14 +1,47 @@
-import { useState } from 'react';
-import { PublicIcon, FriendOnlyIcon, PrivateIcon, CheckIcon, ToggleIcon } from '@/assets/svg/home/category';
+import { useEffect, useState } from 'react';
+import {
+  PublicIcon,
+  FriendOnlyIcon,
+  PrivateIcon,
+  CheckIcon,
+  ToggleIcon,
+  DndIcon,
+  EditCategoryIcon,
+} from '@/assets/svg/home/category';
 import { OpenTodoEditIcon } from '@/assets/svg/home/modal';
+import { instance } from '@/api/axios';
+
+interface categoryProps {
+  id: number;
+  contents: string;
+  scope: string;
+  isActivated: boolean;
+  color: string;
+  seq: number;
+}
 
 const CategorySettingPage = () => {
+  const [activated, setActivated] = useState<categoryProps[]>([]);
+  const [inActivated, setInActivated] = useState<categoryProps[]>([]);
+
   const [isColorButton, setIsColorButton] = useState(false);
   const [isActivatedButton, setIsActivatedButton] = useState(false);
   const [isSharedButton, setIsSharedButton] = useState(false);
 
-  const [isShared, setIsShared] = useState('public');
-  const [isColor, setIsColor] = useState('pink');
+  const [isShared, setIsShared] = useState('PUBLIC');
+  const [isColor, setIsColor] = useState('PINK');
+
+  useEffect(() => {
+    instance
+      .get('/categories')
+      .then((res) => {
+        setActivated(res.data.body['activated']);
+        setInActivated(res.data.body['inactivated']);
+      })
+      .catch((err: string) => {
+        console.log('카테고리 전체 응답 실패:', err);
+      });
+  }, []);
 
   const handleGoBack = () => {
     window.history.back();
@@ -40,6 +73,9 @@ const CategorySettingPage = () => {
     };
   };
 
+  console.log(inActivated);
+  console.log(activated);
+
   return (
     <div className="w-full px-20 pt-9 h-[calc(100vh-3.1875rem)] rounded-tl-3xl bg-Light_Layout-300 dark:bg-Dark_Layout-200">
       <div className="relative flex items-center justify-center">
@@ -50,16 +86,72 @@ const CategorySettingPage = () => {
       </div>
       <div className="flex my-14">
         {/* 비활성 카테고리 */}
-        <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)] bg-Light_Layout-400 rounded-2xl dark:bg-Dark_Layout-400">
+        <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)] overflow-y-auto scrollbar-hide pb-5 bg-Light_Layout-400 rounded-2xl dark:bg-Dark_Layout-400">
           <h2 className="my-5 text-xl font-medium text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Name">
             비활성 카테고리
           </h2>
+          <div className="w-full overflow-y-auto px-7 scrollbar-hide">
+            {inActivated.map((inact) => (
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex">
+                  <DndIcon className="w-7 dark:fill-Light_Text_AboutMe" />
+                  <div className="w-full h-full rounded-lg dark:bg-Dark_Layout-300">
+                    <div
+                      className={`flex border border-${inact.color.toLowerCase()} py-1 px-4 rounded-lg bg-${inact.color.toLowerCase()} bg-opacity-15`}
+                    >
+                      {inact.scope === 'PUBLIC' ? (
+                        <PublicIcon className={`w-5 fill-${inact.color.toLowerCase()}`} />
+                      ) : inact.scope === 'FRIENDS' ? (
+                        <FriendOnlyIcon className={`w-5 fill-${inact.color.toLowerCase()}`} />
+                      ) : inact.scope === 'PRIVATE' ? (
+                        <PrivateIcon className={`w-5 fill-${inact.color.toLowerCase()}`} />
+                      ) : null}
+                      <span className={`text-lg text-${inact.color.toLowerCase()} font-medium ml-2.5`}>
+                        {inact.contents}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button>
+                  <EditCategoryIcon className="px-1 py-1 rounded-full w-9 hover:bg-Light_Layout-200 hover:fill-Light_Text_Name dark:fill-Dark_Text_AboutMe dark:hover:bg-Dark_Layout-300 dark:hover:fill-Light_Layout-100" />
+                </button>
+              </div>
+            ))}
+          </div>
         </section>
         {/* 활성 카테고리 */}
-        <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)] bg-Light_Layout-400 rounded-2xl mx-9 dark:bg-Dark_Layout-400">
+        <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)] bg-Light_Layout-400 rounded-2xl mx-9 pb-5 dark:bg-Dark_Layout-400">
           <h2 className="my-5 text-xl font-medium text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Name">
             카테고리
           </h2>
+          <div className="w-full overflow-y-auto px-7 scrollbar-hide">
+            {activated.map((act) => (
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex">
+                  <DndIcon className="w-7 dark:fill-Light_Text_AboutMe" />
+                  <div className="w-full h-full rounded-lg dark:bg-Dark_Layout-300">
+                    <div
+                      className={`flex border border-${act.color.toLowerCase()} py-1 px-4 rounded-lg bg-${act.color.toLowerCase()} bg-opacity-15`}
+                    >
+                      {act.scope === 'PUBLIC' ? (
+                        <PublicIcon className={`w-5 fill-${act.color.toLowerCase()}`} />
+                      ) : act.scope === 'FRIENDS' ? (
+                        <FriendOnlyIcon className={`w-5 fill-${act.color.toLowerCase()}`} />
+                      ) : act.scope === 'PRIVATE' ? (
+                        <PrivateIcon className={`w-5 fill-${act.color.toLowerCase()}`} />
+                      ) : null}
+                      <span className={`text-lg text-${act.color.toLowerCase()} font-medium ml-2.5`}>
+                        {act.contents}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button>
+                  <EditCategoryIcon className="px-1 py-1 rounded-full w-9 hover:bg-Light_Layout-200 hover:fill-Light_Text_Name dark:fill-Dark_Text_AboutMe dark:hover:bg-Dark_Layout-300 dark:hover:fill-Light_Layout-100" />
+                </button>
+              </div>
+            ))}
+          </div>
         </section>
         {/* 카테고리 생성 */}
         <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)]">
@@ -82,14 +174,14 @@ const CategorySettingPage = () => {
                   공개설정
                 </p>
                 <button onClick={handleOnClickButton('shared')} className="flex items-center justify-center">
-                  {isShared === 'public' ? (
+                  {isShared === 'PUBLIC' ? (
                     <>
                       <PublicIcon className="w-4 fill-Light_Text_AboutMe dark:fill-Dark_Text_Contents" />
                       <p className="ml-1 mr-1.5 font-medium text-sm text-Light_Text_AboutMe dark:text-Dark_Text_Contents">
                         전체공개
                       </p>
                     </>
-                  ) : isShared === 'friendOnly' ? (
+                  ) : isShared === 'FRIENDS' ? (
                     <>
                       <FriendOnlyIcon className="w-4 fill-Light_Text_AboutMe dark:fill-Dark_Text_Contents" />
                       <p className="ml-1 mr-1.5 font-medium text-sm text-Light_Text_AboutMe dark:text-Dark_Text_Contents">
@@ -117,14 +209,14 @@ const CategorySettingPage = () => {
               </div>
               {isSharedButton ? (
                 <div className="absolute right-0 z-10 shadow-lg top-7 rounded-xl bg-Light_Layout-400 dark:bg-Dark_Layout-400">
-                  <button onClick={handleOnClickShared('public')} className="flex items-center px-5 pt-4 pb-3">
+                  <button onClick={handleOnClickShared('PUBLIC')} className="flex items-center px-5 pt-4 pb-3">
                     <PublicIcon className="w-4 fill-Light_Text_AboutMe dark:fill-Dark_Text_Contents" />
                     <p className="ml-1 mr-1.5 font-medium text-sm text-Light_Text_AboutMe dark:text-Dark_Text_Contents">
                       전체공개
                     </p>
                   </button>
                   <button
-                    onClick={handleOnClickShared('friendOnly')}
+                    onClick={handleOnClickShared('FRIENDS')}
                     className="flex items-center px-5 py-3 border-y border-Light_Layout-200 dark:border-Dark_Layout-500"
                   >
                     <FriendOnlyIcon className="w-4 fill-Light_Text_AboutMe dark:fill-Dark_Text_Contents" />
@@ -132,7 +224,7 @@ const CategorySettingPage = () => {
                       친구공개
                     </p>
                   </button>
-                  <button onClick={handleOnClickShared('private')} className="flex items-center px-5 pt-3 pb-4">
+                  <button onClick={handleOnClickShared('PRIVATE')} className="flex items-center px-5 pt-3 pb-4">
                     <PrivateIcon className="w-4 fill-Light_Text_AboutMe dark:fill-Dark_Text_Contents" />
                     <p className="ml-1 mr-1.5 font-medium text-sm text-Light_Text_AboutMe dark:text-Dark_Text_Contents">
                       나만보기
@@ -149,12 +241,12 @@ const CategorySettingPage = () => {
                 <button onClick={handleOnClickButton('color')} className="flex items-center">
                   {isColorButton ? (
                     <>
-                      <div className={`w-5 h-5 mr-1.5 rounded-full bg-${isColor}`} />
+                      <div className={`w-5 h-5 mr-1.5 rounded-full bg-${isColor.toLowerCase()}`} />
                       <ToggleIcon className="w-2.5 rotate-180 transition-all dark:fill-Dark_Text_Contents" />
                     </>
                   ) : (
                     <>
-                      <div className={`w-5 h-5 mr-1.5 rounded-full bg-${isColor}`} />
+                      <div className={`w-5 h-5 mr-1.5 rounded-full bg-${isColor.toLowerCase()}`} />
                       <ToggleIcon className="w-2.5 rotate-0 transition-all dark:fill-Dark_Text_Contents" />
                     </>
                   )}
@@ -163,30 +255,30 @@ const CategorySettingPage = () => {
               {isColorButton ? (
                 <div className="flex mt-2 mb-1 ml-auto">
                   <button
-                    onClick={handleOnClickColor('skyblue')}
+                    onClick={handleOnClickColor('SKYBLUE')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay6 bg-skyblue"
                   />
                   <button
-                    onClick={handleOnClickColor('pink')}
+                    onClick={handleOnClickColor('PINK')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay5 bg-pink"
                   />
                   <button
-                    onClick={handleOnClickColor('blue')}
+                    onClick={handleOnClickColor('BLUE')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay4 bg-blue"
                   />
                   <button
-                    onClick={handleOnClickColor('salmon')}
+                    onClick={handleOnClickColor('SALMON')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay3 bg-salmon"
                   />
                   <button
-                    onClick={handleOnClickColor('purple')}
+                    onClick={handleOnClickColor('PURPLE')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay2 bg-purple"
                   />
                   <button
-                    onClick={handleOnClickColor('yellow')}
+                    onClick={handleOnClickColor('YELLOW')}
                     className="w-5 h-5 rounded-full opacity-0 animate-rightToLeftDelay1 bg-yellow"
                   />
-                  <button onClick={handleOnClickColor('green')} className="w-5 h-5 mr-4 rounded-full bg-green" />
+                  <button onClick={handleOnClickColor('GREEN')} className="w-5 h-5 mr-4 rounded-full bg-green" />
                 </div>
               ) : (
                 <div className="transition-all" />
