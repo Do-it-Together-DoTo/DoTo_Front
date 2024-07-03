@@ -15,6 +15,7 @@ const ChattingPage = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     fetchJoinChatting();
   }, []);

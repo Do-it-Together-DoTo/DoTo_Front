@@ -1,23 +1,22 @@
 import ChattingMessage from '@/components/community/chatting/ChattingMessage';
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { CHATTING_ROOM_LIST, IChatting } from '@/components/community/chatting/ChattingConstant';
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { ArrowLeftIcon } from '@/assets/svg';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { getChatting, sendChattingMessage } from '@/api/community/ChattingApi';
 import { IChat } from '@/api/community/Chatting.Interface';
+import useChatRoomStore from '@/store/community/chatRoomStore';
 
 const ChattingRoomPage = () => {
   const { roomId } = useParams();
-  const [room, setRoom] = useState<IChatting>();
   const [messages, setMessages] = useState<IChat[]>([]);
   const [message, setMessage] = useState('');
+  const chatRoom = useChatRoomStore((state) => state.chatRoom);
 
   const fetchChatMessage = async () => {
     try {
       const response = await getChatting(Number(roomId));
-      console.log(response);
       setMessages(response.data.body.chats.content);
     } catch (error) {
       console.log(error);
@@ -25,8 +24,7 @@ const ChattingRoomPage = () => {
   };
   useEffect(() => {
     fetchChatMessage();
-    setRoom(CHATTING_ROOM_LIST.find((room) => room.roomId === roomId));
-  }, [roomId]);
+  }, []);
 
   const formRef = useRef<HTMLFormElement>(null);
   const handleEnterPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -43,9 +41,8 @@ const ChattingRoomPage = () => {
   };
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await sendChattingMessage(Number(roomId), { contents: message });
+    await sendChattingMessage(Number(roomId), { contents: message });
     setMessage('');
-    console.log(response);
   };
 
   return (
@@ -58,17 +55,18 @@ const ChattingRoomPage = () => {
 
           <CharacterProfileIcon width="36" height="36" />
           <div className="text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon flex flex-col">
-            <h3 className="text-lg  font-bold">{room?.roomName}</h3>
-            <p className="text-xs">{room?.host}</p>
+            <h3 className="text-lg  font-bold">{chatRoom.bettingName}</h3>
+            <p className="text-xs">{chatRoom.memberNickname}</p>
           </div>
         </div>
 
         <div className="flex flex-col w-[29rem] h-[30rem] mb:h-[47rem] px-5 py-6 bg-Light_Layout-100 rounded-2xl justify-between dark:bg-Dark_Layout-300">
           <div className="flex flex-col w-full gap-5 max-h-70 py-3 overflow-y-scroll">
             {messages.map((message) => (
-              <ChattingMessage message={message} />
+              <ChattingMessage key={message.chatId} message={message} />
             ))}
           </div>
+
           {/* 채팅입력 구간 */}
           <form
             ref={formRef}
