@@ -1,7 +1,6 @@
-import { getBetting, joinBetting } from '@/api/community/BettingApi';
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting, IBettingDetail } from '@/api/community/Betting.Interface';
-import { useState, useEffect } from 'react';
+import { IBetting } from '@/api/community/Betting.Interface';
+import { useState } from 'react';
 import { useBettingModal } from '@/hooks/community/useBettingModal';
 
 interface BettingDetailModalProps {
@@ -13,7 +12,7 @@ interface BettingDetailModalProps {
 const BettingModal = ({ betting, type, onClose }: BettingDetailModalProps) => {
   const [isValid] = useState(true);
 
-  const { bettingDetail, values, errors, submitting, handleChange, handleSubmit } = useBettingModal({
+  const { bettingDetail, handleChange, handleSubmit } = useBettingModal({
     betting: betting,
   });
 
