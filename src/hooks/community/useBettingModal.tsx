@@ -1,6 +1,6 @@
-import { IBetting, IBettingAdd, IBettingDetail, IBettingJoin } from '@/api/community/Betting.Interface';
-import { createBetting, joinBetting, getBetting } from '@/api/community/BettingApi';
-import { ChangeEvent, useState, useEffect, FormEventHandler, FormEvent } from 'react';
+import { IBetting, IBettingDetail, IBettingJoin } from '@/api/community/Betting.Interface';
+import { joinBetting, getBetting } from '@/api/community/BettingApi';
+import { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //베팅만들기
@@ -13,7 +13,7 @@ interface createBettingProps {
 export const useBettingModal = ({ betting }: createBettingProps) => {
   //onSubmit은 제출후 결과
   const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
+  const [errors] = useState({});
   console.log(betting);
   const navigate = useNavigate();
   // const [submitting, setSubmitting] = useState(false);
