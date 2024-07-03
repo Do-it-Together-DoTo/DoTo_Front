@@ -1,22 +1,19 @@
 import FriendItem from './FriendItem';
 import { useState, FormEvent } from 'react';
 import { IFriend } from '@/api/community/Friend.Interface';
-import { searchFriend } from '@/api/community/FriendApi';
+import useFriendApi from '@/hooks/community/useFriendApi';
 
 const SearchFriends = () => {
   const [friends, setFriends] = useState<IFriend[]>([]);
   const [keyword, setKeyword] = useState('');
+  const { searchFriend } = useFriendApi();
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const response = await searchFriend({ keyword: keyword });
-      console.log(response);
-      setFriends(response.data.body.searchResult.content);
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await searchFriend({ keyword: keyword });
+    setFriends(response?.data.body.searchResult.content);
   };
+
   return (
     <section className="flex flex-col gap-6 dt:w-[25.6875rem] mb:w-full items-center ">
       <h2 className="text-[1.625rem] text-Light_CategoryText_Icon_Contents">친구 ID 검색</h2>

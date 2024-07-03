@@ -48,6 +48,6 @@ export const deleteFriend = async (friendId: number) => {
 };
 
 //친구 검색
-export const searchFriend = async (data: IFriendSearchReq) => {
+export const getSearchFriendResult = async (data: IFriendSearchReq) => {
   return await axiosInstance.get(END_POINT.FRIEND_SEARCH, { params: data });
 };

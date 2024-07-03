@@ -2,37 +2,14 @@ import { CharacterProfileIcon } from '@/assets/svg/community';
 import { STATUS } from './FriendConstant';
 import Button from './Button';
 import { IFriend } from '@/api/community/Friend.Interface';
-import { cancelRequestFriend, removeFriend, requestFriend } from '@/api/community/FriendApi';
+import useFriendApi from '@/hooks/community/useFriendApi';
 interface IFriendItemProps {
   friend: IFriend;
 }
 
 const FriendItem = ({ friend }: IFriendItemProps) => {
-  const handleDeleteFriendBtn = async () => {
-    try {
-      await removeFriend(friend.memberId);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { removeFriend, addFriend, cancelFriendRequest } = useFriendApi();
 
-  const handleFriendBtn = async () => {
-    try {
-      await requestFriend({ friendId: friend.memberId });
-    } catch (error) {
-      console.log(error);
-    }
-    console.log(friend.status);
-  };
-
-  const handleWaitBtn = async () => {
-    try {
-      await cancelRequestFriend({ friendId: friend.memberId });
-    } catch (error) {
-      console.log(error);
-    }
-    console.log(friend.status);
-  };
   const handleBlockBtn = () => {
     //TODO:차단 모달 등장
   };
@@ -43,15 +20,30 @@ const FriendItem = ({ friend }: IFriendItemProps) => {
         {friend.nickname}
       </span>
       {friend.status === STATUS.FRIEND ? (
-        <Button color="dark" onClick={handleDeleteFriendBtn}>
+        <Button
+          color="dark"
+          onClick={() => {
+            removeFriend(friend.memberId);
+          }}
+        >
           친구삭제
         </Button>
       ) : friend.status === STATUS.NOT_FRIEND ? (
-        <Button color="blue" onClick={handleFriendBtn}>
+        <Button
+          color="blue"
+          onClick={() => {
+            addFriend({ friendId: friend.memberId });
+          }}
+        >
           친구신청
         </Button>
       ) : (
-        <Button color="dark" onClick={handleWaitBtn}>
+        <Button
+          color="dark"
+          onClick={() => {
+            cancelFriendRequest({ friendId: friend.memberId });
+          }}
+        >
           대기중
         </Button>
       )}

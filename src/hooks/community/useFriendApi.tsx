@@ -1,12 +1,19 @@
-import { IFriendReq } from '@/api/community/Friend.Interface';
-import { deleteBlockFriend, deleteFriendRequest, postBlockFriend, postFriend } from '@/api/community/FriendApi';
+import { IFriendList, IFriendReq, IFriendSearchReq } from '@/api/community/Friend.Interface';
+import {
+  deleteBlockFriend,
+  deleteFriend,
+  deleteFriendRequest,
+  getBlockFriends,
+  getFriends,
+  getSearchFriendResult,
+  postBlockFriend,
+  postFriend,
+  postFriendRequset,
+} from '@/api/community/FriendApi';
 
-interface IFrendApiProps {
-  data: IFriendReq;
-}
-
-const useFriendApi = ({ data }: IFrendApiProps) => {
-  const blockFriend = async () => {
+const useFriendApi = () => {
+  // 유저차단
+  const blockFriend = async (data: IFriendReq) => {
     try {
       await postBlockFriend(data);
     } catch (error) {
@@ -14,28 +21,43 @@ const useFriendApi = ({ data }: IFrendApiProps) => {
     }
   };
 
-  const addFriend = async () => {
+  // 친구 목록 조회
+  const getMyBlockFriends = async (data: IFriendList) => {
     try {
-      await postFriend(data);
+      await getBlockFriends(data);
     } catch (error) {
       console.log(error);
     }
   };
-  const cancelFriendRequest = async () => {
+  // 친구 목록 조회
+  const getMyFriends = async (data: IFriendList) => {
+    try {
+      await getFriends(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //친구 신청
+  const addFriend = async (data: IFriendReq) => {
+    try {
+      await postFriendRequset(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //친구신청 취소
+  const cancelFriendRequest = async (data: IFriendReq) => {
     try {
       await deleteFriendRequest(data);
     } catch (error) {
       console.log(error);
     }
   };
-  const unBlockFriend = async () => {
-    try {
-      await deleteBlockFriend(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const refuseFriendRequest = async () => {
+
+  //유저차단 취소
+  const unBlockFriend = async (data: IFriendReq) => {
     try {
       await deleteBlockFriend(data);
     } catch (error) {
@@ -43,7 +65,56 @@ const useFriendApi = ({ data }: IFrendApiProps) => {
     }
   };
 
-  return { blockFriend, addFriend, refuseFriendRequest, unBlockFriend, cancelFriendRequest };
+  //친구 신청 거절
+  const refuseFriendRequest = async (data: IFriendReq) => {
+    try {
+      await deleteBlockFriend(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //친구 신청 수락
+  const acceptFriendRequest = async (data: IFriendReq) => {
+    try {
+      await postFriend(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //친구 삭제
+  const removeFriend = async (memberId: number) => {
+    try {
+      await deleteFriend(memberId);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //친구 검색
+  const searchFriend = async (data: IFriendSearchReq) => {
+    let response;
+    try {
+      response = await getSearchFriendResult(data);
+    } catch (error) {
+      console.log(error);
+    }
+
+    return response;
+  };
+  return {
+    blockFriend,
+    removeFriend,
+    acceptFriendRequest,
+    searchFriend,
+    addFriend,
+    refuseFriendRequest,
+    unBlockFriend,
+    getMyBlockFriends,
+    getMyFriends,
+    cancelFriendRequest,
+  };
 };
 
 export default useFriendApi;
