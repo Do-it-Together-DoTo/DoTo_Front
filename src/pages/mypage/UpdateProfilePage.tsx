@@ -8,7 +8,7 @@ const UpdateProfilePage = () => {
   const { Modal, open, close } = useModal();
 
   return (
-    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
+    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] mb:w-full mb:h-full bg-Light_Layout-200 dark:bg-Dark_Layout-300">
       <h1 className="mt-[3.25rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
         프로필 수정
       </h1>

@@ -3,7 +3,6 @@ import { fakerKO as faker } from '@faker-js/faker';
 import { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-
 const MydataPage = () => {
   const data = {
     all: faker.number.int({ min: 1, max: 31 }),
@@ -58,9 +57,8 @@ const MydataPage = () => {
     ],
   };
   const Options = {};
-
   return (
-    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(screen-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
+    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(screen-3.1875rem)] mb:w-full mb:h-full bg-Light_Layout-200 dark:bg-Dark_Layout-300">
       <div className="mt-[2.125rem] w-[12.875rem] h-[1.875rem] flex justify-center	">
         <ArrowLeftIcon
           width="30"
@@ -68,7 +66,7 @@ const MydataPage = () => {
           className="fill-Light_Text_Name dark:fill-Dark_Text_Name"
           onClick={ArrowLeftHandler}
         />
-        <span className="w-[8rem] h-[1.875rem] flex justify-center items-center text-Light_Text_Name font-semibold dark:text-Dark_Text_Name">
+        <span className="w-[8rem] h-[1.875rem] flex justify-center items-center text-[1.25rem] text-Light_Text_Name font-semibold dark:text-Dark_Text_Name">
           {titleYear}년 {titleMonth}월
         </span>
         <ArrowRightIcon
@@ -185,7 +183,7 @@ const MydataPage = () => {
             </div>
           </div>
           <div className="w-[19.8125rem] h-[9.375rem] flex flex-col items-center bg-Light_Layout-400 dark:bg-Dark_Layout-300 rounded-lg">
-            <div className="mt-[1.75rem] text-[1.25rem] font-semibold text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
+            <div className="mt-[1.75rem] mb:mt-[3rem] text-[1.25rem] font-semibold text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
               내가 연 베팅
             </div>
             <div className="mt-[1rem] flex justify-center items-center">
@@ -199,7 +197,7 @@ const MydataPage = () => {
             <div className="mt-[1rem] font-semibold text-[1.25rem] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
               베팅 승률
             </div>
-            <div className="w-[13.75rem] h-[13.75rem]">
+            <div className="mb:mt-[1rem] w-[13.75rem] h-[13.75rem]">
               <Doughnut data={Data} options={Options}></Doughnut>
             </div>
             <div className="w-[4.875rem] h-[2.25rem] flex justify-center items-center">
@@ -215,7 +213,7 @@ const MydataPage = () => {
               베팅 수익률
             </div>
 
-            <div className="w-[13.75rem] h-[13.75rem]">
+            <div className="mb:mt-[1rem] w-[13.75rem] h-[13.75rem]">
               <Doughnut data={Data} options={Options}></Doughnut>
             </div>
             <div className="w-[4.875rem] h-[2.25rem] flex justify-center items-center">
