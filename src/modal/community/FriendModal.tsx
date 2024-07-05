@@ -1,63 +1,39 @@
-import { CoinIcon } from '@/assets/svg/community';
-import { IBetting } from '@/api/community/Betting.Interface';
-import { useState } from 'react';
-import { useBettingModal } from '@/hooks/community/useBettingModal';
-import useFriendApi from '@/hooks/community/useFriendApi';
-
-interface FriendModalProps {
-  type: 'block' | 'remove';
+interface FriendlModalProps {
+  type: 'block' | 'delete';
   onClose: () => void;
+  onClick: () => void;
 }
 
-const FriendModal = ({ onClose, type }: FriendModalProps) => {
-  const { blockFriend, removeFriend } = useFriendApi();
+const FriendModal = ({ type, onClose, onClick }: FriendlModalProps) => {
   return (
     <>
       <div className="fixed top-0 left-0 w-screen h-screen bg-Dark_Layout-100 bg-opacity-60" onClick={onClose} />
-      <form
-        onSubmit={handleSubmit}
-        className="absolute flex flex-col items-center gap-5 w-[25rem] px-11 py-7 bg-Light_Layout-400 border-none rounded-lg  text-Light_Text_Name top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      >
-        <h3 className="self-start">
-          <span className="font-bold text-lg underline ">{bettingDetail?.memberNickname}</span> 님은
-          <span className="font-bold text-lg underline">{bettingDetail?.todoContents}</span> 를
-        </h3>
-        <div className="flex gap-12 items-center">
-          <div className="flex flex-col items-center  gap-4">
-            <p className="font-bold text-2xl">한다</p>
-            <p className="flex items-center">
-              <CoinIcon width="2rem" height="2rem" />
-              <span className="font-bold text-2xl">{bettingDetail?.successCoins}</span>
-            </p>
-          </div>
-          <span className="font-bold text-2xl">VS</span>
-          <div className="flex flex-col items-center  gap-4">
-            <p className="font-bold text-2xl">안한다</p>
-            <p className="flex items-center ">
-              <CoinIcon width="2rem" height="2rem" />
-              <span className="font-bold text-2xl">{bettingDetail?.failureCoins}</span>
-            </p>
-          </div>
-        </div>
-
-        {type === 'detail' ? (
-          <p>
-            <span className="font-bold text-xl">40명</span>의 친구가 베팅에 참여했어요
-          </p>
-        ) : (
-          <div className="flex flex-col items-center gap-1">
-            <div className="flex items-center">
-              <input name="cost" onChange={handleChange} className="border-b px-4 w-20 focus:outline-none" />를
-              베팅할게요.
-            </div>
-            <p>{isValid ? '유효' : '금액이 부족합니다.'}</p>
+      <div className="absolute flex flex-col items-center gap-5  p-9 bg-Light_Layout-400 border-none  text-Light_Text_Name top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl">
+        <p>
+          <span className="text-Button text-lg">닉네임 뭐하지</span>
+          <span className="text-base">
+            {type === 'block' ? '님을 차단하시겠습니까?' : type === 'delete' && '님을 삭제하시겠습니까?'}
+          </span>
+        </p>
+        {type === 'block' && (
+          <div className="flex flex-col gap-2">
+            <li className="text-xs">차단된 사람은 회원님의 프로필을 찾을 수 없습니다.</li>
+            <li className="text-xs">마이페이지에서 언제든지 차단을 해제할 수 있습니다.</li>
           </div>
         )}
+        <div className="flex gap-3 w-full">
+          <button
+            onClick={onClick}
+            className="w-full h-9 bg-Light_Layout-100 text-Light_Text_AboutMe text-base rounded-[2rem] "
+          >
+            {type === 'block' ? '차단' : '삭제'}
+          </button>
 
-        <button className="w-full h-10  bg-Button text-Light_Layout-400 text-base rounded-[0.625rem] font-bold">
-          {type === 'detail' ? '채팅방 가기' : '베팅하기'}
-        </button>
-      </form>
+          <button onClick={onClose} className="w-full h-9 bg-Button text-Light_Layout-400 text-base rounded-[2rem] ">
+            취소
+          </button>
+        </div>
+      </div>
     </>
   );
 };

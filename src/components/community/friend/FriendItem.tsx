@@ -3,15 +3,28 @@ import { STATUS } from './FriendConstant';
 import Button from './Button';
 import { IFriend } from '@/api/community/Friend.Interface';
 import useFriendApi from '@/hooks/community/useFriendApi';
+import useModal from '@/hooks/useModal';
+import FriendModal from '@/modal/community/FriendModal';
+import { useState } from 'react';
 interface IFriendItemProps {
   friend: IFriend;
 }
 
 const FriendItem = ({ friend }: IFriendItemProps) => {
-  const { removeFriend, addFriend, cancelFriendRequest } = useFriendApi();
+  const { removeFriend, addFriend, cancelFriendRequest, blockFriend } = useFriendApi();
+  const { open, close, Modal } = useModal();
+  const [modalType, setModalType] = useState<'delete' | 'block'>('delete');
+  const handleModalClick = () => {
+    return modalType === 'delete' ? removeFriend(friend.memberId) : blockFriend({ friendId: friend.memberId });
+  };
+  const handleBlockBtnClick = () => {
+    setModalType('block');
+    return open();
+  };
 
-  const handleBlockBtn = () => {
-    //TODO:차단 모달 등장
+  const handleDeleteBtnClick = () => {
+    setModalType('delete');
+    return open();
   };
   return (
     <li className="flex dt:gap-[1rem] items-center mb:justify-between mb:w-full h-[2.5rem]">
@@ -20,12 +33,7 @@ const FriendItem = ({ friend }: IFriendItemProps) => {
         {friend.nickname}
       </span>
       {friend.status === STATUS.FRIEND ? (
-        <Button
-          color="dark"
-          onClick={() => {
-            removeFriend(friend.memberId);
-          }}
-        >
+        <Button color="dark" onClick={handleDeleteBtnClick}>
           친구삭제
         </Button>
       ) : friend.status === STATUS.NOT_FRIEND ? (
@@ -47,9 +55,12 @@ const FriendItem = ({ friend }: IFriendItemProps) => {
           대기중
         </Button>
       )}
-      <Button color="gray" onClick={handleBlockBtn}>
+      <Button color="gray" onClick={handleBlockBtnClick}>
         차단
       </Button>
+      <Modal>
+        <FriendModal type={modalType} onClose={close} onClick={handleModalClick} />
+      </Modal>
     </li>
   );
 };
