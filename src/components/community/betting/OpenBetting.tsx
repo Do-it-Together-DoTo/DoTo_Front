@@ -23,7 +23,7 @@ const OpenBetting = () => {
       <h3 className="text-Light_CategoryText_Icon_Contents text-2xl">오픈 베팅</h3>
       <div className="flex flex-col gap-[0.5rem]">
         {openBetting.map((betting) => (
-          <BettingItem key={betting.bettingId} betting={betting} isParticipate={false} />
+          <BettingItem key={betting.bettingId} betting={betting} isParticipate={false} type="open" />
         ))}
       </div>
     </section>

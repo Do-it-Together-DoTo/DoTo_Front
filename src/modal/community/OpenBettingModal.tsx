@@ -6,7 +6,6 @@ import { getBetting, joinBetting } from '@/api/community/BettingApi';
 
 interface BettingDetailModalProps {
   betting: IBetting;
-  type: 'detail' | 'bet';
   onClose: () => void;
 }
 
@@ -90,7 +89,7 @@ const OpenBettingModal = ({ betting, onClose }: BettingDetailModalProps) => {
         </div>
 
         <button className="w-full h-10  bg-Button text-Light_Layout-400 text-base rounded-[0.625rem] font-bold">
-          채팅방 가기
+          베팅하기
         </button>
       </form>
     </>

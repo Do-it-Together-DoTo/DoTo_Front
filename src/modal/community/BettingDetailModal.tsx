@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 interface BettingDetailModalProps {
   betting: IBetting;
-  type: 'detail' | 'bet';
   onClose: () => void;
 }
 

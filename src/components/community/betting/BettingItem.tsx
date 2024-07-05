@@ -2,12 +2,14 @@ import { CharacterProfileIcon } from '@/assets/svg/community';
 import { IBetting } from '@/api/community/Betting.Interface';
 import useModal from '@/hooks/useModal';
 import BettingDetailModal from '@/modal/community/BettingDetailModal';
+import OpenBettingModal from '@/modal/community/OpenBettingModal';
 
 interface BettingItemProps {
   betting: IBetting;
+  type: 'open' | 'my';
   isParticipate: boolean;
 }
-const BettingItem = ({ betting, isParticipate }: BettingItemProps) => {
+const BettingItem = ({ betting, isParticipate, type }: BettingItemProps) => {
   const { open, close, Modal } = useModal();
   return (
     <div
@@ -19,7 +21,11 @@ const BettingItem = ({ betting, isParticipate }: BettingItemProps) => {
       <p>{betting.bettingName}</p>
       {isParticipate ? <p>자세히 보기</p> : <p>참여하기</p>}
       <Modal>
-        <BettingDetailModal betting={betting} onClose={close} />
+        {type === 'open' ? (
+          <OpenBettingModal betting={betting} onClose={close} />
+        ) : (
+          <BettingDetailModal betting={betting} onClose={close} />
+        )}
       </Modal>
     </div>
   );
