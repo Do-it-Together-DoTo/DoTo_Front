@@ -11,7 +11,6 @@ const Timer = () => {
 
   // TODO: 타이머 로직 보완 필요: useInterval 사용
   useEffect(() => {
-    console.log(restSec);
     setInterval(() => {
       setRestSec(dayjs.duration(dayjs().endOf('w').add(1, 'd').diff(dayjs())));
     }, 1000);

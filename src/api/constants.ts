@@ -16,4 +16,6 @@ export const END_POINT = {
   FRIEND_RESPONSE: `/friends/response`,
   FRIEND_DETAIL: `/members/friends`,
   FRIEND_SEARCH: `/members/search`,
+
+  RANKING: `/members/ranking`,
 };
