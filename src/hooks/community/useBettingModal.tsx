@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 //베팅만들기
 interface createBettingProps {
   betting: IBetting;
+
   onSubmit?: () => void;
   validate?: () => void;
 }
@@ -14,7 +15,6 @@ export const useBettingModal = ({ betting }: createBettingProps) => {
   //onSubmit은 제출후 결과
   const [values, setValues] = useState({});
   const [errors] = useState({});
-  console.log(betting);
   const navigate = useNavigate();
   // const [submitting, setSubmitting] = useState(false);
   const [bettingDetail, setBettingDetail] = useState<IBettingDetail | null>(null);

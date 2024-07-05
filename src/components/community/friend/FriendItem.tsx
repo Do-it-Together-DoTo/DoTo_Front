@@ -14,9 +14,7 @@ const FriendItem = ({ friend }: IFriendItemProps) => {
   const { removeFriend, addFriend, cancelFriendRequest, blockFriend } = useFriendApi();
   const { open, close, Modal } = useModal();
   const [modalType, setModalType] = useState<'delete' | 'block'>('delete');
-  const handleModalClick = () => {
-    return modalType === 'delete' ? removeFriend(friend.memberId) : blockFriend({ friendId: friend.memberId });
-  };
+
   const handleBlockBtnClick = () => {
     setModalType('block');
     return open();
@@ -59,7 +57,27 @@ const FriendItem = ({ friend }: IFriendItemProps) => {
         차단
       </Button>
       <Modal>
-        <FriendModal type={modalType} onClose={close} onClick={handleModalClick} />
+        {modalType === 'delete' ? (
+          <FriendModal
+            nickname={friend.nickname}
+            title="님을 삭제하시겠습니까?"
+            btnText="삭제"
+            onClose={close}
+            onClick={() => removeFriend(friend.memberId)}
+          />
+        ) : (
+          <FriendModal
+            nickname={friend.nickname}
+            title="님을 차단하시겠습니까?"
+            messages={[
+              '차단된 사람은 회원님의 프로필을 찾을 수 없습니다.',
+              '마이페이지에서 언제든지 차단을 해제할 수 있습니다.',
+            ]}
+            btnText="차단"
+            onClose={close}
+            onClick={() => blockFriend({ friendId: friend.memberId })}
+          />
+        )}
       </Modal>
     </li>
   );

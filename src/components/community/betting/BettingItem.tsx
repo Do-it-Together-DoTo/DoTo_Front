@@ -1,7 +1,7 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { IBetting } from '@/api/community/Betting.Interface';
 import useModal from '@/hooks/useModal';
-import BettingModal from '@/modal/community/BettingModal';
+import BettingDetailModal from '@/modal/community/BettingDetailModal';
 
 interface BettingItemProps {
   betting: IBetting;
@@ -19,7 +19,7 @@ const BettingItem = ({ betting, isParticipate }: BettingItemProps) => {
       <p>{betting.bettingName}</p>
       {isParticipate ? <p>자세히 보기</p> : <p>참여하기</p>}
       <Modal>
-        <BettingModal betting={betting} onClose={close} type={null} />
+        <BettingDetailModal betting={betting} onClose={close} />
       </Modal>
     </div>
   );
