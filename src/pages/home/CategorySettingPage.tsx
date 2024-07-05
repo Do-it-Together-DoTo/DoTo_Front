@@ -3,13 +3,14 @@ import {
   PublicIcon,
   FriendOnlyIcon,
   PrivateIcon,
-  CheckIcon,
+  // CheckIcon,
   ToggleIcon,
   DndIcon,
   EditCategoryIcon,
 } from '@/assets/svg/home/category';
 import { OpenTodoEditIcon } from '@/assets/svg/home/modal';
 import { instance } from '@/api/axios';
+// import { DragDropContext, DropResult, Droppable, Draggable } from 'react-beautiful-dnd';
 
 interface categoryProps {
   id: number;
@@ -21,27 +22,30 @@ interface categoryProps {
 }
 
 const CategorySettingPage = () => {
+  const [refresh, setRefresh] = useState(1);
   const [activated, setActivated] = useState<categoryProps[]>([]);
   const [inActivated, setInActivated] = useState<categoryProps[]>([]);
 
   const [isColorButton, setIsColorButton] = useState(false);
-  const [isActivatedButton, setIsActivatedButton] = useState(false);
+  // const [isActivatedButton, setIsActivatedButton] = useState(false);
   const [isSharedButton, setIsSharedButton] = useState(false);
 
   const [isShared, setIsShared] = useState('PUBLIC');
   const [isColor, setIsColor] = useState('PINK');
 
+  const [content, setContent] = useState('');
+
   useEffect(() => {
     instance
       .get('/categories')
       .then((res) => {
-        setActivated(res.data.body['activated']);
-        setInActivated(res.data.body['inactivated']);
+        setActivated([...res.data.body['activated']].reverse());
+        setInActivated([...res.data.body['inactivated']].reverse());
       })
       .catch((err: string) => {
         console.log('카테고리 전체 응답 실패:', err);
       });
-  }, []);
+  }, [refresh]);
 
   const handleGoBack = () => {
     window.history.back();
@@ -53,8 +57,9 @@ const CategorySettingPage = () => {
         setIsSharedButton(!isSharedButton);
       } else if (prop === 'color') {
         setIsColorButton(!isColorButton);
-      } else if (prop === 'activated') {
-        setIsActivatedButton(!isActivatedButton);
+        // } else if (prop === 'activated') {
+        //   setIsActivatedButton(!isActivatedButton);
+        // }
       }
     };
   };
@@ -73,8 +78,46 @@ const CategorySettingPage = () => {
     };
   };
 
-  console.log(inActivated);
-  console.log(activated);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length > 12) {
+      e.target.value = e.target.value.slice(0, 12);
+    }
+
+    setContent(e.target.value);
+  };
+
+  const handleSubmitButton = () => {
+    instance
+      .post('/categories', { contents: content || '\u00A0', scope: isShared, color: isColor })
+      .then(() => {
+        setRefresh((prev) => prev * -1);
+
+        setContent('');
+        setIsShared('PUBLIC');
+        setIsColor('PINK');
+        console.log(activated);
+      })
+      .catch((error) => {
+        console.error('카테고리 삭제 에러:', error);
+      });
+  };
+
+  const handleDelButton = (categoryId: number) => {
+    instance
+      .delete(`/categories/${categoryId}`)
+      .then((response) => {
+        console.log(response.data.header.httpStatusCode);
+        if (response.data.header.httpStatusCode === 400) {
+          console.error('400 에러: 잘못된 요청입니다.');
+        } else {
+          setActivated((prev) => prev.filter((category) => category.id !== categoryId));
+          setInActivated((prev) => prev.filter((category) => category.id !== categoryId));
+        }
+      })
+      .catch((error) => {
+        console.error('카테고리 삭제 에러:', error);
+      });
+  };
 
   return (
     <div className="w-full px-20 pt-9 h-[calc(100vh-3.1875rem)] rounded-tl-3xl bg-Light_Layout-300 dark:bg-Dark_Layout-200">
@@ -92,7 +135,11 @@ const CategorySettingPage = () => {
           </h2>
           <div className="w-full overflow-y-auto px-7 scrollbar-hide">
             {inActivated.map((inact) => (
-              <div className="flex items-center justify-between mb-5">
+              <div
+                key={inact.id}
+                onClick={() => handleDelButton(inact.id)}
+                className="flex items-center justify-between py-2.5 bg-Light_Layout-400 dark:bg-Dark_Layout-400"
+              >
                 <div className="flex">
                   <DndIcon className="w-7 dark:fill-Light_Text_AboutMe" />
                   <div className="w-full h-full rounded-lg dark:bg-Dark_Layout-300">
@@ -106,7 +153,7 @@ const CategorySettingPage = () => {
                       ) : inact.scope === 'PRIVATE' ? (
                         <PrivateIcon className={`w-5 fill-${inact.color.toLowerCase()}`} />
                       ) : null}
-                      <span className={`text-lg text-${inact.color.toLowerCase()} font-medium ml-2.5`}>
+                      <span className={`text-base text-${inact.color.toLowerCase()} font-medium ml-2.5`}>
                         {inact.contents}
                       </span>
                     </div>
@@ -119,6 +166,7 @@ const CategorySettingPage = () => {
             ))}
           </div>
         </section>
+
         {/* 활성 카테고리 */}
         <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)] bg-Light_Layout-400 rounded-2xl mx-9 pb-5 dark:bg-Dark_Layout-400">
           <h2 className="my-5 text-xl font-medium text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Name">
@@ -126,7 +174,11 @@ const CategorySettingPage = () => {
           </h2>
           <div className="w-full overflow-y-auto px-7 scrollbar-hide">
             {activated.map((act) => (
-              <div className="flex items-center justify-between mb-5">
+              <div
+                key={act.id}
+                onClick={() => handleDelButton(act.id)}
+                className="flex items-center justify-between py-2.5 bg-Light_Layout-400 dark:bg-Dark_Layout-400"
+              >
                 <div className="flex">
                   <DndIcon className="w-7 dark:fill-Light_Text_AboutMe" />
                   <div className="w-full h-full rounded-lg dark:bg-Dark_Layout-300">
@@ -140,7 +192,7 @@ const CategorySettingPage = () => {
                       ) : act.scope === 'PRIVATE' ? (
                         <PrivateIcon className={`w-5 fill-${act.color.toLowerCase()}`} />
                       ) : null}
-                      <span className={`text-lg text-${act.color.toLowerCase()} font-medium ml-2.5`}>
+                      <span className={`text-base text-${act.color.toLowerCase()} font-medium ml-2.5`}>
                         {act.contents}
                       </span>
                     </div>
@@ -164,8 +216,11 @@ const CategorySettingPage = () => {
               <p className="text-sm text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">제목</p>
               <input
                 type="text"
+                value={content}
+                maxLength={12}
                 className="w-full py-1 text-sm border-b outline-none border-Light_Layout-100 text-Light_Text_Name bg-Light_Layout-300 border-b-1 caret-Dark_Text_Contents placeholder:text-Dark_Text_Contents dark:bg-Dark_Layout-200 dark:border-Dark_Layout-400 dark:placeholder:text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Name dark:caret-Dark_Layout-400"
-                placeholder="카테고리 제목을 입력하세요. (12자 이내만 표시됩니다.)"
+                placeholder="카테고리 제목을 입력하세요. (12자 이내만 입력됩니다.)"
+                onChange={handleChange}
               />
             </div>
             <div className="relative flex flex-col w-full pb-1 mb-12 border-b border-b-1 border-Light_Layout-100 dark:border-Dark_Layout-400">
@@ -284,7 +339,7 @@ const CategorySettingPage = () => {
                 <div className="transition-all" />
               )}
             </div>
-            <div className="flex items-center justify-between w-full pb-1 mb-12 border-b border-b-1 border-Light_Layout-100 dark:border-Dark_Layout-400">
+            {/* <div className="flex items-center justify-between w-full pb-1 mb-12 border-b border-b-1 border-Light_Layout-100 dark:border-Dark_Layout-400">
               <p className="text-sm text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">비활성화</p>
               {isActivatedButton ? (
                 <button
@@ -299,8 +354,14 @@ const CategorySettingPage = () => {
                   className="w-4 h-4 border-[0.0938rem] rounded-[0.1875rem] border-Dark_Text_Contents dark:border-Light_CategoryText_Icon_Contents"
                 />
               )}
-            </div>
-            <button className="font-medium min-h-9 w-36 rounded-3xl bg-Button text-Light_Layout-400">확인</button>
+            </div> */}
+            <div className="grow" />
+            <button
+              onClick={handleSubmitButton}
+              className="mb-10 font-medium min-h-9 w-36 rounded-3xl bg-Button text-Light_Layout-400"
+            >
+              확인
+            </button>
           </div>
         </section>
       </div>
