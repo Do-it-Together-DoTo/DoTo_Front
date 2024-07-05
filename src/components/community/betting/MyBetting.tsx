@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export interface IBetting {
   bettingId: number;
   bettingName: string;
-  mainCharacterImg: String;
+  mainCharacterImg: string;
   memberId: number;
   memberNickname: string;
 }
