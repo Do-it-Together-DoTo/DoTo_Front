@@ -1,7 +1,14 @@
 import { getMyBetting } from '@/api/community/BettingApi';
 import MyBettingCategory from './MyBettingCategory';
 import { useEffect, useState } from 'react';
-import { IBetting } from '@/api/community/Betting.Interface';
+
+export interface IBetting {
+  bettingId: number;
+  bettingName: string;
+  mainCharacterImg: String;
+  memberId: number;
+  memberNickname: string;
+}
 
 const MyBetting = () => {
   // TODO: 연베팅, 참여한베팅, 완료한 베팅 나눠서 props로 전달

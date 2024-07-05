@@ -1,7 +1,7 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { IBetting } from '@/api/community/Betting.Interface';
 import useModal from '@/hooks/useModal';
-import BettingModal from '@/modal/BettingModal';
+import BettingModal from '@/modal/community/BettingModal';
 
 interface BettingItemProps {
   betting: IBetting;
