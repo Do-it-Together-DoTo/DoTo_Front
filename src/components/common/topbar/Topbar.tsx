@@ -1,6 +1,7 @@
 import { SunIcon, MoonIcon, NotificationOnIcon, NotificationOffIcon } from '@/assets/svg';
 import useDarkModeStore from '@/store/darkmodeStore';
 import useNotificationStore from '@/store/notificationStore';
+import { useEffect } from 'react';
 
 const Topbar = () => {
   const { isNotification, setIsNotification } = useNotificationStore();
@@ -8,15 +9,20 @@ const Topbar = () => {
   const handleAlarmClick = () => {
     setIsNotification();
   };
-  const handleDarkModeClick = () => {
-    setIsDarkMode();
-    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
-    if (!isDarkMode) {
+
+  useEffect(() => {
+    if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }, [isDarkMode]);
+
+  const handleDarkModeClick = () => {
+    setIsDarkMode();
+    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
   };
+
   return (
     <div className="flex justify-end px-[1.59375rem] h-[3.1875rem] items-center dark:bg-Dark_Layout-100 mb:fixed bg-Light_Layout-400">
       <div className="flex gap-3 w-[5.0625rem] ">
