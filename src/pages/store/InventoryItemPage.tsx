@@ -34,9 +34,22 @@ const InventoryItemPage = () => {
     setSelectedItem({ itemName, isRare, itemValue });
   };
 
+  // 아이템 사용
   const confirm = () => {
     console.log('InvenItemModal confirmed');
-    // confirm 클릭 시 기타 기능 추가
+    instance
+      .patch('/members/items', {
+        characterId: 2,
+        itemTypeId: 1,
+        count: 3,
+      })
+      .then((res) => {
+        // setItems(res.data.body);
+        console.log('응답 완료:', res.data);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
     close();
   };
 
@@ -69,10 +82,6 @@ const InventoryItemPage = () => {
                 onClick={openModal}
               />
             ))}
-            {/* <InventoryItem itemName={'특 성장 물약'} isRare={true} itemValue={8} onClick={openModal} />
-            <InventoryItem itemName={'특 성장 물약'} isRare={false} itemValue={3} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={true} itemValue={33} onClick={openModal} />
-            <InventoryItem itemName={'성장 물약'} isRare={false} itemValue={3242353} onClick={openModal} /> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { Coin, Egg } from '@/assets/svg';
-// import { Dispatch, SetStateAction } from 'react';
 
 interface ShopCharModalProps {
   characterName: string;

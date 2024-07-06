@@ -1,15 +1,17 @@
 import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
 type ShopItemProps = {
+  // key: number;
+  itemId: number;
   itemName: string;
   coinValue: number;
   isRare: boolean;
-  onClick: (itemName: string, coinValue: number, isRare: boolean) => void;
+  onClick: (itemId: number, itemName: string, coinValue: number, isRare: boolean) => void;
 };
 
 const ShopItem = (props: ShopItemProps) => {
   const handleClick = () => {
-    props.onClick(props.itemName, props.coinValue, props.isRare);
+    props.onClick(props.itemId, props.itemName, props.coinValue, props.isRare);
   };
 
   return (

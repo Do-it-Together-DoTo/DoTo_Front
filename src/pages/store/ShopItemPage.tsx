@@ -7,9 +7,12 @@ import { useState, useEffect } from 'react';
 import { instance } from '@/api/axios';
 
 const ShopItemPage = () => {
-  const [selectedItem, setSelectedItem] = useState<{ itemName: string; coinValue: number; isRare: boolean } | null>(
-    null,
-  );
+  const [selectedItem, setSelectedItem] = useState<{
+    itemId: number;
+    itemName: string;
+    coinValue: number;
+    isRare: boolean;
+  } | null>(null);
 
   const [items, setItems] = useState<Array<{ id: number; name: string; img: string; price: number; grade: string }>>(
     [],
@@ -30,14 +33,26 @@ const ShopItemPage = () => {
   const { Modal, open, close } = useModal();
 
   const confirm = () => {
+    if (selectedItem !== null) {
+      instance
+        .put(`/store/items/${selectedItem.itemId}`, {
+          count: 3,
+        })
+        .then((res) => {
+          console.log(res);
+          console.log('모달에 적용됨');
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
     console.log('ShopItemBuyModal confirmed');
-    // confirm 클릭 시 기타 기능 추가
     close();
   };
 
-  const openModal = (itemName: string, coinValue: number, isRare: boolean) => {
+  const openModal = (itemId: number, itemName: string, coinValue: number, isRare: boolean) => {
     open();
-    setSelectedItem({ itemName, coinValue, isRare });
+    setSelectedItem({ itemId, itemName, coinValue, isRare });
   };
 
   return (
@@ -51,6 +66,7 @@ const ShopItemPage = () => {
           <Modal>
             {selectedItem && (
               <ShopItemBuyModal
+                itemId={selectedItem.itemId}
                 itemName={selectedItem?.itemName}
                 coinValue={selectedItem?.coinValue}
                 isRare={selectedItem?.isRare}
@@ -63,6 +79,7 @@ const ShopItemPage = () => {
             {items.map((item) => (
               <ShopItem
                 key={item.id}
+                itemId={item.id}
                 itemName={item.name}
                 coinValue={item.price}
                 isRare={item.grade === '테스트 아이템 등급1'}

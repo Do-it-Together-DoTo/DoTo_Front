@@ -8,6 +8,7 @@ import { instance } from '@/api/axios';
 
 const InventoryCharacterPage = () => {
   const [selectedChar, setSelectedChar] = useState<{
+    characterId: number;
     characterName: string;
     characterLevel: number;
     characterExp: number;
@@ -33,14 +34,29 @@ const InventoryCharacterPage = () => {
 
   const { Modal, open, close } = useModal();
 
-  const openModal = (characterName: string, characterLevel: number, characterExp: number, characterDesc: string) => {
+  const openModal = (
+    characterId: number,
+    characterName: string,
+    characterLevel: number,
+    characterExp: number,
+    characterDesc: string,
+  ) => {
     open();
-    setSelectedChar({ characterName, characterLevel, characterExp, characterDesc });
+    setSelectedChar({ characterId, characterName, characterLevel, characterExp, characterDesc });
   };
 
   const confirm = () => {
+    if (selectedChar !== null) {
+      instance
+        .patch(`/members/characters/${selectedChar.characterId}`)
+        .then((res) => {
+          console.log('응답 완료:', res.data);
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
     console.log('InvenCharModal confirmed');
-    // confirm 클릭 시 기타 기능 추가
     close();
   };
 
@@ -55,6 +71,7 @@ const InventoryCharacterPage = () => {
           <Modal>
             {selectedChar && (
               <InventoryCharUseModal
+                characterId={selectedChar.characterId}
                 characterName={selectedChar.characterName}
                 characterLevel={selectedChar.characterLevel}
                 characterExp={selectedChar.characterExp}
@@ -68,6 +85,7 @@ const InventoryCharacterPage = () => {
             {characters.map((character) => (
               <InventoryCharacter
                 key={character.id}
+                characterId={character.id}
                 characterName={character.name}
                 characterLevel={character.level}
                 characterExp={character.exp}

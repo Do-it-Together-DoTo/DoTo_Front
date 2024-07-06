@@ -1,6 +1,7 @@
 import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
 interface ShopItemModalProps {
+  itemId: number;
   itemName: string;
   coinValue: number;
   isRare: boolean;

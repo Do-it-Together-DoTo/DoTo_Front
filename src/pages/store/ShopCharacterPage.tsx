@@ -9,7 +9,6 @@ import { instance } from '@/api/axios';
 const ShopCharacterPage = () => {
   const [selectedChar, setSelectedChar] = useState<{ characterName: string; coinValue: number } | null>(null);
 
-  // const [eggs, setEggs] = useState<object<{ id: number; name: string; img: string; price: number }>>();
   const [eggs, setEggs] = useState<{ id: number; name: string; img: string; price: number } | null>(null);
 
   useEffect(() => {
@@ -28,8 +27,17 @@ const ShopCharacterPage = () => {
   const { Modal, open, close } = useModal();
 
   const confirm = () => {
+    instance
+      .post('/store/characters', {
+        count: 1,
+      })
+      .then((res) => {
+        console.log('응답 완료:', res);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
     console.log('ShopCharBuyModal confirmed');
-    // confirm 클릭 시 기타 기능 추가
     close();
   };
 
@@ -41,7 +49,7 @@ const ShopCharacterPage = () => {
   // eggs가 null이면 렌더링 에러
   if (eggs) {
     return (
-      <div className="w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
+      <div className="dt:w-[calc(100vw-26.1875rem)] mb:w-full h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
         <div className="h-[5.625rem] flex items-center justify-center text-[1.625rem] text-Light_CategoryText_Icon_Contents">
           스토어
         </div>
@@ -61,9 +69,6 @@ const ShopCharacterPage = () => {
             </Modal>
             <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
               <ShopCharacter key={eggs.id} characterName={eggs.name} coinValue={eggs.price} onClick={openModal} />
-              {/* <ShopCharacter characterName={'캐릭터4'} coinValue={400} onClick={openModal} />
-              <ShopCharacter characterName={'캐릭터5'} coinValue={500} onClick={openModal} />
-              <ShopCharacter characterName={'캐릭터6'} coinValue={600} onClick={openModal} /> */}
             </div>
           </div>
         </div>

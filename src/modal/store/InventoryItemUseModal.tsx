@@ -18,14 +18,14 @@ interface InvenItemModalProps {
 }
 
 const InventoryItemUseModal = (props: InvenItemModalProps) => {
-  const [buyNumber, setBuyNumber] = useState(1);
+  const [useNumber, setUseNumber] = useState(1);
 
   const increaseNumber = () => {
-    setBuyNumber(buyNumber + 1);
+    setUseNumber(useNumber + 1);
   };
   const decreaseNumber = () => {
-    if (buyNumber > 1) {
-      setBuyNumber(buyNumber - 1);
+    if (useNumber > 1) {
+      setUseNumber(useNumber - 1);
     }
   };
 
@@ -55,7 +55,7 @@ const InventoryItemUseModal = (props: InvenItemModalProps) => {
               <MinusButton className="w-[8px] h-[8px] m-[4px]" onClick={decreaseNumber} />
             </button>
             <div className="flex items-center justify-center w-[27px] h-[20px] bg-Light_Layout-400 border-Light_Layout-100 rounded-[5px]">
-              <div className="font-bold text-[10px] text-Light_Text_Name">{buyNumber}</div>
+              <div className="font-bold text-[10px] text-Light_Text_Name">{useNumber}</div>
             </div>
             <button>
               <PlusButton className="w-[8px] h-[8px] m-[4px]" onClick={increaseNumber} />

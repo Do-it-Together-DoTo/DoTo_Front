@@ -1,17 +1,30 @@
 import { MyBlob, Slider } from '@/assets/svg';
 
 interface InvenCharProps {
+  characterId: number;
   characterName: string;
   characterLevel: number;
   characterExp: number;
   characterDesc: string;
-  onClick: (characterName: string, characterLevel: number, characterExp: number, characterDesc: string) => void;
+  onClick: (
+    characterId: number,
+    characterName: string,
+    characterLevel: number,
+    characterExp: number,
+    characterDesc: string,
+  ) => void;
   isSelected: boolean;
 }
 
 const InventoryCharacter = (props: InvenCharProps) => {
   const handleClick = () => {
-    props.onClick(props.characterName, props.characterLevel, props.characterExp, props.characterDesc);
+    props.onClick(
+      props.characterId,
+      props.characterName,
+      props.characterLevel,
+      props.characterExp,
+      props.characterDesc,
+    );
   };
 
   return (
@@ -24,7 +37,9 @@ const InventoryCharacter = (props: InvenCharProps) => {
       <div className="text-Light_Text_AboutMe dark:text-Dark_Text_Contents font-nico text-[0.8125rem]">
         Lv.{props.characterLevel}
       </div>
-      <Slider className="w-[6.2075rem] mt-[0.6875rem]" />
+      <div className="block w-[6.2075rem] h-2 mt-[0.6875rem] rounded-full bg-Dark_Layout-100">
+        <div className="block h-2 rounded-full bg-gradient" style={{ width: `calc(0.1rem*${props.characterExp})` }} />
+      </div>
     </div>
   );
 };
