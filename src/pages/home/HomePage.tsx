@@ -152,9 +152,9 @@ const HomePage = () => {
         {/* 프로필 & 팔로워 */}
         <section className="flex flex-col h-[calc(100vh-3.1875rem)]">
           {/* 내 프로필 */}
-          <div
+          <button
             onClick={() => onClickSelected(userProfile)}
-            className="w-[16.1875rem] h-[10.5rem] bg-Light_Layout-100 rounded-tl-3xl dark:bg-Dark_Layout-200 flex flex-col justify-center relative"
+            className="w-[16.1875rem] h-[10.5rem] bg-Light_Layout-100 rounded-tl-3xl dark:bg-Dark_Layout-200 items-center flex flex-col justify-center relative"
           >
             <div className="flex items-center ml-auto mr-8 mb-0.5">
               <CoinIcon className="w-4 h-4" />
@@ -191,7 +191,7 @@ const HomePage = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </button>
           {/* 팔로워 */}
           <div className="w-[16.1875rem] bg-Light_Layout-200 h-full overflow-y-auto scrollbar-hide dark:bg-Dark_Layout-400">
             <div className="flex flex-col items-center pt-4">

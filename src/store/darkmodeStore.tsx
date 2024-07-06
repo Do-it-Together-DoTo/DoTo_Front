@@ -9,7 +9,7 @@ interface DarkModeState {
 const useDarkModeStore = create(
   persist<DarkModeState>(
     (set) => ({
-      isDarkMode: false,
+      isDarkMode: true,
       setIsDarkMode: () => {
         set((state) => ({ isDarkMode: !state.isDarkMode }));
       },

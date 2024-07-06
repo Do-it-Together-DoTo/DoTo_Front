@@ -1,46 +1,49 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import {
   PublicIcon,
   FriendOnlyIcon,
   PrivateIcon,
-  // CheckIcon,
   ToggleIcon,
   DndIcon,
   EditCategoryIcon,
 } from '@/assets/svg/home/category';
 import { OpenTodoEditIcon } from '@/assets/svg/home/modal';
+import CategoryEditModal from '@/modal/home/CategoryEditModal';
+import useModal from '@/hooks/useModal';
 import { instance } from '@/api/axios';
+import useCategoryState from '@/store/home/categoryStateStore';
 // import { DragDropContext, DropResult, Droppable, Draggable } from 'react-beautiful-dnd';
 
-interface categoryProps {
-  id: number;
-  contents: string;
-  scope: string;
-  isActivated: boolean;
-  color: string;
-  seq: number;
-}
-
 const CategorySettingPage = () => {
-  const [refresh, setRefresh] = useState(1);
-  const [activated, setActivated] = useState<categoryProps[]>([]);
-  const [inActivated, setInActivated] = useState<categoryProps[]>([]);
+  const { Modal, open, close } = useModal();
 
+  // store
+  const refresh = useCategoryState((state) => state.refresh);
+  const changeRefresh = useCategoryState((state) => state.changeRefresh);
+
+  const activated = useCategoryState((state) => state.activated);
+  const setActivated = useCategoryState((state) => state.setActivated);
+
+  const inActivated = useCategoryState((state) => state.inActivated);
+  const setInActivated = useCategoryState((state) => state.setInActivated);
+
+  // useState
   const [isColorButton, setIsColorButton] = useState(false);
-  // const [isActivatedButton, setIsActivatedButton] = useState(false);
   const [isSharedButton, setIsSharedButton] = useState(false);
 
   const [isShared, setIsShared] = useState('PUBLIC');
   const [isColor, setIsColor] = useState('PINK');
 
   const [content, setContent] = useState('');
+  const [editContents, setEditContents] = useState({ id: 0, contents: '', scope: '', color: '', isActivated: false });
 
   useEffect(() => {
     instance
       .get('/categories')
       .then((res) => {
         setActivated([...res.data.body['activated']].reverse());
-        setInActivated([...res.data.body['inactivated']].reverse());
+        setInActivated([...res.data.body['inactivated']]);
       })
       .catch((err: string) => {
         console.log('카테고리 전체 응답 실패:', err);
@@ -57,9 +60,6 @@ const CategorySettingPage = () => {
         setIsSharedButton(!isSharedButton);
       } else if (prop === 'color') {
         setIsColorButton(!isColorButton);
-        // } else if (prop === 'activated') {
-        //   setIsActivatedButton(!isActivatedButton);
-        // }
       }
     };
   };
@@ -90,29 +90,11 @@ const CategorySettingPage = () => {
     instance
       .post('/categories', { contents: content || '\u00A0', scope: isShared, color: isColor })
       .then(() => {
-        setRefresh((prev) => prev * -1);
+        changeRefresh();
 
         setContent('');
         setIsShared('PUBLIC');
         setIsColor('PINK');
-        console.log(activated);
-      })
-      .catch((error) => {
-        console.error('카테고리 삭제 에러:', error);
-      });
-  };
-
-  const handleDelButton = (categoryId: number) => {
-    instance
-      .delete(`/categories/${categoryId}`)
-      .then((response) => {
-        console.log(response.data.header.httpStatusCode);
-        if (response.data.header.httpStatusCode === 400) {
-          console.error('400 에러: 잘못된 요청입니다.');
-        } else {
-          setActivated((prev) => prev.filter((category) => category.id !== categoryId));
-          setInActivated((prev) => prev.filter((category) => category.id !== categoryId));
-        }
       })
       .catch((error) => {
         console.error('카테고리 삭제 에러:', error);
@@ -137,7 +119,6 @@ const CategorySettingPage = () => {
             {inActivated.map((inact) => (
               <div
                 key={inact.id}
-                onClick={() => handleDelButton(inact.id)}
                 className="flex items-center justify-between py-2.5 bg-Light_Layout-400 dark:bg-Dark_Layout-400"
               >
                 <div className="flex">
@@ -159,7 +140,18 @@ const CategorySettingPage = () => {
                     </div>
                   </div>
                 </div>
-                <button>
+                <button
+                  onClick={() => {
+                    open();
+                    setEditContents({
+                      id: inact.id,
+                      scope: inact.scope,
+                      color: inact.color.toLowerCase(),
+                      contents: inact.contents,
+                      isActivated: false,
+                    });
+                  }}
+                >
                   <EditCategoryIcon className="px-1 py-1 rounded-full w-9 hover:bg-Light_Layout-200 hover:fill-Light_Text_Name dark:fill-Dark_Text_AboutMe dark:hover:bg-Dark_Layout-300 dark:hover:fill-Light_Layout-100" />
                 </button>
               </div>
@@ -176,7 +168,6 @@ const CategorySettingPage = () => {
             {activated.map((act) => (
               <div
                 key={act.id}
-                onClick={() => handleDelButton(act.id)}
                 className="flex items-center justify-between py-2.5 bg-Light_Layout-400 dark:bg-Dark_Layout-400"
               >
                 <div className="flex">
@@ -198,13 +189,27 @@ const CategorySettingPage = () => {
                     </div>
                   </div>
                 </div>
-                <button>
+                <button
+                  onClick={() => {
+                    open();
+                    setEditContents({
+                      id: act.id,
+                      scope: act.scope,
+                      color: act.color.toLowerCase(),
+                      contents: act.contents,
+                      isActivated: true,
+                    });
+                  }}
+                >
                   <EditCategoryIcon className="px-1 py-1 rounded-full w-9 hover:bg-Light_Layout-200 hover:fill-Light_Text_Name dark:fill-Dark_Text_AboutMe dark:hover:bg-Dark_Layout-300 dark:hover:fill-Light_Layout-100" />
                 </button>
               </div>
             ))}
           </div>
         </section>
+        <Modal>
+          <CategoryEditModal onClose={close} editContents={editContents} />
+        </Modal>
         {/* 카테고리 생성 */}
         <section className="w-full flex flex-col items-center h-[calc(100vh-14.3125rem)]">
           <h2 className="my-5 text-xl font-medium text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Name">
@@ -339,22 +344,6 @@ const CategorySettingPage = () => {
                 <div className="transition-all" />
               )}
             </div>
-            {/* <div className="flex items-center justify-between w-full pb-1 mb-12 border-b border-b-1 border-Light_Layout-100 dark:border-Dark_Layout-400">
-              <p className="text-sm text-Light_CategoryText_Icon_Contents dark:text-Dark_CategoryText_Icon">비활성화</p>
-              {isActivatedButton ? (
-                <button
-                  onClick={handleOnClickButton('activated')}
-                  className="w-4 h-4 flex items-center justify-center border-[0.0938rem] rounded-[0.1875rem] border-Button"
-                >
-                  <CheckIcon className="w-2.5 fill-Button" />
-                </button>
-              ) : (
-                <button
-                  onClick={handleOnClickButton('activated')}
-                  className="w-4 h-4 border-[0.0938rem] rounded-[0.1875rem] border-Dark_Text_Contents dark:border-Light_CategoryText_Icon_Contents"
-                />
-              )}
-            </div> */}
             <div className="grow" />
             <button
               onClick={handleSubmitButton}
