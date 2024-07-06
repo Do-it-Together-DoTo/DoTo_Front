@@ -31,7 +31,8 @@
       "@pages/*": ["pages/*"],
       "@router/*": ["router/*"],
       "@store/*": ["store/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@modal/*": ["modal/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx", "custom.d.ts"],
