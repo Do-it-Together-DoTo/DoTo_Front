@@ -5,7 +5,7 @@ const Modal = ({ onClose, children }: { onClose: () => void; children: React.Rea
     <ModalPortal>
       <div
         onClick={onClose}
-        className="fixed top-0 left-0 flex items-center justify-center w-full h-screen overflow-hidden text-center bg-black bg-opacity-30"
+        className="fixed top-0 left-0 flex items-center justify-center w-full h-screen overflow-hidden text-center bg-black bg-opacity-60"
       >
         <div onClick={(e) => e.stopPropagation()}>{children}</div>
       </div>

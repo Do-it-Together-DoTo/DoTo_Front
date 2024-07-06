@@ -1,8 +1,14 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import moment from 'moment';
+import 'moment/dist/locale/ko';
 import { Droppable, Draggable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { fakerKO as faker } from '@faker-js/faker';
 import CustomCalendar from '@/components/home/calendar/CustomCalendar';
+import CategoryCard from '@/components/home/CategoryCard';
+import useSelectedDateState from '@/store/selectedDateStore';
 import { UserImgSample, CoinIcon } from '@assets/svg';
+import { CategorySettingIcon } from '@assets/svg/home/category';
 
 type SelectedUser = {
   id: string;
@@ -34,24 +40,72 @@ const initialFollowers = Array.from({ length: 10 }, () => ({
   isUserProfile: false,
 }));
 
+const todoList = Array.from({ length: 6 }, () => ({
+  category: {
+    id: faker.string.uuid(),
+    shared: ['public', 'friendOnly', 'private'][Math.floor(Math.random() * 3)],
+    title: faker.lorem.word(),
+    color: ['skyblue', 'pink', 'blue', 'salmon', 'purple', 'yellow', 'green'][Math.floor(Math.random() * 7)],
+
+    todo: Array.from({ length: 3 }, () => ({
+      id: faker.string.uuid(),
+      title: faker.lorem.sentence({ min: 3, max: 20 }),
+      isDone: Math.random() < 0.5,
+    })),
+  },
+}));
+
 const HomePage = () => {
   const [followers, setFollowers] = useState(initialFollowers);
   const [selectedUser, setSelectedUser] = useState<SelectedUser>(userProfile);
-  const [isFollowed, setIsFollowed] = useState(false);
+  const [todos, setTodos] = useState(todoList);
+  // const [isFollowed, setIsFollowed] = useState(false);
+
+  const { selectedDate } = useSelectedDateState((state) => ({
+    selectedDate: moment(state.selectedDate as Date).format('MMM Do(dd)'),
+  }));
 
   const handleDragEnd = (result: DropResult) => {
     const { source, destination } = result;
     if (!destination) return;
     if (source.droppableId === destination.droppableId && source.index === destination.index) return;
 
-    const newFollowers = [...followers];
+    if (source.droppableId === 'followers') {
+      const newFollowers = [...followers];
 
-    const add = newFollowers[source.index];
-    newFollowers.splice(source.index, 1);
+      const add = newFollowers[source.index];
+      newFollowers.splice(source.index, 1);
 
-    newFollowers.splice(destination.index, 0, add);
+      newFollowers.splice(destination.index, 0, add);
 
-    setFollowers(newFollowers);
+      setFollowers(newFollowers);
+    } else {
+      const sourceCategory = todos.find((todoItem) => todoItem.category.id === source.droppableId);
+      const destinationCategory = todos.find((todoItem) => todoItem.category.id === destination.droppableId);
+
+      const sourceTodos = sourceCategory ? [...sourceCategory.category.todo] : [];
+      const destinationTodos = destinationCategory ? [...destinationCategory.category.todo] : [];
+
+      const [removed] = sourceTodos.splice(source.index, 1);
+
+      if (source.droppableId === destination.droppableId) {
+        sourceTodos.splice(destination.index, 0, removed);
+      } else {
+        destinationTodos.splice(destination.index, 0, removed);
+      }
+
+      setTodos(
+        todos.map((todoItem) => {
+          if (todoItem.category.id === source.droppableId) {
+            return { ...todoItem, category: { ...todoItem.category, todo: sourceTodos } };
+          } else if (todoItem.category.id === destination.droppableId) {
+            return { ...todoItem, category: { ...todoItem.category, todo: destinationTodos } };
+          } else {
+            return todoItem;
+          }
+        }),
+      );
+    }
   };
 
   const onClickSelected = (props: SelectedUser) => {
@@ -63,7 +117,7 @@ const HomePage = () => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <div className="flex w-screen">
+      <div className="flex w-full">
         {/* 프로필 & 팔로워 */}
         <section className="flex flex-col h-[calc(100vh-3.1875rem)]">
           {/* 내 프로필 */}
@@ -108,12 +162,12 @@ const HomePage = () => {
             </div>
           </div>
           {/* 팔로워 */}
-          <Droppable droppableId="inbox-column">
+          <Droppable droppableId="followers" type="followers" direction="vertical">
             {(provided) => (
               <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className="w-[16.1875rem] bg-Light_Layout-200 h-full overflow-y-auto scrollbar-hide dark:bg-Dark_Layout-300"
+                className="w-[16.1875rem] bg-Light_Layout-200 h-full overflow-y-auto scrollbar-hide dark:bg-Dark_Layout-400"
               >
                 <div className="flex flex-col items-center pt-4">
                   {followers.map((follower, index) => (
@@ -124,7 +178,7 @@ const HomePage = () => {
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                           onClick={() => onClickSelected(follower)}
-                          className="flex items-center mb-5 px-5 w-[14.4375rem] h-12 rounded-md hover:bg-Light_Layout-100 active:bg-Light_Layout-100 dark:hover:bg-Dark_Layout-200 dark:active:bg-Dark_Layout-200"
+                          className="flex items-center mb-5 px-5 w-[14.4375rem] h-12 rounded-md hover:bg-Light_Layout-100 active:bg-Light_Layout-100 dark:hover:bg-Dark_Layout-300 dark:active:bg-Dark_Layout-300"
                         >
                           <UserImgSample className="min-w-14 max-h-8" />
                           <div className="flex flex-col ml-3.5 max-w-32">
@@ -154,7 +208,7 @@ const HomePage = () => {
         {/* ToDo*/}
         <section className="flex h-[calc(100vh-3.1875rem)] w-full">
           {/* 캘린더 */}
-          <div className="flex flex-col items-center w-3/5 h-full max-h-full overflow-y-auto scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-400">
+          <div className="flex flex-col items-center w-3/5 h-full max-h-full overflow-y-auto scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-300">
             <div className="flex flex-col px-5 my-8">
               {!selectedUser.isUserProfile ? (
                 <p className="font-nico text-Light_CategoryText_Icon_Contents text-[0.625rem] h-1.5 w-40 text-right dark:text-Dark_CategoryText_Icon">
@@ -164,7 +218,7 @@ const HomePage = () => {
                 <p className="h-1.5" />
               )}
               <div className="flex items-center w-[30rem]">
-                <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-300">
+                <div className="flex w-[4.375rem] h-[4.375rem] rounded-full bg-Light_Layout-200 justify-center items-center dark:bg-Dark_Layout-400">
                   <UserImgSample className="w-14" />
                 </div>
                 <div className="flex flex-col justify-center ml-3">
@@ -188,7 +242,7 @@ const HomePage = () => {
                     {selectedUser.introduction}
                   </span>
                 </div>
-                {!selectedUser.isUserProfile &&
+                {/* {!selectedUser.isUserProfile &&
                   (isFollowed ? (
                     <button
                       onClick={() => {
@@ -207,7 +261,7 @@ const HomePage = () => {
                     >
                       친구신청
                     </button>
-                  ))}
+                  ))} */}
               </div>
             </div>
             <div className="flex items-center justify-center">
@@ -216,7 +270,21 @@ const HomePage = () => {
           </div>
 
           {/* 카테고리 */}
-          <div className="w-2/5 h-full bg-Light_Layout-100 dark:bg-Dark_Layout-100"></div>
+          <div className="flex flex-col w-2/5 h-full px-5 bg-Light_Layout-300 dark:bg-Dark_Layout-300">
+            <div className="flex justify-between my-8">
+              <p className="text-lg text-Light_CategoryText_Icon_Contents dark:text-Dark_Text_Contents">
+                {selectedDate}
+              </p>
+              <NavLink to="/category">
+                <CategorySettingIcon width={`1.275rem`} className="dark:fill-Dark_Text_Contents" />
+              </NavLink>
+            </div>
+            <div className="overflow-y-auto scrollbar-hide">
+              {todos.map((todo) => (
+                <CategoryCard key={todo.category.id} category={todo.category} todoList={todo.category.todo} />
+              ))}
+            </div>
+          </div>
         </section>
       </div>
     </DragDropContext>
