@@ -17,7 +17,7 @@ interface CategoryProps {
 
 const Category = ({ page, children }: CategoryProps) => {
   const [isCategoryActive, setIsCategoryActive] = useState(false);
-  const { isDesktop } = useDeviceSize();
+  const { isDesktop, isMobile } = useDeviceSize();
   const handleClickCategory = () => {
     setIsCategoryActive((prev) => !prev);
   };
@@ -63,13 +63,13 @@ const Category = ({ page, children }: CategoryProps) => {
             )}
           </div>
           {isCategoryActive &&
-            page.detail.map((detail) => (
+            page.detail?.map((detail) => (
               <CategoryDetail key={detail.name} to={detail.to} name={detail.name}>
                 {React.createElement(ICON_MAP[detail.icon], { width: `1rem`, height: `1rem` })}
               </CategoryDetail>
             ))}
         </>
-      ) : (
+      ) : page.detail && isMobile ? (
         <>
           <div
             className={`flex items-center w-full px-11 py-3  gap-[0.5rem] relative ${
@@ -101,6 +101,38 @@ const Category = ({ page, children }: CategoryProps) => {
               </CategoryDetail>
             ))}
         </>
+      ) : (
+        <NavLink
+          to={page.to}
+          className={({ isActive }) =>
+            ` flex items-center w-full dt:px-11 py-3 gap-[0.5rem] relative ${
+              isActive
+                ? 'dt:bg-Light_Layout-200 dt:dark:bg-Dark_Layout-300 mb:border-b-2 mb:border-Dark_Layout-300 mb:dark:border-Light_Layout-200'
+                : ''
+            }`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              <span
+                className={`dt:text-base mb:text-xl whitespace-nowrap ${
+                  isActive
+                    ? 'text-Light_CategoryText_Icon dark:text-Dark_Text_Name'
+                    : 'text-Dark_CategoryText_Icon dark:text-Light_Text_Name'
+                }`}
+              >
+                {page.name}
+              </span>
+              {Children.map(children, (child) =>
+                React.cloneElement(child as React.ReactElement, {
+                  className: isActive
+                    ? 'fill-Light_CategoryText_Icon_Contents dark:fill-Dark_Text_Name'
+                    : 'fill-Dark_CategoryText_Icon dark:fill-Light_Text_Name',
+                }),
+              )}
+            </>
+          )}
+        </NavLink>
       )}
     </>
   );
