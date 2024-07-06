@@ -4,6 +4,8 @@ import { IBettingAdd, IBettingJoin } from './Betting.Interface';
 
 //나의 베팅 조회
 export const getMyBetting = async () => {
+  const response = await instance.get(END_POINT.MY_BETTING);
+  console.log(response);
   return await instance.get(END_POINT.MY_BETTING);
 };
 
@@ -14,6 +16,12 @@ export const addBetting = async (data: IBettingAdd) => {
 
 //오픈 베팅 조회
 export const getOpenBetting = async () => {
+  try {
+    const response = await instance.get(END_POINT.OPEN_BETTING);
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
   return await instance.get(END_POINT.OPEN_BETTING);
 };
 
