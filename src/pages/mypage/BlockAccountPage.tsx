@@ -5,7 +5,7 @@ const BlockAccountPage = () => {
       <h1 className="mt-[3.25rem] mb:mt-[5rem] h-[2rem] text-Light_CategoryText_Icon_Contents font-semibold text-[1.625rem] dark:text-Dark_Text_Name">
         차단 목록
       </h1>
-      <div className="py-[1rem] mt-[5.5rem] mb:mt-[7.5rem] flex flex-col items-center w-[45.6875rem] h-[35.125rem] overflow-auto scroll scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-400 rounded-[2rem]">
+      <div className="py-[1rem] mt-[5.5rem] mb:mt-[7.5rem] mb:w-[36rem] flex flex-col items-center w-[45.6875rem] h-[35.125rem] overflow-auto scroll scrollbar-hide bg-Light_Layout-300 dark:bg-Dark_Layout-400 rounded-[2rem]">
         <BlockProfile profileImg={'/svg/UserImgSample.svg'} profileId={'아이디뭐하지'} />
         <BlockProfile profileImg={'/svg/UserImgSample.svg'} profileId={'차단됐어요'} />
         <BlockProfile profileImg={'/svg/UserImgSample.svg'} profileId={'아이디뭐하지'} />
