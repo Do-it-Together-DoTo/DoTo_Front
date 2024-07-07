@@ -1,6 +1,7 @@
 import InventoryCharacter from '@/components/store/InventoryCharacter';
 import StoreMainProfile from '@/components/store/StoreMainProfile';
 import InventoryCharUseModal from '@/modal/store/InventoryCharUseModal';
+
 import useModal from '@/hooks/useModal';
 
 import { useState, useEffect } from 'react';
@@ -45,20 +46,20 @@ const InventoryCharacterPage = () => {
     setSelectedChar({ characterId, characterName, characterLevel, characterExp, characterDesc });
   };
 
-  const confirm = () => {
-    if (selectedChar !== null) {
-      instance
-        .patch(`/members/characters/${selectedChar.characterId}`)
-        .then((res) => {
-          console.log('응답 완료:', res.data);
-        })
-        .catch((err) => {
-          console.log('응답 실패:', err);
-        });
-    }
-    console.log('InvenCharModal confirmed');
-    close();
-  };
+  // const confirm = () => {
+  //   if (selectedChar !== null) {
+  //     instance
+  //       .patch(`/members/characters/${selectedChar.characterId}`)
+  //       .then((res) => {
+  //         console.log('응답 완료:', res.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log('응답 실패:', err);
+  //       });
+  //   }
+  //   console.log('InvenCharModal confirmed');
+  //   close();
+  // };
 
   return (
     <div className="w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
@@ -76,7 +77,7 @@ const InventoryCharacterPage = () => {
                 characterLevel={selectedChar.characterLevel}
                 characterExp={selectedChar.characterExp}
                 characterDesc={selectedChar.characterDesc}
-                onConfirm={confirm}
+                // onConfirm={confirm}
                 onClose={close}
               />
             )}
@@ -94,6 +95,16 @@ const InventoryCharacterPage = () => {
                 isSelected={false}
               />
             ))}
+            <InventoryCharacter
+              key={0}
+              characterId={0}
+              characterName={'알'}
+              characterLevel={0}
+              characterExp={0}
+              characterDesc={'부화 시켜주세요'}
+              onClick={openModal}
+              isSelected={false}
+            />
           </div>
         </div>
       </div>

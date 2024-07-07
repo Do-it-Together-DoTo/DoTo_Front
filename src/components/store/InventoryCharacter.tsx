@@ -1,4 +1,4 @@
-import { MyBlob } from '@/assets/svg';
+import { MyBlob, Egg } from '@/assets/svg';
 
 interface InvenCharProps {
   characterId: number;
@@ -32,7 +32,11 @@ const InventoryCharacter = (props: InvenCharProps) => {
       className={`flex flex-col cursor-pointer justify-center items-center w-[8.4375rem] h-[10.625rem] border dark:border-Dark_Layout-400 rounded-[0.9375rem] ${props.isSelected ? 'border-Button border-4 ' : 'border-Dark_Text_Contents'} `}
       onClick={handleClick}
     >
-      <MyBlob className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]" />
+      {props.characterName == '알' ? (
+        <Egg className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]" />
+      ) : (
+        <MyBlob className="w-[6.3125rem] h-[3.8531rem] mb-[1.0625rem]" />
+      )}
       <div className="text-base font-bold text-Light_Text_Name dark:text-Dark_Text_Name">{props.characterName}</div>
       <div className="text-Light_Text_AboutMe dark:text-Dark_Text_Contents font-nico text-[0.8125rem]">
         Lv.{props.characterLevel}

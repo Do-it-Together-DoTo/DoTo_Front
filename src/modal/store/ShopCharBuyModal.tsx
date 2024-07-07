@@ -1,6 +1,5 @@
 import { Coin, Egg } from '@/assets/svg';
-import ShopHatchModal from '@/modal/store/ShopHatchModal';
-import useModal from '@/hooks/useModal';
+// import useModal from '@/hooks/useModal';
 
 interface ShopCharModalProps {
   characterName: string;
@@ -10,16 +9,10 @@ interface ShopCharModalProps {
 }
 
 const ShopCharBuyModal = (props: ShopCharModalProps) => {
-  const { Modal: ShopHatchModalWrapper, open: openShopHatchModal, close: closeShopHatchModal } = useModal();
-
   const handlePurchase = () => {
     props.onConfirm();
-    openShopHatchModal();
+    open();
   };
-
-  // const handleHatchModal = () => {
-  //   close();
-  // };
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-Dark_Layout-100 bg-opacity-60">
@@ -40,8 +33,6 @@ const ShopCharBuyModal = (props: ShopCharModalProps) => {
             </div>
           </div>
 
-          {/* <Modal>{<ShopHatchModal onClose={close} />}</Modal> */}
-          <ShopHatchModalWrapper>{<ShopHatchModal onClose={closeShopHatchModal} />}</ShopHatchModalWrapper>
           <div className="flex gap-x-2.5">
             <button
               className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
