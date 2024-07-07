@@ -28,7 +28,6 @@ const StoreMainProfile = () => {
   if (user) {
     return (
       <div className="rounded-[0.9375rem] p-16 flex items-center justify-between w-full h-[9.375rem] bg-Light_Layout-100 dark:bg-Dark_Layout-200">
-        {/* <div className="rounded-[0.9375rem] flex items-center justify-center w-[49.8125rem] h-[9.375rem] bg-Light_Layout-100 dark:bg-Dark_Layout-200"> */}
         <div className="flex">
           <MyBlob className="w-[6.8137rem] h-[4.1563rem] mr-4" />
 

@@ -1,4 +1,4 @@
-import { ModelCloseButton, MyBlob, Slider } from '@/assets/svg';
+import { ModelCloseButton, MyBlob } from '@/assets/svg';
 
 interface InvenCharModalProps {
   characterId: number;
@@ -26,9 +26,9 @@ const InventoryCharUseModal = (props: InvenCharModalProps) => {
             </div>
           </div>
           <div className="flex items-center h-6">
-            <div className="block w-[6.2075rem] h-2 rounded-full bg-Dark_Layout-100">
+            <div className="block w-[6.2075rem] h-1 rounded-full bg-Dark_Layout-100">
               <div
-                className="block h-2 rounded-full bg-gradient"
+                className="block h-1 rounded-full bg-gradient"
                 style={{ width: `calc(0.1rem*${props.characterExp})` }}
               />
             </div>

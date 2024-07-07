@@ -1,41 +1,50 @@
 import { ModelCloseButton } from '@/assets/svg';
 import InventoryCharacter from '@/components/store/InventoryCharacter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { instance } from '@/api/axios';
 
-interface Character {
-  charName: string;
-  charLevel: number;
-  charExp: number;
-  charDesc: string;
-}
-
-const func = (characters: Character[], selectChar: (index: number) => void, selectedCharIndex: number | null) => {
+const renderChar = (
+  characters: Array<{ id: number; name: string; img: string; level: number; description: string; exp: number }>,
+  selectChar: (index: number) => void,
+  selectedCharIndex: number | null,
+) => {
   return characters.map((character, index) => {
     return (
       <InventoryCharacter
         key={index}
-        characterName={character.charName}
-        characterLevel={character.charLevel}
-        characterExp={character.charExp}
-        characterDesc={character.charDesc}
+        characterId={character.id}
+        characterName={character.name}
+        characterLevel={character.level}
+        characterExp={character.exp}
+        characterDesc={character.description}
         onClick={() => {
           selectChar(index);
-        }} // setSelected 작동
-        isSelected={selectedCharIndex === index} // 인덱스가 같은지 판별 ===
+        }}
+        isSelected={selectedCharIndex === index}
       />
     );
   });
 };
 
 const SelectCharModal = () => {
-  const [selectedCharIndex, setSelectedCharIndex] = useState<number | null>(null);
+  const [characters, setCharacters] = useState<
+    Array<{ id: number; name: string; img: string; level: number; description: string; exp: number }>
+  >([]);
 
-  const characters: Character[] = Array.from({ length: 10 }, () => ({
-    charName: '짱구',
-    charLevel: 7,
-    charExp: 1234,
-    charDesc: '설명입니다우아아아아아아아ㅏ아앙ㅇ',
-  }));
+  useEffect(() => {
+    instance
+      .get('/members/characters')
+      .then((res) => {
+        setCharacters(res.data.body.characters);
+        console.log('응답 완료:', res.data.body.characters);
+        console.log('characters:', characters);
+      })
+      .catch((err) => {
+        console.log('응답 실패:', err);
+      });
+  }, []);
+
+  const [selectedCharIndex, setSelectedCharIndex] = useState<number | null>(null);
 
   const selectChar = (index: number) => {
     if (index != null) {
@@ -56,7 +65,7 @@ const SelectCharModal = () => {
 
       <div className="relative w-[653px] h-[329px] m-5 p-3 overflow-auto scroll bg-Light_Layout-300 rounded-[10px]">
         <div className="flex flex-wrap gap-x-[1.75rem] gap-y-[1.25rem] w-full">
-          {func(characters, selectChar, selectedCharIndex)}
+          {renderChar(characters, selectChar, selectedCharIndex)}
         </div>
       </div>
 
@@ -65,7 +74,7 @@ const SelectCharModal = () => {
           className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
           // onClick={props.onConfirm}
         >
-          사용
+          적용
         </button>
       </div>
     </div>

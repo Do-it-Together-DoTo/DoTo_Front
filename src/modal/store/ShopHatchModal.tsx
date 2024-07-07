@@ -1,10 +1,13 @@
 import { ModelCloseButton, EggHatched } from '@/assets/svg';
 
-const ShopHatchModal = () => {
+interface ShopHatchModalProps {
+  onClose: () => void;
+}
+
+const ShopHatchModal = (props: ShopHatchModalProps) => {
   return (
     <div className="flex flex-col items-center p-8 justify-center relative h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
-      {/* <button onClick={props.onClose}> */}
-      <button className="absolute top-5 right-5">
+      <button className="absolute top-5 right-5" onClick={props.onClose}>
         <ModelCloseButton className="w-[15px] h-[15px]" />
       </button>
       <div className="flex flex-col justify-center items-center w-[9.8125rem] h-auto">

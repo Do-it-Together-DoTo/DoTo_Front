@@ -26,6 +26,11 @@ const ShopCharacterPage = () => {
 
   const { Modal, open, close } = useModal();
 
+  const openModal = (characterName: string, coinValue: number) => {
+    open();
+    setSelectedChar({ characterName, coinValue });
+  };
+
   const confirm = () => {
     instance
       .post('/store/characters', {
@@ -39,11 +44,6 @@ const ShopCharacterPage = () => {
       });
     console.log('ShopCharBuyModal confirmed');
     close();
-  };
-
-  const openModal = (characterName: string, coinValue: number) => {
-    open();
-    setSelectedChar({ characterName, coinValue });
   };
 
   // eggs가 null이면 렌더링 에러

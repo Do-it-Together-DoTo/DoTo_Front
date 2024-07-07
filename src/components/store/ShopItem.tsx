@@ -1,7 +1,6 @@
 import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
 type ShopItemProps = {
-  // key: number;
   itemId: number;
   itemName: string;
   coinValue: number;
