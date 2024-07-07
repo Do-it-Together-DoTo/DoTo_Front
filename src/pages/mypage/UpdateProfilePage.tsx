@@ -9,12 +9,12 @@ const UpdateProfilePage = () => {
 
   return (
     <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] mb:w-full mb:h-full bg-Light_Layout-200 dark:bg-Dark_Layout-300">
-      <h1 className="mt-[3.25rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
+      <h1 className="mt-[3.25rem] mb:mt-[5rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
         프로필 수정
       </h1>
-      <div className="mt-[5.5rem] relative  w-[47.0625rem] h-[31.75rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
-        <div className="mt-[1.8125rem] relative w-[11.0625rem] h-[11.0625rem] bg-Light_Layout-100 rounded-full dark:bg-Dark_Layout-100">
-          <UserImgSample className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+      <div className="mt-[5.5rem] relative mb:mt-[8rem] w-[47.0625rem] h-[31.75rem] mb:h-[40rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
+        <div className="mt-[1.8125rem] mb:mt-[3rem] relative w-[11.0625rem] h-[11.0625rem] bg-Light_Layout-100 rounded-full dark:bg-Dark_Layout-100">
+          <UserImgSample className="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
           <ModifyIcon
             width={32}
             height={32}
@@ -41,7 +41,7 @@ const UpdateProfilePage = () => {
             <div className="text-[1.5625rem] text-Light_Text_Name dark:text-Dark_Text_Name">9/20</div>
           </div>
         </div>
-        <button className="mt-[2rem] mx-auto w-[11.0625rem] h-[3rem] bg-Button font-pre text-Light_Layout-100 text-[1.5625rem] rounded-[1.5625rem]">
+        <button className="mt-[2rem] mb:mt-[5rem] mx-auto w-[11.0625rem] h-[3rem] bg-Button font-pre text-Light_Layout-100 text-[1.5625rem] rounded-[1.5625rem]">
           저장
         </button>
       </div>
