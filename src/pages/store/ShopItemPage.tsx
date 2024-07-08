@@ -37,6 +37,7 @@ const ShopItemPage = () => {
       instance
         .put(`/store/items/${selectedItem.itemId}`, {
           count: 3,
+          // 모달에서 넘겨받은 값으로 설정
         })
         .then((res) => {
           console.log(res);

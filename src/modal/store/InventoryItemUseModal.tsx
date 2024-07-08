@@ -12,16 +12,19 @@ import { useState } from 'react';
 interface InvenItemModalProps {
   itemName: string;
   isRare: boolean;
-  itemValue: number;
+  itemCount: number;
   onConfirm: () => void;
+  onSell: () => void;
   onClose: () => void;
 }
 
 const InventoryItemUseModal = (props: InvenItemModalProps) => {
-  const [useNumber, setUseNumber] = useState(1);
+  const [useNumber, setUseNumber] = useState(props.itemCount);
 
   const increaseNumber = () => {
-    setUseNumber(useNumber + 1);
+    if (useNumber <= props.itemCount) {
+      setUseNumber(useNumber + 1);
+    }
   };
   const decreaseNumber = () => {
     if (useNumber > 1) {
@@ -47,18 +50,18 @@ const InventoryItemUseModal = (props: InvenItemModalProps) => {
           </div>
 
           <div className="text-[10px] w-52 text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">
-            경험치 + {props.itemValue}
+            경험치 + {props.itemCount}
           </div>
 
           <div className="flex justify-center items-center w-[69px] h-[24px] p-[2px] bg-Light_Layout-200 rounded-[5px]">
-            <button>
-              <MinusButton className="w-[8px] h-[8px] m-[4px]" onClick={decreaseNumber} />
+            <button onClick={decreaseNumber}>
+              <MinusButton className="w-[8px] h-[8px] m-[4px]" />
             </button>
             <div className="flex items-center justify-center w-[27px] h-[20px] bg-Light_Layout-400 border-Light_Layout-100 rounded-[5px]">
               <div className="font-bold text-[10px] text-Light_Text_Name">{useNumber}</div>
             </div>
-            <button>
-              <PlusButton className="w-[8px] h-[8px] m-[4px]" onClick={increaseNumber} />
+            <button onClick={increaseNumber}>
+              <PlusButton className="w-[8px] h-[8px] m-[4px]" />
             </button>
           </div>
         </div>
@@ -69,6 +72,12 @@ const InventoryItemUseModal = (props: InvenItemModalProps) => {
             onClick={props.onConfirm}
           >
             사용
+          </button>
+          <button
+            className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
+            onClick={props.onSell}
+          >
+            판매
           </button>
         </div>
       </div>

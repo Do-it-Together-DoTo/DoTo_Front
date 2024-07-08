@@ -1,4 +1,5 @@
-import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
+import { Coin, RareBadge, NormalBadge, MagicPotion1, MagicPotion2, MinusButton, PlusButton } from '@/assets/svg';
+import { useState } from 'react';
 
 interface ShopItemModalProps {
   itemId: number;
@@ -10,8 +11,19 @@ interface ShopItemModalProps {
 }
 
 const ShopItemBuyModal = (props: ShopItemModalProps) => {
+  const [useNumber, setUseNumber] = useState(1);
+
+  const increaseNumber = () => {
+    setUseNumber(useNumber + 1);
+  };
+  const decreaseNumber = () => {
+    if (useNumber > 1) {
+      setUseNumber(useNumber - 1);
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
+    <div className="flex flex-col items-center justify-center p-10 w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
       <div className="flex flex-col justify-center items-center w-[9.8125rem]">
         <div className="mb-3 text-[15px] text-Light_Text_AboutMe dark:text-Dark_Text_AboutMe">구매하시겠습니까?</div>
 
@@ -29,6 +41,17 @@ const ShopItemBuyModal = (props: ShopItemModalProps) => {
               <div className="font-nico text-[0.6875rem] text-Light_Text_Name dark:text-Dark_Text_Contents">
                 {props.coinValue}
               </div>
+            </div>
+            <div className="flex justify-center items-center w-[69px] h-[24px] p-[2px] bg-Light_Layout-200 rounded-[5px]">
+              <button onClick={decreaseNumber}>
+                <MinusButton className="w-[8px] h-[8px] m-[4px]" />
+              </button>
+              <div className="flex items-center justify-center w-[27px] h-[20px] bg-Light_Layout-400 border-Light_Layout-100 rounded-[5px]">
+                <div className="font-bold text-[10px] text-Light_Text_Name">{useNumber}</div>
+              </div>
+              <button onClick={increaseNumber}>
+                <PlusButton className="w-[8px] h-[8px] m-[4px]" />
+              </button>
             </div>
           </div>
         </div>

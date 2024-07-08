@@ -46,20 +46,35 @@ const InventoryCharacterPage = () => {
     setSelectedChar({ characterId, characterName, characterLevel, characterExp, characterDesc });
   };
 
-  // const confirm = () => {
-  //   if (selectedChar !== null) {
-  //     instance
-  //       .patch(`/members/characters/${selectedChar.characterId}`)
-  //       .then((res) => {
-  //         console.log('응답 완료:', res.data);
-  //       })
-  //       .catch((err) => {
-  //         console.log('응답 실패:', err);
-  //       });
-  //   }
-  //   console.log('InvenCharModal confirmed');
-  //   close();
-  // };
+  const confirm = () => {
+    if (selectedChar !== null) {
+      instance
+        .patch(`/members/characters/${selectedChar.characterId}`)
+        .then((res) => {
+          console.log('응답 완료:', res.data);
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
+    console.log('InvenCharModal confirmed');
+    close();
+  };
+
+  const sellCharacter = () => {
+    if (selectedChar !== null) {
+      instance
+        .delete(`/members/characters/${selectedChar.characterId}`)
+        .then((res) => {
+          console.log('응답 완료:', res.data);
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
+    console.log('Sell Character - completed');
+    close();
+  };
 
   return (
     <div className="w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300 grow">
@@ -77,7 +92,8 @@ const InventoryCharacterPage = () => {
                 characterLevel={selectedChar.characterLevel}
                 characterExp={selectedChar.characterExp}
                 characterDesc={selectedChar.characterDesc}
-                // onConfirm={confirm}
+                onConfirm={confirm}
+                onSell={sellCharacter}
                 onClose={close}
               />
             )}

@@ -1,14 +1,15 @@
 import { RareBadge, NormalBadge, MagicPotion1, MagicPotion2 } from '@/assets/svg';
 
 type InvenItemProps = {
+  itemId: number;
   itemName: string;
   isRare: boolean;
-  itemValue: number;
-  onClick: (itemName: string, isRare: boolean, itemValue: number) => void;
+  itemCount: number;
+  onClick: (itemId: number, itemName: string, isRare: boolean, itemCount: number) => void;
 };
 const InventoryItem = (props: InvenItemProps) => {
   const handleClick = () => {
-    props.onClick(props.itemName, props.isRare, props.itemValue);
+    props.onClick(props.itemId, props.itemName, props.isRare, props.itemCount);
   };
 
   return (
@@ -26,7 +27,7 @@ const InventoryItem = (props: InvenItemProps) => {
         {props.isRare ? <RareBadge className="h-[0.8506rem]" /> : <NormalBadge className="h-[0.8506rem]" />}
         <div className="flex items-center gap-x-[0.25rem]">
           <div className="font-nico text-[0.6875rem] text-Light_Text_Name dark:text-Dark_Text_Contents">
-            × {props.itemValue}
+            × {props.itemCount}
           </div>
         </div>
       </div>

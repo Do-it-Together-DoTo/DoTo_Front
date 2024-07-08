@@ -9,11 +9,6 @@ interface ShopCharModalProps {
 }
 
 const ShopCharBuyModal = (props: ShopCharModalProps) => {
-  const handlePurchase = () => {
-    props.onConfirm();
-    open();
-  };
-
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-Dark_Layout-100 bg-opacity-60">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center h-[18.75rem] w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
@@ -37,7 +32,7 @@ const ShopCharBuyModal = (props: ShopCharModalProps) => {
             <button
               className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
               // onClick={props.onConfirm}
-              onClick={handlePurchase}
+              onClick={props.onConfirm}
             >
               구매
             </button>

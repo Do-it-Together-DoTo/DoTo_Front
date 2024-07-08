@@ -7,9 +7,12 @@ import { useState, useEffect } from 'react';
 import { instance } from '@/api/axios';
 
 const InventoryItemPage = () => {
-  const [selectedItem, setSelectedItem] = useState<{ itemName: string; isRare: boolean; itemValue: number } | null>(
-    null,
-  );
+  const [selectedItem, setSelectedItem] = useState<{
+    itemId: number;
+    itemName: string;
+    isRare: boolean;
+    itemCount: number;
+  } | null>(null);
 
   const [items, setItems] = useState<Array<{ id: number; name: string; img: string; count: number; grade: string }>>(
     [],
@@ -29,27 +32,50 @@ const InventoryItemPage = () => {
 
   const { Modal, open, close } = useModal();
 
-  const openModal = (itemName: string, isRare: boolean, itemValue: number) => {
+  const openModal = (itemId: number, itemName: string, isRare: boolean, itemCount: number) => {
     open();
-    setSelectedItem({ itemName, isRare, itemValue });
+    setSelectedItem({ itemId, itemName, isRare, itemCount });
   };
 
   // 아이템 사용
   const confirm = () => {
     console.log('InvenItemModal confirmed');
-    instance
-      .patch('/members/items', {
-        characterId: 2,
-        itemTypeId: 1,
-        count: 3,
-      })
-      .then((res) => {
-        // setItems(res.data.body);
-        console.log('응답 완료:', res.data);
-      })
-      .catch((err) => {
-        console.log('응답 실패:', err);
-      });
+    if (selectedItem !== null) {
+      instance
+        .patch('/members/items', {
+          characterId: 2,
+          itemTypeId: selectedItem.itemId,
+          count: selectedItem.itemCount,
+        })
+        .then((res) => {
+          console.log('응답 완료:', res.data);
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
+    close();
+  };
+
+  // 아이템 판매
+  const sellItem = () => {
+    console.log('InvenItemModal confirmed');
+    if (selectedItem !== null) {
+      instance
+        .patch(`/members/items/${selectedItem.itemId}`, {
+          characterId: 2,
+          itemTypeId: selectedItem.itemId,
+          count: 3,
+          // 모달에서 넘겨받은 값으로 설정
+        })
+        .then((res) => {
+          // setItems(res.data.body);
+          console.log('응답 완료:', res.data);
+        })
+        .catch((err) => {
+          console.log('응답 실패:', err);
+        });
+    }
     close();
   };
 
@@ -66,8 +92,9 @@ const InventoryItemPage = () => {
               <InventoryItemUseModal
                 itemName={selectedItem?.itemName}
                 isRare={selectedItem?.isRare}
-                itemValue={selectedItem?.itemValue}
+                itemCount={selectedItem?.itemCount}
                 onConfirm={confirm}
+                onSell={sellItem}
                 onClose={close}
               />
             )}
@@ -76,9 +103,10 @@ const InventoryItemPage = () => {
             {items.map((item) => (
               <InventoryItem
                 key={item.id}
+                itemId={item.id}
                 itemName={item.name}
                 isRare={item.grade === 'RARE'}
-                itemValue={item.count}
+                itemCount={item.count}
                 onClick={openModal}
               />
             ))}
