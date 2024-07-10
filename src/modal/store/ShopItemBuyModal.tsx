@@ -7,11 +7,12 @@ interface ShopItemModalProps {
   coinValue: number;
   isRare: boolean;
   onClose: () => void;
-  onConfirm: () => void;
+  onConfirm: (useNumber: number) => void;
+  // getItemCount: (getItemCount: number) => void;
 }
 
 const ShopItemBuyModal = (props: ShopItemModalProps) => {
-  const [useNumber, setUseNumber] = useState(1);
+  const [useNumber, setUseNumber] = useState<number>(1);
 
   const increaseNumber = () => {
     setUseNumber(useNumber + 1);
@@ -21,6 +22,11 @@ const ShopItemBuyModal = (props: ShopItemModalProps) => {
       setUseNumber(useNumber - 1);
     }
   };
+
+  // const sendItemCount = (useNumber: number) => {
+  //   props.getItemCount(useNumber);
+  //   console.log('sendItemCount: ', useNumber);
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center p-10 w-[18.75rem] bg-Light_Layout-100 dark:bg-Dark_Layout-400 rounded-[15px]">
@@ -59,7 +65,10 @@ const ShopItemBuyModal = (props: ShopItemModalProps) => {
         <div className="flex gap-x-2.5">
           <button
             className="w-[6.75rem] h-[1.5625rem] bg-Button font-pre text-Light_Layout-100 dark:text-Light_Layout-400 text-xs rounded-[1.875rem]"
-            onClick={props.onConfirm}
+            onClick={() => {
+              props.onConfirm(useNumber);
+              // sendItemCount(useNumber);
+            }}
           >
             구매
           </button>

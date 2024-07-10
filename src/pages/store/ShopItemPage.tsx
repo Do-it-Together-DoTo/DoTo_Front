@@ -14,6 +14,13 @@ const ShopItemPage = () => {
     isRare: boolean;
   } | null>(null);
 
+  const [itemCount, setItemCount] = useState<number>(1);
+
+  // const getItemCount = (useNumber: number) => {
+  //   setItemCount(useNumber);
+  //   console.log('itemCount: ', itemCount);
+  // };
+
   const [items, setItems] = useState<Array<{ id: number; name: string; img: string; price: number; grade: string }>>(
     [],
   );
@@ -32,14 +39,18 @@ const ShopItemPage = () => {
 
   const { Modal, open, close } = useModal();
 
-  const confirm = () => {
+  const confirm = (useNumber: number) => {
+    setItemCount(useNumber);
+    console.log('itemCount in confirm: ', itemCount);
+
     if (selectedItem !== null) {
       instance
         .put(`/store/items/${selectedItem.itemId}`, {
-          count: 3,
+          count: itemCount,
           // 모달에서 넘겨받은 값으로 설정
         })
         .then((res) => {
+          // console.log('itemCount after confirm: ', itemCount);
           console.log(res);
           console.log('모달에 적용됨');
         })
@@ -73,6 +84,7 @@ const ShopItemPage = () => {
                 isRare={selectedItem?.isRare}
                 onConfirm={confirm}
                 onClose={close}
+                // getItemCount={getItemCount}
               />
             )}
           </Modal>
