@@ -41,19 +41,19 @@ const ChangePasswordPage = () => {
     setIsFormValid(isValid);
   }, [password, newPassword, confirmPassword, touched]);
   return (
-    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
-      <h1 className="mt-[3.25rem] h-[2rem] text-Light_CategoryText_Icon_Contents font-semibold text-[1.625rem] dark:text-Dark_Text_Name">
+    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] mb:w-full mb:h-full bg-Light_Layout-200 dark:bg-Dark_Layout-300">
+      <h1 className="mt-[3.25rem] mb:mt-[5rem] h-[2rem] text-Light_CategoryText_Icon_Contents font-semibold text-[1.625rem] dark:text-Dark_Text_Name">
         비밀번호 변경
       </h1>
-      <div className="mt-[5.5rem] flex flex-col w-[47.875rem] h-[32.25rem]  bg-Light_Layout-300 rounded-[0.9375rem] dark:bg-Dark_Layout-200">
-        <div className="mt-[5.6875rem] flex w-[33.375rem] h-[3rem] ml-[8.125rem]">
+      <div className="mt-[5.5rem] flex flex-col w-[47.875rem] h-[32.25rem] mb:w-[36rem]  bg-Light_Layout-300 rounded-[0.9375rem] dark:bg-Dark_Layout-200">
+        <div className="mt-[5.6875rem] flex w-[47.875rem] h-[3rem] justify-evenly mb:w-[36rem]">
           <label
-            className="w-[6.6875rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
+            className="w-[8.6875rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
             htmlFor="nowPw"
           >
             현재 비밀번호
           </label>
-          <div className="w-[25.0625rem] ml-[1.625rem]">
+          <div className="w-[25.0625rem]">
             <input
               className="w-[24.375rem] outline-none bg-Light_Layout-300 placeholder-Dark_Text_Contents dark:placeholder-Dark_Text_AboutMe text-[0.85rem] dark:bg-Dark_Layout-200 dark:text-Dark_Text_Name"
               placeholder="현재 비밀번호"
@@ -64,17 +64,17 @@ const ChangePasswordPage = () => {
               onFocus={() => setTouched({ ...touched, password: true })}
             />
             <div className="w-[24.375rem] h-[0rem] border border-1 border-Dark_Text_Contents dark:border-Dark_Text_AboutMe" />
-            <div className="w-[24.375rem] font-pre text-[0.6rem] text-error">{touched.password && errors.password}</div>
+            <div className="w-[24.375rem] font-pre text-[0.8rem] text-error">{touched.password && errors.password}</div>
           </div>
         </div>
-        <div className="mt-[3.25rem] flex w-[32.3125rem] h-[3rem] ml-[9.1875rem]">
+        <div className="mt-[3.25rem] flex w-[47.875rem] h-[3rem] justify-evenly mb:w-[36rem]">
           <label
-            className="w-[5.625rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
+            className="w-[8.6875rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
             htmlFor="newPw"
           >
             새 비밀번호
           </label>
-          <div className="w-[25.0625rem] ml-[1.625rem]">
+          <div className="w-[25.0625rem] ">
             <input
               className="w-[24.375rem] outline-none bg-Light_Layout-300 placeholder-Dark_Text_Contents dark:placeholder-Dark_Text_AboutMe text-[0.85rem] dark:bg-Dark_Layout-200 dark:text-Dark_Text_Name"
               placeholder="새 비밀번호"
@@ -85,19 +85,19 @@ const ChangePasswordPage = () => {
               onFocus={() => setTouched({ ...touched, newPassword: true })}
             />
             <div className="w-[24.375rem] h-[0rem] border border-1 border-Dark_Text_Contents dark:border-Dark_Text_AboutMe" />
-            <div className="w-[24.375rem] font-pre text-[0.6rem] text-error">
+            <div className="w-[24.375rem] font-pre text-[0.8rem] text-error">
               {touched.newPassword && errors.newPassword}
             </div>
           </div>
         </div>
-        <div className="mt-[3.25rem] flex w-[34.75rem] h-[3rem] ml-[6.75rem]">
+        <div className="mt-[3.25rem] flex w-[47.875rem] h-[3rem] justify-evenly mb:w-[36rem]">
           <label
-            className="h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
+            className="w-[8.6875rem] h-[1.5rem] font-pre text-[1.25rem] text-Light_Text_Name dark:text-Dark_Text_Name tracking-[-0.02rem]"
             htmlFor="newPwCheck"
           >
             새 비밀번호 확인
           </label>
-          <div className="w-[25.0625rem] ml-[1.625rem]">
+          <div className="w-[25.0625rem]">
             <input
               className="w-[24.375rem] outline-none bg-Light_Layout-300 placeholder-Dark_Text_Contents dark:placeholder-Dark_Text_AboutMe text-[0.85rem] dark:bg-Dark_Layout-200 dark:text-Dark_Text_Name"
               placeholder="비밀번호 확인"
@@ -109,7 +109,7 @@ const ChangePasswordPage = () => {
             />
             <div className="w-[24.375rem] h-[0rem] border border-1 border-Dark_Text_Contents dark:border-Dark_Text_AboutMe" />
             <div className="h-[0.875rem]">
-              <div className="w-[24.375rem] font-pre text-[0.6rem] text-error">
+              <div className="w-[24.375rem] font-pre text-[0.8rem] text-error">
                 {touched.confirmPassword && errors.confirmPassword}
               </div>
             </div>

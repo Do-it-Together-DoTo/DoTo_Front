@@ -1,10 +1,10 @@
 const DeleteAccountPage = () => {
   return (
-    <div className="flex flex-col items-center  w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] bg-Light_Layout-200 dark:bg-Dark_Layout-300">
-      <h1 className="mt-[3.25rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
+    <div className="flex flex-col items-center w-[calc(100vw-26.1875rem)] h-[calc(100vh-3.1875rem)] mb:w-full mb:h-full bg-Light_Layout-200 dark:bg-Dark_Layout-300">
+      <h1 className="mt-[3.25rem] mb:mt-[5rem] text-Light_Text_Name text-[1.625rem] font-semibold dark:text-Dark_Text_Name">
         계정 삭제
       </h1>
-      <div className="mt-[5.5rem] relative  w-[45rem] h-[27.5rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
+      <div className="mt-[5.5rem] relative  w-[45rem] h-[27.5rem] mb:w-[36rem] bg-Light_Layout-300 flex flex-col items-center rounded-[1rem] dark:bg-Dark_Layout-200">
         <p className="mt-[5rem] text-Light_Text_Name text-[1.25rem] text-center dark:text-Dark_Text_Name">
           <span className="text-[1.25rem] text-Light_Text_Name font-bold dark:text-Dark_Text_Name">닉네임 </span>
           님, 계정을 정말 삭제하시겠습니까 ?
