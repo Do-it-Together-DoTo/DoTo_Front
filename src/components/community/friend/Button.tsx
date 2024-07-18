@@ -6,7 +6,7 @@ interface ButtonProps {
   color: 'gray' | 'dark' | 'blue';
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, color }) => {
+const Button = ({ children, onClick, color }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
