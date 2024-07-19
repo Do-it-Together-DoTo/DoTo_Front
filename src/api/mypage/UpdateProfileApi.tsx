@@ -5,7 +5,7 @@ export const getMyCharacter = async () => {
   return await instance.get<MyChracterResponse>(`/members/characters`);
 };
 
-export const changeMainCharacter = async (characterId: String) => {
+export const changeMainCharacter = async (characterId: string) => {
   return await instance.patch(`members/characters/${characterId}`);
 };
 

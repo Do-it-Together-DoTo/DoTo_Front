@@ -1,4 +1,4 @@
 export interface ChangePasswordRequest {
-  currentPassword: String;
-  changePassword: String;
+  currentPassword: string;
+  changePassword: string;
 }
