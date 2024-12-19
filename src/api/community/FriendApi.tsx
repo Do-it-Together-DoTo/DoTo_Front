@@ -1,6 +1,6 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { IFriendList, IFriendReq, IFriendSearchReq } from './Friend.Interface';
+import { IFriendList, IFriendReq, IFriendSearchReq } from '../../types/community/Friend.tsx';
 
 //친구 목록 조회
 export const getFriends = async (data: IFriendList) => {

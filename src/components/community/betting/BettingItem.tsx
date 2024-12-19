@@ -1,5 +1,5 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IBetting } from '@/api/community/Betting.Interface';
+import { IBetting } from '@/types/community/Betting.tsx';
 import useModal from '@/hooks/useModal';
 import BettingDetailModal from '@/modal/community/BettingDetailModal';
 import OpenBettingModal from '@/modal/community/OpenBettingModal';

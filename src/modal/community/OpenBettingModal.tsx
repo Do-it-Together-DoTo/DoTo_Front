@@ -1,5 +1,5 @@
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting, IBettingDetail } from '@/api/community/Betting.Interface';
+import { IBetting, IBettingDetail } from '@/types/community/Betting.tsx';
 import { useEffect, useState } from 'react';
 import CheckBox from '@/components/common/checkbox/Checkbox';
 import { getBetting, joinBetting } from '@/api/community/BettingApi';

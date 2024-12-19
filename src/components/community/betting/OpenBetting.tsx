@@ -1,6 +1,6 @@
 import BettingItem from './BettingItem';
 import { useEffect, useState } from 'react';
-import { IBetting } from '@/api/community/Betting.Interface';
+import { IBetting } from '@/types/community/Betting.tsx';
 import { getOpenBetting } from '@/api/community/BettingApi';
 const OpenBetting = () => {
   const [openBetting, setOpenBetting] = useState<IBetting[]>([]);

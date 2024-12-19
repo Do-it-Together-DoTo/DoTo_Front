@@ -6,7 +6,7 @@ import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 import OrderToggle from '@/components/community/ranking/orderToggle/OrderToggle';
 import useRankingApi from '@/hooks/community/useRankingApi';
-import { IRanking } from '@/api/community/Ranking.interface';
+import { IRanking } from '@/types/community/Ranking.tsx';
 
 const RankingPage = () => {
   const [rankers, setRankers] = useState<IRanking[]>([]);

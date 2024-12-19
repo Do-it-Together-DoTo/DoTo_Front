@@ -1,6 +1,6 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { ChatAdd } from './Chatting.Interface';
+import { ChatAdd } from '../../types/community/Chatting.tsx';
 
 //참여 중인 채팅방 조회
 export const getJoinChatting = async () => {

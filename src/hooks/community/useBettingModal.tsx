@@ -1,4 +1,4 @@
-import { IBetting, IBettingDetail, IBettingJoin } from '@/api/community/Betting.Interface';
+import { IBetting, IBettingDetail, IBettingJoin } from '@/types/community/Betting.tsx';
 import { joinBetting, getBetting } from '@/api/community/BettingApi';
 import { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';

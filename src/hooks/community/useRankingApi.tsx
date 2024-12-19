@@ -1,4 +1,4 @@
-import { IRankingReq } from '@/api/community/Ranking.interface';
+import { IRankingReq } from '@/types/community/Ranking.tsx';
 import { getRanking } from '@/api/community/RankingApi';
 const useRankingApi = () => {
   const getRankingData = async (data: IRankingReq) => {

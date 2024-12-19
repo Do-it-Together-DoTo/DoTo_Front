@@ -1,5 +1,5 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IChatRoom } from '@/api/community/Chatting.Interface';
+import { IChatRoom } from '@/types/community/Chatting.tsx';
 import { Link } from 'react-router-dom';
 import useChatRoomStore from '@/store/community/chatRoomStore';
 

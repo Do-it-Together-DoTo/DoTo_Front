@@ -1,7 +1,7 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import React from 'react';
 import { STAR_ICON_MAP } from './RankingConstant';
-import { IRanking } from '@/api/community/Ranking.interface';
+import { IRanking } from '@/types/community/Ranking.tsx';
 
 interface RankersProps {
   rankers: IRanking[];

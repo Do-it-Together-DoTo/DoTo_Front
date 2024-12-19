@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting, IBettingDetail } from '@/api/community/Betting.Interface';
+import { IBetting, IBettingDetail } from '@/types/community/Betting.tsx';
 import { useEffect, useState } from 'react';
 import { getBetting } from '@/api/community/BettingApi';
 import { Link } from 'react-router-dom';

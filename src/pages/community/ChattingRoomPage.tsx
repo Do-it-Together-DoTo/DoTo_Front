@@ -5,7 +5,7 @@ import { CharacterProfileIcon } from '@/assets/svg/community';
 import { ArrowLeftIcon } from '@/assets/svg';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { getChatting, sendChattingMessage } from '@/api/community/ChattingApi';
-import { IChat } from '@/api/community/Chatting.Interface';
+import { IChat } from '@/types/community/Chatting.tsx';
 import useChatRoomStore from '@/store/community/chatRoomStore';
 
 const ChattingRoomPage = () => {

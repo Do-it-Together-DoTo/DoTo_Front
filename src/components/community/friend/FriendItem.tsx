@@ -1,7 +1,7 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { STATUS } from './FriendConstant';
 import Button from './Button';
-import { IFriend } from '@/api/community/Friend.Interface';
+import { IFriend } from '@/types/community/Friend.tsx';
 import useFriendApi from '@/hooks/community/useFriendApi';
 import useModal from '@/hooks/useModal';
 import FriendModal from '@/modal/community/FriendModal';

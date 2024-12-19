@@ -1,6 +1,6 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { IBettingAdd, IBettingJoin } from './Betting.Interface';
+import { IBettingAdd, IBettingJoin } from '../../types/community/Betting.tsx';
 
 //나의 베팅 조회
 export const getMyBetting = async () => {

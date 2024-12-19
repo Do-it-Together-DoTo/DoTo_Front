@@ -1,4 +1,4 @@
-import { IChatRoom } from '@/api/community/Chatting.Interface';
+import { IChatRoom } from '@/types/community/Chatting.tsx';
 import { create } from 'zustand';
 
 interface ChatRoomState {

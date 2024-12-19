@@ -1,6 +1,6 @@
 import FriendItem from './FriendItem';
 import { useState, FormEvent } from 'react';
-import { IFriend } from '@/api/community/Friend.Interface';
+import { IFriend } from '@/types/community/Friend.tsx';
 import useFriendApi from '@/hooks/community/useFriendApi';
 
 const SearchFriends = () => {

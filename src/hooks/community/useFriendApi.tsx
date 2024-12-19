@@ -1,4 +1,4 @@
-import { IFriendList, IFriendReq, IFriendSearchReq } from '@/api/community/Friend.Interface';
+import { IFriendList, IFriendReq, IFriendSearchReq } from '@/types/community/Friend.tsx';
 import {
   deleteBlockFriend,
   deleteFriend,

@@ -1,5 +1,5 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IChat } from '@/api/community/Chatting.Interface';
+import { IChat } from '@/types/community/Chatting.tsx';
 
 interface ChattingMessageProps {
   message: IChat;
