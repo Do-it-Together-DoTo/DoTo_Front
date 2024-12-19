@@ -1,12 +1,12 @@
-export interface IBetting {
+export type IBetting = {
   bettingId: number;
   bettingName: string;
   mainCharacterImg: string;
   memberId: number;
   memberNickname: string;
-}
+};
 
-export interface IBettingDetail {
+export type IBettingDetail = {
   bettingId: number;
   bettingName: string;
   chatRoomId: number;
@@ -21,14 +21,14 @@ export interface IBettingDetail {
   participantCount: number;
   successCoins: number;
   todoContents: string;
-}
+};
 
-export interface IBettingAdd {
+export type IBettingAdd = {
   todoId: number;
   name: string;
-}
+};
 
-export interface IBettingJoin {
+export type IBettingJoin = {
   cost: number;
   prediction: boolean;
-}
+};

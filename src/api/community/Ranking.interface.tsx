@@ -1,11 +1,11 @@
-export interface IRankingReq {
+export type IRankingReq = {
   order: string;
-}
+};
 
-export interface IRanking {
+export type IRanking = {
   memberId: number;
   memberNickname: string;
   mainCharacterImg: string;
   score: number;
   rank: number;
-}
+};
