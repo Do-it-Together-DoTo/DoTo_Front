@@ -1,9 +1,9 @@
 import BettingItem from './BettingItem';
-import { IBetting } from './MyBetting';
+import { Betting } from './MyBetting';
 
 interface MyBettingCategoryProps {
   category: '연 베팅' | '참여한 베팅' | '완료한 베팅';
-  bettings: IBetting[];
+  bettings: Betting[];
 }
 
 const MyBettingCategory = ({ category, bettings }: MyBettingCategoryProps) => {

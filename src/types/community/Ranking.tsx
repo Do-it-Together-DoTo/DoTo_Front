@@ -1,8 +1,8 @@
-export type IRankingReq = {
+export type RankingRequest = {
   order: string;
 };
 
-export type IRanking = {
+export type Ranking = {
   memberId: number;
   memberNickname: string;
   mainCharacterImg: string;

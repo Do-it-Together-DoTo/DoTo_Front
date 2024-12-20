@@ -1,11 +1,11 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IBetting } from '@/types/community/Betting.tsx';
+import { Betting } from '@/types/community/Betting.tsx';
 import useModal from '@/hooks/useModal';
 import BettingDetailModal from '@/modal/community/BettingDetailModal';
 import OpenBettingModal from '@/modal/community/OpenBettingModal';
 
 interface BettingItemProps {
-  betting: IBetting;
+  betting: Betting;
   type: 'open' | 'my';
   isParticipate: boolean;
 }

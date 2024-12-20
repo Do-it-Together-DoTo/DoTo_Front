@@ -1,4 +1,4 @@
-import { IFriendList, IFriendReq, IFriendSearchReq } from '@/types/community/Friend.tsx';
+import { FriendList, FriendRequest, FriendSearchRequest } from '@/types/community/Friend.tsx';
 import {
   deleteBlockFriend,
   deleteFriend,
@@ -13,7 +13,7 @@ import {
 
 const useFriendApi = () => {
   // 유저차단
-  const blockFriend = async (data: IFriendReq) => {
+  const blockFriend = async (data: FriendRequest) => {
     try {
       await postBlockFriend(data);
     } catch (error) {
@@ -22,7 +22,7 @@ const useFriendApi = () => {
   };
 
   // 친구 목록 조회
-  const getMyBlockFriends = async (data: IFriendList) => {
+  const getMyBlockFriends = async (data: FriendList) => {
     try {
       await getBlockFriends(data);
     } catch (error) {
@@ -30,7 +30,7 @@ const useFriendApi = () => {
     }
   };
   // 친구 목록 조회
-  const getMyFriends = async (data: IFriendList) => {
+  const getMyFriends = async (data: FriendList) => {
     try {
       await getFriends(data);
     } catch (error) {
@@ -39,7 +39,7 @@ const useFriendApi = () => {
   };
 
   //친구 신청
-  const addFriend = async (data: IFriendReq) => {
+  const addFriend = async (data: FriendRequest) => {
     try {
       await postFriendRequset(data);
     } catch (error) {
@@ -48,7 +48,7 @@ const useFriendApi = () => {
   };
 
   //친구신청 취소
-  const cancelFriendRequest = async (data: IFriendReq) => {
+  const cancelFriendRequest = async (data: FriendRequest) => {
     try {
       await deleteFriendRequest(data);
     } catch (error) {
@@ -57,7 +57,7 @@ const useFriendApi = () => {
   };
 
   //유저차단 취소
-  const unBlockFriend = async (data: IFriendReq) => {
+  const unBlockFriend = async (data: FriendRequest) => {
     try {
       await deleteBlockFriend(data);
     } catch (error) {
@@ -66,7 +66,7 @@ const useFriendApi = () => {
   };
 
   //친구 신청 거절
-  const refuseFriendRequest = async (data: IFriendReq) => {
+  const refuseFriendRequest = async (data: FriendRequest) => {
     try {
       await deleteBlockFriend(data);
     } catch (error) {
@@ -75,7 +75,7 @@ const useFriendApi = () => {
   };
 
   //친구 신청 수락
-  const acceptFriendRequest = async (data: IFriendReq) => {
+  const acceptFriendRequest = async (data: FriendRequest) => {
     try {
       await postFriend(data);
     } catch (error) {
@@ -93,7 +93,7 @@ const useFriendApi = () => {
   };
 
   //친구 검색
-  const searchFriend = async (data: IFriendSearchReq) => {
+  const searchFriend = async (data: FriendSearchRequest) => {
     let response;
     try {
       response = await getSearchFriendResult(data);

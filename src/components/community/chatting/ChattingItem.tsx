@@ -1,10 +1,10 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IChatRoom } from '@/types/community/Chatting.tsx';
+import { ChatRoom } from '@/types/community/Chatting.tsx';
 import { Link } from 'react-router-dom';
 import useChatRoomStore from '@/store/community/chatRoomStore';
 
 interface ChattingItemProps {
-  chatting: IChatRoom;
+  chatting: ChatRoom;
 }
 const ChattingItem = ({ chatting }: ChattingItemProps) => {
   const setChatRoom = useChatRoomStore((state) => state.setChatRoom);

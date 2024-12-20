@@ -1,6 +1,6 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { IBettingAdd, IBettingJoin } from '../../types/community/Betting.tsx';
+import { BettingAddRequest, BettingJoinRequest } from '../../types/community/Betting.tsx';
 
 //나의 베팅 조회
 export const getMyBetting = async () => {
@@ -10,8 +10,8 @@ export const getMyBetting = async () => {
 };
 
 //베팅 생성
-export const addBetting = async (data: IBettingAdd) => {
-  return await instance.post<IBettingAdd>(END_POINT.MY_BETTING, data);
+export const addBetting = async (data: BettingAddRequest) => {
+  return await instance.post<BettingAddRequest>(END_POINT.MY_BETTING, data);
 };
 
 //오픈 베팅 조회
@@ -31,8 +31,8 @@ export const getBetting = async (bettingId: number) => {
 };
 
 //베팅 참여
-export const joinBetting = async (bettingId: number, data: IBettingJoin) => {
-  return await instance.post<IBettingJoin>(END_POINT.BETTING(bettingId), data);
+export const joinBetting = async (bettingId: number, data: BettingJoinRequest) => {
+  return await instance.post<BettingJoinRequest>(END_POINT.BETTING(bettingId), data);
 };
 
 //베팅 삭제

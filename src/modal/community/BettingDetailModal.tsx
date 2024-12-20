@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting, IBettingDetail } from '@/types/community/Betting.tsx';
+import { Betting, BettingDetail } from '@/types/community/Betting.tsx';
 import { useEffect, useState } from 'react';
 import { getBetting } from '@/api/community/BettingApi';
 import { Link } from 'react-router-dom';
 
 interface BettingDetailModalProps {
-  betting: IBetting;
+  betting: Betting;
   onClose: () => void;
 }
 
 const BettingDetailModal = ({ betting, onClose }: BettingDetailModalProps) => {
-  const [bettingDetail, setBettingDetail] = useState<IBettingDetail>();
+  const [bettingDetail, setBettingDetail] = useState<BettingDetail>();
 
   const fetchBettingDetail = async () => {
     try {

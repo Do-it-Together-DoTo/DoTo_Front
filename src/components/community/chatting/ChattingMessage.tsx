@@ -1,8 +1,8 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IChat } from '@/types/community/Chatting.tsx';
+import { Chat } from '@/types/community/Chatting.tsx';
 
 interface ChattingMessageProps {
-  message: IChat;
+  message: Chat;
 }
 const ChattingMessage = ({ message }: ChattingMessageProps) => {
   return (

@@ -5,12 +5,12 @@ import { CharacterProfileIcon } from '@/assets/svg/community';
 import { ArrowLeftIcon } from '@/assets/svg';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { getChatting, sendChattingMessage } from '@/api/community/ChattingApi';
-import { IChat } from '@/types/community/Chatting.tsx';
+import { Chat } from '@/types/community/Chatting.tsx';
 import useChatRoomStore from '@/store/community/chatRoomStore';
 
 const ChattingRoomPage = () => {
   const { roomId } = useParams();
-  const [messages, setMessages] = useState<IChat[]>([]);
+  const [messages, setMessages] = useState<Chat[]>([]);
   const [message, setMessage] = useState('');
   const chatRoom = useChatRoomStore((state) => state.chatRoom);
 

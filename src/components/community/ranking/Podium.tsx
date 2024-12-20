@@ -2,10 +2,10 @@ import { CharacterProfileIcon, CrownIcon, RankingBackground } from '@/assets/svg
 import React from 'react';
 import { STAR_ICON_MAP } from './RankingConstant';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
-import { IRanking } from '@/types/community/Ranking.tsx';
+import { Ranking } from '@/types/community/Ranking.tsx';
 
 interface PodiumProps {
-  rankers: IRanking[];
+  rankers: Ranking[];
 }
 const Podium = ({ rankers }: PodiumProps) => {
   const { isDesktop } = useDeviceSize();

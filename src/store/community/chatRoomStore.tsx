@@ -1,9 +1,9 @@
-import { IChatRoom } from '@/types/community/Chatting.tsx';
+import { ChatRoom } from '@/types/community/Chatting.tsx';
 import { create } from 'zustand';
 
 interface ChatRoomState {
-  chatRoom: IChatRoom;
-  setChatRoom: (newChatRoom: IChatRoom) => void;
+  chatRoom: ChatRoom;
+  setChatRoom: (newChatRoom: ChatRoom) => void;
 }
 
 const useChatRoomStore = create<ChatRoomState>((set) => ({
@@ -15,7 +15,7 @@ const useChatRoomStore = create<ChatRoomState>((set) => ({
     memberNickname: '',
     mainCharacterImg: '',
   },
-  setChatRoom: (newChatRoom: IChatRoom) => {
+  setChatRoom: (newChatRoom: ChatRoom) => {
     set(() => ({
       chatRoom: newChatRoom,
     }));

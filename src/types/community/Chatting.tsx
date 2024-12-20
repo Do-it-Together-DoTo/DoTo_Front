@@ -1,4 +1,4 @@
-export type IChat = {
+export type Chat = {
   chatId: number;
   contents: string;
   createdDate: Date;
@@ -7,7 +7,7 @@ export type IChat = {
   mainCharacterImg: string;
 };
 
-export type IChatRoom = {
+export type ChatRoom = {
   chatRoomId: number;
   bettingId: number;
   bettingName: string;
@@ -16,10 +16,10 @@ export type IChatRoom = {
   mainCharacterImg: string;
 };
 
-export type ChatAdd = {
+export type ChatAddRequest = {
   contents: string;
 };
 
-export type ChatListReq = {
+export type ChatListRequest = {
   lastChatId: number;
 };
