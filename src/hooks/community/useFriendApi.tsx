@@ -1,4 +1,4 @@
-import { FriendList, FriendRequest, FriendSearchRequest } from '@/types/community/Friend.tsx';
+import { FriendListRequest, FriendRequest, FriendSearchRequest } from '@/types/community/Friend.tsx';
 import {
   deleteBlockFriend,
   deleteFriend,
@@ -22,7 +22,7 @@ const useFriendApi = () => {
   };
 
   // 친구 목록 조회
-  const getMyBlockFriends = async (data: FriendList) => {
+  const getMyBlockFriends = async (data: FriendListRequest) => {
     try {
       await getBlockFriends(data);
     } catch (error) {
@@ -30,7 +30,7 @@ const useFriendApi = () => {
     }
   };
   // 친구 목록 조회
-  const getMyFriends = async (data: FriendList) => {
+  const getMyFriends = async (data: FriendListRequest) => {
     try {
       await getFriends(data);
     } catch (error) {

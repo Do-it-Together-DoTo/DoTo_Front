@@ -1,4 +1,4 @@
-export type IFriend = {
+export type Friend = {
   memberId: number;
   nickname: string;
   mainCharacterImg: string;

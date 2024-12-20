@@ -1,10 +1,10 @@
 import FriendItem from './FriendItem';
 import { useState, FormEvent } from 'react';
-import { IFriend } from '@/types/community/Friend.tsx';
+import { Friend } from '@/types/community/Friend.tsx';
 import useFriendApi from '@/hooks/community/useFriendApi';
 
 const SearchFriends = () => {
-  const [friends, setFriends] = useState<IFriend[]>([]);
+  const [friends, setFriends] = useState<Friend[]>([]);
   const [keyword, setKeyword] = useState('');
   const { searchFriend } = useFriendApi();
 
