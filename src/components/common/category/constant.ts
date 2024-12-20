@@ -4,12 +4,13 @@ import { InventoryIcon, ShopIcon } from '@/assets/svg/store';
 import { BlockIcon } from '@/assets/svg';
 import { ElementType } from 'react';
 
-interface Category {
+type Category = {
   name: string;
   to: string;
   icon: keyof typeof ICON_MAP;
   detail?: { name: string; to: string; icon: keyof typeof ICON_MAP }[];
-}
+};
+
 export const ICON_MAP: Record<string, ElementType> = {
   RankingIcon: RankingIcon,
   ChattingIcon: ChattingIcon,

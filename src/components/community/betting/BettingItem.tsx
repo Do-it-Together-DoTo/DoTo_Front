@@ -4,11 +4,12 @@ import useModal from '@/hooks/useModal';
 import BettingDetailModal from '@/modal/community/BettingDetailModal';
 import OpenBettingModal from '@/modal/community/OpenBettingModal';
 
-interface BettingItemProps {
+type BettingItemProps = {
   betting: Betting;
   type: 'open' | 'my';
   isParticipate: boolean;
-}
+};
+
 const BettingItem = ({ betting, isParticipate, type }: BettingItemProps) => {
   const { open, close, Modal } = useModal();
   return (

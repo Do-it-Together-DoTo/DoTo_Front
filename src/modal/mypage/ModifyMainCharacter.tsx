@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import MainCharacterCard from '@/components/mypage/MainCharacterCard';
 
-interface ModifyMCProps {
+type ModifyMCProps = {
   close: () => void;
-}
+};
 
 const ModifyMainCharacter = ({ close }: ModifyMCProps) => {
   const [focusedCardIndex, setFocusedCardIndex] = useState<number | null>(null);

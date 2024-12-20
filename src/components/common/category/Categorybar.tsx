@@ -3,9 +3,9 @@ import React from 'react';
 import { ICON_MAP, CATEGORY_LIST } from './constant';
 import { Outlet } from 'react-router-dom';
 
-interface CategorybarProps {
+type CategorybarProps = {
   category: 'community' | 'store' | 'mypage';
-}
+};
 
 const Categorybar = ({ category }: CategorybarProps) => {
   return (

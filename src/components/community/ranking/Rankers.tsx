@@ -3,9 +3,9 @@ import React from 'react';
 import { STAR_ICON_MAP } from './RankingConstant';
 import { Ranking } from '@/types/community/Ranking.tsx';
 
-interface RankersProps {
+type RankersProps = {
   rankers: Ranking[];
-}
+};
 const Rankers = ({ rankers }: RankersProps) => {
   return (
     <section className="w-[28rem] h-[24.1875rem] mb:h-full rounded-[1.875rem] bg-Light_Layout-400 flex flex-col items-center px-9 py-[1.1875rem] dt:overflow-y-auto scrollbar-hide dark:bg-Dark_Layout-400">

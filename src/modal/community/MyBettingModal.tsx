@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useBettingModal } from '@/hooks/community/useBettingModal';
 import CheckBox from '@/components/common/checkbox/Checkbox';
 
-interface BettingDetailModalProps {
+type BettingDetailModalProps = {
   betting: Betting;
   type: 'detail' | 'bet';
   onClose: () => void;
-}
+};
 
 const BettingModal = ({ betting, type, onClose }: BettingDetailModalProps) => {
   const [isValid] = useState(true);

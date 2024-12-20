@@ -1,10 +1,10 @@
 import { ChatRoom } from '@/types/community/Chatting.tsx';
 import { create } from 'zustand';
 
-interface ChatRoomState {
+type ChatRoomState = {
   chatRoom: ChatRoom;
   setChatRoom: (newChatRoom: ChatRoom) => void;
-}
+};
 
 const useChatRoomStore = create<ChatRoomState>((set) => ({
   chatRoom: {

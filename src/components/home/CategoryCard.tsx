@@ -11,18 +11,18 @@ import useModal from '@/hooks/useModal';
 import TodoEditModal from '@/modal/home/TodoEditModal';
 import { useState } from 'react';
 
-interface Todo {
+type Todo = {
   id: string;
   title: string;
   isDone: boolean;
-}
+};
 
-interface Category {
+type Category = {
   id: string;
   shared: string;
   title: string;
   color: string;
-}
+};
 
 const CategoryCard = ({ category, todoList }: { category: Category; todoList: Todo[] }) => {
   const { Modal, open, close } = useModal();

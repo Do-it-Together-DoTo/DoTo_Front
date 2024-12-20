@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import { getBetting } from '@/api/community/BettingApi';
 import { Link } from 'react-router-dom';
 
-interface BettingDetailModalProps {
+type BettingDetailModalProps = {
   betting: Betting;
   onClose: () => void;
-}
+};
 
 const BettingDetailModal = ({ betting, onClose }: BettingDetailModalProps) => {
   const [bettingDetail, setBettingDetail] = useState<BettingDetail>();

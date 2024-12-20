@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-interface FindPwProps {
+type FindPwProps = {
   close: () => void;
-}
+};
 const FindPw = ({ close }: FindPwProps) => {
   const [email, setEmail] = useState('');
   const [verificationCode, setVerificationCode] = useState('');

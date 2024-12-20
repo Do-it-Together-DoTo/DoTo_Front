@@ -2,11 +2,11 @@ import useRadioStore from '@/store/radioStore';
 import { ReactNode } from 'react';
 import { useEffect } from 'react';
 
-export interface RadioGroupProps {
+export type RadioGroupProps = {
   children: ReactNode;
   initialValue: string;
   className?: string;
-}
+};
 
 const RadioGroup = ({ children, initialValue, className }: RadioGroupProps) => {
   const setCheckedValue = useRadioStore((state) => state.setCheckedValue);

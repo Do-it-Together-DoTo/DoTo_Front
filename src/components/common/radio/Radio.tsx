@@ -1,11 +1,11 @@
 import useRadioStore from '@/store/radioStore';
 import { ReactNode } from 'react';
 
-export interface RadioProps {
+export type RadioProps = {
   children: ReactNode;
   value: string;
   className?: string;
-}
+};
 
 const Radio: React.FC<RadioProps> = ({ children, value, className }) => {
   const { checkedValue, setCheckedValue } = useRadioStore();

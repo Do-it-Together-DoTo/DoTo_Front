@@ -10,10 +10,10 @@ import {
 import { PublicIcon, FriendOnlyIcon, PrivateIcon } from '@/assets/svg/home/category';
 import CustomModalCalendar from '@/components/home/calendar/ModalCustomCalendar';
 
-interface TodoEditModalProps {
+type TodoEditModalProps = {
   onClose: () => void;
   selectedTodo: { title: string; category: string; color: string; shared: string };
-}
+};
 
 const TodoEditModal = ({ onClose, selectedTodo }: TodoEditModalProps) => {
   const [contentInfo, setContentInfo] = useState('todoEdit');

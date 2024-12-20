@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 
-interface radioState {
+type radioState = {
   checkedValue: string;
   setCheckedValue: (newValue: string) => void;
-}
+};
 
 const useRadioStore = create<radioState>((set) => ({
   checkedValue: '',

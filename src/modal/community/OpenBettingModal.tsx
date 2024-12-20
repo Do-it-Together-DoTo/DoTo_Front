@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import CheckBox from '@/components/common/checkbox/Checkbox';
 import { getBetting, joinBetting } from '@/api/community/BettingApi';
 
-interface BettingDetailModalProps {
+type BettingDetailModalProps = {
   betting: Betting;
   onClose: () => void;
-}
+};
 
 const OpenBettingModal = ({ betting, onClose }: BettingDetailModalProps) => {
   const [isValid] = useState(true);

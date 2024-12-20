@@ -4,7 +4,7 @@ import { STAR_ICON_MAP } from './RankingConstant';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 import { Ranking } from '@/types/community/Ranking.tsx';
 
-interface PodiumProps {
+type PodiumProps = {
   rankers: Ranking[];
 }
 const Podium = ({ rankers }: PodiumProps) => {

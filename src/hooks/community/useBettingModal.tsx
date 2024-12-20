@@ -4,12 +4,12 @@ import { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //베팅만들기
-interface createBettingProps {
+type createBettingProps = {
   betting: Betting;
 
   onSubmit?: () => void;
   validate?: () => void;
-}
+};
 
 export const useBettingModal = ({ betting }: createBettingProps) => {
   //onSubmit은 제출후 결과

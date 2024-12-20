@@ -6,11 +6,11 @@ import useFriendApi from '@/hooks/community/useFriendApi';
 import useModal from '@/hooks/useModal';
 import FriendModal from '@/modal/community/FriendModal';
 import { useState } from 'react';
-interface IFriendItemProps {
+type FriendItemProps = {
   friend: IFriend;
-}
+};
 
-const FriendItem = ({ friend }: IFriendItemProps) => {
+const FriendItem = ({ friend }: FriendItemProps) => {
   const { removeFriend, addFriend, cancelFriendRequest, blockFriend } = useFriendApi();
   const { open, close, Modal } = useModal();
   const [modalType, setModalType] = useState<'delete' | 'block'>('delete');

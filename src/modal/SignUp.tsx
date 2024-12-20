@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-interface SignUpProps {
+
+type SignUpProps = {
   close: () => void;
-}
+};
+
 const SignUp = ({ close }: SignUpProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
