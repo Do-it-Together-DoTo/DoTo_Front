@@ -1,33 +1,30 @@
-export interface IFriend {
+export type Friend = {
   memberId: number;
   nickname: string;
   mainCharacterImg: string;
   status?: 'FRIEND' | 'NOT_FRIEND';
-}
+};
 
-export interface IFriendBlock {
-  lastFriendId: number;
-}
-
-export interface IFriendReq {
+export type FriendRequest = {
   friendId: number;
-}
+};
 
-export interface IFriendSearchReq {
+export type FriendSearchRequest = {
   keyword: string;
   lastMemberId?: number;
-}
+};
 
-export interface IFriendDetail {
+export type FriendDetail = {
   memberId: number;
   nickname: string;
   description: string;
   mainCharacterImg: string;
   mainCharacterExp: number;
   mainCharacterLevel: number;
-}
+};
+
 //친구목록, 친구차단목록, 친구상세목록 Request
-export interface IFriendList {
+export type FriendListRequest = {
   lastFriendId?: number;
   lastFriendLastUpload?: Date;
-}
+};

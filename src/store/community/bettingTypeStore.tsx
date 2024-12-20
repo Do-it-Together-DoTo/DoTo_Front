@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 
-interface BettingTypeState {
+type BettingTypeState = {
   bettingTypeList: { [key: number]: string };
   setBettingTypeList: (bettingId: number, type: string) => void;
-}
+};
 
 const useBettingTypeStore = create<BettingTypeState>((set) => ({
   bettingTypeList: {},

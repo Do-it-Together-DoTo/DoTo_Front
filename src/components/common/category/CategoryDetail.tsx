@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 import { Children } from 'react';
 import { NavLink } from 'react-router-dom';
 
-interface CategoryDetailProps {
+type CategoryDetailProps = {
   to: string;
   name: string;
   children: ReactNode;
-}
+};
 
 const CategoryDetail = ({ to, name, children }: CategoryDetailProps) => {
   return (

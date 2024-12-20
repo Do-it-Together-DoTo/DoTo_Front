@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 
-interface CommunityPageLayoutProps {
+type CommunityPageLayoutProps = {
   children: ReactNode;
-}
+};
 
 const CommunityPageLayout: React.FC<CommunityPageLayoutProps> = ({ children }) => {
   return (

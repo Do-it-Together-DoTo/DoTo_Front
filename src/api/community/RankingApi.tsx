@@ -1,7 +1,7 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { IRankingReq } from './Ranking.interface';
+import { RankingRequest, } from '../../types/community/Ranking.tsx';
 
-export const getRanking = async (data: IRankingReq) => {
+export const getRanking = async (data: RankingRequest,) => {
   return await instance.get(END_POINT.RANKING, { params: data });
 };

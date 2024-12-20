@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 
-export interface CheckboxProps {
+export type CheckboxProps = {
   children: ReactNode;
   checked?: boolean;
   className?: string;
   onChange: (arg: boolean) => void;
-}
+};
 
 const CheckBox: React.FC<CheckboxProps> = ({ children, checked, className, onChange }) => {
   return (

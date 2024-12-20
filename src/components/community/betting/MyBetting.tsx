@@ -2,19 +2,19 @@ import { getMyBetting } from '@/api/community/BettingApi';
 import MyBettingCategory from './MyBettingCategory';
 import { useEffect, useState } from 'react';
 
-export interface IBetting {
+export type Betting = {
   bettingId: number;
   bettingName: string;
   mainCharacterImg: string;
   memberId: number;
   memberNickname: string;
-}
+};
 
 const MyBetting = () => {
   // TODO: 연베팅, 참여한베팅, 완료한 베팅 나눠서 props로 전달
-  const [myBetting, setMyBetting] = useState<IBetting[]>([]);
-  const [joiningBetting, setJoiningBetting] = useState<IBetting[]>([]);
-  const [closedBetting, setClosedBetting] = useState<IBetting[]>([]);
+  const [myBetting, setMyBetting] = useState<Betting[]>([]);
+  const [joiningBetting, setJoiningBetting] = useState<Betting[]>([]);
+  const [closedBetting, setClosedBetting] = useState<Betting[]>([]);
 
   async function fetchMyBetting() {
     try {

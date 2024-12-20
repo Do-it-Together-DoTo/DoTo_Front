@@ -6,10 +6,10 @@ import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 import OrderToggle from '@/components/community/ranking/orderToggle/OrderToggle';
 import useRankingApi from '@/hooks/community/useRankingApi';
-import { IRanking } from '@/api/community/Ranking.interface';
+import { Ranking } from '@/types/community/Ranking.tsx';
 
 const RankingPage = () => {
-  const [rankers, setRankers] = useState<IRanking[]>([]);
+  const [rankers, setRankers] = useState<Ranking[]>([]);
   const { isDesktop, isMobile } = useDeviceSize();
   const { getRankingData } = useRankingApi();
 

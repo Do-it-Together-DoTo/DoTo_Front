@@ -1,11 +1,11 @@
-interface FriendlModalProps {
+type FriendlModalProps = {
   nickname?: string;
   messages?: string[];
   onClose: () => void;
   onClick: () => void;
   title: string;
   btnText: string;
-}
+};
 
 const FriendModal = ({ onClose, onClick, title, btnText, nickname, messages }: FriendlModalProps) => {
   return (

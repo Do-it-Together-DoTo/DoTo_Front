@@ -1,8 +1,8 @@
 import { MyBlob, Slider } from '@/assets/svg';
 
-interface StoreDetailModalProps {
+type StoreDetailModalProps = {
   onClose: () => void;
-}
+};
 
 const StoreDetailModal = ({ onClose }: StoreDetailModalProps) => {
   return (

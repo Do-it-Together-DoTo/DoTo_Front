@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { TimerIcon } from '@/assets/svg/community';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';

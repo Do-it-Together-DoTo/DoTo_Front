@@ -1,19 +1,19 @@
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting, IBettingDetail } from '@/api/community/Betting.Interface';
+import { Betting, BettingDetailRequest } from '@/types/community/Betting.tsx';
 import { useEffect, useState } from 'react';
 import CheckBox from '@/components/common/checkbox/Checkbox';
 import { getBetting, joinBetting } from '@/api/community/BettingApi';
 
-interface BettingDetailModalProps {
-  betting: IBetting;
+type BettingDetailModalProps = {
+  betting: Betting;
   onClose: () => void;
-}
+};
 
 const OpenBettingModal = ({ betting, onClose }: BettingDetailModalProps) => {
   const [isValid] = useState(true);
   const [isDo, setIsDo] = useState(true);
   const [cost, setCost] = useState(0);
-  const [bettingDetail, setBettingDetail] = useState<IBettingDetail>();
+  const [bettingDetail, setBettingDetail] = useState<BettingDetailRequest>();
 
   async function fetchJoinBetting() {
     try {

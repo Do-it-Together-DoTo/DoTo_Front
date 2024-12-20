@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
-interface ButtonProps {
+type ButtonProps = {
   children: ReactNode;
   onClick: () => void;
   color: 'gray' | 'dark' | 'blue';
-}
+};
 
 const Button = ({ children, onClick, color }: ButtonProps) => {
   return (

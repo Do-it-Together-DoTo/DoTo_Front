@@ -1,10 +1,10 @@
 import Radio from '@/components/common/radio/Radio';
 import { ReactNode } from 'react';
 
-interface MenuItemProps {
+type MenuItemProps = {
   children: ReactNode;
   value: string;
-}
+};
 const MenuItem: React.FC<MenuItemProps> = ({ children, value }) => {
   return (
     <Radio

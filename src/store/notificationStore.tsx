@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 
-interface NotificationState {
+type NotificationState = {
   isNotification: boolean;
   setIsNotification: () => void;
-}
+};
 
 const useNotificationStore = create<NotificationState>((set) => ({
   isNotification: true,

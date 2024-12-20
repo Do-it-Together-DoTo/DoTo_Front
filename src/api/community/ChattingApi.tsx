@@ -1,6 +1,6 @@
 import { instance } from '../axios';
 import { END_POINT } from './constants';
-import { ChatAdd } from './Chatting.Interface';
+import { ChatAddRequest } from '../../types/community/Chatting.tsx';
 
 //참여 중인 채팅방 조회
 export const getJoinChatting = async () => {
@@ -18,6 +18,6 @@ export const joinChatting = async (chatRoomId: number) => {
 };
 
 //채팅메세지 작성
-export const sendChattingMessage = async (chatRoomId: number, data: ChatAdd) => {
+export const sendChattingMessage = async (chatRoomId: number, data: ChatAddRequest) => {
   return await instance.post(END_POINT.CHATTING_MESSAGE(chatRoomId), data);
 };

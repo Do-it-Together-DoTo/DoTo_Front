@@ -1,14 +1,15 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IBetting } from '@/api/community/Betting.Interface';
+import type { Betting } from '@/types/community/Betting.tsx';
 import useModal from '@/hooks/useModal';
 import BettingDetailModal from '@/modal/community/BettingDetailModal';
 import OpenBettingModal from '@/modal/community/OpenBettingModal';
 
-interface BettingItemProps {
-  betting: IBetting;
+type BettingItemProps = {
+  betting: Betting;
   type: 'open' | 'my';
   isParticipate: boolean;
-}
+};
+
 const BettingItem = ({ betting, isParticipate, type }: BettingItemProps) => {
   const { open, close, Modal } = useModal();
   return (

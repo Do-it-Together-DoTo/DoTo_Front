@@ -1,9 +1,9 @@
 import FriendItem from './FriendItem';
 import { useState, useEffect } from 'react';
-import { IFriend } from '@/api/community/Friend.Interface';
+import { Friend } from '@/types/community/Friend.tsx';
 import { getFriends } from '@/api/community/FriendApi';
 const Friends = () => {
-  const [friends, setFriends] = useState<IFriend[]>([]);
+  const [friends, setFriends] = useState<Friend[]>([]);
   const fetchMyFriends = async () => {
     try {
       const response = await getFriends({});

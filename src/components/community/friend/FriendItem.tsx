@@ -1,16 +1,17 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
 import { STATUS } from './FriendConstant';
 import Button from './Button';
-import { IFriend } from '@/api/community/Friend.Interface';
+import { Friend } from '@/types/community/Friend.tsx';
 import useFriendApi from '@/hooks/community/useFriendApi';
 import useModal from '@/hooks/useModal';
 import FriendModal from '@/modal/community/FriendModal';
 import { useState } from 'react';
-interface IFriendItemProps {
-  friend: IFriend;
-}
 
-const FriendItem = ({ friend }: IFriendItemProps) => {
+type FriendItemProps = {
+  friend: Friend;
+};
+
+const FriendItem = ({ friend }: FriendItemProps) => {
   const { removeFriend, addFriend, cancelFriendRequest, blockFriend } = useFriendApi();
   const { open, close, Modal } = useModal();
   const [modalType, setModalType] = useState<'delete' | 'block'>('delete');

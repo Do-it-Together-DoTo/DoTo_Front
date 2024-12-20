@@ -1,9 +1,10 @@
 import { CharacterProfileIcon } from '@/assets/svg/community';
-import { IChat } from '@/api/community/Chatting.Interface';
+import { Chat } from '@/types/community/Chatting.tsx';
 
-interface ChattingMessageProps {
-  message: IChat;
-}
+type ChattingMessageProps = {
+  message: Chat;
+};
+
 const ChattingMessage = ({ message }: ChattingMessageProps) => {
   return (
     <div

@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 import { Children } from 'react';
 import { NavLink } from 'react-router-dom';
 
-interface NavItemLinkProps {
+type NavItemLinkProps = {
   to: string;
   name: string;
   children: ReactNode;
-}
+};
 
 const NavbarItem = ({ to, name, children }: NavItemLinkProps) => {
   return (

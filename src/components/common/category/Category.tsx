@@ -5,7 +5,7 @@ import CategoryDetail from './CategoryDetail';
 import { ICON_MAP } from './constant';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 
-interface CategoryProps {
+type CategoryProps = {
   page: {
     name: string;
     to: string;
@@ -13,7 +13,7 @@ interface CategoryProps {
     detail?: { name: string; to: string; icon: keyof typeof ICON_MAP }[];
   };
   children: ReactNode;
-}
+};
 
 const Category = ({ page, children }: CategoryProps) => {
   const [isCategoryActive, setIsCategoryActive] = useState(false);

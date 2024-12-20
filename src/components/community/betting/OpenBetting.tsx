@@ -1,9 +1,9 @@
 import BettingItem from './BettingItem';
 import { useEffect, useState } from 'react';
-import { IBetting } from '@/api/community/Betting.Interface';
+import { Betting } from '@/types/community/Betting.tsx';
 import { getOpenBetting } from '@/api/community/BettingApi';
 const OpenBetting = () => {
-  const [openBetting, setOpenBetting] = useState<IBetting[]>([]);
+  const [openBetting, setOpenBetting] = useState<Betting[]>([]);
 
   async function fetchMyBetting() {
     try {

@@ -1,14 +1,14 @@
 import { CoinIcon } from '@/assets/svg/community';
-import { IBetting } from '@/api/community/Betting.Interface';
+import { Betting } from '@/types/community/Betting.tsx';
 import { useState } from 'react';
 import { useBettingModal } from '@/hooks/community/useBettingModal';
 import CheckBox from '@/components/common/checkbox/Checkbox';
 
-interface BettingDetailModalProps {
-  betting: IBetting;
+type BettingDetailModalProps = {
+  betting: Betting;
   type: 'detail' | 'bet';
   onClose: () => void;
-}
+};
 
 const BettingModal = ({ betting, type, onClose }: BettingDetailModalProps) => {
   const [isValid] = useState(true);

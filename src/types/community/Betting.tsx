@@ -1,12 +1,12 @@
-export interface IBetting {
+export type Betting = {
   bettingId: number;
   bettingName: string;
   mainCharacterImg: string;
   memberId: number;
   memberNickname: string;
-}
+};
 
-export interface IBettingDetail {
+export type BettingDetailRequest = {
   bettingId: number;
   bettingName: string;
   chatRoomId: number;
@@ -21,14 +21,31 @@ export interface IBettingDetail {
   participantCount: number;
   successCoins: number;
   todoContents: string;
-}
+};
 
-export interface IBettingAdd {
+export type BettingDetail = {
+  bettingId: number;
+  bettingName: string;
+  chatRoomId: number;
+  failureCoins: number;
+  isAchieved: boolean | null;
+  isFinished: boolean;
+  isParticipating: boolean;
+  memberId: number;
+  memberNickname: string;
+  myBetCoins: number;
+  myBetOn: boolean;
+  participantCount: number;
+  successCoins: number;
+  todoContents: string;
+};
+
+export type BettingAddRequest = {
   todoId: number;
   name: string;
-}
+};
 
-export interface IBettingJoin {
+export type BettingJoinRequest = {
   cost: number;
   prediction: boolean;
-}
+};

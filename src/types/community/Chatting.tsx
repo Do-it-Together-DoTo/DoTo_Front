@@ -1,25 +1,25 @@
-export interface IChat {
+export type Chat = {
   chatId: number;
   contents: string;
   createdDate: Date;
   memberId: number;
   memberNickname: string;
   mainCharacterImg: string;
-}
+};
 
-export interface IChatRoom {
+export type ChatRoom = {
   chatRoomId: number;
   bettingId: number;
   bettingName: string;
   memberId: number;
   memberNickname: string;
   mainCharacterImg: string;
-}
+};
 
-export interface ChatAdd {
+export type ChatAddRequest = {
   contents: string;
-}
+};
 
-export interface ChatListReq {
+export type ChatListRequest = {
   lastChatId: number;
-}
+};

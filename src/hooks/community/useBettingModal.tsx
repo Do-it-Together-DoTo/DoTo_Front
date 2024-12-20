@@ -1,15 +1,15 @@
-import { IBetting, IBettingDetail, IBettingJoin } from '@/api/community/Betting.Interface';
+import { Betting, BettingDetail, BettingJoinRequest } from '@/types/community/Betting.tsx';
 import { joinBetting, getBetting } from '@/api/community/BettingApi';
 import { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //베팅만들기
-interface createBettingProps {
-  betting: IBetting;
+type createBettingProps = {
+  betting: Betting;
 
   onSubmit?: () => void;
   validate?: () => void;
-}
+};
 
 export const useBettingModal = ({ betting }: createBettingProps) => {
   //onSubmit은 제출후 결과
@@ -17,7 +17,7 @@ export const useBettingModal = ({ betting }: createBettingProps) => {
   const [errors] = useState({});
   const navigate = useNavigate();
   // const [submitting, setSubmitting] = useState(false);
-  const [bettingDetail, setBettingDetail] = useState<IBettingDetail | null>(null);
+  const [bettingDetail, setBettingDetail] = useState<BettingDetail | null>(null);
 
   async function fetchBetting() {
     try {
@@ -51,7 +51,7 @@ export const useBettingModal = ({ betting }: createBettingProps) => {
 
   async function fetchJoinBetting() {
     try {
-      const response = await joinBetting(betting.bettingId, values as IBettingJoin);
+      const response = await joinBetting(betting.bettingId, values as BettingJoinRequest);
       console.log(response);
     } catch (error) {
       console.log(error);
